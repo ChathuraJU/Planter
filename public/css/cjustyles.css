@@ -1,0 +1,27 @@
+.cju-navbar{
+    background: linear-gradient(90deg, #1b9944 60%, #81c040 100%)!important;
+}
+.cju-sidebar{
+    background: linear-gradient(180deg, #1b9944 20%, #81c040 100%)!important;
+}
+.cju-navbar-header{
+    background-color: white!important;
+    z-index: 1;
+}
+
+
+[class^="fa fa-"], [class*="fa fa-"]{
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    min-width: 1em;
+    display: inline-block;
+    text-align: center;
+    font-size: 16px;
+    vertical-align: middle;
+    position: relative;
+    top: -1px;
+}
