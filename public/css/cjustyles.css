@@ -8,7 +8,11 @@
     background-color: white!important;
     z-index: 1;
 }
-
+.bg-yellow-600 {
+    background-color:#bad531;
+    border-color:#bad531;
+    color:#fff;
+}
 
 [class^="fa fa-"], [class*="fa fa-"]{
     speak: none;

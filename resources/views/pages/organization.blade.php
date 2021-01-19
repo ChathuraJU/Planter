@@ -130,7 +130,7 @@
                                     </div>
                                     <div class="col-sm-6 col-xs-12">
                                         <div class="col-sm-4 col-sm-offset-2">
-                                            <img src="{{asset('images/hospital1.jpg')}}" height ="250px"  />
+                                            <img src="{{asset('images/thankyou.jpg')}}" height ="250px"  />
                                         </div>
                                     </div>
                                 </div>

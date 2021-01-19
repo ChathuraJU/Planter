@@ -68,6 +68,7 @@
     <script src="{{ asset('global_assets/js/plugins/forms/wizards/stepy.min.js')}}"></script>
     <script src="{{ asset('global_assets/js/plugins/extensions/cookie.js')}}"></script>
     <script src="{{ asset('global_assets/js/demo_pages/form_layouts.js')}}"></script>
+    <script src="{{ asset('global_assets/js/demo_pages/timelines.js')}}"></script>
     <!-- /theme JS files -->
 
 </head>

@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('pages.blank');
+    return view('pages.homepage');
 });
 Route::get('nursery', function () {
     return view('pages.nursery_dashboard');

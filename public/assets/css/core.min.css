@@ -294,7 +294,8 @@ a.bg-danger:focus, a.bg-danger:hover {
 }
 
 .page-header-inverse {
-    background-color: #263238;
+    /*background-color: #263238;*/
+    background-color: #7c522d;
     color: #fff;
     margin-bottom: 20px
 }
@@ -365,7 +366,8 @@ a.bg-danger:focus, a.bg-danger:hover {
 }
 
 .page-title {
-    padding: 32px 36px 32px 0;
+    /*padding: 32px 36px 32px 0;*/
+    padding: 26px 36px 26px 0;
     display: block;
     position: relative
 }
@@ -3138,7 +3140,7 @@ input[class*=bg-] + .form-control-feedback {
 
 .navbar {
     margin-bottom: 0;
-    border-width: 1px 0;
+    /*border-width: 1px 0;*/
     padding-left: 0;
     padding-right: 0
 }
