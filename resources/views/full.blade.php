@@ -47,6 +47,7 @@
     <script src="{{ asset('global_assets/js/plugins/forms/validation/validate.min.js') }} "></script>
     <script src="{{ asset('global_assets/js/plugins/forms/styling/uniform.min.js ') }}"></script>
     <script src="{{ asset('global_assets/js/plugins/forms/inputs/formatter.min.js') }}"></script>
+    <script src="{{ asset('global_assets/js/plugins/forms/inputs/touchspin.min.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min.js"></script>
     <!--Data tables-->
     <script src="{{ asset('global_assets/js/plugins/tables/datatables/datatables.min.js') }}"></script>
@@ -69,6 +70,7 @@
     <script src="{{ asset('global_assets/js/plugins/extensions/cookie.js')}}"></script>
     <script src="{{ asset('global_assets/js/demo_pages/form_layouts.js')}}"></script>
     <script src="{{ asset('global_assets/js/demo_pages/timelines.js')}}"></script>
+    <script src="{{ asset('global_assets/js/demo_pages/form_input_groups.js')}}"></script>
     <!-- /theme JS files -->
 
 </head>

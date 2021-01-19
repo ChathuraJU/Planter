@@ -8,7 +8,7 @@
             <div class="page-header-content border-bottom border-bottom-success-300">
                 <div class="page-title">
                     <h5>
-                        <span class="text-semibold">Home - Recent Events</span>
+                        <span class="text-semibold">Recent Events</span>
                     </h5>
                 </div>
 

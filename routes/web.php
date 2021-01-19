@@ -22,6 +22,12 @@ Route::get('nursery', function () {
 Route::get('field', function () {
     return view('pages.field_dashboard');
 });
+Route::get('field-create', function () {
+    return view('pages.create_field');
+});
+Route::get('field-data', function () {
+    return view('pages.field_data');
+});
 Route::get('disease-create', function () {
     return view('pages.create_disease');
 });
