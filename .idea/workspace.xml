@@ -2,12 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b635a8bc-edd1-459c-8275-20ba8bfd7f45" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/public/global_assets/js/demo_pages/form_input_groups.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/global_assets/js/demo_pages/uploader_bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Planter.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Planter.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/full.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/full.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/division.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/create_field.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/homepage.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/homepage.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/api/api-token-manager.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/api/index.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/forgot-password.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/reset-password.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/two-factor-challenge.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/verify-email.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/navigation-dropdown.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/create_field.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/create_field.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/profile/delete-user-form.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/profile/logout-other-browser-sessions-form.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/profile/show.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/profile/two-factor-authentication-form.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/profile/update-password-form.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/profile/update-profile-information-form.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/report_layout.blade.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,28 +44,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="web.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="web.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="25" column="35" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
+            <state relative-caret-position="-215">
+              <caret line="35" column="3" selection-start-line="35" selection-start-column="3" selection-end-line="35" selection-end-column="3" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="create_field.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="create_field.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/pages/create_field.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="138" column="44" selection-start-line="136" selection-start-column="44" selection-end-line="138" selection-end-column="44" />
-              <folding>
-                <element signature="e#4431#4497#0#HTML" expanded="true" />
-                <element signature="e#6026#6048#0#HTML" expanded="true" />
-                <element signature="e#6121#6144#0#HTML" expanded="true" />
-                <element signature="e#6205#6227#0#HTML" expanded="true" />
-                <element signature="e#7577#7601#0#HTML" expanded="true" />
-                <element signature="e#7758#7801#0#HTML" expanded="true" />
-              </folding>
+            <state relative-caret-position="314">
+              <caret line="160" column="51" selection-start-line="160" selection-start-column="51" selection-end-line="160" selection-end-column="51" />
             </state>
           </provider>
         </entry>
@@ -51,7 +65,7 @@
       <file leaf-file-name="full.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/full.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
+            <state relative-caret-position="1440">
               <caret line="72" column="72" selection-start-line="72" selection-start-column="72" selection-end-line="72" selection-end-column="72" />
             </state>
           </provider>
@@ -60,14 +74,8 @@
       <file leaf-file-name="homepage.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/pages/homepage.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1240">
+            <state relative-caret-position="200">
               <caret line="10" column="52" selection-start-line="10" selection-start-column="52" selection-end-line="10" selection-end-column="52" />
-              <folding>
-                <element signature="e#169#200#0#HTML" expanded="true" />
-                <element signature="e#1354#9218#0#HTML" />
-                <element signature="e#8409#12478#0#HTML" />
-                <element signature="e#8329#10856#0#HTML" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -119,10 +127,10 @@
         <option value="$PROJECT_DIR$/public/assets/css/core.min.css" />
         <option value="$PROJECT_DIR$/public/css/cjustyles.css" />
         <option value="$PROJECT_DIR$/resources/views/pages/blank.blade.php" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/resources/views/pages/homepage.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/full.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/pages/create_field.blade.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
       </list>
     </option>
   </component>
@@ -133,6 +141,9 @@
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths>
@@ -240,6 +251,7 @@
       <path value="$PROJECT_DIR$/vendor/fruitcake/laravel-cors" />
       <path value="$PROJECT_DIR$/vendor/psy/psysh" />
       <path value="$PROJECT_DIR$/vendor/phpoption/phpoption" />
+      <path value="$PROJECT_DIR$/vendor/laravel/ui" />
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
@@ -263,55 +275,6 @@
             <path>
               <item name="Planter" type="b2602c69:ProjectViewProjectNode" />
               <item name="Planter" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Planter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Planter" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="global_assets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Planter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Planter" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="global_assets" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Planter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Planter" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="global_assets" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="demo_pages" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Planter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Planter" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="global_assets" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="plugins" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Planter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Planter" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="global_assets" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="plugins" type="462c0819:PsiDirectoryNode" />
-              <item name="fileinput" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Planter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Planter" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Planter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Planter" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -319,6 +282,13 @@
               <item name="Planter" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Planter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Planter" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="layouts" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Planter" type="b2602c69:ProjectViewProjectNode" />
@@ -335,7 +305,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="s&#9;FILE&#9;file://D:/Laravel Projects/Planter/public/css/cjustyles.css&#10;inde&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/api/index.blade.php&#10;cjus&#9;FILE&#9;file://D:/Laravel Projects/Planter/public/css/cjustyles.css&#10;f&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/full.blade.php&#10;sty&#9;FILE&#9;file://D:/Laravel Projects/Planter/public/global_assets/css/icons/icomoon/styles.css&#10;web&#9;FILE&#9;file://D:/Laravel Projects/Planter/routes/web.php&#10;web.php&#9;FILE&#9;file://D:/Laravel Projects/Planter/routes/web.php" />
+    <property name="SearchEverywhereHistoryKey" value="env&#9;FILE&#9;file://D:/Laravel Projects/Planter/.env&#10;s&#9;FILE&#9;file://D:/Laravel Projects/Planter/public/css/cjustyles.css&#10;inde&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/api/index.blade.php&#10;cjus&#9;FILE&#9;file://D:/Laravel Projects/Planter/public/css/cjustyles.css&#10;f&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/full.blade.php&#10;sty&#9;FILE&#9;file://D:/Laravel Projects/Planter/public/global_assets/css/icons/icomoon/styles.css&#10;web&#9;FILE&#9;file://D:/Laravel Projects/Planter/routes/web.php&#10;web.php&#9;FILE&#9;file://D:/Laravel Projects/Planter/routes/web.php" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="D:/React Projects/Todo-app" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
@@ -372,12 +342,13 @@
       <option name="presentableId" value="Default" />
       <updated>1610990707453</updated>
       <workItem from="1610990708832" duration="10933000" />
-      <workItem from="1611075036343" duration="14974000" />
+      <workItem from="1611075036343" duration="15017000" />
+      <workItem from="1611162719193" duration="4245000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25907000" />
+    <option name="totallyTimeSpent" value="30195000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -390,7 +361,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32954547" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -398,8 +368,8 @@
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="npm" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32954547" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18381241" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32954547" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18683812" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32954547" />
@@ -423,6 +393,41 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="25" column="35" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/full.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1440">
+          <caret line="72" column="72" selection-start-line="72" selection-start-column="72" selection-end-line="72" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/pages/homepage.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="10" column="52" selection-start-line="10" selection-start-column="52" selection-end-line="10" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/cjustyles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/pages/create_field.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2760">
+          <caret line="138" column="44" selection-start-line="136" selection-start-column="44" selection-end-line="138" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="920">
           <caret line="46" column="39" selection-start-line="46" selection-start-column="39" selection-end-line="46" selection-end-column="39" />
         </state>
@@ -433,11 +438,6 @@
         <state relative-caret-position="3280">
           <caret line="164" column="64" selection-start-line="164" selection-start-column="64" selection-end-line="164" selection-end-column="64" />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-449" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/auth/login.blade.php">
@@ -485,9 +485,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-612">
           <caret line="2" column="4" lean-forward="true" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
-          <folding>
-            <element signature="e#7#44#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -525,26 +522,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="25" column="35" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/global_assets/js/demo_pages/form_input_groups.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/pages/homepage.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1240">
+        <state relative-caret-position="200">
           <caret line="10" column="52" selection-start-line="10" selection-start-column="52" selection-end-line="10" selection-end-column="52" />
-          <folding>
-            <element signature="e#169#200#0#HTML" expanded="true" />
-            <element signature="e#1354#9218#0#HTML" />
-            <element signature="e#8409#12478#0#HTML" />
-            <element signature="e#8329#10856#0#HTML" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -556,23 +540,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/full.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
+        <state relative-caret-position="1440">
           <caret line="72" column="72" selection-start-line="72" selection-start-column="72" selection-end-line="72" selection-end-column="72" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/pages/create_field.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="138" column="44" selection-start-line="136" selection-start-column="44" selection-end-line="138" selection-end-column="44" />
-          <folding>
-            <element signature="e#4431#4497#0#HTML" expanded="true" />
-            <element signature="e#6026#6048#0#HTML" expanded="true" />
-            <element signature="e#6121#6144#0#HTML" expanded="true" />
-            <element signature="e#6205#6227#0#HTML" expanded="true" />
-            <element signature="e#7577#7601#0#HTML" expanded="true" />
-            <element signature="e#7758#7801#0#HTML" expanded="true" />
-          </folding>
+        <state relative-caret-position="314">
+          <caret line="160" column="51" selection-start-line="160" selection-start-column="51" selection-end-line="160" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/dashboard.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-480" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-215">
+          <caret line="35" column="3" selection-start-line="35" selection-start-column="3" selection-end-line="35" selection-end-column="3" />
         </state>
       </provider>
     </entry>

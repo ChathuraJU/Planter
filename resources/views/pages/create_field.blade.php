@@ -136,7 +136,6 @@
 
                         <a class="btn"> </a>
 
-                        <a class="btn"> </a>
                         <a class="btn btn-primary pull-right" id="btncreate" style="margin-right: 30px;">Create <span class="icon-check"></span></a>
                         <a class="btn btn-primary pull-right hidden" id="btnupdate" style="margin-right: 30px;">Update <span class="icon-check"></span></a>
                     </form>

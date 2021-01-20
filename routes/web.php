@@ -52,3 +52,7 @@ Route::get('register-requests', function () {
 Route::get('users', function () {
     return view('pages.registered-users');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
