@@ -12,18 +12,26 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+
 
 Route::get('/', function () {
     return view('pages.homepage');
 });
-Route::get('nursery', function () {
+Route::get('nursery-dashboard', function () {
     return view('pages.nursery_dashboard');
 });
-Route::get('field', function () {
+Route::get('field-dashboard', function () {
     return view('pages.field_dashboard');
 });
 Route::get('field-create', function () {
     return view('pages.create_field');
+});
+Route::get('field-data-logs', function () {
+    return view('pages.all_field_data_logs');
 });
 Route::get('field-data', function () {
     return view('pages.field_data');
@@ -53,6 +61,3 @@ Route::get('users', function () {
     return view('pages.registered-users');
 });
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

@@ -83,7 +83,7 @@
 <!-- Main navbar -->
 <div class="navbar navbar-inverse navbar-fixed-top cju-navbar">
     <div class="navbar-header text-center cju-navbar-header">
-        <a class="cju-logo" href="/pages/dashboard.php"><img src="{{asset('images/planter.png')}}"
+        <a href="/pages/dashboard.php"><img src="{{asset('images/planter.png')}}"
                                                                 style="height: 50px;background-color: white" alt=""></a>
 
         <ul class="nav navbar-nav pull-right visible-xs-block">
@@ -168,9 +168,10 @@
                             <li class=""><a href="{{url('nursery-dashboard')}}"><i class="fa fa-leaf"></i> <span>Nursery Dashboard</span></a></li>
                             <li class=""><a href="{{url('field-dashboard')}}"><i class="fa fa-pagelines"></i> <span>Field Dashboard</span></a></li>
 
-                            <li class="navigation-header"><span class="fa fa-seeding"></span><span class="text-center">Field</span></li>
+                            <li class="navigation-header"><span class="fa fa-tree"></span><span class="text-center">Field</span></li>
                             <li class=""><a href="{{url('field-create')}}"><i class="icon-pencil6"></i> <span>Create Field</span></a></li>
-                            <li class=""><a href="{{url('field-data')}}"><i class="icon-clipboard"></i> <span>Add Field Data</span></a></li>
+                            <li class=""><a href="{{url('field-data-logs')}}"><i class="icon-stack"></i> <span>All Field Data Logs</span></a></li>
+                            <li class=""><a href="{{url('field-data')}}"><i class="icon-clipboard"></i> <span>Add Field Data Log</span></a></li>
 
                             <li class="navigation-header"><span class="fa fa-bug"></span><span class="text-center">Diseases</span></li>
                             <li class=""><a href="{{url('disease-create')}}"><i class="icon-pencil6"></i> <span>Create Disease Log</span></a></li>
