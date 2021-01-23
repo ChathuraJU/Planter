@@ -29,3 +29,7 @@
     position: relative;
     top: -1px;
 }
+
+table {
+    font-size: 14px;
+}

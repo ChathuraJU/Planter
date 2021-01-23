@@ -58,6 +58,8 @@
     <script src="{{ asset('global_assets/js/plugins/tables/datatables/extensions/fixed_header.min.js') }}"></script>
     <script src="{{ asset('global_assets/js/plugins/forms/styling/switchery.min.js') }}"></script>
     <script src="{{ asset('global_assets/js/plugins/tables/datatables/extensions/select.min.js') }}"></script>
+    <script src="{{ asset('global_assets/js/plugins/ui/fullcalender.min.js') }}"></script>
+    <script src="{{ asset('global_assets/js/plugins/tables/handsontable/handsontable.min.js') }}"></script>
 
 
     <script src="{{ asset('assets/js/app.js') }}"></script>
@@ -68,9 +70,14 @@
     <script src="{{ asset('global_assets/js/plugins/forms/validation/validate.min.js')}}"></script>
     <script src="{{ asset('global_assets/js/plugins/forms/wizards/stepy.min.js')}}"></script>
     <script src="{{ asset('global_assets/js/plugins/extensions/cookie.js')}}"></script>
+    <script src="{{ asset('global_assets/js/plugins/fileinput/plugins/purify.min.js')}}"></script>
+    <script src="{{ asset('global_assets/js/plugins/fileinput/plugins/sortable.min.js')}}"></script>
+    <script src="{{ asset('global_assets/js/plugins/fileinput/fileinput.min.js')}}"></script>
     <script src="{{ asset('global_assets/js/demo_pages/form_layouts.js')}}"></script>
     <script src="{{ asset('global_assets/js/demo_pages/timelines.js')}}"></script>
+    <script src="{{ asset('global_assets/js/demo_pages/uploader_bootstrap.js')}}"></script>
     <script src="{{ asset('global_assets/js/demo_pages/form_input_groups.js')}}"></script>
+
     <!-- /theme JS files -->
 
 </head>

@@ -3,15 +3,17 @@
 @section('content')
 
 
-<div class="container" >
+<div class="container mt-5" >
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card" style="background: black; opacity: 0.8">
                 <div class="card-header">
-                   <div class="row justify-content-center">
-                       <a class="" href="#"><img src="{{asset('images/planter.png')}}" style="height: 50px;" alt="planter-logo"></a>
-                   </div>
+                    <div class="row justify-content-center">
+                        <a class="" href="#"><img src="{{asset('images/planter.png')}}" style="height: 50px;" alt="planter-logo"></a>
+                    </div>
                 </div>
+                <hr style="background-color: white">
+                <div class="row justify-content-center" style="color: white; text-decoration: underline; font-size: 20px">{{ __('Login') }}</div>
                 <div class="card-body" >
                     <form method="POST" action="{{ route('login') }}">
                         @csrf

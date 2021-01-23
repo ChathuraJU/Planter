@@ -51,6 +51,9 @@ Route::get('labour-chart', function () {
 Route::get('create-report', function () {
     return view('pages.create_report');
 });
+Route::get('all-report', function () {
+    return view('pages.all_report');
+});
 Route::get('organization', function () {
     return view('pages.organization');
 });
