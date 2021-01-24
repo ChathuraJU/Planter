@@ -94,6 +94,7 @@
                     <table class="table datatable-button-init-basic" id="fieldlogs">
                         <thead>
                         <tr>
+                            <th>ID</th>
                             <th>Division</th>
                             <th>Field Name</th>
                             <th>Field Officer Name</th>
@@ -105,11 +106,12 @@
                         <tbody>
 
                         <tr>
+                            <td>1</td>
                             <td>Upper Division</td>
                             <td>2207</td>
                             <td>Andrew</td>
                             <td>20.01.2021</td>
-                            <td><a href="#">View</a></td>
+                            <td><a href="field_receivable">View</a></td>
                         </tr>
                         </tbody>
                     </table>
@@ -137,8 +139,8 @@
             autoWidth: false,
             columnDefs: [{
                 orderable: false,
-                width: '20%',
-                targets: [ 4 ]
+                width: 'auto',
+                targets: [ 5 ]
             }],
             dom: '<"datatable-header"fBl><"datatable-scroll-wrap"t><"datatable-footer"ip>',
             language: {

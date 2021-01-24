@@ -920,7 +920,7 @@ th {
 }
 
 .table-bordered tr > td[class*=bg-], .table-bordered tr > th[class*=bg-], .table-bordered tr[class*=bg-] > td, .table-bordered tr[class*=bg-] > th {
-    border-color: #fff
+    border-color: #ddd
 }
 
 .panel[class*=bg-] .table-striped > tbody > tr:nth-child(odd), .table-striped[class*=bg-] > tbody > tr:nth-child(odd) {

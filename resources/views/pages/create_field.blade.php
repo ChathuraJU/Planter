@@ -131,11 +131,10 @@
                                 </div>
 
                             </div>
-                            <div class="row mb-5" style="text-align: center">
-                                <button type="submit" class="btn btn-primary">Submit form <i class="icon-arrow-right14 position-right"></i></button>
-                                {{--<a class="btn btn-primary pull-right" id="btncreate" style="margin-right: 30px;">Create <span class="icon-check"></span></a>--}}
-                                {{--<a class="btn btn-primary pull-right hidden" id="btnupdate" style="margin-right: 30px;">Update <span class="icon-check"></span></a>--}}
+                            <div class="text-center mb-5" >
+                                <button type="submit" id="submit_field_data" class="btn bg-green-800 btn-labeled btn-rounded btn-xlg"><b><i class="icon-arrow-down-right32"></i></b>Submit Form</button>
                             </div>
+
                         </div>
                     </form>
             </div>

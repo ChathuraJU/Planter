@@ -2,15 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b635a8bc-edd1-459c-8275-20ba8bfd7f45" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/public/global_assets/js/plugins/tables/handsontable/handsontable.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/global_assets/js/plugins/ui/fullcalender.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/pages/create_report.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/pages/register_labour.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/pages/field_receivable.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/css/core.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/core.min.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/cjustyles.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/cjustyles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/passwords/email.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/passwords/email.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/global_assets/js/plugins/tables/handsontable/handsontable.min.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/full.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/full.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/pages/all_field_data_logs.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/all_field_data_logs.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/pages/create_field.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/create_field.blade.php" afterDir="false" />
@@ -32,8 +28,8 @@
       <file leaf-file-name="web.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="268">
-              <caret line="36" column="36" lean-forward="true" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
+            <state relative-caret-position="308">
+              <caret line="38" column="12" selection-start-line="38" selection-start-column="12" selection-end-line="38" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -41,29 +37,95 @@
       <file leaf-file-name="full.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/full.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="61" column="27" lean-forward="true" selection-start-line="61" selection-start-column="27" selection-end-line="61" selection-end-column="27" />
+            <state relative-caret-position="260">
+              <caret line="37" column="79" selection-start-line="37" selection-start-column="79" selection-end-line="37" selection-end-column="79" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="field_data.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="all_field_data_logs.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/pages/all_field_data_logs.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="113" column="57" selection-start-line="113" selection-start-column="57" selection-end-line="113" selection-end-column="57" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="field_data.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/pages/field_data.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="116" column="72" selection-start-line="116" selection-start-column="72" selection-end-line="116" selection-end-column="72" />
+            <state relative-caret-position="-7">
+              <caret line="30" column="36" selection-start-line="30" selection-start-column="36" selection-end-line="30" selection-end-column="36" />
               <folding>
-                <element signature="e#988#2940#0#HTML" />
+                <element signature="e#992#2944#0#HTML" />
+                <element signature="e#49583#51950#0#HTML" />
+                <element signature="e#5275#6224#0#HTML" />
+                <element signature="e#5725#6649#0#HTML" />
+                <element signature="e#6555#7027#0#HTML" />
+                <element signature="e#7030#7931#0#HTML" />
+                <element signature="e#7892#8722#0#HTML" />
+                <element signature="e#8293#8315#0#HTML" expanded="true" />
+                <element signature="e#8434#8457#0#HTML" expanded="true" />
+                <element signature="e#8563#8585#0#HTML" expanded="true" />
+                <element signature="e#8836#9729#0#HTML" />
+                <element signature="e#9732#10625#0#HTML" />
+                <element signature="e#10628#11491#0#HTML" />
+                <element signature="e#11034#11056#0#HTML" expanded="true" />
+                <element signature="e#11203#11226#0#HTML" expanded="true" />
+                <element signature="e#11332#11354#0#HTML" expanded="true" />
+                <element signature="e#11523#12003#0#HTML" />
+                <element signature="e#13412#16292#0#HTML" />
+                <element signature="e#12880#12905#0#HTML" expanded="true" />
+                <element signature="e#17660#17712#0#HTML" expanded="true" />
+                <element signature="e#19324#19348#0#HTML" expanded="true" />
+                <element signature="e#16388#17697#0#HTML" />
+                <element signature="e#23446#23487#0#HTML" expanded="true" />
+                <element signature="e#23666#23690#0#HTML" expanded="true" />
+                <element signature="e#23721#24588#0#HTML" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="create_field.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/pages/create_field.blade.php">
+      <file leaf-file-name="field_receivable.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/pages/field_receivable.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="115" column="44" lean-forward="true" selection-start-line="115" selection-start-column="44" selection-end-line="117" selection-end-column="138" />
+            <state relative-caret-position="-2726">
+              <caret line="118" column="38" selection-start-line="118" selection-start-column="38" selection-end-line="118" selection-end-column="38" />
+              <folding>
+                <element signature="e#998#3110#0#HTML" />
+                <element signature="e#8522#8544#0#HTML" expanded="true" />
+                <element signature="e#8693#8716#0#HTML" expanded="true" />
+                <element signature="e#8822#8844#0#HTML" expanded="true" />
+                <element signature="e#11217#11239#0#HTML" expanded="true" />
+                <element signature="e#11386#11409#0#HTML" expanded="true" />
+                <element signature="e#11515#11537#0#HTML" expanded="true" />
+                <element signature="e#12892#12917#0#HTML" expanded="true" />
+                <element signature="e#18551#18575#0#HTML" expanded="true" />
+                <element signature="e#18653#23621#0#HTML" />
+                <element signature="e#14774#14799#0#HTML" expanded="true" />
+                <element signature="e#23718#23742#0#HTML" expanded="true" />
+                <element signature="e#14103#14125#0#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cjustyles.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/css/cjustyles.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="220">
+              <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="homepage.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/pages/homepage.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="400">
+              <caret line="119" column="69" selection-start-line="119" selection-start-column="69" selection-end-line="119" selection-end-column="109" />
             </state>
           </provider>
         </entry>
@@ -102,7 +164,18 @@
       <find>datatable</find>
       <find>datatable_ex</find>
       <find>number</find>
+      <find>control-labe</find>
+      <find>th</find>
+      <find>table-bordered</find>
+      <find>spark</find>
+      <find>mspbtn</find>
+      <find>datepicker</find>
+      <find>jgr</find>
     </findStrings>
+    <replaceStrings>
+      <replace>col-lg-3 control-labe</replace>
+      <replace>td</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -114,7 +187,6 @@
         <option value="$PROJECT_DIR$/public/global_assets/css/icons/icomoon/styles.css" />
         <option value="$PROJECT_DIR$/resources/views/pages/organization.blade.php" />
         <option value="$PROJECT_DIR$/public/assets/css/components.min.css" />
-        <option value="$PROJECT_DIR$/public/assets/css/core.min.css" />
         <option value="$PROJECT_DIR$/resources/views/pages/homepage.blade.php" />
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/resources/views/auth/passwords/reset.blade.php" />
@@ -133,17 +205,20 @@
         <option value="$PROJECT_DIR$/resources/views/pages/register_labour.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/pages/labour_chart.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/pages/create_report.blade.php" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/public/global_assets/js/demo_pages/datatables_basic.js.ts" />
         <option value="$PROJECT_DIR$/public/global_assets/js/plugins/ui/fullcalender.min.js" />
         <option value="$PROJECT_DIR$/public/global_assets/js/demo_pages/datatables_extension_buttons_init.js" />
         <option value="$PROJECT_DIR$/public/global_assets/js/demo_pages/datatables_basic.js" />
-        <option value="$PROJECT_DIR$/resources/views/pages/all_field_data_logs.blade.php" />
         <option value="$PROJECT_DIR$/public/global_assets/js/plugins/tables/handsontable/handsontable.min.js" />
-        <option value="$PROJECT_DIR$/resources/views/full.blade.php" />
+        <option value="$PROJECT_DIR$/public/assets/css/core.min.css" />
         <option value="$PROJECT_DIR$/public/css/cjustyles.css" />
         <option value="$PROJECT_DIR$/resources/views/pages/create_field.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/pages/field_data.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/pages/view_field_data_log.blade.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/resources/views/pages/all_field_data_logs.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/pages/field_receivable.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/full.blade.php" />
       </list>
     </option>
   </component>
@@ -267,7 +342,7 @@
       <path value="$PROJECT_DIR$/vendor/laravel/ui" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="505" />
     <option name="y" value="51" />
     <option name="width" value="697" />
@@ -320,7 +395,7 @@
               <item name="global_assets" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
               <item name="plugins" type="462c0819:PsiDirectoryNode" />
-              <item name="tables" type="462c0819:PsiDirectoryNode" />
+              <item name="pickers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Planter" type="b2602c69:ProjectViewProjectNode" />
@@ -329,8 +404,8 @@
               <item name="global_assets" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
               <item name="plugins" type="462c0819:PsiDirectoryNode" />
-              <item name="tables" type="462c0819:PsiDirectoryNode" />
-              <item name="handsontable" type="462c0819:PsiDirectoryNode" />
+              <item name="pickers" type="462c0819:PsiDirectoryNode" />
+              <item name="pickadate" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Planter" type="b2602c69:ProjectViewProjectNode" />
@@ -357,7 +432,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="cj&#9;FILE&#9;file://D:/Laravel Projects/Planter/public/css/cjustyles.css&#10;fu&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/full.blade.php&#10;full&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/full.blade.php&#10;ema&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/auth/passwords/email.blade.php&#10;regis&#9;null&#9;null&#10;cr&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/pages/create_field.blade.php&#10;home&#9;FILE&#9;file://D:/Laravel Projects/Planter/app/Http/Controllers/HomeController.php&#10;service&#9;null&#9;null&#10;control&#9;FILE&#9;file://D:/Laravel Projects/Planter/app/Http/Controllers/Auth/ResetPasswordController.php&#10;en&#9;FILE&#9;file://D:/Laravel Projects/Planter/.env&#10;hom&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/home.blade.php&#10;env&#9;FILE&#9;file://D:/Laravel Projects/Planter/.env&#10;app&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/layouts/app.blade.php&#10;lo&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/auth/login.blade.php&#10;contr&#9;null&#9;null&#10;s&#9;FILE&#9;file://D:/Laravel Projects/Planter/public/css/cjustyles.css&#10;inde&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/api/index.blade.php&#10;cjus&#9;FILE&#9;file://D:/Laravel Projects/Planter/public/css/cjustyles.css&#10;f&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/full.blade.php&#10;sty&#9;FILE&#9;file://D:/Laravel Projects/Planter/public/global_assets/css/icons/icomoon/styles.css&#10;web&#9;FILE&#9;file://D:/Laravel Projects/Planter/routes/web.php&#10;web.php&#9;FILE&#9;file://D:/Laravel Projects/Planter/routes/web.php" />
+    <property name="SearchEverywhereHistoryKey" value="f&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/full.blade.php&#10;fu&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/full.blade.php&#10;msp&#9;FILE&#9;file://D:/Laravel Projects/Planter/public/mspstyles.css&#10;sty&#9;FILE&#9;file://D:/Laravel Projects/Planter/public/css/cjustyles.css&#10;homep&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/pages/homepage.blade.php&#10;cj&#9;FILE&#9;file://D:/Laravel Projects/Planter/public/css/cjustyles.css&#10;full&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/full.blade.php&#10;ema&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/auth/passwords/email.blade.php&#10;regis&#9;null&#9;null&#10;cr&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/pages/create_field.blade.php&#10;home&#9;FILE&#9;file://D:/Laravel Projects/Planter/app/Http/Controllers/HomeController.php&#10;service&#9;null&#9;null&#10;control&#9;FILE&#9;file://D:/Laravel Projects/Planter/app/Http/Controllers/Auth/ResetPasswordController.php&#10;en&#9;FILE&#9;file://D:/Laravel Projects/Planter/.env&#10;hom&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/home.blade.php&#10;env&#9;FILE&#9;file://D:/Laravel Projects/Planter/.env&#10;app&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/layouts/app.blade.php&#10;lo&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/auth/login.blade.php&#10;contr&#9;null&#9;null&#10;s&#9;FILE&#9;file://D:/Laravel Projects/Planter/public/css/cjustyles.css&#10;inde&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/api/index.blade.php&#10;cjus&#9;FILE&#9;file://D:/Laravel Projects/Planter/public/css/cjustyles.css&#10;web&#9;FILE&#9;file://D:/Laravel Projects/Planter/routes/web.php&#10;web.php&#9;FILE&#9;file://D:/Laravel Projects/Planter/routes/web.php" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="D:/React Projects/Todo-app" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
@@ -406,12 +481,12 @@
       <workItem from="1611254958711" duration="12093000" />
       <workItem from="1611347409572" duration="7911000" />
       <workItem from="1611355686982" duration="2042000" />
-      <workItem from="1611409275222" duration="14732000" />
+      <workItem from="1611409275222" duration="45765000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67191000" />
+    <option name="totallyTimeSpent" value="98224000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -458,32 +533,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/images/panel_bg.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/css/components.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="21501" column="20" selection-end-line="22095" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/css/core.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="6115" column="15" lean-forward="true" selection-start-line="6115" selection-start-column="15" selection-end-line="6115" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/global_assets/js/plugins/fileinput/plugins/piexif.min.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/dashboard.blade.php" />
-    <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-480" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/assets/css/colors.min.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="177">
@@ -495,13 +544,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-460">
           <caret line="230" column="1" selection-start-line="230" selection-start-column="1" selection-end-line="230" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/pages/homepage.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="10" column="52" selection-start-line="10" selection-start-column="52" selection-end-line="10" selection-end-column="52" />
         </state>
       </provider>
     </entry>
@@ -724,13 +766,6 @@
         <state relative-caret-position="-1680" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="36" column="36" lean-forward="true" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/global_assets/js/plugins/tables/handsontable/handsontable.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="501">
@@ -748,40 +783,151 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/pages/all_field_data_logs.blade.php">
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/phpstorm.jar!/resources/html5-schema/html5/block.rnc">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="93" column="37" selection-start-line="93" selection-start-column="37" selection-end-line="93" selection-end-column="37" />
+        <state relative-caret-position="197">
+          <caret line="269" column="16" selection-start-line="269" selection-start-column="16" selection-end-line="269" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/bootstrap/dist/css/bootstrap.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="5" column="19646" selection-start-line="5" selection-start-column="19646" selection-end-line="5" selection-end-column="19646" />
+          <folding>
+            <element signature="e#28362#28617#2" expanded="true" />
+            <element signature="e#29214#29388#1" expanded="true" />
+            <element signature="e#29433#29688#1" expanded="true" />
+            <element signature="e#32090#32404#2" expanded="true" />
+            <element signature="e#33013#33187#1" expanded="true" />
+            <element signature="e#33232#33546#1" expanded="true" />
+            <element signature="e#63084#63292#2" expanded="true" />
+            <element signature="e#63521#63678#2" expanded="true" />
+            <element signature="e#64081#64237#2" expanded="true" />
+            <element signature="e#65724#65898#1" expanded="true" />
+            <element signature="e#80063#80320#2" expanded="true" />
+            <element signature="e#81187#81450#2" expanded="true" />
+            <element signature="e#111722#111918#2" expanded="true" />
+            <element signature="e#111964#112161#2" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/css/core.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="922" column="22" selection-start-line="922" selection-start-column="22" selection-end-line="922" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/css/bootstrap.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret column="21440" selection-start-column="21440" selection-end-column="21440" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/pages/homepage.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="119" column="69" selection-start-line="119" selection-start-column="69" selection-end-line="119" selection-end-column="109" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/mspstyles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="81" column="7" selection-start-line="81" selection-start-column="1" selection-end-line="81" selection-end-column="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/css/cjustyles.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="508">
-          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/full.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="61" column="27" lean-forward="true" selection-start-line="61" selection-start-column="27" selection-end-line="61" selection-end-column="27" />
+        <state relative-caret-position="220">
+          <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/pages/create_field.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="115" column="44" lean-forward="true" selection-start-line="115" selection-start-column="44" selection-end-line="117" selection-end-column="138" />
+        <state relative-caret-position="134">
+          <caret line="134" column="132" selection-start-line="134" selection-start-column="132" selection-end-line="134" selection-end-column="132" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/pages/all_field_data_logs.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="113" column="57" selection-start-line="113" selection-start-column="57" selection-end-line="113" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="38" column="12" selection-start-line="38" selection-start-column="12" selection-end-line="38" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/pages/field_data.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="116" column="72" selection-start-line="116" selection-start-column="72" selection-end-line="116" selection-end-column="72" />
+        <state relative-caret-position="-7">
+          <caret line="30" column="36" selection-start-line="30" selection-start-column="36" selection-end-line="30" selection-end-column="36" />
           <folding>
-            <element signature="e#988#2940#0#HTML" />
+            <element signature="e#992#2944#0#HTML" />
+            <element signature="e#49583#51950#0#HTML" />
+            <element signature="e#5275#6224#0#HTML" />
+            <element signature="e#5725#6649#0#HTML" />
+            <element signature="e#6555#7027#0#HTML" />
+            <element signature="e#7030#7931#0#HTML" />
+            <element signature="e#7892#8722#0#HTML" />
+            <element signature="e#8293#8315#0#HTML" expanded="true" />
+            <element signature="e#8434#8457#0#HTML" expanded="true" />
+            <element signature="e#8563#8585#0#HTML" expanded="true" />
+            <element signature="e#8836#9729#0#HTML" />
+            <element signature="e#9732#10625#0#HTML" />
+            <element signature="e#10628#11491#0#HTML" />
+            <element signature="e#11034#11056#0#HTML" expanded="true" />
+            <element signature="e#11203#11226#0#HTML" expanded="true" />
+            <element signature="e#11332#11354#0#HTML" expanded="true" />
+            <element signature="e#11523#12003#0#HTML" />
+            <element signature="e#13412#16292#0#HTML" />
+            <element signature="e#12880#12905#0#HTML" expanded="true" />
+            <element signature="e#17660#17712#0#HTML" expanded="true" />
+            <element signature="e#19324#19348#0#HTML" expanded="true" />
+            <element signature="e#16388#17697#0#HTML" />
+            <element signature="e#23446#23487#0#HTML" expanded="true" />
+            <element signature="e#23666#23690#0#HTML" expanded="true" />
+            <element signature="e#23721#24588#0#HTML" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/full.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="37" column="79" selection-start-line="37" selection-start-column="79" selection-end-line="37" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/pages/field_receivable.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2726">
+          <caret line="118" column="38" selection-start-line="118" selection-start-column="38" selection-end-line="118" selection-end-column="38" />
+          <folding>
+            <element signature="e#998#3110#0#HTML" />
+            <element signature="e#8522#8544#0#HTML" expanded="true" />
+            <element signature="e#8693#8716#0#HTML" expanded="true" />
+            <element signature="e#8822#8844#0#HTML" expanded="true" />
+            <element signature="e#11217#11239#0#HTML" expanded="true" />
+            <element signature="e#11386#11409#0#HTML" expanded="true" />
+            <element signature="e#11515#11537#0#HTML" expanded="true" />
+            <element signature="e#12892#12917#0#HTML" expanded="true" />
+            <element signature="e#18551#18575#0#HTML" expanded="true" />
+            <element signature="e#18653#23621#0#HTML" />
+            <element signature="e#14774#14799#0#HTML" expanded="true" />
+            <element signature="e#23718#23742#0#HTML" expanded="true" />
+            <element signature="e#14103#14125#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>

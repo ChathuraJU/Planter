@@ -35,6 +35,9 @@
     <script src="{{ asset('global_assets/js/plugins/ui/moment/moment.min.js ') }}"></script>
     <script src="{{ asset('global_assets/js/plugins/pickers/daterangepicker.js') }} "></script>
     <script src="{{ asset('global_assets/js/plugins/pickers/anytime.min.js') }}"></script>
+    <script src="{{ asset('global_assets/js/plugins/pickers/pickadate/picker.js') }}"></script>
+    <script src="{{ asset('global_assets/js/plugins/pickers/pickadate/picker.date.js') }}"></script>
+    <script src="{{ asset('global_assets/js/plugins/pickers/pickadate/legacy.js') }}"></script>
     <script src="{{ asset('global_assets/js/plugins/visualization/d3/d3.min.js') }} "></script>
     <script src="{{ asset('global_assets/js/plugins/visualization/d3/d3_tooltip.js') }} "></script>
     <script src="{{ asset('global_assets/js/plugins/visualization/echarts/echarts.min.js') }} "></script>
@@ -59,7 +62,6 @@
     <script src="{{ asset('global_assets/js/plugins/forms/styling/switchery.min.js') }}"></script>
     <script src="{{ asset('global_assets/js/plugins/tables/datatables/extensions/select.min.js') }}"></script>
     <script src="{{ asset('global_assets/js/plugins/ui/fullcalender.min.js') }}"></script>
-    <script src="{{ asset('global_assets/js/plugins/tables/handsontable/handsontable.min.js') }}"></script>
 
 
     <script src="{{ asset('assets/js/app.js') }}"></script>
@@ -177,8 +179,10 @@
 
                             <li class="navigation-header"><span class="fa fa-tree"></span><span class="text-center">Field</span></li>
                             <li class=""><a href="{{url('field-create')}}"><i class="icon-pencil6"></i> <span>Create Field</span></a></li>
+                            <li class=""><a href="{{url('field-receivable')}}"><i class="icon-stack-check"></i> <span>Add Field Receivables</span></a></li>
                             <li class=""><a href="{{url('field-data-logs')}}"><i class="icon-stack"></i> <span>All Field Data Logs</span></a></li>
                             <li class=""><a href="{{url('field-data')}}"><i class="icon-clipboard"></i> <span>Add Field Data Log</span></a></li>
+
 
                             <li class="navigation-header"><span class="fa fa-bug"></span><span class="text-center">Diseases</span></li>
                             <li class=""><a href="{{url('disease-create')}}"><i class="icon-pencil6"></i> <span>Create Disease Log</span></a></li>

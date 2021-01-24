@@ -36,6 +36,9 @@ Route::get('field-data-logs', function () {
 Route::get('field-data', function () {
     return view('pages.field_data');
 });
+Route::get('field-receivable', function () {
+    return view('pages.field_receivable');
+});
 Route::get('disease-create', function () {
     return view('pages.create_disease');
 });
