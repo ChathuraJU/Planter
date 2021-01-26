@@ -109,12 +109,10 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="content-group-lg">
-                                    <h6 class="text-semibold">Basic options</h6>
-                                    <p>The basic setup requires targetting an input element and invoking the picker.</p>
-                                    <div class="input-group">
-                                        <span class="input-group-addon"><i class="icon-calendar5"></i></span>
-                                        <input type="text" class="form-control pickadate" placeholder="Try me&hellip;">
+                                <div class="form-group">
+                                    <label class="col-lg-3 control-label text-semibold" for="field_norms">Date :</label>
+                                    <div class="col-lg-9">
+                                        <input type="text" name="date" id="date" placeholder="" class="form-control mspborder required">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -181,6 +179,34 @@
                         </div>
 
                         <div class="col-md-5">
+                            <fieldset >
+                                <legend class="text-semibold"><i class="icon-file-excel position-left"></i>Field Log Summary</legend>
+                                <!-- Scrollable table -->
+                                <div class="table-responsive pre-scrollable" style="max-height: 500px">
+                                    <table class="table table-bordered" id="fieldsummarytable">
+                                        <thead>
+                                        <tr class="bg-green">
+                                            <th>Field Officer Name </th>
+                                            <th>Field No. </th>
+                                            <th>Block No. </th>
+                                            <th>Field Wt. </th>
+
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>Eugene</td>
+                                            <td>5656</td>
+                                            <td>56</td>
+                                            <td>56</td>
+                                        </tr>
+
+                                        </tbody>
+
+                                    </table>
+                                </div>
+                                <!-- /scrollable table -->
+                            </fieldset>
                             <fieldset>
                                 <legend class="text-semibold"><i class="icon-truck position-left"></i>Approvals Summary</legend>
                                 <!-- Scrollable table -->
@@ -207,11 +233,41 @@
                                 </div>
                                 <!-- /scrollable table -->
                             </fieldset>
+                            <fieldset>
+                                <legend class="text-semibold"><i class="icon-truck position-left"></i>Weather</legend>
+                                <div class="panel text-center bg-success has-bg-image">
+                                    <div class="panel-body">
+                                        <h6 class="text-semibold no-margin-bottom mt-5">Tickets statistics</h6>
+                                        <div class="opacity-75 content-group">893 tickets in total</div>
+                                        <div class="svg-center position-relative mb-5" id="progress_percentage_four"><svg width="92" height="92"><g transform="translate(46,46)"><path class="d3-progress-background" d="M0,46A46,46 0 1,1 0,-46A46,46 0 1,1 0,46M0,43A43,43 0 1,0 0,-43A43,43 0 1,0 0,43Z" style="fill: rgb(229, 57, 53);"></path><path class="d3-progress-foreground" filter="url(#blur)" d="M3.3306690738754696e-15,-44.47471191587417A1.5,1.5 0 0,1 1.5505617977528126,-45.97385950854408A46,46 0 0,1 20.97770759318713,40.938194685827796A1.5,1.5 0 0,1 18.93641133210156,40.2419224921158L18.93641133210156,40.2419224921158A1.5,1.5 0 0,1 19.609596228414052,38.26831242370859A43,43 0 0,0 1.449438202247194,-42.97556432320425A1.5,1.5 0 0,1 3.3306690738754696e-15,-44.47471191587417Z" style="fill: rgb(255, 255, 255); stroke: rgb(255, 255, 255);"></path><path class="d3-progress-front" d="M3.3306690738754696e-15,-44.47471191587417A1.5,1.5 0 0,1 1.5505617977528126,-45.97385950854408A46,46 0 0,1 20.97770759318713,40.938194685827796A1.5,1.5 0 0,1 18.93641133210156,40.2419224921158L18.93641133210156,40.2419224921158A1.5,1.5 0 0,1 19.609596228414052,38.26831242370859A43,43 0 0,0 1.449438202247194,-42.97556432320425A1.5,1.5 0 0,1 3.3306690738754696e-15,-44.47471191587417Z" style="fill: rgb(255, 255, 255); fill-opacity: 1;"></path><text dx="0" dy="8" style="font-size: 22px; line-height: 1; fill: rgb(255, 255, 255); text-anchor: middle;">43%</text></g></svg></div>
+                                    </div>
+
+                                    <div class="panel-body panel-body-accent pb-15">
+                                        <div class="row">
+                                            <div class="col-xs-4">
+                                                <div class="text-uppercase text-size-mini text-muted">Raised</div>
+                                                <h5 class="text-semibold no-margin">5,328</h5>
+                                            </div>
+
+                                            <div class="col-xs-4">
+                                                <div class="text-uppercase text-size-mini text-muted">Pending</div>
+                                                <h5 class="text-semibold no-margin">2,348</h5>
+                                            </div>
+
+                                            <div class="col-xs-4">
+                                                <div class="text-uppercase text-size-mini text-muted">Closed</div>
+                                                <h5 class="text-semibold no-margin">4,357</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+
                         </div>
                     </div>
 
                     <div class="row " style="margin-top: 50px">
-                        <div class="col-md-12">
+                        <div class="col-md-9">
                             <fieldset>
                                 <legend class="text-semibold"><i class="icon-truck position-left"></i>Collection Summary</legend>
                                 <!-- Scrollable table -->
@@ -245,12 +301,6 @@
                                 </div>
                                 <!-- /scrollable table -->
                             </fieldset>
-                        </div>
-
-                    </div>
-                    <div class="row" style="margin-top: 50px">
-
-                        <div class="col-md-12">
                             <fieldset>
                                 <legend class="text-semibold"><i class="icon-stack-plus position-left"></i>Confirmation</legend>
 
@@ -279,8 +329,68 @@
                                 </div>
                             </fieldset>
                         </div>
+                        <div class="col-md-3">
+                            <fieldset>
+                                <legend class="text-semibold"><i class="icon-notebook position-left"></i>Notes Summary</legend>
+                                <div class="panel panel-body border-top-teal">
+                                    <ul class="list-feed">
+                                        <li>
+                                            <div class="text-muted">Jan 12, 12:47</div>
+                                            <a href="#">David Linner</a> requested refund for a double bank card charge
+                                        </li>
 
+                                        <li>
+                                            <div class="text-muted">Jan 11, 10:25</div>
+                                            User <a href="#">Christopher Wallace</a> from Google is awaiting for staff reply
+                                        </li>
+
+                                        <li>
+                                            <div class="text-muted">Jan 10, 09:37</div>
+                                            Ticket <strong>#43683</strong> has been resolved by <a href="#">Victoria Wilson</a>
+                                        </li>
+
+                                        <li>
+                                            <div class="text-muted">Jan 9, 08:28</div>
+                                            <a href="#">Eugene Kopyov</a> merged <strong>Master</strong>, <strong>Demo</strong> and <strong>Dev</strong> branches
+                                        </li>
+
+                                        <li>
+                                            <div class="text-muted">Jan 8, 07:58</div>
+                                            All sellers have received payouts for December, 2016!
+                                        </li>
+
+                                        <li>
+                                            <div class="text-muted">Jan 7, 06:32</div>
+                                            <a href="#">Chris Arney</a> created a new ticket <strong>#43136</strong> and assigned to <a href="#">John Nod</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </fieldset>
+                            <fieldset>
+                                <legend class="text-semibold"><i class="icon-images2 position-left"></i>Images</legend>
+                                <div class="content-group">
+                                    <div class="row">
+                                        <div class="col-lg-4 col-sm-4">
+                                            <p><a href="#"><img src="images/placeholderimg.jpg" class="img-responsive img-rounded" alt="image"></a></p>
+                                            <p><a href="#"><img src="images/placeholderimg.jpg" class="img-responsive img-rounded" alt="image"></a></p>
+                                        </div>
+
+                                        <div class="col-lg-4 col-sm-4">
+                                            <p><a href="#"><img src="images/placeholderimg.jpg" class="img-responsive img-rounded" alt="image"></a></p>
+                                            <p><a href="#"><img src="images/placeholderimg.jpg" class="img-responsive img-rounded" alt="image"></a></p>
+                                        </div>
+
+                                        <div class="col-lg-4 col-sm-4">
+                                            <p><a href="#"><img src="images/placeholderimg.jpg" class="img-responsive img-rounded" alt="image"></a></p>
+                                            <p><a href="#"><img src="images/placeholderimg.jpg" class="img-responsive img-rounded" alt="image"></a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                        </div>
                     </div>
+
                 </div>
             </div>
         </form>

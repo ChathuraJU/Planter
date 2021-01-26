@@ -174,7 +174,13 @@
                         <ul class="navigation navigation-main navigation-accordion">
                             <li class="active"><a href="{{url('home')}}"><i class="icon-home2"></i> <span>Home</span></a></li>
                             <li class="navigation-header"><span class="icon-display"></span><span class="text-center">Dashboard</span></li>
-                            <li class=""><a href="{{url('nursery-dashboard')}}"><i class="fa fa-leaf"></i> <span>Nursery Dashboard</span></a></li>
+                            <li>
+                                <a href="{{url('nursery-dashboard')}}"><i class="fa fa-leaf"></i> <span>Nursery Dashboard</span></a>
+                                <ul class="hidden-ul">
+                                    <li><a href="blog_classic_v.html">Classic vertical</a></li>
+
+                                </ul>
+                            </li>
                             <li class=""><a href="{{url('field-dashboard')}}"><i class="fa fa-pagelines"></i> <span>Field Dashboard</span></a></li>
 
                             <li class="navigation-header"><span class="fa fa-tree"></span><span class="text-center">Field</span></li>

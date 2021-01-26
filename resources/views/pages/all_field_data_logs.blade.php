@@ -96,7 +96,6 @@
                         <tr>
                             <th>ID</th>
                             <th>Division</th>
-                            <th>Field Name</th>
                             <th>Field Officer Name</th>
                             <th>Log Date</th>
                             <th>Action</th>
@@ -108,7 +107,6 @@
                         <tr>
                             <td>1</td>
                             <td>Upper Division</td>
-                            <td>2207</td>
                             <td>Andrew</td>
                             <td>20.01.2021</td>
                             <td><a href="field_receivable">View</a></td>
