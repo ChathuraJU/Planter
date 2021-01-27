@@ -75,7 +75,124 @@
         </div>
         {{--/page top cards--}}
 
+        <div class="row">
+            <div class="col-sm-12">
+                <form action="#">
+                    <div class="panel panel-white">
+                        <div class="panel-heading">
+                            <h5 class="panel-title">Labour Register Form<a class="heading-elements-toggle"><i class="icon-more"></i></a></h5>
+                            <div class="heading-elements">
+                                <ul class="icons-list">
+                                    <li><a data-action="collapse"></a></li>
+                                    <li><a data-action="reload"></a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="panel-body">
+                            <div class="row">
+
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label class="control-label text-semibold">First Name :</label>
+                                        <input type="text" name="fname" id="fname" placeholder="Enter First Name Here." class="form-control mspborder required">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label class="control-label text-semibold">Last Name :</label>
+                                        <input type="text" name="lname" id="lname" placeholder="Enter Last Name Here." class="form-control mspborder required">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label class="control-label text-semibold">Gender</label>
+                                        <select data-placeholder="Select a Region..." class="select select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+                                            <option></option>
+                                            <optgroup label="Regions">
+                                                <option value="0">Male</option>
+                                                <option value="1">Female</option>
+                                            </optgroup>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label class="control-label text-semibold">Date of Birth : :</label>
+                                        <input type="text" name="dob" id="dob" placeholder="Select your birthday here" class="form-control mspborder required">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label class="control-label text-semibold">NIC No. :</label>
+                                        <input type="text" name="plot_no" id="plot_no" placeholder="Enter Plot No." class="form-control mspborder required">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label class="control-label text-semibold">Contact No. :</label>
+                                        <input type="text" name="contact" id="contact" placeholder="Enter year Contact number." class="form-control mspborder required">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label class="control-label text-semibold">Current Address :</label>
+                                        <input type="text" name="contact" id="contact" placeholder="Enter year Contact number." class="form-control mspborder required">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label class="control-label text-semibold">Number of Cuttings: </label>
+                                        <div class="input-group bootstrap-touchspin mspborder">
+                                            <span class="input-group-addon bootstrap-touchspin-prefix" style="display: none;"></span>
+                                            <input type="text" value="" class="touchspin-empty form-control " style="display: block;">
+                                            <span class="input-group-addon bootstrap-touchspin-postfix" style="display: none;"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label class="col-lg-2 control-label text-semibold">Upload Image:</label>
+                                        <div class="col-lg-10">
+                                            <input type="file" class="file-input-ajax" multiple="multiple">
+                                            {{--<span class="help-block">This scenario uses asynchronous/parallel uploads. Uploading itself is turned off in live preview.</span>--}}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="row">
+                                        <div class="col-lg-4 col-sm-4">
+                                            <p><a href="#"><img src="images/placeholderimg.jpg" class="img-responsive img-rounded" alt="image"></a></p>
+                                            <p><a href="#"><img src="images/placeholderimg.jpg" class="img-responsive img-rounded" alt="image"></a></p>
+                                        </div>
+
+                                        <div class="col-lg-4 col-sm-4">
+                                            <p><a href="#"><img src="images/placeholderimg.jpg" class="img-responsive img-rounded" alt="image"></a></p>
+                                            <p><a href="#"><img src="images/placeholderimg.jpg" class="img-responsive img-rounded" alt="image"></a></p>
+                                        </div>
+
+                                        <div class="col-lg-4 col-sm-4">
+                                            <p><a href="#"><img src="images/placeholderimg.jpg" class="img-responsive img-rounded" alt="image"></a></p>
+                                            <p><a href="#"><img src="images/placeholderimg.jpg" class="img-responsive img-rounded" alt="image"></a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="text-center mb-5" >
+                            <button type="submit" id="submit_field_data" class="btn bg-green-800 btn-labeled btn-rounded btn-xlg"><b><i class="icon-arrow-down-right32"></i></b>Submit Form</button>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+
     </div>
+
 
 
     {{--page content ends--}}
