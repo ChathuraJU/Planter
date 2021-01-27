@@ -8,7 +8,7 @@
             <div class="page-header-content border-bottom border-bottom-success-300">
                 <div class="page-title">
                     <h5>
-                        <span class="text-semibold">View Field Data Logs</span>
+                        <span class="text-semibold">All Field Data Logs</span>
                     </h5>
                 </div>
 
@@ -16,9 +16,9 @@
 
             <div class="breadcrumb-line" id="mydiv">
                 <ul class="breadcrumb">
-                    <li><a href="#"><i class="icon-home2 position-left"></i> Home</a></li>
+                    <li><a href=""><i class="icon-home2 position-left"></i> Home</a></li>
                     <li><a href="#">Fields</a></li>
-                    <li class="active">View Field Data Logs</li>
+                    <li class="active">All Field Data Logs</li>
                 </ul>
 
             </div>
@@ -109,7 +109,7 @@
                             <td>Upper Division</td>
                             <td>Andrew</td>
                             <td>20.01.2021</td>
-                            <td><a href="field_receivable">View</a></td>
+                            <td><a href="{{route('')}}">View</a></td>
                         </tr>
                         </tbody>
                     </table>
@@ -138,7 +138,7 @@
             columnDefs: [{
                 orderable: false,
                 width: 'auto',
-                targets: [ 5 ]
+                targets: [ 4 ]
             }],
             dom: '<"datatable-header"fBl><"datatable-scroll-wrap"t><"datatable-footer"ip>',
             language: {

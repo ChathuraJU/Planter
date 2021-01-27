@@ -18,11 +18,14 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 
-Route::get('/', function () {
+Route::get('/homepage', function () {
     return view('pages.homepage');
 });
 Route::get('nursery-dashboard', function () {
     return view('pages.nursery_dashboard');
+});
+Route::get('nursery-create', function () {
+    return view('pages.nursery_create');
 });
 Route::get('field-dashboard', function () {
     return view('pages.field_dashboard');

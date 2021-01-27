@@ -177,8 +177,7 @@
                             <li>
                                 <a href="{{url('nursery-dashboard')}}"><i class="fa fa-leaf"></i> <span>Nursery Dashboard</span></a>
                                 <ul class="hidden-ul">
-                                    <li><a href="blog_classic_v.html">Classic vertical</a></li>
-
+                                    <li><a href="{{url('nursery-create')}}">Create Nursery Dashboard</a></li>
                                 </ul>
                             </li>
                             <li class=""><a href="{{url('field-dashboard')}}"><i class="fa fa-pagelines"></i> <span>Field Dashboard</span></a></li>
