@@ -75,10 +75,13 @@
     <script src="{{ asset('global_assets/js/plugins/fileinput/plugins/purify.min.js')}}"></script>
     <script src="{{ asset('global_assets/js/plugins/fileinput/plugins/sortable.min.js')}}"></script>
     <script src="{{ asset('global_assets/js/plugins/fileinput/fileinput.min.js')}}"></script>
+
+
     <script src="{{ asset('global_assets/js/demo_pages/form_layouts.js')}}"></script>
     <script src="{{ asset('global_assets/js/demo_pages/timelines.js')}}"></script>
     <script src="{{ asset('global_assets/js/demo_pages/uploader_bootstrap.js')}}"></script>
     <script src="{{ asset('global_assets/js/demo_pages/form_input_groups.js')}}"></script>
+    <script src="{{ asset('global_assets/js/demo_pages/login.js')}}"></script>
 
     <!-- /theme JS files -->
 
@@ -106,13 +109,7 @@
             <!--            <li><a class="sidebar-control sidebar-main-toggle hidden-xs"><i class="icon-paragraph-justify3"></i></a></li>-->
         </ul>
 
-        <ul class="nav navbar-nav navbar-right">
-
-            <li>
-                <a href="#">
-                    <span class="visible-xs-inline-block position-right">Icon link</span>
-                </a>
-            </li>
+        <ul class="nav navbar-nav navbar-right" style="color: #5a6268">
 
             <li class="dropdown dropdown-user">
                 <a class="dropdown-toggle" data-toggle="dropdown">
@@ -194,7 +191,7 @@
                             <li class=""><a href="{{url('disease-identify')}}"><i class="icon-reading"></i> <span>Disease Identification</span></a></li>
 
                             <li class="navigation-header"><span class="icon-man-woman"></span><span class="text-center">Labour</span></li>
-                            <li><a href="{{url('labour-register')}}e"><i class="icon-pencil6"></i> Register Labour</a></li>
+                            <li><a href="{{url('labour-register')}}"><i class="icon-pencil6"></i> Register Labour</a></li>
                             <li><a href="{{url('labour-chart')}}"><i class="icon-profile"></i>Labour Chart</a></li>
 
                             <li class="navigation-header"><span class="icon-wrench"></span><span class="text-center">Reports</span></li>
@@ -219,6 +216,13 @@
         <!-- Main content -->
         <div class="content-wrapper" id="background">
             @yield('main')
+           <div class="container">
+               <!-- Footer -->
+               <div class="footer text-muted">
+                   Copyright © {{ date('Y') }} <a href="#">Planter</a> by <a href="#" target="_blank">CJU</a>
+               </div>
+               <!-- /footer -->
+           </div>
         </div>
     </div>
 </div>

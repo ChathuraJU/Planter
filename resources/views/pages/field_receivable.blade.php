@@ -397,11 +397,7 @@
         {{--/Add field data form ends--}}
 
 
-        <!-- Footer -->
-        <div class="footer text-muted">
-            Copyright © {{ date('Y') }} <a href="#">Planter</a> by <a href="#" target="_blank">CJU</a>
-        </div>
-        <!-- /footer -->
+
 
     </div>
     {{--page content ends--}}

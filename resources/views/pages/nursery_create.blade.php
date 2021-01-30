@@ -75,6 +75,7 @@
         </div>
         {{--/page top cards--}}
 
+        {{--create nursery dashboard form starts here--}}
         <div class="row">
             <div class="col-sm-12">
                 <form action="#">
@@ -125,33 +126,13 @@
                                         <input type="text" name="plot_no" id="plot_no" placeholder="Enter Plot No." class="form-control mspborder required">
                                     </div>
                                 </div>
-                                <div class="col-sm-6">
+                                <div class="col-sm-12">
                                     <div class="form-group">
-                                        <label class="col-lg-2 control-label text-semibold">Upload Image:</label>
-                                        <div class="col-lg-10">
+                                        <label class="control-label text-semibold">Upload Image:</label>
                                             <input type="file" class="file-input-ajax" multiple="multiple">
-                                            {{--<span class="help-block">This scenario uses asynchronous/parallel uploads. Uploading itself is turned off in live preview.</span>--}}
-                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-sm-6">
-                                    <div class="row">
-                                        <div class="col-lg-4 col-sm-4">
-                                            <p><a href="#"><img src="images/placeholderimg.jpg" class="img-responsive img-rounded" alt="image"></a></p>
-                                            <p><a href="#"><img src="images/placeholderimg.jpg" class="img-responsive img-rounded" alt="image"></a></p>
-                                        </div>
 
-                                        <div class="col-lg-4 col-sm-4">
-                                            <p><a href="#"><img src="images/placeholderimg.jpg" class="img-responsive img-rounded" alt="image"></a></p>
-                                            <p><a href="#"><img src="images/placeholderimg.jpg" class="img-responsive img-rounded" alt="image"></a></p>
-                                        </div>
-
-                                        <div class="col-lg-4 col-sm-4">
-                                            <p><a href="#"><img src="images/placeholderimg.jpg" class="img-responsive img-rounded" alt="image"></a></p>
-                                            <p><a href="#"><img src="images/placeholderimg.jpg" class="img-responsive img-rounded" alt="image"></a></p>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
 
                         </div>
@@ -163,8 +144,9 @@
                 </form>
             </div>
         </div>
+        {{--create nursery dashboard form starts here--}}
 
-        {{--create field form starts here--}}
+        {{--nursery dashboard table starts here--}}
         <div class="row">
             <div class="col-sm-12">
                 <!-- Basic initialization -->
@@ -186,7 +168,7 @@
                             <th>Region</th>
                             <th>Plot No.</th>
                             <th>No. of Cutting</th>
-                            <th>Layout</th>
+                            <th>Layout Date</th>
                             <th>Action</th>
 
                         </tr>
@@ -197,9 +179,8 @@
 
                             <td>2207</td>
                             <th>Plot No.</th>
-
                             <td>200</td>
-                            <td><a href="#">Update</a></td>
+                            <td>2021.10.10</td>
                             <td><a href="#">Delete</a></td>
 
                         </tr>
@@ -209,7 +190,7 @@
                 <!-- /basic initialization -->
             </div>
         </div>
-        {{--/create field form ends--}}
+        {{--/nursery dashboard table ends--}}
 
 
 

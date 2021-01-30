@@ -119,61 +119,39 @@
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label class="control-label text-semibold">Date of Birth : :</label>
-                                        <input type="text" name="dob" id="dob" placeholder="Select your birthday here" class="form-control mspborder required">
+                                        <input type="text" name="dob" id="dob" placeholder="Select your birthday here.." class="form-control mspborder required">
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label class="control-label text-semibold">NIC No. :</label>
-                                        <input type="text" name="plot_no" id="plot_no" placeholder="Enter Plot No." class="form-control mspborder required">
+                                        <input type="text" name="nic" id="nic" placeholder="Enter your NIC number.." class="form-control mspborder required">
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label class="control-label text-semibold">Contact No. :</label>
-                                        <input type="text" name="contact" id="contact" placeholder="Enter year Contact number." class="form-control mspborder required">
+                                        <input type="text" name="contact" id="contact" placeholder="Enter your Contact number.." class="form-control mspborder required">
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label class="control-label text-semibold">Current Address :</label>
-                                        <input type="text" name="contact" id="contact" placeholder="Enter year Contact number." class="form-control mspborder required">
+                                        <input type="text" name="address" id="address" placeholder="Enter your Current Address.." class="form-control mspborder required">
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <label class="control-label text-semibold">Number of Cuttings: </label>
-                                        <div class="input-group bootstrap-touchspin mspborder">
-                                            <span class="input-group-addon bootstrap-touchspin-prefix" style="display: none;"></span>
-                                            <input type="text" value="" class="touchspin-empty form-control " style="display: block;">
-                                            <span class="input-group-addon bootstrap-touchspin-postfix" style="display: none;"></span>
-                                        </div>
+                                        <label class="control-label text-semibold">EPF No. :</label>
+                                        <input type="text" name="epf" id="epf" placeholder="Enter your EPF number.." class="form-control mspborder required">
                                     </div>
                                 </div>
-                                <div class="col-sm-6">
+
+                                <div class="col-sm-12">
                                     <div class="form-group">
-                                        <label class="col-lg-2 control-label text-semibold">Upload Image:</label>
+                                        <label class="col-lg-2 control-label text-semibold">Profile Image:</label>
                                         <div class="col-lg-10">
                                             <input type="file" class="file-input-ajax" multiple="multiple">
-                                            {{--<span class="help-block">This scenario uses asynchronous/parallel uploads. Uploading itself is turned off in live preview.</span>--}}
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="row">
-                                        <div class="col-lg-4 col-sm-4">
-                                            <p><a href="#"><img src="images/placeholderimg.jpg" class="img-responsive img-rounded" alt="image"></a></p>
-                                            <p><a href="#"><img src="images/placeholderimg.jpg" class="img-responsive img-rounded" alt="image"></a></p>
-                                        </div>
-
-                                        <div class="col-lg-4 col-sm-4">
-                                            <p><a href="#"><img src="images/placeholderimg.jpg" class="img-responsive img-rounded" alt="image"></a></p>
-                                            <p><a href="#"><img src="images/placeholderimg.jpg" class="img-responsive img-rounded" alt="image"></a></p>
-                                        </div>
-
-                                        <div class="col-lg-4 col-sm-4">
-                                            <p><a href="#"><img src="images/placeholderimg.jpg" class="img-responsive img-rounded" alt="image"></a></p>
-                                            <p><a href="#"><img src="images/placeholderimg.jpg" class="img-responsive img-rounded" alt="image"></a></p>
                                         </div>
                                     </div>
                                 </div>

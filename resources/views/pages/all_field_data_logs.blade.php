@@ -109,7 +109,7 @@
                             <td>Upper Division</td>
                             <td>Andrew</td>
                             <td>20.01.2021</td>
-                            <td><a href="{{route('')}}">View</a></td>
+                            <td><a href="{{url('field-receivable')}}">View</a></td>
                         </tr>
                         </tbody>
                     </table>
