@@ -8,7 +8,7 @@
             <div class="page-header-content border-bottom border-bottom-success-300">
                 <div class="page-title">
                     <h5>
-                        <span class="text-semibold">Create Disease</span>
+                        <span class="text-semibold">Registered Users</span>
                     </h5>
                 </div>
 
@@ -17,8 +17,8 @@
             <div class="breadcrumb-line" id="mydiv">
                 <ul class="breadcrumb">
                     <li><a href="#"><i class="icon-home2 position-left"></i> Home</a></li>
-                    <li><a href="#">Diseases</a></li>
-                    <li class="active">Create Disease</li>
+                    <li><a href="#">Miscellaneous</a></li>
+                    <li class="active">Registered Users</li>
                 </ul>
 
             </div>
@@ -75,67 +75,7 @@
         </div>
         {{--/page top cards--}}
 
-        {{--/create disease form starts here--}}
-        <div class="row">
-            <div class="col-sm-12">
-                <form action="#">
-                    <div class="panel panel-white">
-                        <div class="panel-heading">
-                            <h5 class="panel-title">Create Disease Form<a class="heading-elements-toggle"><i class="icon-more"></i></a></h5>
-                            <div class="heading-elements">
-                                <ul class="icons-list">
-                                    <li><a data-action="collapse"></a></li>
-                                    <li><a data-action="reload"></a></li>
-                                </ul>
-                            </div>
-                        </div>
 
-                        <div class="panel-body">
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label class="control-label text-semibold">Disease Name :</label>
-                                        <input type="text" name="disease_name" id="disease_name" placeholder="Enter Disease Name" class="form-control mspborder required">
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label class="control-label text-semibold">Keywords :</label>
-                                        <input type="text" name="keywords" id="keywords" placeholder="Enter Keywords" class="form-control mspborder required">
-                                    </div>
-                                </div>
-
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label class="control-label text-semibold">Description</label>
-                                            <textarea rows="5" cols="5" name="description" id="description" class="form-control" placeholder="Default textarea"></textarea>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label class="control-label text-semibold">Solutions</label>
-                                            <textarea rows="5" cols="5" name="solutions" id="solutions" class="form-control" placeholder="Default textarea"></textarea>
-                                    </div>
-                                </div>
-                                <div class="col-sm-12">
-                                    <div class="form-group">
-                                        <label class="control-label text-semibold">Upload Image:</label>
-                                        <input type="file" class="file-input-ajax" multiple="multiple">
-                                    </div>
-                                </div>
-
-                            </div>
-
-                        </div>
-                        <div class="text-center mb-5" >
-                            <button type="submit" id="submit_field_data" class="btn bg-green-800 btn-labeled btn-rounded btn-xlg"><b><i class="icon-arrow-down-right32"></i></b>Submit Form</button>
-                        </div>
-
-                    </div>
-                </form>
-            </div>
-        </div>
-        {{--/create disease form ends--}}
 
         {{--disease table starts here--}}
         <div class="row">
@@ -143,7 +83,7 @@
                 <!-- Basic initialization -->
                 <div class="panel panel-white">
                     <div class="panel-heading">
-                        <h5 class="panel-title">Diseases List</h5>
+                        <h5 class="panel-title">User List</h5>
                         <div class="heading-elements">
                             <ul class="icons-list">
                                 <li><a data-action="collapse"></a></li>
@@ -154,27 +94,30 @@
 
                     <table class="table datatable-button-init-basic" id="fieldstable">
                         <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Disease name</th>
-                                <th>Keyword</th>
-                                <th>Photo</th>
-                                <th>Action</th>
-                            </tr>
+                        <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>NIC</th>
+                            <th>Contact No.</th>
+                            <th>Estate Name</th>
+                            <th>Designation</th>
+                            <th>Action</th>
+                        </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>2207</td>
-                                <th>Plot No.</th>
-                                <td>200</td>
-                                <td>img</td>
-                                <td>
-                                    <ul class="icons-list">
-                                        <li><a href="#" data-toggle="modal" data-target="#view_modal"><i class="icon-eye"></i></a></li>
-                                        <li><a href="#" data-toggle="modal" data-target="#remove_modal"><i class="icon-trash"></i></a></li>
-                                    </ul>
-                                </td>
-                            </tr>
+                        <tr>
+                            <td>test</td>
+                            <td>test</td>
+                            <td>test</td>
+                            <td>test</td>
+                            <td>test</td>
+                            <td>test</td>
+                            <td>
+                                <ul class="icons-list">
+                                    <li><a href="#" data-toggle="modal" data-target="#view_modal"><i class="icon-eye"></i></a></li>
+                                </ul>
+                            </td>
+                        </tr>
                         </tbody>
                     </table>
                 </div>
@@ -186,55 +129,62 @@
                         <div class="modal-content">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h5 class="modal-title">View Disease Info.</h5>
+                                <h5 class="modal-title">View Person Info.</h5>
                             </div>
 
                             <div class="modal-body">
                                 <div class="row">
                                     <div class="col-sm-6">
-
                                         <div class="form-group">
-                                            <label class="control-label text-semibold">Disease Name :</label>
-                                            <input type="text" name="disease_name" id="disease_name" placeholder="Enter Disease Name" class="form-control mspborder readonly">
+                                            <label class="control-label text-semibold">First Name :</label>
+                                            <input type="text" name="fname" id="disease_name" placeholder="Enter First Name" class="form-control mspborder disabled">
                                         </div>
-
                                         <div class="form-group">
-                                            <label class="control-label text-semibold">Keywords :</label>
-                                            <input type="text" name="keywords" id="keywords" placeholder="Enter Keywords" class="form-control mspborder readonly">
+                                            <label class="control-label text-semibold">DOB :</label>
+                                            <input type="text" name="dob" id="dob" placeholder="Enter your birthday" class="form-control mspborder disabled">
                                         </div>
-
+                                        <div class="form-group">
+                                            <label class="control-label text-semibold">NIC :</label>
+                                            <input type="text" name="nic" id="nic" placeholder="Enter Last NIC no." class="form-control mspborder disabled">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label text-semibold">Current Address :</label>
+                                            <input type="text" name="address" id="address" placeholder="Enter your address" class="form-control mspborder disabled">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label text-semibold">Estate Name :</label>
+                                            <input type="text" name="estate" id="estate" placeholder="Enter Estate Name" class="form-control mspborder readonly">
+                                        </div>
                                     </div>
                                     <div class="col-sm-6">
-                                        <div class="content-group">
-                                            <div class="row">
-                                                <div class="col-lg-6 col-sm-6">
-                                                    <label class="control-label text-semibold">Image</label>
-                                                    <p><a href="#"><img src="images/placeholderimg.jpg" class="img-responsive img-rounded" alt="image"></a></p>
-                                                </div>
-                                            </div>
+                                        <div class="form-group">
+                                            <label class="control-label text-semibold">Last Name :</label>
+                                            <input type="text" name="lname" id="lname" placeholder="Enter Last Name" class="form-control mspborder disabled">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label text-semibold">Gender :</label>
+                                            <input type="text" name="gender" id="gender" placeholder="Enter your Gender" class="form-control mspborder readonly">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label text-semibold">Contact No. :</label>
+                                            <input type="text" name="contact" id="contact" placeholder="Enter your contact no." class="form-control mspborder readonly">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label text-semibold">Email Address :</label>
+                                            <input type="text" name="email" id="email" placeholder="Enter your email" class="form-control mspborder disabled">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label text-semibold">Designation :</label>
+                                            <input type="text" name="designation" id="designation" placeholder="Enter your designation" class="form-control mspborder readonly">
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row">
 
-                                    <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <label class="control-label text-semibold">Description</label>
-                                            <textarea rows="5" cols="5" name="description" id="description" class="form-control" placeholder="Default textarea readonly"></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <label class="control-label text-semibold">Solutions</label>
-                                            <textarea rows="5" cols="5" name="solutions" id="solutions" class="form-control" placeholder="Default textarea readonly"></textarea>
-                                        </div>
-                                    </div>
-
-                                </div>
                             </div>
 
-                            <div class="modal-footer">
-                                <button type="button" class="btn bg-green-800" data-dismiss="modal">Save changes</button>
+
+                            <div class="modal-footer text-center">
+                                <button type="button" class="btn bg-green-800" data-dismiss="modal"><a href="#" data-toggle="modal" data-target="#update_modal" style="color: white">Update Info.</a></button>
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                             </div>
                         </div>
@@ -243,8 +193,8 @@
                 <!-- /view modal -->
 
 
-                <!-- Remove modal -->
-                <div id="remove_modal" class="modal fade" role="dialog">
+                <!-- Update modal -->
+                <div id="update_modal" class="modal fade" role="dialog">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -253,17 +203,18 @@
                             </div>
 
                             <div class="modal-body">
-                                You are about to remove this row. Are you sure?
+                                You are about to change the user data. Are you sure?
                             </div>
 
                             <div class="modal-footer">
-                                <button type="button" class="btn bg-green-800" data-dismiss="modal">Yes, remove</button>
+                                <button type="button" class="btn bg-green-800" data-dismiss="modal">Yes, approve</button>
                                 <button type="button" class="btn btn-default" data-dismiss="modal">No, thanks</button>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- /remove modal -->
+                <!-- /update modal -->
+
             </div>
         </div>
         {{--/disease table ends--}}
@@ -286,8 +237,8 @@
             autoWidth: false,
             columnDefs: [{
                 orderable: false,
-                width: '20%',
-                targets: [ 4 ]
+                width: 'auto',
+                targets: [ 6 ]
             }],
             dom: '<"datatable-header"fBl><"datatable-scroll-wrap"t><"datatable-footer"ip>',
             language: {

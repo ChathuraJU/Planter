@@ -199,7 +199,6 @@
                             <li><a href="{{url('all-reports')}}"><i class="fa fa-file-pdf-o"></i> All Reports</a></li>
 
                             <li class="navigation-header"><span class="icon-cogs"></span><span class="text-center">Miscellaneous</span></li>
-                            <li><a href="{{url('organization')}}"><i class="icon-office"></i> Organization Configuration</a></li>
                             <li><a href="{{url('register-requests')}}"><i class="icon-hour-glass3"></i> Register Requests</a></li>
                             <li><a href="{{url('users')}}"><i class="icon-users2"></i> Registered Users</a></li>
 

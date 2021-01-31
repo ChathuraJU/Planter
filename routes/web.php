@@ -60,13 +60,10 @@ Route::get('create-report', function () {
 Route::get('all-report', function () {
     return view('pages.all_report');
 });
-Route::get('organization', function () {
-    return view('pages.organization');
-});
 Route::get('register-requests', function () {
     return view('pages.register_requests');
 });
 Route::get('users', function () {
-    return view('pages.registered-users');
+    return view('pages.registered_users');
 });
 
