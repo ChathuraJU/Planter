@@ -10,10 +10,9 @@
 }
 .bg-yellow-600 {
     background-color:#81c040;
-    border-color:#bad531;
+    border-color:#81c040;
     color:#fff;
 }
-
 
 [class^="fa fa-"], [class*="fa fa-"]{
     speak: none;
@@ -209,4 +208,8 @@ table {
 
 .modal-header{
     background-color: rgba(129,192,64,0.43)
+}
+.cju-form-group{
+    margin-bottom: 5px;
+    position: relative;
 }
