@@ -75,6 +75,7 @@
         </div>
         {{--/page top cards--}}
 
+        {{--create field form starts here--}}
         <div class="row">
             <div class="col-sm-12">
                     <form action="#">
@@ -139,8 +140,8 @@
                     </form>
             </div>
         </div>
+        {{--create field form ends--}}
 
-        {{--create field form starts here--}}
         <div class="row">
             <div class="col-sm-12">
                 <!-- Basic initialization -->
