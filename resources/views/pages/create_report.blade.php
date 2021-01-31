@@ -121,6 +121,7 @@
                                 <div class="col-sm-6">
                                     <fieldset>
                                         <legend class="text-semibold"><i class="icon-file-eye position-left"></i>Preview</legend>
+                                    </fieldset>
                                 </div>
                             </div>
                             <div class="form-group">
