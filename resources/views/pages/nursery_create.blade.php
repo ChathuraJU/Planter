@@ -161,29 +161,31 @@
                         </div>
                     </div>
 
-
                     <table class="table datatable-button-init-basic" id="fieldstable">
                         <thead>
-                        <tr>
-                            <th>Region</th>
-                            <th>Plot No.</th>
-                            <th>No. of Cutting</th>
-                            <th>Layout Date</th>
-                            <th>Action</th>
+                            <tr>
+                                <th>Region</th>
+                                <th>Plot No.</th>
+                                <th>No. of Cutting</th>
+                                <th>Layout Date</th>
+                                <th>Action</th>
 
-                        </tr>
+                            </tr>
                         </thead>
                         <tbody>
+                            <tr>
+                                <td>2207</td>
+                                <th>Plot No.</th>
+                                <td>200</td>
+                                <td>2021.10.10</td>
+                                <td>
+                                    <ul class="icons-list">
+                                        <li><a href="#" data-toggle="modal" data-target="#view_modal"><i class="icon-eye"></i></a></li>
+                                        <li><a href="#" data-toggle="modal" data-target="#remove_modal"><i class="icon-trash"></i></a></li>
+                                    </ul>
+                                </td>
 
-                        <tr>
-
-                            <td>2207</td>
-                            <th>Plot No.</th>
-                            <td>200</td>
-                            <td>2021.10.10</td>
-                            <td><a href="#">Delete</a></td>
-
-                        </tr>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -192,7 +194,80 @@
         </div>
         {{--/nursery dashboard table ends--}}
 
+        <!-- View modal -->
+        <div id="view_modal" class="modal fade" role="dialog">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header" >
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h5 class="modal-title">View Disease Info.</h5>
+                    </div>
 
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label class="control-label text-semibold">Disease Name :</label>
+                                    <input type="text" name="disease_name" id="disease_name" placeholder="Enter Disease Name" class="form-control mspborder readonly">
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label text-semibold">Keywords :</label>
+                                    <input type="text" name="keywords" id="keywords" placeholder="Enter Keywords" class="form-control mspborder readonly">
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label text-semibold">Description</label>
+                                    <textarea rows="5" cols="5" name="description" id="description" class="form-control" placeholder="Default textarea readonly"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label text-semibold">Solutions</label>
+                                    <textarea rows="5" cols="5" name="solutions" id="solutions" class="form-control" placeholder="Default textarea readonly"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="content-group">
+                                            <label class="control-label text-semibold">Image</label>
+                                            <p><a href="#"><img src="images/placeholderimg.jpg" class="img-responsive img-rounded" alt="image"></a></p>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+
+
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn bg-green-800" data-dismiss="modal">Save changes</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /view modal -->
+
+
+        <!-- Remove modal -->
+        <div id="remove_modal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h5 class="modal-title">Confirm action</h5>
+                    </div>
+
+                    <div class="modal-body">
+                        You are about to remove this row. Are you sure?
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn bg-green-800" data-dismiss="modal">Yes, remove</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">No, thanks</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /remove modal -->
 
 
     </div>

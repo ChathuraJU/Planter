@@ -152,40 +152,39 @@
                         </div>
                     </div>
 
-
                     <table class="table datatable-button-init-basic" id="fieldstable">
                         <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Disease name</th>
-                            <th>Keyword</th>
-                            <th>Photo</th>
-                            <th>Action</th>
-                        </tr>
+                            <tr>
+                                <th>ID</th>
+                                <th>Disease name</th>
+                                <th>Keyword</th>
+                                <th>Photo</th>
+                                <th>Action</th>
+                            </tr>
                         </thead>
                         <tbody>
-
-                        <tr>
-                            <td>2207</td>
-                            <th>Plot No.</th>
-                            <td>200</td>
-                            <td><ul class="icons-list">
-                                    <li><a href="#" data-toggle="modal" data-target="#view_modal"><i class="icon-eye"></i></a></li>
-                                    <li><a href="#" data-toggle="modal" data-target="#remove_modal"><i class="icon-trash"></i></a></li>
-
-                                </ul></td>
-                            <td><a href="#">Delete</a></td>
-                        </tr>
+                            <tr>
+                                <td>2207</td>
+                                <th>Plot No.</th>
+                                <td>200</td>
+                                <td>img</td>
+                                <td>
+                                    <ul class="icons-list">
+                                        <li><a href="#" data-toggle="modal" data-target="#view_modal"><i class="icon-eye"></i></a></li>
+                                        <li><a href="#" data-toggle="modal" data-target="#remove_modal"><i class="icon-trash"></i></a></li>
+                                    </ul>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
                 <!-- /basic initialization -->
 
-                <!-- Edit modal -->
+                <!-- View modal -->
                 <div id="view_modal" class="modal fade" role="dialog">
                     <div class="modal-dialog modal-lg">
                         <div class="modal-content">
-                            <div class="modal-header" style="background-color: rgba(156,170,180,0.43)">
+                            <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                                 <h5 class="modal-title">View Disease Info.</h5>
                             </div>
@@ -193,17 +192,30 @@
                             <div class="modal-body">
                                 <div class="row">
                                     <div class="col-sm-6">
+
                                         <div class="form-group">
                                             <label class="control-label text-semibold">Disease Name :</label>
                                             <input type="text" name="disease_name" id="disease_name" placeholder="Enter Disease Name" class="form-control mspborder readonly">
                                         </div>
-                                    </div>
-                                    <div class="col-sm-6">
+
                                         <div class="form-group">
                                             <label class="control-label text-semibold">Keywords :</label>
                                             <input type="text" name="keywords" id="keywords" placeholder="Enter Keywords" class="form-control mspborder readonly">
                                         </div>
+
                                     </div>
+                                    <div class="col-sm-6">
+                                        <div class="content-group">
+                                            <div class="row">
+                                                <div class="col-lg-6 col-sm-6">
+                                                    <label class="control-label text-semibold">Description</label>
+                                                    <p><a href="#"><img src="images/placeholderimg.jpg" class="img-responsive img-rounded" alt="image"></a></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
 
                                     <div class="col-sm-6">
                                         <div class="form-group">
@@ -217,28 +229,18 @@
                                             <textarea rows="5" cols="5" name="solutions" id="solutions" class="form-control" placeholder="Default textarea readonly"></textarea>
                                         </div>
                                     </div>
-                                    <div class="col-sm-12">
-                                        <div class="content-group">
-                                            <div class="row">
-                                                <div class="col-lg-4 col-sm-4">
-                                                    <p><a href="#"><img src="images/placeholderimg.jpg" class="img-responsive img-rounded" alt="image"></a></p>
-                                                </div>
 
-
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
 
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary" data-dismiss="modal">Save changes</button>
+                                <button type="button" class="btn bg-green-800" data-dismiss="modal">Save changes</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- /edit modal -->
+                <!-- /view modal -->
 
 
                 <!-- Remove modal -->
@@ -255,18 +257,18 @@
                             </div>
 
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-primary" data-dismiss="modal">Yes, remove</button>
+                                <button type="button" class="btn bg-green-800" data-dismiss="modal">Yes, remove</button>
                                 <button type="button" class="btn btn-default" data-dismiss="modal">No, thanks</button>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-- /remove modal -->
-
-
             </div>
         </div>
         {{--/disease table ends--}}
+
+
 
     </div>
     {{--page content ends--}}
