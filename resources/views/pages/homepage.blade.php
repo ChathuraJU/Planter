@@ -70,162 +70,165 @@
                 </div>
             </div>
         </div>
-    {{--/page top cards--}}
+        {{--/page top cards--}}
 
-    <!-- Timeline -->
-    <div class="timeline timeline-left">
-        <div class="timeline-container">
-            <!-- Date stamp -->
-            <div class="timeline-date text-muted">
-                <i class="icon-history position-left"></i> <span class="text-semibold">Today</span>
-            </div>
-            <!-- /date stamp -->
-
-            <!-- Blog post -->
-            <div class="timeline-row">
-
-                <div class="timeline-icon">
-                    <img src="{{asset('images/users/1.jpg')}}" alt="">
+        <!-- Timeline -->
+        <div class="timeline timeline-left">
+            <div class="timeline-container">
+                <!-- Date stamp -->
+                <div class="timeline-date text-muted">
+                    <i class="icon-history position-left"></i> <span class="text-semibold">Today</span>
                 </div>
+                <!-- /date stamp -->
 
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="panel panel-flat timeline-content">
-                            <div class="panel-heading">
-                                <h6 class="panel-title text-bold">Upper Division Crop Posted</h6>
-                                <div class="heading-elements">
-                                    <span class="heading-text"><i class="icon-checkmark-circle position-left text-success"></i> 49 minutes ago</span>
+                <!-- Blog post -->
+                <div class="timeline-row">
+
+                    <div class="timeline-icon">
+                        <img src="{{asset('images/users/1.jpg')}}" alt="">
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="panel panel-flat timeline-content">
+                                <div class="panel-heading">
+                                    <h6 class="panel-title text-bold">Upper Division Crop Posted</h6>
+                                    <div class="heading-elements">
+                                        <span class="heading-text"><i class="icon-checkmark-circle position-left text-success"></i> 49 minutes ago</span>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="panel-body">
-                                <h6 class="content-group">
-                                    <i class="icon-user position-left"></i>
-                                    <a href="#">Jason Statham </a> Created:
-                                </h6>
+                                <div class="panel-body">
+                                    <h6 class="content-group">
+                                        <i class="icon-user position-left"></i>
+                                        <a href="#">Jason Statham </a> Created:
+                                    </h6>
 
-                                <blockquote>
-                                    <p>Added Note here</p>
-                                    <footer><cite title="Source Title">10:39 am</cite></footer>
-                                </blockquote>
-                            </div>
-                            <div class="panel-footer panel-footer-transparent">
-                                <div class="heading-elements">
-                                    <ul class="list-inline list-inline-condensed heading-text">
-                                        <li><a href="#" class="text-default"><i class="icon-spinner position-left text-primary"></i> Pending</a></li>
-                                        <li><a href="#" class="text-default"><i class="icon-check position-left text-success"></i> Approved</a></li>
-                                        <li><a href="#" class="text-default"><i class="icon-cross position-left text-warning"></i> Rejected</a></li>
-                                    </ul>
-                                    <span class="heading-btn pull-right">
-                                        <button type="button" class="btn bg-green-800 btn-labeled btn-rounded"><b><i class="icon-eye"></i></b> View</button>
-                                    </span>
+                                    <blockquote>
+                                        <p>Added Note here</p>
+                                        <footer><cite title="Source Title">10:39 am</cite></footer>
+                                    </blockquote>
+                                </div>
+                                <div class="panel-footer panel-footer-transparent">
+                                    <div class="heading-elements">
+                                        <ul class="list-inline list-inline-condensed heading-text">
+                                            <li><a href="#" class="text-default"><i class="icon-spinner position-left text-primary"></i> Pending</a></li>
+                                            <li><a href="#" class="text-default"><i class="icon-check position-left text-success"></i> Approved</a></li>
+                                            <li><a href="#" class="text-default"><i class="icon-cross position-left text-warning"></i> Rejected</a></li>
+                                        </ul>
+                                        <span class="heading-btn pull-right">
+                                            <button type="button" class="btn bg-green-800 btn-labeled btn-rounded"><b><i class="icon-eye"></i></b> View</button>
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- /blog post -->
+                <!-- /blog post -->
 
-            <!-- Blog post -->
-            <div class="timeline-row">
-                <div class="timeline-icon">
-                    <img src="{{asset('images/users/1.jpg')}}" alt="">
-                </div>
+                <!-- Blog post -->
+                <div class="timeline-row">
+                    <div class="timeline-icon">
+                        <img src="{{asset('images/users/1.jpg')}}" alt="">
+                    </div>
 
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="panel panel-flat timeline-content">
-                            <div class="panel-heading">
-                                <h6 class="panel-title text-bold">Upper Division Crop Accepted</h6>
-                                <div class="heading-elements">
-                                    <span class="heading-text"><i class="icon-checkmark-circle position-left text-success"></i> 3 hours ago</span>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="panel panel-flat timeline-content">
+                                <div class="panel-heading">
+                                    <h6 class="panel-title text-bold">Upper Division Crop Accepted</h6>
+                                    <div class="heading-elements">
+                                        <span class="heading-text"><i class="icon-checkmark-circle position-left text-success"></i> 3 hours ago</span>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="panel-body">
-                                <h6 class="content-group">
-                                    <i class="icon-user position-left"></i>
-                                    <a href="#">Melanie Watson</a> approved the <a href="#"> ID </a>
-                                </h6>
+                                <div class="panel-body">
+                                    <h6 class="content-group">
+                                        <i class="icon-user position-left"></i>
+                                        <a href="#">Melanie Watson</a> approved the <a href="#"> ID </a>
+                                    </h6>
 
-                                <blockquote>
-                                    <p>Added note here</p>
-                                    <footer>Melanie, <cite title="Source Title">12:56 am</cite></footer>
-                                </blockquote>
-                            </div>
+                                    <blockquote>
+                                        <p>Added note here</p>
+                                        <footer>Melanie, <cite title="Source Title">12:56 am</cite></footer>
+                                    </blockquote>
+                                </div>
 
-                            <div class="panel-footer panel-footer-transparent">
-                                <div class="heading-elements">
-                                    <ul class="list-inline list-inline-condensed heading-text">
-                                        <li><a href="#" class="text-default"><i class="icon-spinner position-left text-primary"></i> Pending</a></li>
-                                        <li><a href="#" class="text-default"><i class="icon-check position-left text-success"></i> Approved</a></li>
-                                        <li><a href="#" class="text-default"><i class="icon-cross position-left text-warning"></i> Rejected</a></li>
-                                    </ul>
-                                    <span class="heading-btn pull-right">
-                                        <button type="button" class="btn bg-green-800 btn-labeled btn-rounded"><b><i class="icon-eye"></i></b> View</button>
-                                    </span>
+                                <div class="panel-footer panel-footer-transparent">
+                                    <div class="heading-elements">
+                                        <ul class="list-inline list-inline-condensed heading-text">
+                                            <li><a href="#" class="text-default"><i class="icon-spinner position-left text-primary"></i> Pending</a></li>
+                                            <li><a href="#" class="text-default"><i class="icon-check position-left text-success"></i> Approved</a></li>
+                                            <li><a href="#" class="text-default"><i class="icon-cross position-left text-warning"></i> Rejected</a></li>
+                                        </ul>
+                                        <span class="heading-btn pull-right">
+                                            <button type="button" class="btn bg-green-800 btn-labeled btn-rounded"><b><i class="icon-eye"></i></b> View</button>
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- /blog post -->
+                <!-- /blog post -->
 
-            <!-- Date stamp -->
-            <div class="timeline-date text-muted">
-                <i class="icon-history position-left"></i> <span class="text-semibold">Monday</span>, April 18
-            </div>
-            <!-- /date stamp -->
-
-            <!-- Blog post -->
-            <div class="timeline-row">
-                <div class="timeline-icon">
-                    <img src="{{asset('images/users/1.jpg')}}" alt="">
+                <!-- Date stamp -->
+                <div class="timeline-date text-muted">
+                    <i class="icon-history position-left"></i> <span class="text-semibold">Monday</span>, April 18
                 </div>
+                <!-- /date stamp -->
 
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="panel panel-flat timeline-content">
-                            <div class="panel-heading">
-                                <h6 class="panel-title text-bold">Lower Division Crop Updates</h6>
-                                <div class="heading-elements">
-                                    <span class="heading-text"><i class="icon-checkmark-circle position-left text-success"></i> 3 hours ago</span>
+                <!-- Blog post -->
+                <div class="timeline-row">
+                    <div class="timeline-icon">
+                        <img src="{{asset('images/users/1.jpg')}}" alt="">
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="panel panel-flat timeline-content">
+                                <div class="panel-heading">
+                                    <h6 class="panel-title text-bold">Lower Division Crop Updates</h6>
+                                    <div class="heading-elements">
+                                        <span class="heading-text"><i class="icon-checkmark-circle position-left text-success"></i> 3 hours ago</span>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="panel-body">
-                                <h6 class="content-group">
-                                    <i class="icon-user position-left"></i>
-                                    <a href="#">Melanie Watson</a> updated on <a href="#">ID</a>
-                                </h6>
+                                <div class="panel-body">
+                                    <h6 class="content-group">
+                                        <i class="icon-user position-left"></i>
+                                        <a href="#">Melanie Watson</a> updated on <a href="#">ID</a>
+                                    </h6>
 
-                                <blockquote>
-                                    <p>Added note here</p>
-                                    <footer>Melanie, <cite title="Source Title">12:56 am</cite></footer>
-                                </blockquote>
-                            </div>
+                                    <blockquote>
+                                        <p>Added note here</p>
+                                        <footer>Melanie, <cite title="Source Title">12:56 am</cite></footer>
+                                    </blockquote>
+                                </div>
 
-                            <div class="panel-footer panel-footer-transparent">
-                                <div class="heading-elements">
-                                    <ul class="list-inline list-inline-condensed heading-text">
-                                        <li><a href="#" class="text-default"><i class="icon-spinner position-left text-primary"></i> Pending</a></li>
-                                        <li><a href="#" class="text-default"><i class="icon-check position-left text-success"></i> Approved</a></li>
-                                        <li><a href="#" class="text-default"><i class="icon-cross position-left text-warning"></i> Rejected</a></li>
-                                    </ul>
-                                    <span class="heading-btn pull-right">
-                                        <button type="button" class="btn bg-green-800 btn-labeled btn-rounded"><b><i class="icon-eye"></i></b> View</button>
-                                    </span>
+                                <div class="panel-footer panel-footer-transparent">
+                                    <div class="heading-elements">
+                                        <ul class="list-inline list-inline-condensed heading-text">
+                                            <li><a href="#" class="text-default"><i class="icon-spinner position-left text-primary"></i> Pending</a></li>
+                                            <li><a href="#" class="text-default"><i class="icon-check position-left text-success"></i> Approved</a></li>
+                                            <li><a href="#" class="text-default"><i class="icon-cross position-left text-warning"></i> Rejected</a></li>
+                                        </ul>
+                                        <span class="heading-btn pull-right">
+                                            <button type="button" class="btn bg-green-800 btn-labeled btn-rounded"><b><i class="icon-eye"></i></b> View</button>
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- /blog post -->
+                <!-- /blog post -->
 
+            </div>
         </div>
+        <!-- /timeline -->
+
     </div>
-    <!-- /timeline -->
+    {{--page content ends--}}
 @endsection

@@ -30,54 +30,6 @@
 
     {{--page content starts here--}}
     <div class="content">
-        {{--page top cards--}}
-        <div class="row">
-            <div class="col-sm-4">
-                <div class="panel panel-body bg-yellow-600 has-bg-image">
-                    <div class="media no-margin">
-                        <div class="media-body">
-                            <h3 class="no-margin">PMMS00001</h3>
-                            <span class="text-uppercase text-size-small">Employee ID</span>
-                        </div>
-
-                        <div class="media-right media-middle">
-                            <i class="icon-vcard icon-3x opacity-75"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="panel panel-body bg-yellow-600 has-bg-image">
-                    <div class="media no-margin">
-                        <div class="media-body">
-                            <h3 class="no-margin">IT Unit</h3>
-                            <span class="text-uppercase text-size-small">Division</span>
-                        </div>
-
-                        <div class="media-right media-middle">
-                            <i class="icon-location4 icon-3x opacity-75"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="panel panel-body bg-yellow-600 has-bg-image">
-                    <div class="media no-margin">
-                        <div class="media-body">
-                            <h3 class="no-margin">{{ date('Y-m-d H:i:s') }}</h3>
-                            <span class="text-uppercase text-size-small">Date / Time</span>
-                        </div>
-
-                        <div class="media-right media-middle">
-                            <i class="icon-calendar icon-3x opacity-75"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        {{--/page top cards--}}
-
-
         {{--Add field data form starts here--}}
         <form class="form-horizontal" action="#">
             <div class="panel panel-white">

@@ -28,52 +28,56 @@
 
     {{--page content starts here--}}
     <div class="content">
-        {{--page top cards--}}
-        <div class="row">
-            <div class="col-sm-4">
-                <div class="panel panel-body bg-yellow-600 has-bg-image">
-                    <div class="media no-margin">
-                        <div class="media-body">
-                            <h3 class="no-margin">PMMS00001</h3>
-                            <span class="text-uppercase text-size-small">Employee ID</span>
+        <div class="panel panel-flat">
+            <div class="panel-body">
+                <form action="#" class="main-search">
+                    <div class="input-group content-group">
+                        <div class="has-feedback has-feedback-left">
+                            <input type="text" class="form-control input-xlg" value="Search by Name">
+
                         </div>
 
-                        <div class="media-right media-middle">
-                            <i class="icon-vcard icon-3x opacity-75"></i>
+                        <div class="input-group-btn">
+                            <button type="submit" class="btn bg-green-800 btn-xlg">Search</button>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="panel panel-body bg-yellow-600 has-bg-image">
-                    <div class="media no-margin">
-                        <div class="media-body">
-                            <h3 class="no-margin">IT Unit</h3>
-                            <span class="text-uppercase text-size-small">Division</span>
+
+                </form>
+
+                <div class="row">
+                    <div class="panel panel-flat">
+                        <div class="panel-heading">
+                            <h6 class="panel-title">Disease Title</h6>
                         </div>
 
-                        <div class="media-right media-middle">
-                            <i class="icon-location4 icon-3x opacity-75"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="panel panel-body bg-yellow-600 has-bg-image">
-                    <div class="media no-margin">
-                        <div class="media-body">
-                            <h3 class="no-margin">{{ date('Y-m-d H:i:s') }}</h3>
-                            <span class="text-uppercase text-size-small">Date / Time</span>
-                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <div class="thumbnail">
+                                        <div class="thumb">
+                                            <a href="images/placeholder.jpg" data-popup="lightbox">
+                                                <img src="images/placeholder.jpg" alt="">
+                                                <span class="zoom-image"><i class="icon-plus2"></i></span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-9">
+                                    <p><span style="color: black">Description</span>By default, Bootstrap's thumbnails are designed to showcase linked images with minimal required markup.</p>
+                                </div>
+                            </div>
 
-                        <div class="media-right media-middle">
-                            <i class="icon-calendar icon-3x opacity-75"></i>
+
+
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        {{--/page top cards--}}
+
+
+
+
 
     </div>
 

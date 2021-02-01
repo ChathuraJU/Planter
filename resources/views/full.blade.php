@@ -82,6 +82,7 @@
     <script src="{{ asset('global_assets/js/demo_pages/uploader_bootstrap.js')}}"></script>
     <script src="{{ asset('global_assets/js/demo_pages/form_input_groups.js')}}"></script>
     <script src="{{ asset('global_assets/js/demo_pages/login.js')}}"></script>
+    <script src="{{ asset('global_assets/js/demo_pages/components_thumbnails.js')}}"></script>
 
     <!-- /theme JS files -->
 
