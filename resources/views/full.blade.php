@@ -197,7 +197,7 @@
                             <li><a href="{{url('labour-register')}}"><i class="icon-pencil6"></i> Register Labour</a></li>
                             <li><a href="{{url('labour-chart')}}"><i class="icon-profile"></i>Labour Chart</a></li>
 
-                            <li class="navigation-header"><span class="icon-wrench"></span><span class="text-center">Reports</span></li>
+                            <li class="navigation-header"><span class="icon-file-check"></span><span class="text-center">Reports</span></li>
                             <li><a href="{{url('create-report')}}"><i class="icon-home4"></i> Create Report</a></li>
                             <li><a href="{{url('all-reports')}}"><i class="fa fa-file-pdf-o"></i> All Reports</a></li>
 

@@ -8,7 +8,7 @@
             <div class="page-header-content border-bottom border-bottom-success-300">
                 <div class="page-title">
                     <h5>
-                        <span class="text-semibold">All Reports</span>
+                        <i class="icon-arrow-left52 position-left"></i><span class="text-semibold">All Reports</span>
                     </h5>
                 </div>
 
@@ -28,19 +28,94 @@
 
     {{--page content starts here--}}
     <div class="content">
+        <div class="panel panel-white">
+            <div class="panel-heading">
+                <h6 class="panel-title text-semibold">Report Collection<a class="heading-elements-toggle"><i class="icon-more"></i></a></h6>
 
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="panel panel-white">
-                    <div class="panel-heading">
-                        <h5 class="panel-title">Yearly<a class="heading-elements-toggle"><i class="icon-more"></i></a></h5>
-                        <div class="heading-elements">
-                            <ul class="icons-list">
-                                <li><a data-action="collapse"></a></li>
-                                <li><a data-action="reload"></a></li>
-                            </ul>
-                        </div>
-                    </div>
+            </div>
+
+            <ul class="nav nav-lg nav-tabs nav-tabs-bottom nav-tabs-toolbar no-margin">
+                <li class="active"><a href="#report-yearly" data-toggle="tab" aria-expanded="true"><i class="icon-menu7    position-left"></i> Yearly Reports</a></li>
+                <li class=""><a href="#report-monthly" data-toggle="tab" aria-expanded="false"><i class="icon-menu6 position-left"></i> Monthly Reports</a></li>
+            </ul>
+
+            <div class="tab-content">
+                <div class="tab-pane fade active in" id="report-yearly">
+                    {{--<div class="panel-body">--}}
+                        {{--<div class="content-group-lg">--}}
+                            {{--<h6 class="text-semibold">Course overview</h6>--}}
+                            {{--<p>Then sluggishly this camel learned woodchuck far stretched unspeakable notwithstanding the walked owing stung mellifluously glumly rooster more examined one that combed until a less less witless pouted up voluble timorously glared elaborate giraffe steady while grinned and got one beaver to walked. Connected picked rashly ocelot flirted while wherever unwound much more one inside emotionally well much woolly amidst upon far burned ouch sadistically became.</p>--}}
+                            {{--<p>A collection of textile samples lay spread out on the table - Samsa was a travelling salesman - and above it there hung a picture that he had recently cut out of an illustrated magazine and housed in a nice, gilded frame. It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the whole of her lower arm towards the viewer. Gregor then turned to look out the window at the dull weather.</p>--}}
+                        {{--</div>--}}
+
+                        {{--<h6 class="text-semibold">What you will learn</h6>--}}
+                        {{--<p class="content-group">Some cow goose out and sweeping wow the skillfully goodness one crazily far some jeez darn well so peevish pending nudged categorically in between about much alas handsome intolerable devotedly helpfully smiled momentously next much this this next sweepingly far. Together prim and limpet much extravagantly quail longing a ouch that walking a jeepers flamingo more.</p>--}}
+
+                        {{--<div class="row">--}}
+                            {{--<div class="col-sm-6">--}}
+                                {{--<div class="content-group">--}}
+                                    {{--<dl>--}}
+                                        {{--<dt class="text-size-small text-bold text-uppercase">--}}
+                                            {{--<i class="icon-checkmark3 text-blue position-left"></i>--}}
+                                            {{--Salamander much that on much--}}
+                                        {{--</dt>--}}
+                                        {{--<dd>Like partook magic this enthusiastic tasteful far crud otter this the ferret honey iguana. Together prim and limpet much extravagantly quail longing.</dd>--}}
+
+                                        {{--<dt class="text-size-small text-bold text-uppercase">--}}
+                                            {{--<i class="icon-checkmark3 text-blue position-left"></i>--}}
+                                            {{--Well far some raccoon--}}
+                                        {{--</dt>--}}
+                                        {{--<dd>Python laudably euphemistically since this copious much human this briefly hello ouch less one diligent however impotently made gave a slick up much.</dd>--}}
+
+                                        {{--<dt class="text-size-small text-bold text-uppercase">--}}
+                                            {{--<i class="icon-checkmark3 text-blue position-left"></i>--}}
+                                            {{--Goldfish rapidly that far--}}
+                                        {{--</dt>--}}
+                                        {{--<dd>Well far some raccoon knew goose and crud behind salmon amenable oh the poignant sufficiently yikes a naked showed far reindeer imminently.</dd>--}}
+
+                                        {{--<dt class="text-size-small text-bold text-uppercase">--}}
+                                            {{--<i class="icon-checkmark3 text-blue position-left"></i>--}}
+                                            {{--Gregor then turned to look out--}}
+                                        {{--</dt>--}}
+                                        {{--<dd>Then sluggishly this camel learned woodchuck far stretched unspeakable notwithstanding the walked owing stung mellifluously glumly rooster.</dd>--}}
+                                    {{--</dl>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+
+                            {{--<div class="col-sm-6">--}}
+                                {{--<div class="content-group">--}}
+                                    {{--<dl>--}}
+                                        {{--<dt class="text-size-small text-bold text-uppercase">--}}
+                                            {{--<i class="icon-checkmark3 text-blue position-left"></i>--}}
+                                            {{--Misunderstood cuffed more depending--}}
+                                        {{--</dt>--}}
+                                        {{--<dd>And earthworm dear arose bald agilely sad so below cowered within ceremonially therefore via much this symbolically and newt capably.</dd>--}}
+
+                                        {{--<dt class="text-size-small text-bold text-uppercase">--}}
+                                            {{--<i class="icon-checkmark3 text-blue position-left"></i>--}}
+                                            {{--Voluble much saddled mechanic--}}
+                                        {{--</dt>--}}
+                                        {{--<dd>Much took between less goodness jay mallard kneeled gnashed this up strong cooperative. A collection of textile samples lay spread.</dd>--}}
+
+                                        {{--<dt class="text-size-small text-bold text-uppercase">--}}
+                                            {{--<i class="icon-checkmark3 text-blue position-left"></i>--}}
+                                            {{--Before some one more--}}
+                                        {{--</dt>--}}
+                                        {{--<dd>Pending some contrary rabbit up that the more conditionally ouch confidently far so was darn logic thus dove the juicily because that placed otter.</dd>--}}
+
+                                        {{--<dt class="text-size-small text-bold text-uppercase">--}}
+                                            {{--<i class="icon-checkmark3 text-blue position-left"></i>--}}
+                                            {{--So slit more darn hey well wore--}}
+                                        {{--</dt>--}}
+                                        {{--<dd>Well far some raccoon knew goose and crud behind salmon amenable oh the poignant sufficiently yikes a naked showed far reindeer imminently.</dd>--}}
+                                    {{--</dl>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+
+                        {{--<h6 class="text-semibold">Course program</h6>--}}
+                        {{--So slit more darn hey well wore submissive savage this shark aardvark fumed thoughtfully much drank when angelfish so outgrew some alas vigorously therefore warthog superb less oh groundhog less alas gibbered barked some hey despicably with aesthetic hamster jay by luckily. A collection of textile samples lay spread out on the table - Samsa was a travelling salesman - and above it there hung a picture that he had recently cut out of an illustrated magazine and housed in a nice, gilded frame--}}
+                    {{--</div>--}}
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-sm-6">
@@ -87,20 +162,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="panel panel-white">
-                    <div class="panel-heading">
-                        <h5 class="panel-title">Monthly<a class="heading-elements-toggle"><i class="icon-more"></i></a></h5>
-                        <div class="heading-elements">
-                            <ul class="icons-list">
-                                <li><a data-action="collapse"></a></li>
-                                <li><a data-action="reload"></a></li>
-                            </ul>
-                        </div>
-                    </div>
+
+                <div class="tab-pane fade" id="report-monthly">
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-sm-6">
@@ -146,10 +209,9 @@
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
-
-
     </div>
     {{--page content ends--}}
 
@@ -215,15 +277,15 @@
                     buttons: [
                         {
                             extend: 'copyHtml5',
-                            text: 'Copy to Clipboard <i class="icon-copy3 position-right"></i>'
+                            text: 'Clipboard <i class="icon-copy3 position-right"></i>'
                         },
                         {
                             extend: 'excelHtml5',
-                            text: 'Export to Excel <i class="icon-file-excel position-right"></i>'
+                            text: 'Excel <i class="icon-file-excel position-right"></i>'
                         },
                         {
                             extend: 'pdfHtml5',
-                            text: 'Export to PDF <i class="icon-file-pdf position-right"></i>',
+                            text: 'PDF <i class="icon-file-pdf position-right"></i>',
                             exportOptions: {
                                 columns: ':visible:not(.not-export-col)'
                             }
@@ -262,7 +324,7 @@
             }
         });
 
-        function datatb() {
+        function datatb2() {
             var table_offset = $('#monthlyreporttable').DataTable({
                 fixedHeader: {
                     header: true,
@@ -277,15 +339,15 @@
                     buttons: [
                         {
                             extend: 'copyHtml5',
-                            text: 'Copy to Clipboard <i class="icon-copy3 position-right"></i>'
+                            text: 'Clipboard <i class="icon-copy3 position-right"></i>'
                         },
                         {
                             extend: 'excelHtml5',
-                            text: 'Export to Excel <i class="icon-file-excel position-right"></i>'
+                            text: 'Excel <i class="icon-file-excel position-right"></i>'
                         },
                         {
                             extend: 'pdfHtml5',
-                            text: 'Export to PDF <i class="icon-file-pdf position-right"></i>',
+                            text: 'PDF <i class="icon-file-pdf position-right"></i>',
                             exportOptions: {
                                 columns: ':visible:not(.not-export-col)'
                             }
