@@ -62,13 +62,13 @@
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label class="control-label text-semibold">Description</label>
-                                            <textarea rows="5" cols="5" name="description" id="description" class="form-control" placeholder="Default textarea"></textarea>
+                                            <textarea rows="5" cols="5" name="description" id="description" class="form-control mspborder required" placeholder="Default textarea"></textarea>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label class="control-label text-semibold">Solutions</label>
-                                            <textarea rows="5" cols="5" name="solutions" id="solutions" class="form-control" placeholder="Default textarea"></textarea>
+                                            <textarea rows="5" cols="5" name="solutions" id="solutions" class="form-control mspborder required" placeholder="Default textarea"></textarea>
                                     </div>
                                 </div>
                                 <div class="col-sm-12">

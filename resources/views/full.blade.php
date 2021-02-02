@@ -75,6 +75,7 @@
     <script src="{{ asset('global_assets/js/plugins/fileinput/plugins/purify.min.js')}}"></script>
     <script src="{{ asset('global_assets/js/plugins/fileinput/plugins/sortable.min.js')}}"></script>
     <script src="{{ asset('global_assets/js/plugins/fileinput/fileinput.min.js')}}"></script>
+    <script src="{{ asset('global_assets/js/plugins/media/fancybox.min.js')}}"></script>
 
 
     <script src="{{ asset('global_assets/js/demo_pages/form_layouts.js')}}"></script>
@@ -83,6 +84,7 @@
     <script src="{{ asset('global_assets/js/demo_pages/form_input_groups.js')}}"></script>
     <script src="{{ asset('global_assets/js/demo_pages/login.js')}}"></script>
     <script src="{{ asset('global_assets/js/demo_pages/components_thumbnails.js')}}"></script>
+    <script src="{{ asset('global_assets/js/demo_pages/ecommerce_product_list.js')}}"></script>
 
     <!-- /theme JS files -->
 
@@ -170,7 +172,7 @@
                 <div class="sidebar-category sidebar-category-visible ">
                     <div class="category-content no-padding">
                         <ul class="navigation navigation-main navigation-accordion">
-                            <li class="active"><a href="{{url('home')}}"><i class="icon-home2"></i> <span>Home</span></a></li>
+                            <li class="active"><a href="{{url('homepage')}}"><i class="icon-home2"></i> <span>Home</span></a></li>
                             <li class="navigation-header"><span class="icon-display"></span><span class="text-center">Dashboard</span></li>
                             <li>
                                 <a href="{{url('nursery-dashboard')}}"><i class="fa fa-leaf"></i> <span>Nursery Dashboard</span></a>

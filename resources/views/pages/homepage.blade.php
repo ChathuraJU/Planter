@@ -3,18 +3,11 @@
 @section('main')
     {{--page header starts here--}}
     <div class="content-group">
-        <div class="page-header page-header-inverse"
-             style=" border-color: #273246;">
-            <div class="page-header-content border-bottom border-bottom-success-300">
-                <div class="page-title">
-                    <h5>
-                        <span class="text-semibold">Recent Events</span>
-                    </h5>
-                </div>
+        <div class="page-header page-header-inverse border-bottom"
+             style=" border-color: #7c522d;">
 
-            </div>
 
-            <div class="breadcrumb-line" id="mydiv">
+            <div class="breadcrumb-line " id="mydiv">
                 <ul class="breadcrumb">
                     <li><a href="#"><i class="icon-home2 position-left"></i>Home - Recent Events</a></li>
                 </ul>
