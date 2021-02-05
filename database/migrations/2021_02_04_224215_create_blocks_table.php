@@ -17,6 +17,7 @@ class CreateBlocksTable extends Migration
             $table->integer('id');
             $table->string('block_no');
             $table->string('field_id');
+            $table->double('hectare');
             $table->timestamps();
         });
     }

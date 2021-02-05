@@ -18,6 +18,7 @@ class CreateDivisionsTable extends Migration
             $table->string('division_name');
             $table->string('division_per_field_norm_payment');
             $table->string('division_per_over_kg_payment');
+            $table->binary('status');
             $table->timestamps();
         });
     }

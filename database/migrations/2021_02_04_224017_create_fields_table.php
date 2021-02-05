@@ -16,6 +16,8 @@ class CreateFieldsTable extends Migration
         Schema::create('fields', function (Blueprint $table) {
             $table->integer('field_id');
             $table->integer('division_id');
+            $table->integer('user_id');
+            $table->integer('field_name');
             $table->double('hectare');
             $table->string('image');
             $table->timestamps();
