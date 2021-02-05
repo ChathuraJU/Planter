@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateNurseryPlanTable extends Migration
+class CreateReportsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,13 @@ class CreateNurseryPlanTable extends Migration
      */
     public function up()
     {
-        Schema::create('nursery_plan', function (Blueprint $table) {
-            $table->id();
-            $table->integer('nursery_id');
-            $table->integer('task_id');
-            $table->date('scheduled_date');
-            $table->date('completed_date');
-            $table->binary('status');
-            $table->integer('user_id');
+        Schema::create('reports', function (Blueprint $table) {
+            $table->integer('report_id');
+            $table->binary('report_type');
+            $table->integer('year');
+            $table->integer('month');
+            $table->string('name');
             $table->string('note');
-
             $table->timestamps();
         });
     }
@@ -34,6 +31,6 @@ class CreateNurseryPlanTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('nursery_plan');
+        Schema::dropIfExists('reports');
     }
 }
