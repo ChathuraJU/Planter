@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDivisionsTable extends Migration
+class CreateNurseriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,13 @@ class CreateDivisionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('divisions', function (Blueprint $table) {
-            $table->integer('division_id');
-            $table->string('division_name');
-            $table->string('division_per_field_norm_payment');
-            $table->string('division_per_over_kg_payment');
+        Schema::create('nurseries', function (Blueprint $table) {
+            $table->integer('nursery_id');
+            $table->string('region');
+            $table->string('plot_no');
+            $table->integer('no_of_cuttings');
+            $table->date('layout_date');
+            $table->string('image');
             $table->timestamps();
         });
     }
@@ -29,6 +31,6 @@ class CreateDivisionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('divisions');
+        Schema::dropIfExists('nurseries');
     }
 }

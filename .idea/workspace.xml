@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="b635a8bc-edd1-459c-8275-20ba8bfd7f45" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_02_04_223838_create_divisions_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_02_04_223838_create_divisions_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_02_04_225541_create_field_data_log_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_02_04_231221_create_labour_collection_table.php" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -20,17 +22,40 @@
       <file leaf-file-name=".env" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.env">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
+            <state relative-caret-position="220">
               <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2021_02_04_225541_create_field_data_log_table.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/database/migrations/2021_02_04_225541_create_field_data_log_table.php">
+      <file leaf-file-name="2021_02_05_092525_create_diseases_table.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/database/migrations/2021_02_05_092525_create_diseases_table.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="265">
-              <caret line="30" column="44" lean-forward="true" selection-start-line="30" selection-start-column="44" selection-end-line="30" selection-end-column="44" />
+            <state relative-caret-position="348">
+              <caret line="22" column="33" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2021_02_05_113112_create_nurseries_table.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/database/migrations/2021_02_05_113112_create_nurseries_table.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="282">
+              <caret line="29" column="19" lean-forward="true" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2021_02_05_114008_create_nursery_plan_table.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/database/migrations/2021_02_05_114008_create_nursery_plan_table.php">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="field_data.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/pages/field_data.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="394">
+              <caret line="422" selection-start-line="422" selection-end-line="426" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -91,15 +116,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/views/pages/organization.blade.php" />
-        <option value="$PROJECT_DIR$/public/assets/css/components.min.css" />
-        <option value="$PROJECT_DIR$/resources/views/auth/passwords/reset.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/app.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" />
-        <option value="$PROJECT_DIR$/resources/views/pages/nursery.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/pages/blank.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/pages/view_fields.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/auth/login.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/auth/passwords/email.blade.php" />
         <option value="$PROJECT_DIR$/public/global_assets/js/demo_pages/datatables_basic.js.ts" />
         <option value="$PROJECT_DIR$/public/global_assets/js/plugins/ui/fullcalender.min.js" />
@@ -138,10 +154,19 @@
         <option value="$PROJECT_DIR$/database/migrations/2021_02_04_213034_create_labour_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2021_02_04_223227_create_persons_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2021_02_04_223620_create_labours_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2021_02_04_223838_create_divisions_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2021_02_04_224017_create_fields_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2021_02_04_224215_create_blocks_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2021_02_04_225541_create_field_data_log_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2021_02_05_072334_create_labour_field_collection_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2021_02_05_073324_create_field_receivables_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2021_02_05_084230_create_division_collections_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2021_02_05_085406_create_labour_collections_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2021_02_04_223838_create_divisions_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2021_02_05_091547_create_division_receivables_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2021_02_05_091951_create_collection_approvals_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2021_02_05_092344_create_payments_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2021_02_05_092525_create_diseases_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2021_02_05_113112_create_nurseries_table.php" />
       </list>
     </option>
   </component>
@@ -265,9 +290,9 @@
       <path value="$PROJECT_DIR$/vendor/laravel/ui" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="322" />
-    <option name="y" value="-28" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="534" />
+    <option name="y" value="57" />
     <option name="width" value="697" />
     <option name="height" value="745" />
   </component>
@@ -299,25 +324,20 @@
             <path>
               <item name="Planter" type="b2602c69:ProjectViewProjectNode" />
               <item name="Planter" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Planter" type="b2602c69:ProjectViewProjectNode" />
               <item name="Planter" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-              <item name="factories" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Planter" type="b2602c69:ProjectViewProjectNode" />
               <item name="Planter" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-              <item name="migrations" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Planter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Planter" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-              <item name="seeds" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Planter" type="b2602c69:ProjectViewProjectNode" />
@@ -394,11 +414,14 @@
       <workItem from="1612295510077" duration="9609000" />
       <workItem from="1612375751627" duration="2266000" />
       <workItem from="1612468698480" duration="8901000" />
+      <workItem from="1612505222213" duration="1110000" />
+      <workItem from="1612509187894" duration="6842000" />
+      <workItem from="1612523250942" duration="2824000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="162066000" />
+    <option name="totallyTimeSpent" value="172842000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -419,8 +442,8 @@
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32954547" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="npm" order="2" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32954547" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28517398" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32467532" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18683812" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -445,67 +468,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/node_modules/bootstrap/scss/_tables.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-403">
-          <caret line="111" column="1" selection-start-line="111" selection-start-column="1" selection-end-line="111" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/phpstorm.jar!/resources/html5-schema/html5/block.rnc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="269" column="16" selection-start-line="269" selection-start-column="16" selection-end-line="269" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/bootstrap/dist/css/bootstrap.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="5" column="19646" selection-start-line="5" selection-start-column="19646" selection-end-line="5" selection-end-column="19646" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/mspstyles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="81" column="7" selection-start-line="81" selection-start-column="1" selection-end-line="81" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/DatabaseSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="4" column="34" selection-start-line="4" selection-start-column="34" selection-end-line="4" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_08_19_000000_create_failed_jobs_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="18" column="31" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/css/colors.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret column="4679" selection-start-column="4679" selection-end-column="4679" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/global_assets/js/demo_pages/login.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/auth/register.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="173" column="82" lean-forward="true" selection-start-line="173" selection-start-column="82" selection-end-line="173" selection-end-column="82" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/global_assets/js/plugins/forms/tags/tagsinput.min.js" />
-    <entry file="file://$PROJECT_DIR$/public/global_assets/js/plugins/ui/prism.min.js" />
     <entry file="file://$PROJECT_DIR$/public/global_assets/js/demo_pages/form_tags_input.js" />
     <entry file="file://$PROJECT_DIR$/public/css/cjustyles.css">
       <provider selected="true" editor-type-id="text-editor">
@@ -574,13 +536,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="297" column="29" selection-start-line="297" selection-start-column="23" selection-end-line="297" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/pages/field_data.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="400" selection-start-line="400" selection-end-line="430" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -679,9 +634,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/User_types.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/User_types.php" />
     <entry file="file://$PROJECT_DIR$/database/seeds/UserTypeSeeder.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="368">
@@ -703,13 +656,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2021_02_04_212345_create_persons_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="28" column="33" lean-forward="true" selection-end-line="42" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2021_02_04_212345_create_persons_table.php" />
     <entry file="file://$PROJECT_DIR$/database/migrations/2021_02_04_223227_create_persons_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="325">
@@ -717,13 +664,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2021_02_04_213034_create_labour_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-20">
-          <caret line="16" selection-start-line="16" selection-end-line="23" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2021_02_04_213034_create_labour_table.php" />
     <entry file="file://$PROJECT_DIR$/database/migrations/2021_02_04_223620_create_labours_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="325">
@@ -738,6 +679,9 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2021_02_04_231221_create_labour_collection_table.php" />
+    <entry file="file://$PROJECT_DIR$/database/migrations/2021_02_05_072334_create_labour_field_collection_table.php" />
+    <entry file="file://$PROJECT_DIR$/database/migrations/2021_02_05_073324_create_field_receivables_table.php" />
     <entry file="file://$PROJECT_DIR$/database/migrations/2021_02_04_224215_create_blocks_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
@@ -745,24 +689,77 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2021_02_04_223838_create_divisions_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="16" column="40" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2021_02_04_225541_create_field_data_log_table.php" />
     <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
+        <state relative-caret-position="220">
           <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2021_02_04_225541_create_field_data_log_table.php">
+    <entry file="file://$PROJECT_DIR$/database/migrations/2021_02_05_084230_create_division_collections_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="30" column="44" lean-forward="true" selection-start-line="30" selection-start-column="44" selection-end-line="30" selection-end-column="44" />
+        <state relative-caret-position="148">
+          <caret line="17" column="37" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2021_02_04_223838_create_divisions_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="19" column="48" selection-start-line="19" selection-start-column="48" selection-end-line="19" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2021_02_05_085406_create_labour_collections_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="28" column="45" selection-start-line="28" selection-start-column="45" selection-end-line="28" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2021_02_05_091547_create_division_receivables_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="24" column="41" lean-forward="true" selection-start-line="24" selection-start-column="41" selection-end-line="24" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2021_02_05_091951_create_collection_approvals_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="17" column="49" lean-forward="true" selection-start-line="17" selection-start-column="49" selection-end-line="17" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2021_02_05_092344_create_payments_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="16" column="25" lean-forward="true" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2021_02_05_092525_create_diseases_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="22" column="33" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2021_02_05_113112_create_nurseries_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="29" column="19" lean-forward="true" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2021_02_05_114008_create_nursery_plan_table.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/pages/field_data.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="394">
+          <caret line="422" selection-start-line="422" selection-end-line="426" selection-end-column="37" />
         </state>
       </provider>
     </entry>

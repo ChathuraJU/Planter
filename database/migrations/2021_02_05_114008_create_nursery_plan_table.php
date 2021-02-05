@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateLabourCollectionTable extends Migration
+class CreateNurseryPlanTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateLabourCollectionTable extends Migration
      */
     public function up()
     {
-        Schema::create('labour_collection', function (Blueprint $table) {
+        Schema::create('nursery_plan', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });
@@ -26,6 +26,6 @@ class CreateLabourCollectionTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('labour_collection');
+        Schema::dropIfExists('nursery_plan');
     }
 }
