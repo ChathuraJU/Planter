@@ -105,7 +105,7 @@
                 <!-- Basic initialization -->
                 <div class="panel panel-white">
                     <div class="panel-heading">
-                        <h5 class="panel-title">All Nursery dashboards</h5>
+                        <h5 class="panel-title">All Nursery Dashboards</h5>
                         <div class="heading-elements">
                             <ul class="icons-list">
                                 <li><a data-action="collapse"></a></li>
@@ -153,34 +153,158 @@
                 <div class="modal-content">
                     <div class="modal-header" >
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h5 class="modal-title">View Disease Info.</h5>
+                        <h5 class="modal-title">Plan for Plot no. : XXXXX</h5>
                     </div>
 
                     <div class="modal-body">
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <label class="control-label text-semibold">Disease Name :</label>
-                                    <input type="text" name="disease_name" id="disease_name" placeholder="Enter Disease Name" class="form-control mspborder readonly">
+                                    <label class="control-label text-semibold"> Region :</label>
+                                    <input type="text" name="Region" id="Region" placeholder="Region Name" class="form-control mspborder readonly">
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label text-semibold">Keywords :</label>
-                                    <input type="text" name="keywords" id="keywords" placeholder="Enter Keywords" class="form-control mspborder readonly">
+                                    <label class="control-label text-semibold">Layout Date :</label>
+                                    <input type="text" name="layout_date" id="layout_date" placeholder="Layout date" class="form-control mspborder readonly">
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label text-semibold">Description</label>
-                                    <textarea rows="5" cols="5" name="description" id="description" class="form-control" placeholder="Default textarea readonly"></textarea>
+                                    <label class="control-label text-semibold">No. of Cuttings :</label>
+                                    <input type="text" name="cuttings" id="cuttings" placeholder="No. of Cuttings" class="form-control mspborder readonly">
                                 </div>
-                                <div class="form-group">
-                                    <label class="control-label text-semibold">Solutions</label>
-                                    <textarea rows="5" cols="5" name="solutions" id="solutions" class="form-control" placeholder="Default textarea readonly"></textarea>
+                                <legend class="text-semibold"><i class="icon-images2 position-left"></i>Images</legend>
+                                <div class="content-group">
+                                    <div class="row">
+                                        <div class="col-lg-4 col-sm-4">
+                                            <p><a href="images/placeholderimg.jpg" class="media-left" data-popup="lightbox"><img src="images/placeholderimg.jpg" class="img-responsive img-rounded" alt="image"></a></p>
+                                            <p><a href="images/placeholderimg.jpg" class="media-left" data-popup="lightbox"><img src="images/placeholderimg.jpg" class="img-responsive img-rounded" alt="image"></a></p>
+                                        </div>
+
+                                        <div class="col-lg-4 col-sm-4">
+                                            <p><a href="images/placeholderimg.jpg" class="media-left" data-popup="lightbox"><img src="images/placeholderimg.jpg" class="img-responsive img-rounded" alt="image"></a></p>
+                                            <p><a href="images/placeholderimg.jpg" class="media-left" data-popup="lightbox"><img src="images/placeholderimg.jpg" class="img-responsive img-rounded" alt="image"></a></p>
+                                        </div>
+
+                                        <div class="col-lg-4 col-sm-4">
+                                            <p><a href="images/placeholderimg.jpg" class="media-left" data-popup="lightbox"><img src="images/placeholderimg.jpg" class="img-responsive img-rounded" alt="image"></a></p>
+                                            <p><a href="images/placeholderimg.jpg" class="media-left" data-popup="lightbox"><img src="images/placeholderimg.jpg" class="img-responsive img-rounded" alt="image"></a></p>
+                                        </div>
+                                    </div>
                                 </div>
+
                             </div>
                             <div class="col-sm-6">
-                                <div class="content-group">
-                                            <label class="control-label text-semibold">Image</label>
-                                            <p><a href="#"><img src="images/placeholderimg.jpg" class="img-responsive img-rounded" alt="image"></a></p>
-
+                                <div class="panel panel-body">
+                                    <legend class="text-semibold"><i class="icon-task position-left"></i>Schedule</legend>
+                                    <ul class="list-feed media-list cju-list-scroll">
+                                        <li>
+                                            <span class="list-feed-solid text-muted">12.12.2021</span>
+                                            <div class="media-body">
+                                                <div class="text-semibold">Cuttings Layout</div>
+                                            </div>
+                                            <div class="media-right">
+                                                <ul class="icons-list icons-list-extended text-nowrap">
+                                                    <li style="display: none"><a href="#" class="text-danger "><i class="icon-spinner position-left text-danger"></i> Pending</a></li>
+                                                    <li><a href="#" class="text-success"><i class="icon-check position-left text-success"></i> Completed</a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <span class="list-feed-solid text-muted">26.02.2021</span>
+                                            <div class="media-body">
+                                                <div class="text-semibold">Folio Spraying 1st Round</div>
+                                            </div>
+                                            <div class="media-right">
+                                                <ul class="icons-list icons-list-extended text-nowrap">
+                                                    <li style="display: none"><a href="#" class="text-danger "><i class="icon-spinner position-left text-danger"></i> Pending</a></li>
+                                                    <li><a href="#" class="text-success"><i class="icon-check position-left text-success"></i> Completed</a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <span class="list-feed-solid text-muted">26.02.2021</span>
+                                            <div class="media-body">
+                                                <div class="text-semibold">Folio Spraying 2nd Round</div>
+                                            </div>
+                                            <div class="media-right">
+                                                <ul class="icons-list icons-list-extended text-nowrap">
+                                                    <li style="display: none"><a href="#" class="text-danger "><i class="icon-spinner position-left text-danger"></i> Pending</a></li>
+                                                    <li><a href="#" class="text-success"><i class="icon-check position-left text-success"></i> Completed</a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <span class="list-feed-solid text-muted">26.02.2021</span>
+                                            <div class="media-body">
+                                                <div class="text-semibold">Folio Spraying 4th Round</div>
+                                            </div>
+                                            <div class="media-right">
+                                                <ul class="icons-list icons-list-extended text-nowrap">
+                                                    <li style="display: none"><a href="#" class="text-danger "><i class="icon-spinner position-left text-danger"></i> Pending</a></li>
+                                                    <li><a href="#" class="text-success"><i class="icon-check position-left text-success"></i> Completed</a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <span class="list-feed-solid text-muted">26.02.2021</span>
+                                            <div class="media-body">
+                                                <div class="text-semibold">Fertilizer 1st Round</div>
+                                            </div>
+                                            <div class="media-right">
+                                                <ul class="icons-list icons-list-extended text-nowrap">
+                                                    <li><a href="#" class="text-danger "><i class="icon-spinner position-left text-danger"></i> Pending</a></li>
+                                                    <li style="display: none"><a href="#" class="text-success"><i class="icon-check position-left text-success"></i> Completed</a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <span class="list-feed-solid text-muted">26.02.2021</span>
+                                            <div class="media-body">
+                                                <div class="text-semibold">Folio Spraying 5th Round</div>
+                                            </div>
+                                            <div class="media-right">
+                                                <ul class="icons-list icons-list-extended text-nowrap">
+                                                    <li><a href="#" class="text-danger "><i class="icon-spinner position-left text-danger"></i> Pending</a></li>
+                                                    <li style="display: none"><a href="#" class="text-success"><i class="icon-check position-left text-success"></i> Completed</a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <span class="list-feed-solid text-muted">26.02.2021</span>
+                                            <div class="media-body">
+                                                <div class="text-semibold">Folio Spraying 6th Round</div>
+                                            </div>
+                                            <div class="media-right">
+                                                <ul class="icons-list icons-list-extended text-nowrap">
+                                                    <li><a href="#" class="text-danger "><i class="icon-spinner position-left text-danger"></i> Pending</a></li>
+                                                    <li style="display: none"><a href="#" class="text-success"><i class="icon-check position-left text-success"></i> Completed</a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <span class="list-feed-solid text-muted">26.02.2021</span>
+                                            <div class="media-body">
+                                                <div class="text-semibold">Folio Spraying 7th Round</div>
+                                            </div>
+                                            <div class="media-right">
+                                                <ul class="icons-list icons-list-extended text-nowrap">
+                                                    <li><a href="#" class="text-danger "><i class="icon-spinner position-left text-danger"></i> Pending</a></li>
+                                                    <li style="display: none"><a href="#" class="text-success"><i class="icon-check position-left text-success"></i> Completed</a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <span class="list-feed-solid text-muted">26.02.2021</span>
+                                            <div class="media-body">
+                                                <div class="text-semibold">Folio Spraying 8th Round</div>
+                                            </div>
+                                            <div class="media-right">
+                                                <ul class="icons-list icons-list-extended text-nowrap">
+                                                    <li ><a href="#" class="text-danger "><i class="icon-spinner position-left text-danger"></i> Pending</a></li>
+                                                    <li style="display: none"><a href="#" class="text-success"><i class="icon-check position-left text-success"></i> Completed</a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>

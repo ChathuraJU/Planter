@@ -136,7 +136,7 @@ class TasksSeeder extends Seeder
         DB::table('tasks')->insert([
             'task_id' => '25',
             'task_name' => 'Field Laying',
-            'no_of_days' => '14',
+            'no_of_days' => '270',
         ]);
 
     }

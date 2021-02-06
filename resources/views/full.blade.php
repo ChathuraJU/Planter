@@ -175,8 +175,9 @@
                             <li class="active"><a href="{{url('homepage')}}"><i class="icon-home2"></i> <span>Home</span></a></li>
                             <li class="navigation-header"><span class="icon-display"></span><span class="text-center">Dashboard</span></li>
                             <li>
-                                <a href="{{url('nursery-dashboard')}}"><i class="fa fa-leaf"></i> <span>Nursery Dashboard</span></a>
+                                <a href=""><i class="fa fa-leaf"></i> <span>Nursery</span></a>
                                 <ul class="hidden-ul">
+                                    <li><a href="{{url('nursery-dashboard')}}">Nursery Dashboards</a></li>
                                     <li><a href="{{url('nursery-create')}}">Create Nursery Dashboard</a></li>
                                 </ul>
                             </li>

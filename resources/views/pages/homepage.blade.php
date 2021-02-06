@@ -105,7 +105,7 @@
                                 <div class="panel-footer panel-footer-transparent">
                                     <div class="heading-elements">
                                         <ul class="list-inline list-inline-condensed heading-text">
-                                            <li><a href="#" class="text-default"><i class="icon-spinner position-left text-primary"></i> Pending</a></li>
+                                            <li><a href="#" class="text-default"><i class="icon-spinner position-left text-danger"></i> Pending</a></li>
                                             <li><a href="#" class="text-default"><i class="icon-check position-left text-success"></i> Approved</a></li>
                                             <li><a href="#" class="text-default"><i class="icon-cross position-left text-warning"></i> Rejected</a></li>
                                         </ul>
@@ -151,7 +151,7 @@
                                 <div class="panel-footer panel-footer-transparent">
                                     <div class="heading-elements">
                                         <ul class="list-inline list-inline-condensed heading-text">
-                                            <li><a href="#" class="text-default"><i class="icon-spinner position-left text-primary"></i> Pending</a></li>
+                                            <li><a href="#" class="text-default"><i class="icon-spinner position-left text-danger"></i> Pending</a></li>
                                             <li><a href="#" class="text-default"><i class="icon-check position-left text-success"></i> Approved</a></li>
                                             <li><a href="#" class="text-default"><i class="icon-cross position-left text-warning"></i> Rejected</a></li>
                                         </ul>
@@ -203,7 +203,7 @@
                                 <div class="panel-footer panel-footer-transparent">
                                     <div class="heading-elements">
                                         <ul class="list-inline list-inline-condensed heading-text">
-                                            <li><a href="#" class="text-default"><i class="icon-spinner position-left text-primary"></i> Pending</a></li>
+                                            <li><a href="#" class="text-default"><i class="icon-spinner position-left text-danger"></i> Pending</a></li>
                                             <li><a href="#" class="text-default"><i class="icon-check position-left text-success"></i> Approved</a></li>
                                             <li><a href="#" class="text-default"><i class="icon-cross position-left text-warning"></i> Rejected</a></li>
                                         </ul>
