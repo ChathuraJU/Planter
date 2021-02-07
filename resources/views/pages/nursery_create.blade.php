@@ -8,7 +8,7 @@
             <div class="page-header-content border-bottom border-bottom-success-300">
                 <div class="page-title">
                     <h5>
-                        <span class="text-semibold">Create Nursery</span>
+                        <i class="icon-arrow-left52 position-left"></i><span class="text-semibold">Create Nursery</span>
                     </h5>
                 </div>
 

@@ -67,9 +67,6 @@
     <script src="{{ asset('assets/js/app.js') }}"></script>
     <script src="{{ asset('global_assets/js/demo_pages/layout_fixed_custom.js') }}"></script>
 
-    <script src="{{ asset('global_assets/js/plugins/forms/selects/select2.min.js')}}"></script>
-    <script src="{{ asset('global_assets/js/plugins/forms/styling/uniform.min.js')}}"></script>
-    <script src="{{ asset('global_assets/js/plugins/forms/validation/validate.min.js')}}"></script>
     <script src="{{ asset('global_assets/js/plugins/forms/wizards/stepy.min.js')}}"></script>
     <script src="{{ asset('global_assets/js/plugins/extensions/cookie.js')}}"></script>
     <script src="{{ asset('global_assets/js/plugins/fileinput/plugins/purify.min.js')}}"></script>

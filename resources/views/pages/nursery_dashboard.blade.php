@@ -8,7 +8,7 @@
             <div class="page-header-content border-bottom border-bottom-success-300">
                 <div class="page-title">
                     <h5>
-                        <span class="text-semibold">Nursery Dashboard</span>
+                        <i class="icon-arrow-left52 position-left"></i><span class="text-semibold">Nursery Dashboard</span>
                     </h5>
                 </div>
 
@@ -28,8 +28,267 @@
 
     {{--page content starts here--}}
     <div class="content">
+        <div class="panel panel-flat">
+            <div class="panel-heading">
+                <h5 class="panel-title">Search the disease<a class="heading-elements-toggle"><i class="icon-more"></i></a></h5>
+                <div class="heading-elements">
+                    <ul class="icons-list">
+                        <li><a data-action="collapse" class=""></a></li>
+                        <li><a data-action="close"></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="panel-body" style="">
+                <form action="#" class="main-search">
+                    <div class="input-group content-group">
+                        <div class="has-feedback has-feedback-left">
+                            <input type="text" class="form-control input-xlg" value="">
+
+                        </div>
+
+                        <div class="input-group-btn">
+                            <button type="submit" class="btn bg-green-800 btn-xlg">Search</button>
+                        </div>
+                    </div>
+
+                    <div class="row search-option-buttons">
+                        <div class="col-sm-12 text-center">
+                            <ul class="list-inline no-margin-bottom">
+                                <li><a href="{{url('nursery-create')}}" type="button" class="btn bg-green-800 btn-labeled btn-rounded"><b><i class="icon-pen-plus"></i></b>Create Nursery Dashboard</a></li>
+                                <li><a href="#" class="btn btn-link"><i class="icon-reload-alt position-left"></i> Refine your search</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6 col-lg-4">
+                <div class="panel panel-flat">
+
+                    <!-- Panel heading -->
+                    <div class="panel-heading">
 
 
+                        <ul class="media-list">
+                            <li class="media stack-media-on-mobile">
+                                <div class="media-left" style="padding-right: 05px !important;">
+                                    <div class="thumb">
+                                        <a href="images/placeholderimg.jpg" class="media-left" data-popup="lightbox">
+                                            <img src="images/placeholderimg.jpg" class="img-responsive img-rounded media-preview" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="media-body">
+                                    <h6 class="media-heading"><a href="#" style="font-weight: bold; color: #2d3748">Plot No. : XXX</a></h6>
+                                    <ul class="list-inline list-inline-separate text-muted mb-5">
+                                        <li>02 Months 04 Days</li>
+                                        <li>2020.01.20</li>
+                                        <li>No. of Cuttings : XX</li>
+                                    </ul>
+
+
+                                </div>
+
+                            </li>
+                        </ul>
+
+                    </div>
+                    <!-- /panel heading -->
+
+
+                    <!-- Tabs nav -->
+                    <ul class="nav nav-tabs nav-justified no-margin no-border-radius bg-yellow-600 border-top border-top-teal-300">
+                        <li class="active">
+                            <a href="#schedule" class="text-size-small text-uppercase text-semibold" data-toggle="tab" aria-expanded="true">
+                                Schedule
+                            </a>
+                        </li>
+
+                        <li class="">
+                            <a href="#comments" class="text-size-small text-uppercase text-semibold" data-toggle="tab" aria-expanded="false">
+                                Comments
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- /tabs nav -->
+
+
+                    <!-- Tabs content -->
+                    <div class="tab-content panel-body">
+                        <div class="tab-pane fade" id="comments">
+                            {{--<div class="caption">--}}
+                            <ul class="media-list content-group cju-list-scroll">
+                                <li class="media">
+                                    <a href="#" class="media-left">
+                                        <img src="images/placeholderimg.jpg" class="img-circle img-sm" alt="">
+                                    </a>
+
+                                    <div class="media-body">
+                                        <div class="media-heading text-semibold"><a href="#">Eugene Kopyov</a></div>
+                                        Delivered is to ye belonging enjoyment preferred. Astonished and acceptance men...
+                                    </div>
+                                </li>
+
+                                <li class="media">
+                                    <a href="#" class="media-left">
+                                        <img src="images/placeholderimg.jpg" class="img-circle img-sm" alt="">
+                                    </a>
+
+                                    <div class="media-body">
+                                        <div class="media-heading text-semibold"><a href="#">Amanda Baker</a></div>
+                                        Delivered is to ye belonging enjoyment preferred. Astonished and acceptance men...
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <textarea name="enter-message" class="form-control content-group" rows="2" cols="1" placeholder="Add comment"></textarea>
+
+                            <div class="row text-center">
+                                <button type="submit" id="submit_field_data" class="btn bg-green-800 btn-labeled btn-rounded btn-lg"><b><i class="fa fa-send-o"></i></b>Send</button>
+                            </div>
+                            {{--</div>--}}
+                        </div>
+                        <div class="tab-pane fade active in" id="schedule">
+
+
+                            <ul class="list-feed media-list cju-list-scroll">
+                                <li>
+                                    <span class="list-feed-solid text-muted">12.12.2021</span>
+                                    <div class="media-body">
+                                        <div class="text-semibold">Cuttings Layout</div>
+                                    </div>
+                                    <div class="media-right">
+                                        <ul class="icons-list icons-list-extended text-nowrap">
+                                            <li style="display: none"><a href="#" class="text-danger "><i class="icon-spinner position-left text-danger"></i> Pending</a></li>
+                                            <li><a href="#" class="text-success"><i class="icon-check position-left text-success"></i> Completed</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="list-feed-solid text-muted">26.02.2021</span>
+                                    <div class="media-body">
+                                        <div class="text-semibold">Folio Spraying 1st Round</div>
+                                    </div>
+                                    <div class="media-right">
+                                        <ul class="icons-list icons-list-extended text-nowrap">
+                                            <li style="display: none"><a href="#" class="text-danger "><i class="icon-spinner position-left text-danger"></i> Pending</a></li>
+                                            <li><a href="#" class="text-success"><i class="icon-check position-left text-success"></i> Completed</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="list-feed-solid text-muted">26.02.2021</span>
+                                    <div class="media-body">
+                                        <div class="text-semibold">Folio Spraying 2nd Round</div>
+                                    </div>
+                                    <div class="media-right">
+                                        <ul class="icons-list icons-list-extended text-nowrap">
+                                            <li style="display: none"><a href="#" class="text-danger "><i class="icon-spinner position-left text-danger"></i> Pending</a></li>
+                                            <li><a href="#" class="text-success"><i class="icon-check position-left text-success"></i> Completed</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="list-feed-solid text-muted">26.02.2021</span>
+                                    <div class="media-body">
+                                        <div class="text-semibold">Folio Spraying 4th Round</div>
+                                    </div>
+                                    <div class="media-right">
+                                        <ul class="icons-list icons-list-extended text-nowrap">
+                                            <li style="display: none"><a href="#" class="text-danger "><i class="icon-spinner position-left text-danger"></i> Pending</a></li>
+                                            <li><a href="#" class="text-success"><i class="icon-check position-left text-success"></i> Completed</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="list-feed-solid text-muted">26.02.2021</span>
+                                    <div class="media-body">
+                                        <div class="text-semibold">Fertilizer 1st Round</div>
+                                    </div>
+                                    <div class="media-right">
+                                        <ul class="icons-list icons-list-extended text-nowrap">
+                                            <li><a href="#" class="text-danger "><i class="icon-spinner position-left text-danger"></i> Pending</a></li>
+                                            <li style="display: none"><a href="#" class="text-success"><i class="icon-check position-left text-success"></i> Completed</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="list-feed-solid text-muted">26.02.2021</span>
+                                    <div class="media-body">
+                                        <div class="text-semibold">Folio Spraying 5th Round</div>
+                                    </div>
+                                    <div class="media-right">
+                                        <ul class="icons-list icons-list-extended text-nowrap">
+                                            <li><a href="#" class="text-danger "><i class="icon-spinner position-left text-danger"></i> Pending</a></li>
+                                            <li style="display: none"><a href="#" class="text-success"><i class="icon-check position-left text-success"></i> Completed</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="list-feed-solid text-muted">26.02.2021</span>
+                                    <div class="media-body">
+                                        <div class="text-semibold">Folio Spraying 6th Round</div>
+                                    </div>
+                                    <div class="media-right">
+                                        <ul class="icons-list icons-list-extended text-nowrap">
+                                            <li><a href="#" class="text-danger "><i class="icon-spinner position-left text-danger"></i> Pending</a></li>
+                                            <li style="display: none"><a href="#" class="text-success"><i class="icon-check position-left text-success"></i> Completed</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="list-feed-solid text-muted">26.02.2021</span>
+                                    <div class="media-body">
+                                        <div class="text-semibold">Folio Spraying 7th Round</div>
+                                    </div>
+                                    <div class="media-right">
+                                        <ul class="icons-list icons-list-extended text-nowrap">
+                                            <li><a href="#" class="text-danger "><i class="icon-spinner position-left text-danger"></i> Pending</a></li>
+                                            <li style="display: none"><a href="#" class="text-success"><i class="icon-check position-left text-success"></i> Completed</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="list-feed-solid text-muted">26.02.2021</span>
+                                    <div class="media-body">
+                                        <div class="text-semibold">Folio Spraying 8th Round</div>
+                                    </div>
+                                    <div class="media-right">
+                                        <ul class="icons-list icons-list-extended text-nowrap">
+                                            <li ><a href="#" class="text-danger "><i class="icon-spinner position-left text-danger"></i> Pending</a></li>
+                                            <li style="display: none"><a href="#" class="text-success"><i class="icon-check position-left text-success"></i> Completed</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+
+                    </div>
+                    <!-- /tabs content -->
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Pagination -->
+        <div class="text-center content-group-lg pt-20">
+            <ul class="pagination">
+                <li class="disabled"><a href="#"><i class="icon-arrow-small-left"></i></a></li>
+                <li class="active"><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#"><i class="icon-arrow-small-right"></i></a></li>
+            </ul>
+        </div>
+        <!-- /pagination -->
     </div>
 
 
@@ -37,4 +296,3 @@
 
 
 @endsection
-

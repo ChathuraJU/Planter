@@ -106,18 +106,7 @@
                         <!-- Tabs content -->
                         <div class="tab-content panel-body">
                             <div class="tab-pane active fade in" id="contact">
-                                {{--<div class="cju-form-group mt-5">--}}
-                                {{--<label class="text-semibold">Full name:</label>--}}
-                                {{--<span class="pull-right-sm">Victoria Anna Davidson</span>--}}
-                                {{--</div>--}}
-                                {{--<div class="cju-form-group mt-5">--}}
-                                {{--<label class="text-semibold">EPF No. :</label>--}}
-                                {{--<span class="pull-right-sm"></span>--}}
-                                {{--</div>--}}
-                                {{--<div class="cju-form-group mt-5">--}}
-                                {{--<label class="text-semibold">NIC No. :</label>--}}
-                                {{--<span class="pull-right-sm"></span>--}}
-                                {{--</div>--}}
+
                                 <div class="cju-form-group mt-5">
                                     <label class="text-semibold">Gender :</label>
                                     <span class="pull-right-sm"></span>
@@ -210,18 +199,7 @@
                         <!-- Tabs content -->
                         <div class="tab-content panel-body">
                             <div class="tab-pane active fade in" id="contact">
-                                {{--<div class="cju-form-group mt-5">--}}
-                                {{--<label class="text-semibold">Full name:</label>--}}
-                                {{--<span class="pull-right-sm">Victoria Anna Davidson</span>--}}
-                                {{--</div>--}}
-                                {{--<div class="cju-form-group mt-5">--}}
-                                {{--<label class="text-semibold">EPF No. :</label>--}}
-                                {{--<span class="pull-right-sm"></span>--}}
-                                {{--</div>--}}
-                                {{--<div class="cju-form-group mt-5">--}}
-                                {{--<label class="text-semibold">NIC No. :</label>--}}
-                                {{--<span class="pull-right-sm"></span>--}}
-                                {{--</div>--}}
+
                                 <div class="cju-form-group mt-5">
                                     <label class="text-semibold">Gender :</label>
                                     <span class="pull-right-sm"></span>
@@ -314,18 +292,7 @@
                         <!-- Tabs content -->
                         <div class="tab-content panel-body">
                             <div class="tab-pane active fade in" id="contact">
-                                {{--<div class="cju-form-group mt-5">--}}
-                                {{--<label class="text-semibold">Full name:</label>--}}
-                                {{--<span class="pull-right-sm">Victoria Anna Davidson</span>--}}
-                                {{--</div>--}}
-                                {{--<div class="cju-form-group mt-5">--}}
-                                {{--<label class="text-semibold">EPF No. :</label>--}}
-                                {{--<span class="pull-right-sm"></span>--}}
-                                {{--</div>--}}
-                                {{--<div class="cju-form-group mt-5">--}}
-                                {{--<label class="text-semibold">NIC No. :</label>--}}
-                                {{--<span class="pull-right-sm"></span>--}}
-                                {{--</div>--}}
+
                                 <div class="cju-form-group mt-5">
                                     <label class="text-semibold">Gender :</label>
                                     <span class="pull-right-sm"></span>
@@ -418,18 +385,6 @@
                         <!-- Tabs content -->
                         <div class="tab-content panel-body">
                             <div class="tab-pane active fade in" id="contact">
-                                {{--<div class="cju-form-group mt-5">--}}
-                                {{--<label class="text-semibold">Full name:</label>--}}
-                                {{--<span class="pull-right-sm">Victoria Anna Davidson</span>--}}
-                                {{--</div>--}}
-                                {{--<div class="cju-form-group mt-5">--}}
-                                {{--<label class="text-semibold">EPF No. :</label>--}}
-                                {{--<span class="pull-right-sm"></span>--}}
-                                {{--</div>--}}
-                                {{--<div class="cju-form-group mt-5">--}}
-                                {{--<label class="text-semibold">NIC No. :</label>--}}
-                                {{--<span class="pull-right-sm"></span>--}}
-                                {{--</div>--}}
                                 <div class="cju-form-group mt-5">
                                     <label class="text-semibold">Gender :</label>
                                     <span class="pull-right-sm"></span>
@@ -482,7 +437,6 @@
                 </div>
                 <!-- /user details (with sample pattern) -->
             </div>
-
         </div>
 
         <!-- Pagination -->
