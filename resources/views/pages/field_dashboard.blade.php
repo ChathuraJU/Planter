@@ -117,11 +117,9 @@
                <div class="panel panel-flat">
                    <div class="panel-heading">
                        <h5 class="panel-title">Latex Liters</h5>
-
                    </div>
 
                    <div class="panel-body">
-
                    </div>
                </div>
                <!-- /basic column chart -->
@@ -235,33 +233,347 @@
                 </div>
             </div>
             <div class="d-none md-block col-md-9">
-                <div class="panel text-center bg-brown-700" style="background-image: url('{{asset('images/panel_bg.png')}}');">
-                    <div class="panel-body">
-                        <h6 class="text-semibold no-margin-bottom mt-5">20th Jan 2021</h6>
-                        <div class="opacity-75 content-group">KANDY</div>
-                        <div class="opacity-75 content-group">01.13 PM</div>
-                        <i class="icon-cloud" style="font-size: 54px"></i>
+                    <div class="row">
+                        <div class="col-sm-6 col-md-4">
+                            <div class="panel panel-body bg-teal-400" style="background-image: url('{{asset('images/panel_bg.png')}}');">
+                                <div class="media no-margin">
+                                    <div class="media-left media-middle">
+                                        <i class="icon-cloud icon-2x opacity-75"></i>
+                                    </div>
+
+                                    <div class="media-body text-right">
+                                        <div class="row text-center">
+                                            <span class="text-uppercase text-bold text-size-mini">12th Jan 2021</span>
+                                        </div>
+                                        <div class="row text-center">
+                                            <span class="text-uppercase text-size-mini">Kandy</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mt-3">
+                                    <div class="col-xs-4">
+                                        <div class="text-uppercase text-size-mini opacity-75">Rainfall</div>
+                                        <h5 class="text-semibold no-margin">55.0mm</h5>
+                                    </div>
+
+                                    <div class="col-xs-4">
+                                        <div class="text-uppercase text-size-mini opacity-75">Temp</div>
+                                        <h5 class="text-semibold no-margin">23°C</h5>
+                                    </div>
+
+                                    <div class="col-xs-4">
+                                        <div class="text-uppercase text-size-mini opacity-75">Humidity</div>
+                                        <h5 class="text-semibold no-margin">93%</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <div class="panel panel-body bg-teal-400" style="background-image: url('{{asset('images/panel_bg.png')}}');">
+                                <div class="media no-margin">
+                                    <div class="media-left media-middle">
+                                        <i class="icon-cloud icon-2x opacity-75"></i>
+                                    </div>
+
+                                    <div class="media-body text-right">
+                                        <div class="row text-center">
+                                            <span class="text-uppercase text-bold text-size-mini">12th Jan 2021</span>
+                                        </div>
+                                        <div class="row text-center">
+                                            <span class="text-uppercase text-size-mini">Kandy</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mt-3">
+                                    <div class="col-xs-4">
+                                        <div class="text-uppercase text-size-mini opacity-75">Rainfall</div>
+                                        <h5 class="text-semibold no-margin">55.0mm</h5>
+                                    </div>
+
+                                    <div class="col-xs-4">
+                                        <div class="text-uppercase text-size-mini opacity-75">Temp</div>
+                                        <h5 class="text-semibold no-margin">23°C</h5>
+                                    </div>
+
+                                    <div class="col-xs-4">
+                                        <div class="text-uppercase text-size-mini opacity-75">Humidity</div>
+                                        <h5 class="text-semibold no-margin">93%</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <div class="panel panel-body bg-teal-400" style="background-image: url('{{asset('images/panel_bg.png')}}');">
+                                <div class="media no-margin">
+                                    <div class="media-left media-middle">
+                                        <i class="icon-cloud icon-2x opacity-75"></i>
+                                    </div>
+
+                                    <div class="media-body text-right">
+                                        <div class="row text-center">
+                                            <span class="text-uppercase text-bold text-size-mini">12th Jan 2021</span>
+                                        </div>
+                                        <div class="row text-center">
+                                            <span class="text-uppercase text-size-mini">Kandy</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mt-3">
+                                    <div class="col-xs-4">
+                                        <div class="text-uppercase text-size-mini opacity-75">Rainfall</div>
+                                        <h5 class="text-semibold no-margin">55.0mm</h5>
+                                    </div>
+
+                                    <div class="col-xs-4">
+                                        <div class="text-uppercase text-size-mini opacity-75">Temp</div>
+                                        <h5 class="text-semibold no-margin">23°C</h5>
+                                    </div>
+
+                                    <div class="col-xs-4">
+                                        <div class="text-uppercase text-size-mini opacity-75">Humidity</div>
+                                        <h5 class="text-semibold no-margin">93%</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <div class="panel panel-body bg-teal-400" style="background-image: url('{{asset('images/panel_bg.png')}}');">
+                                <div class="media no-margin">
+                                    <div class="media-left media-middle">
+                                        <i class="icon-cloud icon-2x opacity-75"></i>
+                                    </div>
+
+                                    <div class="media-body text-right">
+                                        <div class="row text-center">
+                                            <span class="text-uppercase text-bold text-size-mini">12th Jan 2021</span>
+                                        </div>
+                                        <div class="row text-center">
+                                            <span class="text-uppercase text-size-mini">Kandy</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mt-3">
+                                    <div class="col-xs-4">
+                                        <div class="text-uppercase text-size-mini opacity-75">Rainfall</div>
+                                        <h5 class="text-semibold no-margin">55.0mm</h5>
+                                    </div>
+
+                                    <div class="col-xs-4">
+                                        <div class="text-uppercase text-size-mini opacity-75">Temp</div>
+                                        <h5 class="text-semibold no-margin">23°C</h5>
+                                    </div>
+
+                                    <div class="col-xs-4">
+                                        <div class="text-uppercase text-size-mini opacity-75">Humidity</div>
+                                        <h5 class="text-semibold no-margin">93%</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <div class="panel panel-body bg-teal-400" style="background-image: url('{{asset('images/panel_bg.png')}}');">
+                                <div class="media no-margin">
+                                    <div class="media-left media-middle">
+                                        <i class="icon-cloud icon-2x opacity-75"></i>
+                                    </div>
+
+                                    <div class="media-body text-right">
+                                        <div class="row text-center">
+                                            <span class="text-uppercase text-bold text-size-mini">12th Jan 2021</span>
+                                        </div>
+                                        <div class="row text-center">
+                                            <span class="text-uppercase text-size-mini">Kandy</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mt-3">
+                                    <div class="col-xs-4">
+                                        <div class="text-uppercase text-size-mini opacity-75">Rainfall</div>
+                                        <h5 class="text-semibold no-margin">55.0mm</h5>
+                                    </div>
+
+                                    <div class="col-xs-4">
+                                        <div class="text-uppercase text-size-mini opacity-75">Temp</div>
+                                        <h5 class="text-semibold no-margin">23°C</h5>
+                                    </div>
+
+                                    <div class="col-xs-4">
+                                        <div class="text-uppercase text-size-mini opacity-75">Humidity</div>
+                                        <h5 class="text-semibold no-margin">93%</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <div class="panel panel-body bg-teal-400" style="background-image: url('{{asset('images/panel_bg.png')}}');">
+                                <div class="media no-margin">
+                                    <div class="media-left media-middle">
+                                        <i class="icon-cloud icon-2x opacity-75"></i>
+                                    </div>
+
+                                    <div class="media-body text-right">
+                                        <div class="row text-center">
+                                            <span class="text-uppercase text-bold text-size-mini">12th Jan 2021</span>
+                                        </div>
+                                        <div class="row text-center">
+                                            <span class="text-uppercase text-size-mini">Kandy</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mt-3">
+                                    <div class="col-xs-4">
+                                        <div class="text-uppercase text-size-mini opacity-75">Rainfall</div>
+                                        <h5 class="text-semibold no-margin">55.0mm</h5>
+                                    </div>
+
+                                    <div class="col-xs-4">
+                                        <div class="text-uppercase text-size-mini opacity-75">Temp</div>
+                                        <h5 class="text-semibold no-margin">23°C</h5>
+                                    </div>
+
+                                    <div class="col-xs-4">
+                                        <div class="text-uppercase text-size-mini opacity-75">Humidity</div>
+                                        <h5 class="text-semibold no-margin">93%</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <div class="heading-elements">
+                        <button type="button" class="btn btn-link daterange-ranges heading-btn text-semibold">
+                            <i class="icon-calendar3 position-left"></i> <span>January 10 - February 8</span> <b class="caret"></b>
+                        </button>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="col-sm-12 col-md-6">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="row ">
+                                    <div class="col-sm-6 col-md-12">
+                                        <div class="panel panel-body bg-green-800" style="background-image: url('{{asset('images/panel_bg.png')}}');">
+                                            <div class="media no-margin">
+                                                <div class="media-left media-middle">
+                                                    <i class="icon-pulse2 icon-2x opacity-75"></i>
+                                                </div>
+
+                                                <div class="media-body text-right">
+                                                    <div class="row text-center">
+                                                        <span class="text-uppercase text-size-mini">Latex Liters</span>
+                                                    </div>
+                                                    <div class="row text-center">
+                                                        <span class="text-uppercase text-bold text-size-mini">EXPECTED</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <h3 class="no-margin text-center">652.25 (L)</h3>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-12">
+                                        <div class="panel panel-body bg-green-600" style="background-image: url('{{asset('images/panel_bg.png')}}');">
+                                            <div class="media no-margin">
+                                                <div class="media-left media-middle">
+                                                    <i class="icon-pulse2 icon-2x opacity-75"></i>
+                                                </div>
+
+                                                <div class="media-body text-right">
+                                                    <div class="row text-center">
+                                                        <span class="text-uppercase text-size-mini">Latex Liters</span>
+                                                    </div>
+                                                    <div class="row text-center">
+                                                        <span class="text-uppercase text-bold text-size-mini">ACTUAL</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <h3 class="no-margin text-center">652.25 (L)</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-8">
+                                <!-- Basic column chart -->
+                                <div class="panel panel-flat">
+                                    <div class="panel-heading">
+                                        <h5 class="panel-title">Latex Liters</h5>
+                                    </div>
+
+                                    <div class="panel-body">
+                                    </div>
+                                </div>
+                                <!-- /basic column chart -->
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="panel-body panel-body-accent pb-15">
+                    <div class="col-sm-12 col-md-6">
                         <div class="row">
-                            <div class="col-xs-4">
-                                <div class="text-uppercase text-size-mini opacity-75">Rainfall</div>
-                                <h5 class="text-semibold no-margin">55.0mm</h5>
-                            </div>
+                            <div class="col-sm-4">
+                                <div class="row ">
+                                    <div class="col-sm-6 col-md-12">
+                                        <div class="panel panel-body bg-green-800" style="background-image: url('{{asset('images/panel_bg.png')}}');">
+                                            <div class="media no-margin">
+                                                <div class="media-left media-middle">
+                                                    <i class="icon-pulse2 icon-2x opacity-75"></i>
+                                                </div>
 
-                            <div class="col-xs-4">
-                                <div class="text-uppercase text-size-mini opacity-75">Temp</div>
-                                <h5 class="text-semibold no-margin">23°C</h5>
+                                                <div class="media-body text-right">
+                                                    <div class="row text-center">
+                                                        <span class="text-uppercase text-size-mini">Latex Kilos</span>
+                                                    </div>
+                                                    <div class="row text-center">
+                                                        <span class="text-uppercase text-bold text-size-mini">EXPECTED</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <h3 class="no-margin text-center">652.25 (KG)</h3>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-12">
+                                        <div class="panel panel-body bg-green-600" style="background-image: url('{{asset('images/panel_bg.png')}}');">
+                                            <div class="media no-margin">
+                                                <div class="media-left media-middle">
+                                                    <i class="icon-pulse2 icon-2x opacity-75"></i>
+                                                </div>
+                                                <div class="media-body text-right">
+                                                    <div class="row text-center">
+                                                        <span class="text-uppercase text-size-mini">Latex Kilos</span>
+                                                    </div>
+                                                    <div class="row text-center">
+                                                        <span class="text-uppercase text-bold text-size-mini">ACTUAL</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <h3 class="no-margin text-center">652.25 (KG)</h3>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
+                            <div class="col-sm-8">
+                                <!-- Basic column chart -->
+                                <div class="panel panel-flat">
+                                    <div class="panel-heading">
+                                        <h5 class="panel-title">Latex Kilos</h5>
+                                    </div>
 
-                            <div class="col-xs-4">
-                                <div class="text-uppercase text-size-mini opacity-75">Humidity</div>
-                                <h5 class="text-semibold no-margin">93%</h5>
+                                    <div class="panel-body">
+                                    </div>
+                                </div>
+                                <!-- /basic column chart -->
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
