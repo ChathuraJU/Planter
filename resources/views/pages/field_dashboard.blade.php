@@ -1,6 +1,7 @@
 @extends('full')
 
 @section('main')
+
     {{--page header starts here--}}
     <div class="content-group">
         <div class="page-header page-header-inverse"
@@ -8,7 +9,7 @@
             <div class="page-header-content border-bottom border-bottom-success-300">
                 <div class="page-title">
                     <h5>
-                        <span class="text-semibold">Field Dashboard</span>
+                        <i class="icon-arrow-left52 position-left"></i><span class="text-semibold">Field Dashboard</span>
                     </h5>
                 </div>
 
@@ -20,6 +21,26 @@
                     <li><a href="#">Dashboard</a></li>
                     <li class="active">Field Dashboard</li>
                 </ul>
+                <ul class="breadcrumb-elements">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                            <i class="fa fa-tree position-left"></i>
+                            Select a Field
+                            <span class="caret"></span>
+                        </a>
+
+                        <ul class="dropdown-menu dropdown-menu-right">
+                            <li><a href="#"><i class="fa fa-stack"></i> Overall</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#"><i class="fa fa-pagelines"></i> 2005</a></li>
+                            <li><a href="#"><i class="fa fa-pagelines"></i> 2006</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#"><i class="fa fa-pagelines"></i> 2025</a></li>
+                            <li><a href="#"><i class="fa fa-pagelines"></i> 2027</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
 
             </div>
         </div>
@@ -28,7 +49,164 @@
 
     {{--page content starts here--}}
     <div class="content">
+       <div class="row">
+           <div class="col-sm-12 col-md-6">
+               <div class="row">
+                   <div class="col-sm-6 col-md-4">
+                       <div class="panel panel-body bg-teal-400" style="background-image: url('{{asset('images/panel_bg.png')}}');">
+                           <div class="media no-margin">
+                               <div class="media-left media-middle">
+                                   <i class="icon-pulse2 icon-2x opacity-75"></i>
+                               </div>
 
+                               <div class="media-body text-right">
+                                   <div class="row text-center">
+                                       <span class="text-uppercase text-size-mini">Latex Liters</span>
+                                   </div>
+                                   <div class="row text-center">
+                                       <span class="text-uppercase text-bold text-size-mini">Predicted</span>
+                                   </div>
+                               </div>
+                           </div>
+                           <hr>
+                           <h3 class="no-margin text-center">652.25 (L)</h3>
+                       </div>
+                   </div>
+                   <div class="col-sm-6 col-md-4">
+                       <div class="panel panel-body bg-blue-400" style="background-image: url('{{asset('images/panel_bg.png')}}');">
+                           <div class="media no-margin">
+                               <div class="media-left media-middle">
+                                   <i class="icon-pulse2 icon-2x opacity-75"></i>
+                               </div>
+
+                               <div class="media-body text-right">
+                                   <div class="row text-center">
+                                       <span class="text-uppercase text-size-mini">Latex Liters</span>
+                                   </div>
+                                   <div class="row text-center">
+                                       <span class="text-uppercase text-bold text-size-mini">Actual</span>
+                                   </div>
+                               </div>
+                           </div>
+                           <hr>
+                           <h3 class="no-margin text-center">652.25 (L)</h3>
+                       </div>
+                   </div>
+                   <div class="col-sm-6 col-md-4">
+                       <div class="panel panel-body bg-orange-400" style="background-image: url('{{asset('images/panel_bg.png')}}');">
+                           <div class="media no-margin">
+                               <div class="media-left media-middle">
+                                   <i class="icon-pulse2 icon-2x opacity-75"></i>
+                               </div>
+
+                               <div class="media-body text-right">
+                                   <div class="row text-center">
+                                       <span class="text-uppercase text-size-mini">Latex Liters</span>
+                                   </div>
+                                   <div class="row text-center">
+                                       <span class="text-uppercase text-bold text-size-mini">Expected</span>
+                                   </div>
+                               </div>
+                           </div>
+                           <hr>
+                           <h3 class="no-margin text-center">652.25 (L)</h3>
+                       </div>
+                   </div>
+               </div>
+               <div class="row">
+                   <!-- Basic column chart -->
+                   <div class="panel panel-flat">
+                       <div class="panel-heading">
+                           <h5 class="panel-title">Latex Liters</h5>
+
+                       </div>
+
+                       <div class="panel-body">
+
+                       </div>
+                   </div>
+                   <!-- /basic column chart -->
+               </div>
+           </div>
+           <div class="col-sm-12 col-md-6">
+               <div class="row">
+                   <div class="col-sm-6 col-md-4">
+                       <div class="panel panel-body bg-teal-400" style="background-image: url('{{asset('images/panel_bg.png')}}');">
+                           <div class="media no-margin">
+                               <div class="media-left media-middle">
+                                   <i class="icon-pulse2 icon-2x opacity-75"></i>
+                               </div>
+
+                               <div class="media-body text-right">
+                                   <div class="row text-center">
+                                       <span class="text-uppercase text-size-mini">Latex Kilos</span>
+                                   </div>
+                                   <div class="row text-center">
+                                       <span class="text-uppercase text-bold text-size-mini">Predicted</span>
+                                   </div>
+                               </div>
+                           </div>
+                           <hr>
+                           <h3 class="no-margin text-center">652.25 (KG)</h3>
+                       </div>
+                   </div>
+                   <div class="col-sm-6 col-md-4">
+                       <div class="panel panel-body bg-blue-400" style="background-image: url('{{asset('images/panel_bg.png')}}');">
+                           <div class="media no-margin">
+                               <div class="media-left media-middle">
+                                   <i class="icon-pulse2 icon-2x opacity-75"></i>
+                               </div>
+
+                               <div class="media-body text-right">
+                                   <div class="row text-center">
+                                       <span class="text-uppercase text-size-mini">Latex Kilos</span>
+                                   </div>
+                                   <div class="row text-center">
+                                       <span class="text-uppercase text-bold text-size-mini">Actual</span>
+                                   </div>
+                               </div>
+                           </div>
+                           <hr>
+                           <h3 class="no-margin text-center">652.25 (KG)</h3>
+                       </div>
+                   </div>
+                   <div class="col-sm-6 col-md-4">
+                       <div class="panel panel-body bg-orange-400" style="background-image: url('{{asset('images/panel_bg.png')}}');">
+                           <div class="media no-margin">
+                               <div class="media-left media-middle">
+                                   <i class="icon-pulse2 icon-2x opacity-75"></i>
+                               </div>
+
+                               <div class="media-body text-right">
+                                   <div class="row text-center">
+                                       <span class="text-uppercase text-size-mini">Latex Kilos</span>
+                                   </div>
+                                   <div class="row text-center">
+                                       <span class="text-uppercase text-bold text-size-mini">Expected</span>
+                                   </div>
+                               </div>
+                           </div>
+                           <hr>
+                           <h3 class="no-margin text-center">652.25 (KG)</h3>
+                       </div>
+                   </div>
+               </div>
+               <div class="row">
+                   <!-- Basic column chart -->
+                   <div class="panel panel-flat">
+                       <div class="panel-heading">
+                           <h5 class="panel-title">Latex Kilos</h5>
+
+                       </div>
+
+                       <div class="panel-body">
+
+                       </div>
+                   </div>
+                   <!-- /basic column chart -->
+               </div>
+           </div>
+       </div>
 
     </div>
 
