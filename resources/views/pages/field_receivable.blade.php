@@ -187,28 +187,29 @@
                             </fieldset>
                             <fieldset>
                                 <legend class="text-semibold"><i class="icon-truck position-left"></i>Weather</legend>
-                                <div class="panel text-center bg-success has-bg-image">
+                                <div class="panel text-center bg-brown-700" style="background-image: url('{{asset('images/panel_bg.png')}}');">
                                     <div class="panel-body">
-                                        <h6 class="text-semibold no-margin-bottom mt-5">Tickets statistics</h6>
-                                        <div class="opacity-75 content-group">893 tickets in total</div>
-                                        <div class="svg-center position-relative mb-5" id="progress_percentage_four"><svg width="92" height="92"><g transform="translate(46,46)"><path class="d3-progress-background" d="M0,46A46,46 0 1,1 0,-46A46,46 0 1,1 0,46M0,43A43,43 0 1,0 0,-43A43,43 0 1,0 0,43Z" style="fill: rgb(229, 57, 53);"></path><path class="d3-progress-foreground" filter="url(#blur)" d="M3.3306690738754696e-15,-44.47471191587417A1.5,1.5 0 0,1 1.5505617977528126,-45.97385950854408A46,46 0 0,1 20.97770759318713,40.938194685827796A1.5,1.5 0 0,1 18.93641133210156,40.2419224921158L18.93641133210156,40.2419224921158A1.5,1.5 0 0,1 19.609596228414052,38.26831242370859A43,43 0 0,0 1.449438202247194,-42.97556432320425A1.5,1.5 0 0,1 3.3306690738754696e-15,-44.47471191587417Z" style="fill: rgb(255, 255, 255); stroke: rgb(255, 255, 255);"></path><path class="d3-progress-front" d="M3.3306690738754696e-15,-44.47471191587417A1.5,1.5 0 0,1 1.5505617977528126,-45.97385950854408A46,46 0 0,1 20.97770759318713,40.938194685827796A1.5,1.5 0 0,1 18.93641133210156,40.2419224921158L18.93641133210156,40.2419224921158A1.5,1.5 0 0,1 19.609596228414052,38.26831242370859A43,43 0 0,0 1.449438202247194,-42.97556432320425A1.5,1.5 0 0,1 3.3306690738754696e-15,-44.47471191587417Z" style="fill: rgb(255, 255, 255); fill-opacity: 1;"></path><text dx="0" dy="8" style="font-size: 22px; line-height: 1; fill: rgb(255, 255, 255); text-anchor: middle;">43%</text></g></svg></div>
+                                        <h6 class="text-semibold no-margin-bottom mt-5">20th Jan 2021</h6>
+                                        <div class="opacity-75 content-group">KANDY</div>
+                                        <div class="opacity-75 content-group">01.13 PM</div>
+                                        <i class="icon-cloud" style="font-size: 54px"></i>
                                     </div>
 
                                     <div class="panel-body panel-body-accent pb-15">
                                         <div class="row">
                                             <div class="col-xs-4">
-                                                <div class="text-uppercase text-size-mini text-muted">Raised</div>
-                                                <h5 class="text-semibold no-margin">5,328</h5>
+                                                <div class="text-uppercase text-size-mini opacity-75">Rainfall</div>
+                                                <h5 class="text-semibold no-margin">55.0mm</h5>
                                             </div>
 
                                             <div class="col-xs-4">
-                                                <div class="text-uppercase text-size-mini text-muted">Pending</div>
-                                                <h5 class="text-semibold no-margin">2,348</h5>
+                                                <div class="text-uppercase text-size-mini opacity-75">Temp</div>
+                                                <h5 class="text-semibold no-margin">23°C</h5>
                                             </div>
 
                                             <div class="col-xs-4">
-                                                <div class="text-uppercase text-size-mini text-muted">Closed</div>
-                                                <h5 class="text-semibold no-margin">4,357</h5>
+                                                <div class="text-uppercase text-size-mini opacity-75">Humidity</div>
+                                                <h5 class="text-semibold no-margin">93%</h5>
                                             </div>
                                         </div>
                                     </div>

@@ -113,20 +113,18 @@
                        </div>
                    </div>
                </div>
-               <div class="row">
-                   <!-- Basic column chart -->
-                   <div class="panel panel-flat">
-                       <div class="panel-heading">
-                           <h5 class="panel-title">Latex Liters</h5>
+               <!-- Basic column chart -->
+               <div class="panel panel-flat">
+                   <div class="panel-heading">
+                       <h5 class="panel-title">Latex Liters</h5>
 
-                       </div>
-
-                       <div class="panel-body">
-
-                       </div>
                    </div>
-                   <!-- /basic column chart -->
+
+                   <div class="panel-body">
+
+                   </div>
                </div>
+               <!-- /basic column chart -->
            </div>
            <div class="col-sm-12 col-md-6">
                <div class="row">
@@ -191,23 +189,81 @@
                        </div>
                    </div>
                </div>
-               <div class="row">
-                   <!-- Basic column chart -->
-                   <div class="panel panel-flat">
-                       <div class="panel-heading">
-                           <h5 class="panel-title">Latex Kilos</h5>
+               <!-- Basic column chart -->
+               <div class="panel panel-flat">
+                   <div class="panel-heading">
+                       <h5 class="panel-title">Latex Kilos</h5>
 
-                       </div>
-
-                       <div class="panel-body">
-
-                       </div>
                    </div>
-                   <!-- /basic column chart -->
+
+                   <div class="panel-body">
+
+                   </div>
                </div>
+               <!-- /basic column chart -->
            </div>
        </div>
 
+        <div class="row">
+            <div class="col-sm-12 col-md-3">
+                <div class="panel text-center bg-brown-700" style="background-image: url('{{asset('images/panel_bg.png')}}');">
+                    <div class="panel-body">
+                        <h6 class="text-semibold no-margin-bottom mt-5">20th Jan 2021</h6>
+                        <div class="opacity-75 content-group">KANDY</div>
+                        <div class="opacity-75 content-group">01.13 PM</div>
+                        <i class="icon-cloud" style="font-size: 54px"></i>
+                    </div>
+
+                    <div class="panel-body panel-body-accent pb-15">
+                        <div class="row">
+                            <div class="col-xs-4">
+                                <div class="text-uppercase text-size-mini opacity-75">Rainfall</div>
+                                <h5 class="text-semibold no-margin">55.0mm</h5>
+                            </div>
+
+                            <div class="col-xs-4">
+                                <div class="text-uppercase text-size-mini opacity-75">Temp</div>
+                                <h5 class="text-semibold no-margin">23°C</h5>
+                            </div>
+
+                            <div class="col-xs-4">
+                                <div class="text-uppercase text-size-mini opacity-75">Humidity</div>
+                                <h5 class="text-semibold no-margin">93%</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-none md-block col-md-9">
+                <div class="panel text-center bg-brown-700" style="background-image: url('{{asset('images/panel_bg.png')}}');">
+                    <div class="panel-body">
+                        <h6 class="text-semibold no-margin-bottom mt-5">20th Jan 2021</h6>
+                        <div class="opacity-75 content-group">KANDY</div>
+                        <div class="opacity-75 content-group">01.13 PM</div>
+                        <i class="icon-cloud" style="font-size: 54px"></i>
+                    </div>
+
+                    <div class="panel-body panel-body-accent pb-15">
+                        <div class="row">
+                            <div class="col-xs-4">
+                                <div class="text-uppercase text-size-mini opacity-75">Rainfall</div>
+                                <h5 class="text-semibold no-margin">55.0mm</h5>
+                            </div>
+
+                            <div class="col-xs-4">
+                                <div class="text-uppercase text-size-mini opacity-75">Temp</div>
+                                <h5 class="text-semibold no-margin">23°C</h5>
+                            </div>
+
+                            <div class="col-xs-4">
+                                <div class="text-uppercase text-size-mini opacity-75">Humidity</div>
+                                <h5 class="text-semibold no-margin">93%</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
 
