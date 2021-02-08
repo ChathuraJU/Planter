@@ -115,11 +115,14 @@
                </div>
                <!-- Basic column chart -->
                <div class="panel panel-flat">
-                   <div class="panel-heading">
-                       <h5 class="panel-title">Latex Liters</h5>
-                   </div>
+                   {{--<div class="panel-heading">--}}
+                       {{--<h5 class="panel-title">Latex Liters</h5>--}}
+                   {{--</div>--}}
 
                    <div class="panel-body">
+                       <div class="container-fluid">
+                           <div id="latex-liters" style="width:100%; height:300px;"></div>
+                       </div>
                    </div>
                </div>
                <!-- /basic column chart -->
@@ -189,13 +192,15 @@
                </div>
                <!-- Basic column chart -->
                <div class="panel panel-flat">
-                   <div class="panel-heading">
-                       <h5 class="panel-title">Latex Kilos</h5>
+                   {{--<div class="panel-heading">--}}
+                       {{--<h5 class="panel-title">Latex Kilos</h5>--}}
 
-                   </div>
+                   {{--</div>--}}
 
                    <div class="panel-body">
-
+                       <div class="container-fluid">
+                           <div id="latex-kilos" style="width:100%; height:300px;"></div>
+                       </div>
                    </div>
                </div>
                <!-- /basic column chart -->
@@ -453,10 +458,9 @@
                 </div>
                 <div class="panel-body">
                     <div class="col-sm-12 col-md-6">
-                        <div class="row">
-                            <div class="col-sm-4">
+
                                 <div class="row ">
-                                    <div class="col-sm-6 col-md-12">
+                                    <div class="col-sm-6 col-md-6">
                                         <div class="panel panel-body bg-green-800" style="background-image: url('{{asset('images/panel_bg.png')}}');">
                                             <div class="media no-margin">
                                                 <div class="media-left media-middle">
@@ -476,7 +480,7 @@
                                             <h3 class="no-margin text-center">652.25 (L)</h3>
                                         </div>
                                     </div>
-                                    <div class="col-sm-6 col-md-12">
+                                    <div class="col-sm-6 col-md-6">
                                         <div class="panel panel-body bg-green-600" style="background-image: url('{{asset('images/panel_bg.png')}}');">
                                             <div class="media no-margin">
                                                 <div class="media-left media-middle">
@@ -497,8 +501,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-sm-8">
+
                                 <!-- Basic column chart -->
                                 <div class="panel panel-flat">
                                     <div class="panel-heading">
@@ -506,18 +509,17 @@
                                     </div>
 
                                     <div class="panel-body">
+
                                     </div>
                                 </div>
                                 <!-- /basic column chart -->
-                            </div>
-                        </div>
+
                     </div>
 
                     <div class="col-sm-12 col-md-6">
-                        <div class="row">
-                            <div class="col-sm-4">
+
                                 <div class="row ">
-                                    <div class="col-sm-6 col-md-12">
+                                    <div class="col-sm-6 col-md-6">
                                         <div class="panel panel-body bg-green-800" style="background-image: url('{{asset('images/panel_bg.png')}}');">
                                             <div class="media no-margin">
                                                 <div class="media-left media-middle">
@@ -537,7 +539,7 @@
                                             <h3 class="no-margin text-center">652.25 (KG)</h3>
                                         </div>
                                     </div>
-                                    <div class="col-sm-6 col-md-12">
+                                    <div class="col-sm-6 col-md-6">
                                         <div class="panel panel-body bg-green-600" style="background-image: url('{{asset('images/panel_bg.png')}}');">
                                             <div class="media no-margin">
                                                 <div class="media-left media-middle">
@@ -557,8 +559,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-sm-8">
+
                                 <!-- Basic column chart -->
                                 <div class="panel panel-flat">
                                     <div class="panel-heading">
@@ -569,8 +570,7 @@
                                     </div>
                                 </div>
                                 <!-- /basic column chart -->
-                            </div>
-                        </div>
+
                     </div>
                 </div>
 
@@ -581,6 +581,102 @@
 
     {{--page content ends--}}
 
+    <script type="text/javascript">
+        {{-- chart >> latex liters--}}
 
+        // based on prepared DOM, initialize echarts instance
+        var myChart = echarts.init(document.getElementById('latex-liters'));
+
+        // specify chart configuration item and data
+        var option = {
+            title: {
+                text: 'Chart Name'
+            },
+            tooltip: {},
+            xAxis: {
+                data: ["Predicted","Actual","Expected"]
+            },
+            yAxis: {},
+            series: [{
+                name: 'Latex Liters',
+                type: 'bar',
+                data: [
+                    {
+                        value: 200,
+                        itemStyle: {
+                            color: '#32aa9f'
+                        }
+                    },
+                    {
+                        value: 188,
+                        itemStyle: {
+                            color: '#33b7f4'
+                        }
+                    },
+                    {
+                        value: 220,
+                        itemStyle: {
+                            color: '#fca930'
+                        }
+                    }
+                ],
+                showBackground: true,
+                backgroundStyle: {
+                    color: 'rgba(180, 180, 180, 0.2)'
+                }
+            }]
+        };
+
+        // use configuration item and data specified to show chart
+        myChart.setOption(option);
+
+        {{-- chart >> latex Killos--}}
+
+        // based on prepared DOM, initialize echarts instance
+        var myChart = echarts.init(document.getElementById('latex-kilos'));
+
+        // specify chart configuration item and data
+        var option = {
+            title: {
+                text: 'Chart Name'
+            },
+            tooltip: {},
+            xAxis: {
+                data: ["Predicted","Actual","Expected"]
+            },
+            yAxis: {},
+            series: [{
+                name: 'Latex Liters',
+                type: 'bar',
+                data: [
+                    {
+                        value: 200,
+                        itemStyle: {
+                            color: '#32aa9f'
+                        }
+                    },
+                    {
+                        value: 188,
+                        itemStyle: {
+                            color: '#33b7f4'
+                        }
+                    },
+                    {
+                        value: 220,
+                        itemStyle: {
+                            color: '#fca930'
+                        }
+                    }
+                ],
+                showBackground: true,
+                backgroundStyle: {
+                    color: 'rgba(180, 180, 180, 0.2)'
+                }
+            }]
+        };
+
+        // use configuration item and data specified to show chart
+        myChart.setOption(option);
+    </script>
 @endsection
 

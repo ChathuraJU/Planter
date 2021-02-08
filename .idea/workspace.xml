@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b635a8bc-edd1-459c-8275-20ba8bfd7f45" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/create_disease.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/create_disease.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/pages/field_dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/field_dashboard.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/labour_chart.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/labour_chart.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/search_disease.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/search_disease.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -21,63 +21,21 @@
       <file leaf-file-name="field_dashboard.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/pages/field_dashboard.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="71">
-              <caret line="446" column="43" selection-start-line="446" selection-start-column="43" selection-end-line="446" selection-end-column="43" />
+            <state relative-caret-position="118">
+              <caret line="201" column="29" selection-start-line="201" selection-start-column="29" selection-end-line="202" selection-end-column="29" />
               <folding>
-                <element signature="e#2230#3372#0#HTML" />
-                <element signature="e#2327#2393#0#HTML" expanded="true" />
-                <element signature="e#3392#4531#0#HTML" />
-                <element signature="e#3489#3555#0#HTML" expanded="true" />
-                <element signature="e#4551#5694#0#HTML" />
-                <element signature="e#4650#4716#0#HTML" expanded="true" />
-                <element signature="e#4499#6842#0#HTML" />
-                <element signature="e#6573#6639#0#HTML" expanded="true" />
-                <element signature="e#7638#8780#0#HTML" />
-                <element signature="e#7735#7801#0#HTML" expanded="true" />
-                <element signature="e#8800#9944#0#HTML" />
-                <element signature="e#8899#8965#0#HTML" expanded="true" />
-                <element signature="e#10090#24549#0#HTML" />
-                <element signature="e#10212#10278#0#HTML" expanded="true" />
-                <element signature="e#10613#10636#0#HTML" expanded="true" />
-                <element signature="e#12009#12075#0#HTML" expanded="true" />
-                <element signature="e#14035#16128#0#HTML" />
-                <element signature="e#14137#14203#0#HTML" expanded="true" />
-                <element signature="e#16153#18246#0#HTML" />
-                <element signature="e#16255#16321#0#HTML" expanded="true" />
-                <element signature="e#18373#18439#0#HTML" expanded="true" />
-                <element signature="e#18271#20364#0#HTML" />
-                <element signature="e#18373#18439#0#HTML" expanded="true" />
-                <element signature="e#16153#18246#0#HTML" />
-                <element signature="e#16255#16321#0#HTML" expanded="true" />
-                <element signature="e#25144#28725#0#HTML" />
-                <element signature="e#25288#26665#0#HTML" />
-                <element signature="e#25400#25466#0#HTML" expanded="true" />
-                <element signature="e#26698#28073#0#HTML" />
-                <element signature="e#26810#26876#0#HTML" expanded="true" />
-                <element signature="e#29047#32626#0#HTML" />
-                <element signature="e#29191#30568#0#HTML" />
-                <element signature="e#29303#29369#0#HTML" expanded="true" />
-                <element signature="e#30601#31975#0#HTML" />
-                <element signature="e#30713#30779#0#HTML" expanded="true" />
+                <element signature="e#6102#6134#0#HTML" expanded="true" />
+                <element signature="e#6158#9681#0#HTML" />
+                <element signature="e#10228#10260#0#HTML" expanded="true" />
+                <element signature="e#10088#24531#0#HTML" />
+                <element signature="e#11686#24516#0#HTML" />
+                <element signature="e#25298#26747#0#HTML" />
+                <element signature="e#26784#28231#0#HTML" />
+                <element signature="e#29201#30650#0#HTML" />
+                <element signature="e#30687#32133#0#HTML" />
+                <element signature="e#33292#33904#0#HTML" />
+                <element signature="e#34882#35963#0#HTML" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="core.min.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/assets/css/core.min.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="321">
-              <caret line="6124" selection-start-line="6124" selection-end-line="6124" selection-end-column="52" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="full.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/full.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="42" column="73" selection-start-line="42" selection-start-column="67" selection-end-line="42" selection-end-column="73" />
             </state>
           </provider>
         </entry>
@@ -146,7 +104,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/public/global_assets/js/demo_pages/components_thumbnails.js" />
         <option value="$PROJECT_DIR$/resources/views/pages/all_field_data_logs.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/pages/create_field.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/pages/create_report.blade.php" />
@@ -154,7 +111,6 @@
         <option value="$PROJECT_DIR$/resources/views/pages/registered_users.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/pages/register_requests.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/pages/register_labour.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/pages/create_disease.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/pages/all_reports.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2021_02_04_203758_create_user_types_table.php" />
@@ -196,6 +152,8 @@
         <option value="$PROJECT_DIR$/resources/views/pages/field_receivable.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/pages/labour_chart.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/pages/search_disease.blade.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/resources/views/pages/create_disease.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/pages/field_dashboard.blade.php" />
       </list>
     </option>
@@ -343,18 +301,20 @@
             <path>
               <item name="Planter" type="b2602c69:ProjectViewProjectNode" />
               <item name="Planter" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Planter" type="b2602c69:ProjectViewProjectNode" />
               <item name="Planter" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Planter" type="b2602c69:ProjectViewProjectNode" />
               <item name="Planter" type="462c0819:PsiDirectoryNode" />
-              <item name="storage" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -363,7 +323,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="dis&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/pages/search_disease.blade.php&#10;labo&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/pages/labour_chart.blade.php&#10;fiel&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/pages/field_receivable.blade.php&#10;fieldse&#9;FILE&#9;file://D:/Laravel Projects/Planter/database/seeds/FieldsSeeder.php&#10;fields&#9;FILE&#9;file://D:/Laravel Projects/Planter/database/seeds/FieldsSeeder.php&#10;full&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/full.blade.php&#10;lab&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/pages/labour_chart.blade.php&#10;LABOUR&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/pages/labour_chart.blade.php&#10;cju&#9;FILE&#9;file://D:/Laravel Projects/Planter/public/css/cjustyles.css&#10;we&#9;FILE&#9;file://D:/Laravel Projects/Planter/routes/web.php&#10;field&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/pages/field_receivable.blade.php&#10;cj&#9;FILE&#9;file://D:/Laravel Projects/Planter/public/css/cjustyles.css&#10;tas&#9;FILE&#9;file://D:/Laravel Projects/Planter/database/seeds/TasksSeeder.php&#10;home&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/pages/homepage.blade.php&#10;diseas&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/pages/search_disease.blade.php&#10;rec&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/pages/field_receivable.blade.php&#10;nurser&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/pages/nursery_create.blade.php&#10;app.p&#9;FILE&#9;file://D:/Laravel Projects/Planter/config/app.php&#10;log&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/auth/login.blade.php&#10;fu&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/full.blade.php&#10;cre&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/pages/create_disease.blade.php&#10;nurse&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/pages/nursery_create.blade.php&#10;fie&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/pages/field_data.blade.php&#10;sty&#9;FILE&#9;file://D:/Laravel Projects/Planter/public/css/cjustyles.css&#10;regis&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/auth/register.blade.php&#10;re&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/pages/register_labour.blade.php&#10;reg&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/auth/register.blade.php&#10;create&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/pages/create_field.blade.php&#10;seed&#9;null&#9;null&#10;f&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/full.blade.php&#10;msp&#9;FILE&#9;file://D:/Laravel Projects/Planter/public/mspstyles.css&#10;homep&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/pages/homepage.blade.php&#10;ema&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/auth/passwords/email.blade.php&#10;cr&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/pages/create_field.blade.php&#10;service&#9;null&#9;null&#10;control&#9;FILE&#9;file://D:/Laravel Projects/Planter/app/Http/Controllers/Auth/ResetPasswordController.php&#10;en&#9;FILE&#9;file://D:/Laravel Projects/Planter/.env&#10;hom&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/home.blade.php&#10;env&#9;FILE&#9;file://D:/Laravel Projects/Planter/.env&#10;app&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/layouts/app.blade.php&#10;lo&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/auth/login.blade.php&#10;contr&#9;null&#9;null&#10;s&#9;FILE&#9;file://D:/Laravel Projects/Planter/public/css/cjustyles.css&#10;inde&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/api/index.blade.php&#10;cjus&#9;FILE&#9;file://D:/Laravel Projects/Planter/public/css/cjustyles.css&#10;web&#9;FILE&#9;file://D:/Laravel Projects/Planter/routes/web.php&#10;web.php&#9;FILE&#9;file://D:/Laravel Projects/Planter/routes/web.php" />
+    <property name="SearchEverywhereHistoryKey" value="web&#9;FILE&#9;file://D:/Laravel Projects/Planter/routes/web.php&#10;dis&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/pages/search_disease.blade.php&#10;labo&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/pages/labour_chart.blade.php&#10;fiel&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/pages/field_receivable.blade.php&#10;fieldse&#9;FILE&#9;file://D:/Laravel Projects/Planter/database/seeds/FieldsSeeder.php&#10;fields&#9;FILE&#9;file://D:/Laravel Projects/Planter/database/seeds/FieldsSeeder.php&#10;full&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/full.blade.php&#10;lab&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/pages/labour_chart.blade.php&#10;LABOUR&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/pages/labour_chart.blade.php&#10;cju&#9;FILE&#9;file://D:/Laravel Projects/Planter/public/css/cjustyles.css&#10;we&#9;FILE&#9;file://D:/Laravel Projects/Planter/routes/web.php&#10;field&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/pages/field_receivable.blade.php&#10;cj&#9;FILE&#9;file://D:/Laravel Projects/Planter/public/css/cjustyles.css&#10;tas&#9;FILE&#9;file://D:/Laravel Projects/Planter/database/seeds/TasksSeeder.php&#10;home&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/pages/homepage.blade.php&#10;diseas&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/pages/search_disease.blade.php&#10;rec&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/pages/field_receivable.blade.php&#10;nurser&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/pages/nursery_create.blade.php&#10;app.p&#9;FILE&#9;file://D:/Laravel Projects/Planter/config/app.php&#10;log&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/auth/login.blade.php&#10;fu&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/full.blade.php&#10;cre&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/pages/create_disease.blade.php&#10;nurse&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/pages/nursery_create.blade.php&#10;fie&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/pages/field_data.blade.php&#10;sty&#9;FILE&#9;file://D:/Laravel Projects/Planter/public/css/cjustyles.css&#10;regis&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/auth/register.blade.php&#10;re&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/pages/register_labour.blade.php&#10;reg&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/auth/register.blade.php&#10;create&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/pages/create_field.blade.php&#10;seed&#9;null&#9;null&#10;f&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/full.blade.php&#10;msp&#9;FILE&#9;file://D:/Laravel Projects/Planter/public/mspstyles.css&#10;homep&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/pages/homepage.blade.php&#10;ema&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/auth/passwords/email.blade.php&#10;cr&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/pages/create_field.blade.php&#10;service&#9;null&#9;null&#10;control&#9;FILE&#9;file://D:/Laravel Projects/Planter/app/Http/Controllers/Auth/ResetPasswordController.php&#10;en&#9;FILE&#9;file://D:/Laravel Projects/Planter/.env&#10;hom&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/home.blade.php&#10;env&#9;FILE&#9;file://D:/Laravel Projects/Planter/.env&#10;app&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/layouts/app.blade.php&#10;lo&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/auth/login.blade.php&#10;contr&#9;null&#9;null&#10;s&#9;FILE&#9;file://D:/Laravel Projects/Planter/public/css/cjustyles.css&#10;inde&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/api/index.blade.php&#10;cjus&#9;FILE&#9;file://D:/Laravel Projects/Planter/public/css/cjustyles.css&#10;web.php&#9;FILE&#9;file://D:/Laravel Projects/Planter/routes/web.php" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="D:/React Projects/Todo-app" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
@@ -430,12 +390,13 @@
       <workItem from="1612509187894" duration="6842000" />
       <workItem from="1612523250942" duration="11139000" />
       <workItem from="1612635768729" duration="8380000" />
-      <workItem from="1612691959069" duration="25491000" />
+      <workItem from="1612691959069" duration="25523000" />
+      <workItem from="1612808022834" duration="5419000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="215028000" />
+    <option name="totallyTimeSpent" value="220479000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -451,13 +412,13 @@
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32954547" />
-      <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50075644" side_tool="true" weight="0.32467532" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32954547" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="npm" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="13" weight="0.32467532" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21406959" />
+      <window_info anchor="bottom" id="Terminal" order="13" sideWeight="0.49924356" weight="0.32467532" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21709532" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="4" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -487,13 +448,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/pages/create_disease.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="10" column="71" selection-start-line="10" selection-start-column="71" selection-end-line="10" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/auth/login.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="20">
@@ -694,13 +648,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/pages/nursery_dashboards.blade.php" />
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="26" column="12" lean-forward="true" selection-start-line="26" selection-start-column="12" selection-end-line="26" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/css/cjustyles.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="368">
@@ -726,14 +673,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
           <caret line="89" column="59" selection-start-line="89" selection-start-column="59" selection-end-line="89" selection-end-column="59" />
-          <folding>
-            <element signature="e#169#200#0#HTML" expanded="true" />
-            <element signature="e#979#2710#0#HTML" />
-            <element signature="e#3147#3187#0#HTML" expanded="true" />
-            <element signature="e#3759#3800#0#HTML" expanded="true" />
-            <element signature="e#6428#7747#0#HTML" />
-            <element signature="e#8323#16490#0#HTML" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -758,28 +697,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/css/core.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="6124" selection-start-line="6124" selection-end-line="6124" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/full.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="42" column="73" selection-start-line="42" selection-start-column="67" selection-end-line="42" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/pages/field_receivable.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="440">
           <caret line="215" column="38" selection-start-line="215" selection-start-column="38" selection-end-line="215" selection-end-column="38" />
-          <folding>
-            <element signature="e#11729#11795#0#HTML" expanded="true" />
-            <element signature="e#12130#12153#0#HTML" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -797,46 +718,53 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/full.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="42" column="73" selection-start-line="42" selection-start-column="67" selection-end-line="42" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/css/core.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="6124" selection-start-line="6124" selection-end-line="6124" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="26" column="12" lean-forward="true" selection-start-line="26" selection-start-column="12" selection-end-line="26" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/pages/create_disease.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="231" lean-forward="true" selection-start-line="231" selection-end-line="231" />
+          <folding>
+            <element signature="e#4711#11605#0#HTML" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/pages/field_dashboard.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="71">
-          <caret line="446" column="43" selection-start-line="446" selection-start-column="43" selection-end-line="446" selection-end-column="43" />
+        <state relative-caret-position="118">
+          <caret line="201" column="29" selection-start-line="201" selection-start-column="29" selection-end-line="202" selection-end-column="29" />
           <folding>
-            <element signature="e#2230#3372#0#HTML" />
-            <element signature="e#2327#2393#0#HTML" expanded="true" />
-            <element signature="e#3392#4531#0#HTML" />
-            <element signature="e#3489#3555#0#HTML" expanded="true" />
-            <element signature="e#4551#5694#0#HTML" />
-            <element signature="e#4650#4716#0#HTML" expanded="true" />
-            <element signature="e#4499#6842#0#HTML" />
-            <element signature="e#6573#6639#0#HTML" expanded="true" />
-            <element signature="e#7638#8780#0#HTML" />
-            <element signature="e#7735#7801#0#HTML" expanded="true" />
-            <element signature="e#8800#9944#0#HTML" />
-            <element signature="e#8899#8965#0#HTML" expanded="true" />
-            <element signature="e#10090#24549#0#HTML" />
-            <element signature="e#10212#10278#0#HTML" expanded="true" />
-            <element signature="e#10613#10636#0#HTML" expanded="true" />
-            <element signature="e#12009#12075#0#HTML" expanded="true" />
-            <element signature="e#14035#16128#0#HTML" />
-            <element signature="e#14137#14203#0#HTML" expanded="true" />
-            <element signature="e#16153#18246#0#HTML" />
-            <element signature="e#16255#16321#0#HTML" expanded="true" />
-            <element signature="e#18373#18439#0#HTML" expanded="true" />
-            <element signature="e#18271#20364#0#HTML" />
-            <element signature="e#18373#18439#0#HTML" expanded="true" />
-            <element signature="e#16153#18246#0#HTML" />
-            <element signature="e#16255#16321#0#HTML" expanded="true" />
-            <element signature="e#25144#28725#0#HTML" />
-            <element signature="e#25288#26665#0#HTML" />
-            <element signature="e#25400#25466#0#HTML" expanded="true" />
-            <element signature="e#26698#28073#0#HTML" />
-            <element signature="e#26810#26876#0#HTML" expanded="true" />
-            <element signature="e#29047#32626#0#HTML" />
-            <element signature="e#29191#30568#0#HTML" />
-            <element signature="e#29303#29369#0#HTML" expanded="true" />
-            <element signature="e#30601#31975#0#HTML" />
-            <element signature="e#30713#30779#0#HTML" expanded="true" />
+            <element signature="e#6102#6134#0#HTML" expanded="true" />
+            <element signature="e#6158#9681#0#HTML" />
+            <element signature="e#10228#10260#0#HTML" expanded="true" />
+            <element signature="e#10088#24531#0#HTML" />
+            <element signature="e#11686#24516#0#HTML" />
+            <element signature="e#25298#26747#0#HTML" />
+            <element signature="e#26784#28231#0#HTML" />
+            <element signature="e#29201#30650#0#HTML" />
+            <element signature="e#30687#32133#0#HTML" />
+            <element signature="e#33292#33904#0#HTML" />
+            <element signature="e#34882#35963#0#HTML" />
           </folding>
         </state>
       </provider>
