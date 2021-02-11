@@ -50,17 +50,17 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'fname' => ['bail','required', 'string', 'max:255'],
-            'lname' => ['bail','required', 'string', 'max:255'],
-            'gender' => ['bail','required', 'string', 'max:255'],
-            'dob' => ['bail','required', 'int'],
-            'nic' => ['bail','required', 'string', 'max:255'],
-            'contact' => ['bail','required', 'numeric', 'max:12'],
-            'address' => ['bail', 'required', 'string', 'max:12'],
-            'designation' => ['bail','required', 'string', 'max:12'],
-            'estate' => ['bail','required', 'string', 'max:12'],
-            'email' => ['bail','required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['bail','required', 'string', 'min:8', 'confirmed'],
+//            'fname' => ['bail','required', 'string', 'max:255'],
+//            'lname' => ['bail','required', 'string', 'max:255'],
+//            'gender' => ['bail','required', 'string', 'max:255'],
+//            'dob' => ['bail','required'],
+//            'nic' => ['bail','required', 'string', 'max:255'],
+//            'contact' => ['bail','required', 'numeric', 'max:12'],
+//            'address' => ['bail', 'required', 'string', 'max:12'],
+//            'designation' => ['bail','required', 'string', 'max:12'],
+//            'estate' => ['bail','required', 'string', 'max:12'],
+//            'email' => ['bail','required', 'string', 'email', 'max:255', 'unique:users'],
+//            'password' => ['bail','required', 'string', 'min:8', 'confirmed'],
         ]);
     }
 

@@ -35,7 +35,7 @@ function inputTypeahead(inputId, url, csrf) {
 };
 
 function formDataAjax(url, successMessage, errorMessage, formId) {
-    if (checkValidity()) {
+    // if (checkValidity()) {
         f = new FormData($("#" + formId)[0]);
         $.ajax({
             method: "POST",
@@ -57,7 +57,7 @@ function formDataAjax(url, successMessage, errorMessage, formId) {
         }).fail(function () {
             messageErrorAlert(errorMessage);
         });
-    }
+    // }
 };
 
 function messageSuccessAlert(message) {
@@ -181,7 +181,7 @@ function datatb(obj){
 };
 
 function tableRowClick(token, url, doneFunction) {
-    $('.datatable-button-html5-basic').on('click', 'tbody tr', function () {
+    $('.datatable-button-init-basic').on('click', 'tbody tr', function () {
         var trid = $(this).attr('id');
         var options = {_token: token, "myData": trid};
         swal({

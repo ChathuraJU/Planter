@@ -32,66 +32,78 @@
         {{--create field form starts here--}}
         <div class="row">
             <div class="col-sm-12">
-                    <form action="#">
-                        <div class="panel panel-white">
-                            <div class="panel-heading">
-                                <h5 class="panel-title">Create Field Form<a class="heading-elements-toggle"><i class="icon-more"></i></a></h5>
-                                <div class="heading-elements">
-                                    <ul class="icons-list">
-                                        <li><a data-action="collapse"></a></li>
-                                        <li><a data-action="reload"></a></li>
-                                    </ul>
-                                </div>
+                <form action="" method="post" enctype="multipart/form-data" id="frm_field">
+                    @csrf
+                    <input type="hidden" id="txtId" name="txtId" value=""/>
+                    <div class="panel panel-white">
+                        <div class="panel-heading">
+                            <h5 class="panel-title">Create Field Form<a class="heading-elements-toggle"><i
+                                        class="icon-more"></i></a></h5>
+                            <div class="heading-elements">
+                                <ul class="icons-list">
+                                    <li><a data-action="collapse"></a></li>
+                                    <li><a data-action="reload"></a></li>
+                                </ul>
                             </div>
+                        </div>
 
-                            <div class="panel-body">
-                                <div class="row">
-                                    <div class="col-sm-4">
-                                        <div class="form-group">
-                                            <label class="control-label text-semibold">Division</label>
-                                            <select data-placeholder="Select a Division..." class="select select2-hidden-accessible" tabindex="-1" aria-hidden="true">
-                                                <option></option>
-                                                <optgroup label="Divisions">
-                                                    <option value="0">Upper Division</option>
-                                                    <option value="1">Lower Division</option>
-                                                </optgroup>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <div class="form-group">
-                                            <label class="control-label text-semibold">Field Name:</label>
-                                            <input type="text" name="field_name" id="field_name" placeholder="Enter Field Name " class="form-control mspborder required">
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <div class="form-group">
-                                            <label class="control-label text-semibold">Number of Hectares: </label>
-                                            <div class="input-group bootstrap-touchspin mspborder">
-                                                <span class="input-group-addon bootstrap-touchspin-prefix" style="display: none;"></span>
-                                                <input type="text" value="" class="touchspin-empty form-control " style="display: block;">
-                                                <span class="input-group-addon bootstrap-touchspin-postfix" style="display: none;"></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12">
-                                        <div class="form-group">
-                                            <label class="col-lg-2 control-label text-semibold">Upload Image:</label>
-                                            <div class="col-lg-10">
-                                                <input type="file" class="file-input-ajax" multiple="multiple">
-                                                {{--<span class="help-block">This scenario uses asynchronous/parallel uploads. Uploading itself is turned off in live preview.</span>--}}
-                                            </div>
-                                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label class="control-label text-semibold">Division</label>
+                                        <select data-placeholder="Select a Division..."
+                                                class="select select2-hidden-accessible" id="txtDivision" name="txtDivision"
+                                                tabindex="-1" aria-hidden="true">
+                                            <option></option>
+                                            <optgroup label="Divisions">
+                                                <option value="0">Upper Division</option>
+                                                <option value="1">Lower Division</option>
+                                            </optgroup>
+                                        </select>
                                     </div>
                                 </div>
-
-                            </div>
-                            <div class="text-center mb-5" >
-                                <button type="submit" id="submit_field_data" class="btn bg-green-800 btn-labeled btn-rounded btn-xlg"><b><i class="icon-arrow-down-right32"></i></b>Submit Form</button>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label class="control-label text-semibold">Field Name:</label>
+                                        <input type="text" name="txt_field_name" id="txt_field_name"
+                                               placeholder="Enter Field Name " class="form-control mspborder required">
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label class="control-label text-semibold">Number of Hectares: </label>
+                                        <div class="input-group bootstrap-touchspin mspborder">
+                                            <span class="input-group-addon bootstrap-touchspin-prefix"
+                                                  style="display: none;"></span>
+                                            <input type="text" value="" id="txt_no_of_hecatres" name="txt_no_of_hecatres"
+                                                   class="touchspin-empty form-control " style="display: block;">
+                                            <span class="input-group-addon bootstrap-touchspin-postfix"
+                                                  style="display: none;"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label class="col-lg-2 control-label text-semibold">Upload Image:</label>
+                                        <div class="col-lg-10">
+                                            <input type="file" name="txt_upload_image" class="file-input-ajax" >
+                                            <span class="help-block">This scenario uses asynchronous/parallel uploads. Uploading itself is turned off in live preview.</span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
 
                         </div>
-                    </form>
+                        <div class="text-center mb-5">
+                            <button type="button" id="submit_field_data"
+                                    class="btn bg-green-800 btn-labeled btn-rounded btn-xlg"><b><i
+                                        class="icon-arrow-down-right32"></i></b>Submit Form
+                            </button>
+                        </div>
+
+                    </div>
+                </form>
             </div>
         </div>
         {{--create field form ends--}}
@@ -123,15 +135,15 @@
                         </tr>
                         </thead>
                         <tbody>
-
-                        <tr>
-                            <td>Upper Division</td>
-                            <td></td>
-                            <td>2207</td>
-                            <td>200</td>
-                            <td><a href="#">Update</a></td>
-
-                        </tr>
+                        @foreach($fields as $field)
+                            <tr id="{{ $field->field_id }}">
+                                <td>{{ $field->division_id == 0 ? 'Upper Division' : 'Lower Division' }}</td>
+                                <td></td>
+                                <td>{{ $field->field_name }}</td>
+                                <td>{{ $field->hectare }}</td>
+                                <td><a href="#">Update</a></td>
+                            </tr>
+                        @endforeach
                         </tbody>
                     </table>
                 </div>
@@ -141,17 +153,28 @@
         {{--/create field form ends--}}
 
 
-
-
     </div>
     {{--page content ends--}}
 
     {{--javascripts starts here--}}
+    <script src="{{ asset('assets/js/core.js') }}"></script>
     <script>
+        tableRowClick("{{ csrf_token() }}", "{{ route('field.get') }}", function (data) {
+            var decodedData = JSON.parse(data);
+            $("#txtId").val(decodedData.field_id);
+            $("#txtDivision").select2().val(decodedData.division_id).trigger("change");
+            $("#txt_field_name").val(decodedData.field_name);
+            $("#txt_no_of_hecatres").val(decodedData.hectare);
+        });
 
+        const formName = "frm_field";
+        $("#submit_field_data").click(function () {
+            formDataAjax("{{ route('field.save') }}", "Field Registered Successfully", "Error Registering Field", formName);
+        });
 
         $(document).ready(function () {
-           datatb();
+            $("#" + formName).trigger('reset');
+            datatb();
         });
 
         // Setting datatable defaults
@@ -160,7 +183,7 @@
             columnDefs: [{
                 orderable: false,
                 width: '20%',
-                targets: [ 4 ]
+                targets: [4]
             }],
             dom: '<"datatable-header"fBl><"datatable-scroll-wrap"t><"datatable-footer"ip>',
             language: {
@@ -181,7 +204,7 @@
                 fixedHeader: {
                     header: true,
                 },
-                order: [[ 0, "desc" ]],
+                order: [[0, "desc"]],
                 buttons: {
                     dom: {
                         button: {
@@ -210,6 +233,8 @@
             });
             table_offset.fixedHeader.headerOffset($('.navbar-fixed-top').height());
         }
+
+
 
     </script>
     {{--javascripts ends--}}
