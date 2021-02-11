@@ -292,6 +292,9 @@
             table_offset.fixedHeader.headerOffset($('.navbar-fixed-top').height());
         }
 
+
+
+
     </script>
     {{--javascripts ends--}}
 
