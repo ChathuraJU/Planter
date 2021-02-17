@@ -15,11 +15,11 @@ class CreateNurseriesTable extends Migration
     {
         Schema::create('nurseries', function (Blueprint $table) {
             $table->integer('nursery_id');
-            $table->string('region');
-            $table->string('plot_no');
-            $table->integer('no_of_cuttings');
+            $table->string('region')->default('None');
+            $table->string('plot_no')->default('None');
+            $table->integer('no_of_cuttings')->default('0');
             $table->date('layout_date');
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }

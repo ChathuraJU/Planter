@@ -14,13 +14,13 @@ class CreateLaboursTable extends Migration
     public function up()
     {
         Schema::create('labours', function (Blueprint $table) {
-            $table->integer('labour_id');
-            $table->integer('person_id');
-            $table->double('tot_latex_liters');
-            $table->double('tot_latex_kg');
-            $table->double('tot_scrap_kg');
-            $table->double('tot_over_kg');
-            $table->double('salary_paid');
+            $table->bigInteger('labour_id');
+            $table->integer('person_id')->default(0);
+            $table->double('tot_latex_liters')->default(0);
+            $table->double('tot_latex_kg')->default(0);
+            $table->double('tot_scrap_kg')->default(0);
+            $table->double('tot_over_kg')->default(0);
+            $table->double('salary_paid')->default(0);
             $table->timestamps();
         });
     }

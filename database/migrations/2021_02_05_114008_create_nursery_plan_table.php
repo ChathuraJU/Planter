@@ -15,13 +15,13 @@ class CreateNurseryPlanTable extends Migration
     {
         Schema::create('nursery_plan', function (Blueprint $table) {
             $table->id();
-            $table->integer('nursery_id');
-            $table->integer('task_id');
+            $table->integer('nursery_id')->default(0);
+            $table->integer('task_id')->default(0);
             $table->date('scheduled_date');
             $table->date('completed_date');
-            $table->binary('status');
-            $table->integer('user_id');
-            $table->string('note');
+            $table->boolean('status')->default(false);
+            $table->integer('user_id')->default(0);
+            $table->string('note')->nullable();
 
             $table->timestamps();
         });

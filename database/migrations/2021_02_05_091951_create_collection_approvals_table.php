@@ -15,13 +15,13 @@ class CreateCollectionApprovalsTable extends Migration
     {
         Schema::create('collection_approvals', function (Blueprint $table) {
             $table->id();
-            $table->integer('div_collection_id');
-            $table->integer('user_type_id');
-            $table->integer('user_id');
+            $table->integer('div_collection_id')->default(0);
+            $table->integer('user_type_id')->default(0);
+            $table->integer('user_id')->default(0);
             $table->date('approval_date');
-            $table->string('note');
-            $table->string('images');
-            $table->binary('approval_status');
+            $table->string('note')->nullable();
+            $table->string('images')->nullable();
+            $table->boolean('approval_status')->default(false);
             $table->timestamps();
         });
     }

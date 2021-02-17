@@ -14,21 +14,21 @@ class CreateDivisionCollectionsTable extends Migration
     public function up()
     {
         Schema::create('division_collections', function (Blueprint $table) {
-            $table->integer('division_collection_id');
-            $table->integer('division_id');
+            $table->integer('division_collection_id')->default(0);
+            $table->integer('division_id')->default(0);
             $table->date('date');
-            $table->string('weather');
-            $table->double('total_division_latex_liters');
-            $table->double('total_division_latex_kgs');
-            $table->double('total_division_scrap_kgs');
-            $table->double('total_division_over_kgs');
-            $table->double('total_division_payable');
-            $table->double('total_division_kgs');
-            $table->integer('total_division_tappers');
-            $table->double('total_division_tap_per_hectare');
-            $table->double('total_division_wt');
-            $table->double('total_factory_wt');
-            $table->double('total_division_loss');
+            $table->string('weather')->default('None');
+            $table->double('total_division_latex_liters')->default(0);
+            $table->double('total_division_latex_kgs')->default(0);
+            $table->double('total_division_scrap_kgs')->default(0);
+            $table->double('total_division_over_kgs')->default(0);
+            $table->double('total_division_payable')->default(0);
+            $table->double('total_division_kgs')->default(0);
+            $table->integer('total_division_tappers')->default(0);
+            $table->double('total_division_tap_per_hectare')->default(0);
+            $table->double('total_division_wt')->default(0);
+            $table->double('total_factory_wt')->default(0);
+            $table->double('total_division_loss')->default(0);
             $table->timestamps();
         });
     }

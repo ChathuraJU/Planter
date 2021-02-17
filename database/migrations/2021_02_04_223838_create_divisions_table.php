@@ -15,10 +15,10 @@ class CreateDivisionsTable extends Migration
     {
         Schema::create('divisions', function (Blueprint $table) {
             $table->integer('division_id');
-            $table->string('division_name');
-            $table->string('division_per_field_norm_payment');
-            $table->string('division_per_over_kg_payment');
-            $table->binary('status');
+            $table->string('division_name')->default(0);
+            $table->string('division_per_field_norm_payment')->default(0);
+            $table->string('division_per_over_kg_payment')->default(0);
+            $table->boolean('status')->default(false);
             $table->timestamps();
         });
     }

@@ -15,11 +15,11 @@ class CreateDiseasesTable extends Migration
     {
         Schema::create('diseases', function (Blueprint $table) {
             $table->id();
-            $table->integer('disease_name');
-            $table->string('keywords');
-            $table->string('descriptions');
-            $table->string('solution');
-            $table->string('image');
+            $table->string('disease_name')->default('None');
+            $table->string('keywords')->default('None');
+            $table->string('descriptions')->default('None');
+            $table->string('solution')->default('None');
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }

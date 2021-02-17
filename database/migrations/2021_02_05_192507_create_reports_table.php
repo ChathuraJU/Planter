@@ -15,11 +15,11 @@ class CreateReportsTable extends Migration
     {
         Schema::create('reports', function (Blueprint $table) {
             $table->integer('report_id');
-            $table->binary('report_type');
-            $table->integer('year');
-            $table->integer('month');
-            $table->string('name');
-            $table->string('note');
+            $table->binary('report_type')->default(0);
+            $table->integer('year')->default(0);
+            $table->integer('month')->default(0);
+            $table->string('name')->default('None');
+            $table->string('note')->nullable();
             $table->timestamps();
         });
     }

@@ -15,9 +15,9 @@ class CreatePaymentsTable extends Migration
     {
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
-            $table->integer('labour_id');
+            $table->integer('labour_id')->default(0);
             $table->date('payment_date');
-            $table->double('pay_amount');
+            $table->double('pay_amount')->default(0);
             $table->timestamps();
         });
     }

@@ -14,18 +14,18 @@ class CreatePersonsTable extends Migration
     public function up()
     {
         Schema::create('persons', function (Blueprint $table) {
-            $table->string('person_id');
-            $table->integer('user_type_id');
-            $table->string('fname');
-            $table->string('lname');
-            $table->string('gender');
-            $table->date('dob');
-            $table->string('nic');
-            $table->string('contact');
-            $table->string('address');
-            $table->string('epf');
-            $table->string('image');
-            $table->bigInteger('status');
+            $table->bigInteger('person_id');
+            $table->integer('user_type_id')->default(0);
+            $table->string('fname')->default('None');
+            $table->string('lname')->default('None');
+            $table->string('gender')->default('None');
+            $table->date('dob')->nullable();
+            $table->string('nic')->default('None');
+            $table->string('contact')->default('None');
+            $table->string('address')->default('None');
+            $table->string('epf')->default('None');
+            $table->string('image')->nullable();
+            $table->boolean('status')->default(true);
             $table->timestamps();
         });
     }

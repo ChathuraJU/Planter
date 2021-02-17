@@ -14,19 +14,19 @@ class CreateLabourCollectionsTable extends Migration
     public function up()
     {
         Schema::create('labour_collections', function (Blueprint $table) {
-            $table->integer('labour_collection_id');
-            $table->integer('labour_id');
-            $table->integer('division_collection_id');
-            $table->integer('field_id');
-            $table->integer('block_id');
-            $table->double('labour_latex_liters');
-            $table->double('metrolac_reading');
-            $table->double('labour_latex_kgs');
-            $table->double('labour_scrap_kgs');
-            $table->double('labour_over_kgs');
-            $table->integer('labour_field_norms');
-            $table->double('labour_payable');
-            $table->binary('labour_pay_status');
+            $table->integer('labour_collection_id')->default(0);
+            $table->integer('labour_id')->default(0);
+            $table->integer('division_collection_id')->default(0);
+            $table->integer('field_id')->default(0);
+            $table->integer('block_id')->default(0);
+            $table->double('labour_latex_liters')->default(0);
+            $table->double('metrolac_reading')->default(0);
+            $table->double('labour_latex_kgs')->default(0);
+            $table->double('labour_scrap_kgs')->default(0);
+            $table->double('labour_over_kgs')->default(0);
+            $table->integer('labour_field_norms')->default(0);
+            $table->double('labour_payable')->default(0);
+            $table->boolean('labour_pay_status')->default(false);
             $table->timestamps();
         });
     }
