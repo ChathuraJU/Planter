@@ -31,7 +31,9 @@
 
         <div class="row">
             <div class="col-sm-12">
-                <form action="#">
+                <form action="" method="post" enctype="multipart/form-data" id="frm_labour">
+                    @csrf
+                    <input type="hidden" id="txtId" name="txtId" value=""/>>
                     <div class="panel panel-white">
                         <div class="panel-heading">
                             <h5 class="panel-title">Labour Register Form<a class="heading-elements-toggle"><i class="icon-more"></i></a></h5>
@@ -61,7 +63,7 @@
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label class="control-label text-semibold">Gender</label>
-                                        <select data-placeholder="Select a Region..." class="select select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+                                        <select data-placeholder="Select a Region..." id="gender" name="gender" class="select select2-hidden-accessible" tabindex="-1" aria-hidden="true">
                                             <option></option>
                                             <optgroup label="Regions">
                                                 <option value="0">Male</option>
@@ -113,7 +115,7 @@
 
                         </div>
                         <div class="text-center mb-5" >
-                            <button type="submit" id="submit_field_data" class="btn bg-green-800 btn-labeled btn-rounded btn-xlg"><b><i class="icon-arrow-down-right32"></i></b>Submit Form</button>
+                            <button type="button" id="submit_field_data" class="btn bg-green-800 btn-labeled btn-rounded btn-xlg"><b><i class="icon-arrow-down-right32"></i></b>Submit Form</button>
                         </div>
 
                     </div>
@@ -128,7 +130,14 @@
 
 
     {{--page content ends--}}
+    <script src="{{ asset('assets/js/core.js') }}"></script>
+<script>
+    const formName = "frm_labour";
+    $("#submit_field_data").click(function () {
+        formDataAjax("{{ route('labour.save') }}", "Labour Registered Successfully", "Error Registering Labour", formName);
+    });
 
+</script>
 
 @endsection
 

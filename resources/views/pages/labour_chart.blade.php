@@ -187,7 +187,7 @@
                             </li>
 
                             <li>
-                                <a href="#performance" class="text-size-small text-uppercase text-semibold" data-toggle="tab">
+                                <a href="#performance1" class="text-size-small text-uppercase text-semibold" data-toggle="tab">
                                     Performance Details
                                 </a>
                             </li>
@@ -219,7 +219,7 @@
 
                             </div>
 
-                            <div class="tab-pane fade" id="performance">
+                            <div class="tab-pane fade" id="performance1">
                                 <div class="cju-form-group mt-5">
                                     <label class="text-semibold">Total No. of Liters :</label>
                                     <span class="pull-right-sm">200L</span>

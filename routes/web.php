@@ -29,7 +29,6 @@ Route::middleware(['auth'])->group(function () {
     Route::get('field-dashboard', function () {
         return view('pages.field_dashboard');
     });
-    Route::get('field-create', 'FieldController@index');
 
     Route::get('field-data-logs', function () {
         return view('pages.all_field_data_logs');
@@ -46,12 +45,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('disease-identify', function () {
         return view('pages.search_disease');
     });
-    Route::get('labour-register', function () {
-        return view('pages.register_labour');
-    });
-    Route::get('labour-chart', function () {
-        return view('pages.labour_chart');
-    });
+
     Route::get('create-report', function () {
         return view('pages.create_report');
     });
@@ -66,7 +60,13 @@ Route::middleware(['auth'])->group(function () {
     });
 
     //Field Routes
+    Route::get('field-create', 'FieldController@index');
     Route::post('filed-save', 'FieldController@store')->name('field.save');
     Route::post('filed-get', 'FieldController@retrieve')->name('field.get');
+
+    //Labour Routes
+    Route::get('labour-chart', 'LabourController@index');
+    Route::get('labour-register', 'LabourController@labour_register');
+    Route::post('labour-save', 'LabourController@store')->name('labour.save');
 });
 
