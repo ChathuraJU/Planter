@@ -8,6 +8,7 @@ namespace App\Http\Controllers;
 use App\Disease;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class DiseaseController extends Controller
 {
@@ -17,24 +18,62 @@ class DiseaseController extends Controller
     }
 
     public function save(Request $request){
-        $disease = new Disease;
 
-        $disease->disease_name = $request->disease_name;      
-        $disease->keywords = $request->keywords;      
-        $disease->descriptions = $request->description;     
-        $disease->solution = $request->solutions;     
-        // $disease->image = $request->image;  
-        
-        if($disease->save()){
-            echo true;
+        $dis_id = $request->txtId;
+
+        if($dis_id){
+
+            $disease = Disease::find($dis_id);
+
+            $disease->disease_name = $request->disease_name_up;
+            $disease->keywords = $request->keywords_up;
+            $disease->descriptions = $request->description_up;
+            $disease->solution = $request->solutions_up;
+
+            if ($request->img_file) {
+//           if ($field->image != null && $field->image != '') {
+//               File::delete(public_path().'/'.$field->image);
+//               dd(public_path().'/'.$field->image);
+//           }
+                $path = Storage::putFile('public/diseases', $request->file('img_file'),'public');
+                $disease->image = 'storage/'.$path;
+            }
+
+            if($disease->save()){
+                echo true;
+
+            }else{
+                echo false;
+            }
 
         }else{
-            echo false;
+            $disease = new Disease;
+
+            $disease->disease_name = $request->disease_name;
+            $disease->keywords = $request->keywords;
+            $disease->descriptions = $request->description;
+            $disease->solution = $request->solutions;
+
+            $path = Storage::putFile('public/diseases', $request->file('img_file'),'public');
+            $disease->image = 'storage/'.$path;
+
+            if($disease->save()){
+                echo true;
+
+            }else{
+                echo false;
+            }
         }
+
     }
 
     public function retrieve(Request $request){
-        $disease = Disease::find($request->id); 
+        $disease = Disease::find($request->id);
         echo $disease->tojson();
+    }
+
+    public function delete(Request $request){
+        $disease = Disease::find($request->id);
+        $disease->delete();
     }
 }

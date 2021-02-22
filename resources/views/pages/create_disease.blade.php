@@ -114,7 +114,6 @@
                                 <th>ID</th>
                                 <th>Disease name</th>
                                 <th>Keyword</th>
-                                <th>Photo</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -124,7 +123,6 @@
                                 <td>{{ $disease->id }}</td>
                                 <td>{{ $disease->disease_name }}</td>
                                 <td>{{ $disease->keywords }}</td>
-                                <td><img src="storage/app/{{ $disease->image}}"/></td>
                                 <td>
                                     <ul class="icons-list">
                                         <li><a href="#" onclick="get_disease({{ $disease->id }})" data-toggle="modal" data-target="#view_modal"><i class="icon-eye"></i></a></li>
@@ -180,8 +178,18 @@
                                         <div class="col-sm-6">
                                             <div class="content-group">
                                                 <div class="row">
-                                                    <div class="col-lg-6 col-sm-6">
-                                                        <label class="control-label text-semibold">Image</label>
+                                                    <div class="col-lg-4 col-sm-4">
+                                                        <p><a href="#"><img src="images/placeholderimg.jpg" class="img-responsive img-rounded" alt="image"></a></p>
+                                                        <p><a href="#"><img src="images/placeholderimg.jpg" class="img-responsive img-rounded" alt="image"></a></p>
+                                                    </div>
+
+                                                    <div class="col-lg-4 col-sm-4">
+                                                        <p><a href="#"><img src="images/placeholderimg.jpg" class="img-responsive img-rounded" alt="image"></a></p>
+                                                        <p><a href="#"><img src="images/placeholderimg.jpg" class="img-responsive img-rounded" alt="image"></a></p>
+                                                    </div>
+
+                                                    <div class="col-lg-4 col-sm-4">
+                                                        <p><a href="#"><img src="images/placeholderimg.jpg" class="img-responsive img-rounded" alt="image"></a></p>
                                                         <p><a href="#"><img src="images/placeholderimg.jpg" class="img-responsive img-rounded" alt="image"></a></p>
                                                     </div>
                                                 </div>

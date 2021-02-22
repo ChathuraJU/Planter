@@ -1,7 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="b635a8bc-edd1-459c-8275-20ba8bfd7f45" name="Default" comment="">
+<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/Planter.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Planter.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -25,6 +44,16 @@
       <change beforePath="$PROJECT_DIR$/database/migrations/2021_02_05_192020_create_tasks_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_02_05_192020_create_tasks_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2021_02_05_192507_create_reports_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_02_05_192507_create_reports_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2021_02_05_193028_create_comments_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_02_05_193028_create_comments_table.php" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/LabourController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/PersonController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Planter.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Planter.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Labours.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Labour.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Persons.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Person.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/labour_chart.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/labour_chart.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/register_labour.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/register_labour.blade.php" afterDir="false" />
+>>>>>>> Stashed changes
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -44,53 +73,6 @@
         <option value="JavaScript File" />
       </list>
     </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>nav-bar</find>
-      <find>submit</find>
-      <find>general</find>
-      <find>fan</find>
-      <find>form-group</find>
-      <find>organ</find>
-      <find>sub</find>
-      <find>unif</find>
-      <find>lear</find>
-      <find>find</find>
-      <find>field_no</find>
-      <find>href=&quot;#&quot;</find>
-      <find>primary</find>
-      <find>nurser</find>
-      <find>dash</find>
-      <find>validation</find>
-      <find>&lt;script src=&quot;{{ asset('global_assets/js/plugins/forms/validation/validate.min.js') }} &quot;&gt;&lt;/script&gt;</find>
-      <find>global_assets/js/plugins/forms/validation/validate.min.js</find>
-      <find>global_assets/js/plugins/forms/selects/select2.min.js</find>
-      <find>select</find>
-      <find>subm</find>
-      <find>submi</find>
-      <find>widg</find>
-      <find>icon-user-lock</find>
-      <find>field</find>
-      <find>icon-3x</find>
-      <find>charts</find>
-      <find>has-bg-image</find>
-      <find>weath</find>
-      <find>mt-2</find>
-    </findStrings>
-    <replaceStrings>
-      <replace>col-lg-3 control-labe</replace>
-      <replace>td</replace>
-      <replace>cju-form-group</replace>
-      <replace>field_name</replace>
-      <replace>href=&quot;images/placeholderimg.jpg&quot; class=&quot;media-left&quot; data-popup=&quot;lightbox&quot;</replace>
-      <replace>danger</replace>
-      <replace>fa fa-pagelines</replace>
-      <replace>mt-2</replace>
-      <replace>icon-2x</replace>
-      <replace>mt-3</replace>
-      <replace>bg-green-700</replace>
-    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -199,7 +181,11 @@
       <path value="$PROJECT_DIR$/vendor/laravel/ui" />
     </include_path>
   </component>
+<<<<<<< Updated upstream
   <component name="ProjectId" id="1oZyG7X6q4rhGY3f3hmUSB6HWYi" />
+=======
+  <component name="ProjectId" id="1oTQSP5YB2BuZR7KVLsmMXEEft6" />
+>>>>>>> Stashed changes
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -208,7 +194,11 @@
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="web&#9;FILE&#9;file://D:/Laravel Projects/Planter/routes/web.php&#10;dis&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/pages/search_disease.blade.php&#10;labo&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/pages/labour_chart.blade.php&#10;fiel&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/pages/field_receivable.blade.php&#10;fieldse&#9;FILE&#9;file://D:/Laravel Projects/Planter/database/seeds/FieldsSeeder.php&#10;fields&#9;FILE&#9;file://D:/Laravel Projects/Planter/database/seeds/FieldsSeeder.php&#10;full&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/full.blade.php&#10;lab&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/pages/labour_chart.blade.php&#10;LABOUR&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/pages/labour_chart.blade.php&#10;cju&#9;FILE&#9;file://D:/Laravel Projects/Planter/public/css/cjustyles.css&#10;we&#9;FILE&#9;file://D:/Laravel Projects/Planter/routes/web.php&#10;field&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/pages/field_receivable.blade.php&#10;cj&#9;FILE&#9;file://D:/Laravel Projects/Planter/public/css/cjustyles.css&#10;tas&#9;FILE&#9;file://D:/Laravel Projects/Planter/database/seeds/TasksSeeder.php&#10;home&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/pages/homepage.blade.php&#10;diseas&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/pages/search_disease.blade.php&#10;rec&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/pages/field_receivable.blade.php&#10;nurser&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/pages/nursery_create.blade.php&#10;app.p&#9;FILE&#9;file://D:/Laravel Projects/Planter/config/app.php&#10;log&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/auth/login.blade.php&#10;fu&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/full.blade.php&#10;cre&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/pages/create_disease.blade.php&#10;nurse&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/pages/nursery_create.blade.php&#10;fie&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/pages/field_data.blade.php&#10;sty&#9;FILE&#9;file://D:/Laravel Projects/Planter/public/css/cjustyles.css&#10;regis&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/auth/register.blade.php&#10;re&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/pages/register_labour.blade.php&#10;reg&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/auth/register.blade.php&#10;create&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/pages/create_field.blade.php&#10;seed&#9;null&#9;null&#10;f&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/full.blade.php&#10;msp&#9;FILE&#9;file://D:/Laravel Projects/Planter/public/mspstyles.css&#10;homep&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/pages/homepage.blade.php&#10;ema&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/auth/passwords/email.blade.php&#10;cr&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/pages/create_field.blade.php&#10;service&#9;null&#9;null&#10;control&#9;FILE&#9;file://D:/Laravel Projects/Planter/app/Http/Controllers/Auth/ResetPasswordController.php&#10;en&#9;FILE&#9;file://D:/Laravel Projects/Planter/.env&#10;hom&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/home.blade.php&#10;env&#9;FILE&#9;file://D:/Laravel Projects/Planter/.env&#10;app&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/layouts/app.blade.php&#10;lo&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/auth/login.blade.php&#10;contr&#9;null&#9;null&#10;s&#9;FILE&#9;file://D:/Laravel Projects/Planter/public/css/cjustyles.css&#10;inde&#9;FILE&#9;file://D:/Laravel Projects/Planter/resources/views/api/index.blade.php&#10;cjus&#9;FILE&#9;file://D:/Laravel Projects/Planter/public/css/cjustyles.css&#10;web.php&#9;FILE&#9;file://D:/Laravel Projects/Planter/routes/web.php" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+<<<<<<< Updated upstream
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+=======
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Controllers" />
+>>>>>>> Stashed changes
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -221,11 +211,11 @@
       <recent name="D:\Laravel Projects\Planter\resources\views\pages" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Yohan\Documents\Projects 1\Planter\app\Http\Controllers" />
       <recent name="D:\Laravel Projects\Planter\public\global_assets\js\demo_pages" />
       <recent name="D:\Laravel Projects\Planter\public\global_assets\js\plugins\ui" />
       <recent name="D:\Laravel Projects\Planter\public\global_assets\js\plugins\forms" />
       <recent name="D:\Laravel Projects\Planter\resources\views\pages" />
-      <recent name="D:\Laravel Projects\Planter\public\global_assets\js\plugins" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -263,8 +253,21 @@
       <workItem from="1612635768729" duration="8380000" />
       <workItem from="1612691959069" duration="25523000" />
       <workItem from="1612808022834" duration="5419000" />
+<<<<<<< Updated upstream
       <workItem from="1613508312961" duration="891000" />
       <workItem from="1613582330276" duration="6008000" />
+=======
+      <workItem from="1613308110461" duration="692000" />
+      <workItem from="1613488070978" duration="1324000" />
+      <workItem from="1613494303454" duration="1077000" />
+      <workItem from="1613508728025" duration="1979000" />
+      <workItem from="1613658601074" duration="2866000" />
+      <workItem from="1613667682428" duration="9881000" />
+      <workItem from="1613745137998" duration="547000" />
+      <workItem from="1613748958203" duration="1069000" />
+      <workItem from="1613799726242" duration="306000" />
+      <workItem from="1613800534771" duration="838000" />
+>>>>>>> Stashed changes
     </task>
     <servers />
   </component>
@@ -279,11 +282,44 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
+<<<<<<< Updated upstream
   </component>
   <component name="WindowStateProjectService">
     <state x="377" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1613594557938">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="377" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1613594557938" />
+=======
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="507" y="123" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1613677869975">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="507" y="123" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1613677869975" />
+    <state x="404" y="71" key="NewPhpClassDialog" timestamp="1613509669061">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="404" y="71" key="NewPhpClassDialog/0.0.1366.728@0.0.1366.728" timestamp="1613509669061" />
+    <state x="339" y="162" key="run.anything.popup" timestamp="1613675147819">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1613675147819" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1613669791917">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1613669791917" />
+>>>>>>> Stashed changes
   </component>
 </project>

@@ -66,27 +66,27 @@
 
             <div class="row">
                 @foreach ($labours as $key => $labour)
-                
+
                     <div class="col-sm-3">
                             <!-- User details (with sample pattern) -->
                             <div class="content-group">
                                 <div class="panel-body bg-yellow-600 border-radius-top text-center">
-            
+
                                     <a href="#" class="display-inline-block content-group-sm">
-                                        <img src="{{ asset('images/users/1.jpg') }}" class="img-circle img-responsive" alt="" style="width: 120px; height: 120px;">
+                                        <img src="{{ asset($labour->image) }}" class="img-circle img-responsive" alt="" style="width: 120px; height: 120px;">
                                     </a>
-            
+
                                     <h5 class="text-semibold no-margin-bottom">
-                                            {{ $labour->fname . ' ' .$labour->lname}} 
+                                            {{ $labour->fname . ' ' .$labour->lname}}
                                     </h5>
-            
+
                                     <span class="display-block">EPF No: {{ $labour->epf }}</span>
                                     <span class="display-block">NIC: {{ $labour->nic }}</span>
-            
+
                                 </div>
-            
+
                                 <div class="panel panel-body no-border-top no-border-radius-top" style="padding: 5px!important;">
-            
+
                                     <!-- Tabs nav -->
                                     <ul class="nav nav-tabs nav-justified no-margin no-border-radius bg-teal-400 border-top border-top-teal-300">
                                         <li class="active">
@@ -94,7 +94,7 @@
                                                 Contact Details
                                             </a>
                                         </li>
-            
+
                                         <li>
                                             <a href="#performance{{ $key }}" class="text-size-small text-uppercase text-semibold" data-toggle="tab">
                                                 Performance Details
@@ -102,14 +102,14 @@
                                         </li>
                                     </ul>
                                     <!-- /tabs nav -->
-            
-            
+
+
                                     <!-- Tabs content -->
                                     <div class="tab-content panel-body">
                                         <div class="tab-pane active fade in" id="contact{{ $key }}">
 
                                             @if ($labour->gender == 0)
-            
+
                                             <div class="cju-form-group mt-5">
                                                 <label class="text-semibold">Gender : Male</label>
                                                 <span class="pull-right-sm"></span>
@@ -122,7 +122,7 @@
                                                     <span class="pull-right-sm"></span>
                                                 </div>
                                             @endif
-                                            
+
                                             <div class="cju-form-group">
                                                 <label class="text-semibold">D.O.B. : {{$labour-> dob }}</label>
                                                 <span class="pull-right-sm"></span>
@@ -131,35 +131,35 @@
                                                 <label class="text-semibold">Contact No. :</label>
                                                 <span class="pull-right-sm">{{$labour->contact}}</span>
                                             </div>
-            
+
                                             <div class="cju-form-group">
                                                 <label class="text-semibold">Address :</label>
                                                 <span class="pull-right-sm">{{$labour->address}}</span>
                                             </div>
-            
+
                                         </div>
-            
+
                                         <div class="tab-pane fade" id="performance{{ $key }}">
                                             <div class="cju-form-group mt-5">
                                                 <label class="text-semibold">Total No. of Liters :</label>
                                                 <span class="pull-right-sm">{{$labour->tot_latex_liters}}</span>
                                             </div>
-            
+
                                             <div class="cju-form-group">
                                                 <label class="text-semibold">Total No. of Latex Kgs. :</label>
                                                 <span class="pull-right-sm">{{$labour->tot_latex_kg}}</span>
                                             </div>
-            
+
                                             <div class="cju-form-group">
                                                 <label class="text-semibold">Total No. of Scrap Kgs. :</label>
                                                 <span class="pull-right-sm">{{$labour->tot_scrap_kg}}</span>
                                             </div>
-            
+
                                             <div class="cju-form-group">
                                                 <label class="text-semibold">Total Over Kgs. :</label>
                                                 <span class="pull-right-sm">{{$labour->tot_over_kg}}</span>
                                             </div>
-            
+
                                             <div class="cju-form-group">
                                                 <label class="text-semibold">Salary Paid:</label>
                                                 <span class="pull-right-sm">{{$labour->salary_paid}}</span>
@@ -171,13 +171,13 @@
                             </div>
                             <!-- /user details (with sample pattern) -->
                         </div>
-                
+
                 @endforeach
             </div>
 
-           
+
         <!-- Pagination -->
-        <div class="text-center content-group-lg pt-20"> 
+        <div class="text-center content-group-lg pt-20">
             {{ $labours-> links() }}
         </div>
         <!-- /pagination -->

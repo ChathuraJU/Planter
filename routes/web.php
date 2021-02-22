@@ -71,5 +71,6 @@ Route::middleware(['auth'])->group(function () {
     Route::get('disease-create', 'DiseaseController@register_disease');
     Route::post('disease-save', 'DiseaseController@save')->name('disease.save');
     Route::post('disease-get', 'DiseaseController@retrieve')->name('disease.get');
+    Route::post('disease-delete', 'DiseaseController@delete')->name('disease.delete');
 });
 

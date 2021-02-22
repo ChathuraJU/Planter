@@ -24,3 +24,6 @@ yarn-error.log
 *.iml
 *.iml
 *.xml
+.idea/Planter.iml
+.idea/workspace.xml
+.idea/Planter.iml

@@ -107,7 +107,7 @@
                                     <div class="form-group">
                                         <label class="col-lg-2 control-label text-semibold">Profile Image:</label>
                                         <div class="col-lg-10">
-                                            <input type="file" class="file-input-ajax" multiple="multiple">
+                                            <input type="file" class="file-input-ajax" multiple="multiple" name="labour_img">
                                         </div>
                                     </div>
                                 </div>
