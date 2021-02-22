@@ -39,10 +39,10 @@
                 </div>
             </div>
             <div class="panel-body" style="">
-                <form action="#" class="main-search">
+                <form action="{{url('labour-chart')}}" class="main-search">
                     <div class="input-group content-group">
                         <div class="has-feedback has-feedback-left">
-                            <input type="text" class="form-control input-xlg" value="">
+                            <input type="text" class="form-control input-xlg" value="" id="search" name="search">
 
                         </div>
 
@@ -64,391 +64,121 @@
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-sm-3">
-                <!-- User details (with sample pattern) -->
-                <div class="content-group">
-                    <div class="panel-body bg-yellow-600 border-radius-top text-center">
-
-                        <a href="#" class="display-inline-block content-group-sm">
-                            <img src="{{ asset('images/users/1.jpg') }}" class="img-circle img-responsive" alt="" style="width: 120px; height: 120px;">
-                        </a>
-
-                        <h5 class="text-semibold no-margin-bottom">
-                            Name
-                        </h5>
-
-                        <span class="display-block">EPF No</span>
-                        <span class="display-block">NIC</span>
-
-                    </div>
-
-                    <div class="panel panel-body no-border-top no-border-radius-top" style="padding: 5px!important;">
-
-                        <!-- Tabs nav -->
-                        <ul class="nav nav-tabs nav-justified no-margin no-border-radius bg-teal-400 border-top border-top-teal-300">
-                            <li class="active">
-                                <a href="#contact" class="text-size-small text-uppercase text-semibold" data-toggle="tab">
-                                    Contact Details
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="#performance" class="text-size-small text-uppercase text-semibold" data-toggle="tab">
-                                    Performance Details
-                                </a>
-                            </li>
-                        </ul>
-                        <!-- /tabs nav -->
-
-
-                        <!-- Tabs content -->
-                        <div class="tab-content panel-body">
-                            <div class="tab-pane active fade in" id="contact">
-
-                                <div class="cju-form-group mt-5">
-                                    <label class="text-semibold">Gender :</label>
-                                    <span class="pull-right-sm"></span>
+            <div class="row">
+                @foreach ($labours as $key => $labour)
+                
+                    <div class="col-sm-3">
+                            <!-- User details (with sample pattern) -->
+                            <div class="content-group">
+                                <div class="panel-body bg-yellow-600 border-radius-top text-center">
+            
+                                    <a href="#" class="display-inline-block content-group-sm">
+                                        <img src="{{ asset('images/users/1.jpg') }}" class="img-circle img-responsive" alt="" style="width: 120px; height: 120px;">
+                                    </a>
+            
+                                    <h5 class="text-semibold no-margin-bottom">
+                                            {{ $labour->fname . ' ' .$labour->lname}} 
+                                    </h5>
+            
+                                    <span class="display-block">EPF No: {{ $labour->epf }}</span>
+                                    <span class="display-block">NIC: {{ $labour->nic }}</span>
+            
                                 </div>
-                                <div class="cju-form-group">
-                                    <label class="text-semibold">D.O.B. :</label>
-                                    <span class="pull-right-sm"></span>
-                                </div>
-                                <div class="cju-form-group">
-                                    <label class="text-semibold">Contact No. :</label>
-                                    <span class="pull-right-sm">+944584538458</span>
-                                </div>
+            
+                                <div class="panel panel-body no-border-top no-border-radius-top" style="padding: 5px!important;">
+            
+                                    <!-- Tabs nav -->
+                                    <ul class="nav nav-tabs nav-justified no-margin no-border-radius bg-teal-400 border-top border-top-teal-300">
+                                        <li class="active">
+                                            <a href="#contact{{ $key }}" class="text-size-small text-uppercase text-semibold" data-toggle="tab">
+                                                Contact Details
+                                            </a>
+                                        </li>
+            
+                                        <li>
+                                            <a href="#performance{{ $key }}" class="text-size-small text-uppercase text-semibold" data-toggle="tab">
+                                                Performance Details
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <!-- /tabs nav -->
+            
+            
+                                    <!-- Tabs content -->
+                                    <div class="tab-content panel-body">
+                                        <div class="tab-pane active fade in" id="contact{{ $key }}">
 
-                                <div class="cju-form-group">
-                                    <label class="text-semibold">Address :</label>
-                                    <span class="pull-right-sm">Kandyu Srilankaa</span>
-                                </div>
+                                            @if ($labour->gender == 0)
+            
+                                            <div class="cju-form-group mt-5">
+                                                <label class="text-semibold">Gender : Male</label>
+                                                <span class="pull-right-sm"></span>
+                                            </div>
 
+                                            @else
+
+                                                <div class="cju-form-group mt-5">
+                                                    <label class="text-semibold">Gender : Female</label>
+                                                    <span class="pull-right-sm"></span>
+                                                </div>
+                                            @endif
+                                            
+                                            <div class="cju-form-group">
+                                                <label class="text-semibold">D.O.B. : {{$labour-> dob }}</label>
+                                                <span class="pull-right-sm"></span>
+                                            </div>
+                                            <div class="cju-form-group">
+                                                <label class="text-semibold">Contact No. :</label>
+                                                <span class="pull-right-sm">{{$labour->contact}}</span>
+                                            </div>
+            
+                                            <div class="cju-form-group">
+                                                <label class="text-semibold">Address :</label>
+                                                <span class="pull-right-sm">{{$labour->address}}</span>
+                                            </div>
+            
+                                        </div>
+            
+                                        <div class="tab-pane fade" id="performance{{ $key }}">
+                                            <div class="cju-form-group mt-5">
+                                                <label class="text-semibold">Total No. of Liters :</label>
+                                                <span class="pull-right-sm">{{$labour->tot_latex_liters}}</span>
+                                            </div>
+            
+                                            <div class="cju-form-group">
+                                                <label class="text-semibold">Total No. of Latex Kgs. :</label>
+                                                <span class="pull-right-sm">{{$labour->tot_latex_kg}}</span>
+                                            </div>
+            
+                                            <div class="cju-form-group">
+                                                <label class="text-semibold">Total No. of Scrap Kgs. :</label>
+                                                <span class="pull-right-sm">{{$labour->tot_scrap_kg}}</span>
+                                            </div>
+            
+                                            <div class="cju-form-group">
+                                                <label class="text-semibold">Total Over Kgs. :</label>
+                                                <span class="pull-right-sm">{{$labour->tot_over_kg}}</span>
+                                            </div>
+            
+                                            <div class="cju-form-group">
+                                                <label class="text-semibold">Salary Paid:</label>
+                                                <span class="pull-right-sm">{{$labour->salary_paid}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- /tabs content -->
+                                </div>
                             </div>
-
-                            <div class="tab-pane fade" id="performance">
-                                <div class="cju-form-group mt-5">
-                                    <label class="text-semibold">Total No. of Liters :</label>
-                                    <span class="pull-right-sm">200L</span>
-                                </div>
-
-                                <div class="cju-form-group">
-                                    <label class="text-semibold">Total No. of Latex Kgs. :</label>
-                                    <span class="pull-right-sm">230Kg</span>
-                                </div>
-
-                                <div class="cju-form-group">
-                                    <label class="text-semibold">Total No. of Scrap Kgs. :</label>
-                                    <span class="pull-right-sm">230Kg</span>
-                                </div>
-
-                                <div class="cju-form-group">
-                                    <label class="text-semibold">Total Over Kgs. :</label>
-                                    <span class="pull-right-sm">230Kg</span>
-                                </div>
-
-                                <div class="cju-form-group">
-                                    <label class="text-semibold">Salary Paid:</label>
-                                    <span class="pull-right-sm">25000 LKR</span>
-                                </div>
-                            </div>
+                            <!-- /user details (with sample pattern) -->
                         </div>
-                        <!-- /tabs content -->
-                    </div>
-                </div>
-                <!-- /user details (with sample pattern) -->
+                
+                @endforeach
             </div>
-            <div class="col-sm-3">
-                <!-- User details (with sample pattern) -->
-                <div class="content-group">
-                    <div class="panel-body bg-green-600 border-radius-top text-center">
 
-                        <a href="#" class="display-inline-block content-group-sm">
-                            <img src="{{ asset('images/users/1.jpg') }}" class="img-circle img-responsive" alt="" style="width: 120px; height: 120px;">
-                        </a>
-
-                        <h5 class="text-semibold no-margin-bottom">
-                            Name
-                        </h5>
-
-                        <span class="display-block">EPF No</span>
-                        <span class="display-block">NIC</span>
-
-                    </div>
-
-                    <div class="panel panel-body no-border-top no-border-radius-top" style="padding: 5px!important;">
-
-                        <!-- Tabs nav -->
-                        <ul class="nav nav-tabs nav-justified no-margin no-border-radius bg-teal-400 border-top border-top-teal-300">
-                            <li class="active">
-                                <a href="#contact" class="text-size-small text-uppercase text-semibold" data-toggle="tab">
-                                    Contact Details
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="#performance1" class="text-size-small text-uppercase text-semibold" data-toggle="tab">
-                                    Performance Details
-                                </a>
-                            </li>
-                        </ul>
-                        <!-- /tabs nav -->
-
-
-                        <!-- Tabs content -->
-                        <div class="tab-content panel-body">
-                            <div class="tab-pane active fade in" id="contact">
-
-                                <div class="cju-form-group mt-5">
-                                    <label class="text-semibold">Gender :</label>
-                                    <span class="pull-right-sm"></span>
-                                </div>
-                                <div class="cju-form-group">
-                                    <label class="text-semibold">D.O.B. :</label>
-                                    <span class="pull-right-sm"></span>
-                                </div>
-                                <div class="cju-form-group">
-                                    <label class="text-semibold">Contact No. :</label>
-                                    <span class="pull-right-sm">+944584538458</span>
-                                </div>
-
-                                <div class="cju-form-group">
-                                    <label class="text-semibold">Address :</label>
-                                    <span class="pull-right-sm">Kandyu Srilankaa</span>
-                                </div>
-
-                            </div>
-
-                            <div class="tab-pane fade" id="performance1">
-                                <div class="cju-form-group mt-5">
-                                    <label class="text-semibold">Total No. of Liters :</label>
-                                    <span class="pull-right-sm">200L</span>
-                                </div>
-
-                                <div class="cju-form-group">
-                                    <label class="text-semibold">Total No. of Latex Kgs. :</label>
-                                    <span class="pull-right-sm">230Kg</span>
-                                </div>
-
-                                <div class="cju-form-group">
-                                    <label class="text-semibold">Total No. of Scrap Kgs. :</label>
-                                    <span class="pull-right-sm">230Kg</span>
-                                </div>
-
-                                <div class="cju-form-group">
-                                    <label class="text-semibold">Total Over Kgs. :</label>
-                                    <span class="pull-right-sm">230Kg</span>
-                                </div>
-
-                                <div class="cju-form-group">
-                                    <label class="text-semibold">Salary Paid:</label>
-                                    <span class="pull-right-sm">25000 LKR</span>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /tabs content -->
-                    </div>
-                </div>
-                <!-- /user details (with sample pattern) -->
-            </div>
-            <div class="col-sm-3">
-                <!-- User details (with sample pattern) -->
-                <div class="content-group">
-                    <div class="panel-body bg-green-600 border-radius-top text-center">
-
-                        <a href="#" class="display-inline-block content-group-sm">
-                            <img src="{{ asset('images/users/1.jpg') }}" class="img-circle img-responsive" alt="" style="width: 120px; height: 120px;">
-                        </a>
-
-                        <h5 class="text-semibold no-margin-bottom">
-                            Name
-                        </h5>
-
-                        <span class="display-block">EPF No</span>
-                        <span class="display-block">NIC</span>
-
-                    </div>
-
-                    <div class="panel panel-body no-border-top no-border-radius-top" style="padding: 5px!important;">
-
-                        <!-- Tabs nav -->
-                        <ul class="nav nav-tabs nav-justified no-margin no-border-radius bg-teal-400 border-top border-top-teal-300">
-                            <li class="active">
-                                <a href="#contact" class="text-size-small text-uppercase text-semibold" data-toggle="tab">
-                                    Contact Details
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="#performance" class="text-size-small text-uppercase text-semibold" data-toggle="tab">
-                                    Performance Details
-                                </a>
-                            </li>
-                        </ul>
-                        <!-- /tabs nav -->
-
-
-                        <!-- Tabs content -->
-                        <div class="tab-content panel-body">
-                            <div class="tab-pane active fade in" id="contact">
-
-                                <div class="cju-form-group mt-5">
-                                    <label class="text-semibold">Gender :</label>
-                                    <span class="pull-right-sm"></span>
-                                </div>
-                                <div class="cju-form-group">
-                                    <label class="text-semibold">D.O.B. :</label>
-                                    <span class="pull-right-sm"></span>
-                                </div>
-                                <div class="cju-form-group">
-                                    <label class="text-semibold">Contact No. :</label>
-                                    <span class="pull-right-sm">+944584538458</span>
-                                </div>
-
-                                <div class="cju-form-group">
-                                    <label class="text-semibold">Address :</label>
-                                    <span class="pull-right-sm">Kandyu Srilankaa</span>
-                                </div>
-
-                            </div>
-
-                            <div class="tab-pane fade" id="performance">
-                                <div class="cju-form-group mt-5">
-                                    <label class="text-semibold">Total No. of Liters :</label>
-                                    <span class="pull-right-sm">200L</span>
-                                </div>
-
-                                <div class="cju-form-group">
-                                    <label class="text-semibold">Total No. of Latex Kgs. :</label>
-                                    <span class="pull-right-sm">230Kg</span>
-                                </div>
-
-                                <div class="cju-form-group">
-                                    <label class="text-semibold">Total No. of Scrap Kgs. :</label>
-                                    <span class="pull-right-sm">230Kg</span>
-                                </div>
-
-                                <div class="cju-form-group">
-                                    <label class="text-semibold">Total Over Kgs. :</label>
-                                    <span class="pull-right-sm">230Kg</span>
-                                </div>
-
-                                <div class="cju-form-group">
-                                    <label class="text-semibold">Salary Paid:</label>
-                                    <span class="pull-right-sm">25000 LKR</span>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /tabs content -->
-                    </div>
-                </div>
-                <!-- /user details (with sample pattern) -->
-            </div>
-            <div class="col-sm-3">
-                <!-- User details (with sample pattern) -->
-                <div class="content-group">
-                    <div class="panel-body bg-green-600 border-radius-top text-center">
-
-                        <a href="#" class="display-inline-block content-group-sm">
-                            <img src="{{ asset('images/users/1.jpg') }}" class="img-circle img-responsive" alt="" style="width: 120px; height: 120px;">
-                        </a>
-
-                        <h5 class="text-semibold no-margin-bottom">
-                            Name
-                        </h5>
-
-                        <span class="display-block">EPF No</span>
-                        <span class="display-block">NIC</span>
-
-                    </div>
-
-                    <div class="panel panel-body no-border-top no-border-radius-top" style="padding: 5px!important;">
-
-                        <!-- Tabs nav -->
-                        <ul class="nav nav-tabs nav-justified no-margin no-border-radius bg-teal-400 border-top border-top-teal-300">
-                            <li class="active">
-                                <a href="#contact" class="text-size-small text-uppercase text-semibold" data-toggle="tab">
-                                    Contact Details
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="#performance" class="text-size-small text-uppercase text-semibold" data-toggle="tab">
-                                    Performance Details
-                                </a>
-                            </li>
-                        </ul>
-                        <!-- /tabs nav -->
-
-
-                        <!-- Tabs content -->
-                        <div class="tab-content panel-body">
-                            <div class="tab-pane active fade in" id="contact">
-                                <div class="cju-form-group mt-5">
-                                    <label class="text-semibold">Gender :</label>
-                                    <span class="pull-right-sm"></span>
-                                </div>
-                                <div class="cju-form-group">
-                                    <label class="text-semibold">D.O.B. :</label>
-                                    <span class="pull-right-sm"></span>
-                                </div>
-                                <div class="cju-form-group">
-                                    <label class="text-semibold">Contact No. :</label>
-                                    <span class="pull-right-sm">+944584538458</span>
-                                </div>
-
-                                <div class="cju-form-group">
-                                    <label class="text-semibold">Address :</label>
-                                    <span class="pull-right-sm">Kandyu Srilankaa</span>
-                                </div>
-
-                            </div>
-
-                            <div class="tab-pane fade" id="performance">
-                                <div class="cju-form-group mt-5">
-                                    <label class="text-semibold">Total No. of Liters :</label>
-                                    <span class="pull-right-sm">200L</span>
-                                </div>
-
-                                <div class="cju-form-group">
-                                    <label class="text-semibold">Total No. of Latex Kgs. :</label>
-                                    <span class="pull-right-sm">230Kg</span>
-                                </div>
-
-                                <div class="cju-form-group">
-                                    <label class="text-semibold">Total No. of Scrap Kgs. :</label>
-                                    <span class="pull-right-sm">230Kg</span>
-                                </div>
-
-                                <div class="cju-form-group">
-                                    <label class="text-semibold">Total Over Kgs. :</label>
-                                    <span class="pull-right-sm">230Kg</span>
-                                </div>
-
-                                <div class="cju-form-group">
-                                    <label class="text-semibold">Salary Paid:</label>
-                                    <span class="pull-right-sm">25000 LKR</span>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /tabs content -->
-                    </div>
-                </div>
-                <!-- /user details (with sample pattern) -->
-            </div>
-        </div>
-
+           
         <!-- Pagination -->
-        <div class="text-center content-group-lg pt-20">
-            <ul class="pagination">
-                <li class="disabled"><a href="#"><i class="icon-arrow-small-left"></i></a></li>
-                <li class="active"><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-                <li><a href="#"><i class="icon-arrow-small-right"></i></a></li>
-            </ul>
+        <div class="text-center content-group-lg pt-20"> 
+            {{ $labours-> links() }}
         </div>
         <!-- /pagination -->
 

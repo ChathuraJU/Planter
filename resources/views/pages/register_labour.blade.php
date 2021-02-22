@@ -115,7 +115,7 @@
 
                         </div>
                         <div class="text-center mb-5" >
-                            <button type="button" id="submit_field_data" class="btn bg-green-800 btn-labeled btn-rounded btn-xlg"><b><i class="icon-arrow-down-right32"></i></b>Submit Form</button>
+                            <button type="button" id="submit_labour_data" class="btn bg-green-800 btn-labeled btn-rounded btn-xlg"><b><i class="icon-arrow-down-right32"></i></b>Submit Form</button>
                         </div>
 
                     </div>
@@ -130,10 +130,10 @@
 
 
     {{--page content ends--}}
-    <script src="{{ asset('assets/js/core.js') }}"></script>
+<script src="{{ asset('assets/js/core.js') }}"></script>
 <script>
     const formName = "frm_labour";
-    $("#submit_field_data").click(function () {
+    $("#submit_labour_data").click(function () {
         formDataAjax("{{ route('labour.save') }}", "Labour Registered Successfully", "Error Registering Labour", formName);
     });
 

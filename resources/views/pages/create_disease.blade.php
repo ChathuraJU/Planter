@@ -32,7 +32,9 @@
         {{--/create disease form starts here--}}
         <div class="row">
             <div class="col-sm-12">
-                <form action="#">
+                <form action="" method="post" enctype="multipart/form-data" id="frm_disease">
+                    @csrf
+                    <input type="hidden" id="txtId" name="txtId" value=""/>>
                     <div class="panel panel-white">
                         <div class="panel-heading">
                             <h5 class="panel-title">Create Disease Form<a class="heading-elements-toggle"><i class="icon-more"></i></a></h5>
@@ -82,7 +84,7 @@
 
                         </div>
                         <div class="text-center mb-5" >
-                            <button type="submit" id="submit_field_data" class="btn bg-green-800 btn-labeled btn-rounded btn-xlg"><b><i class="icon-arrow-down-right32"></i></b>Submit Form</button>
+                            <button type="button" id="submit_disease_data" class="btn bg-green-800 btn-labeled btn-rounded btn-xlg"><b><i class="icon-arrow-down-right32"></i></b>Submit Form</button>
                         </div>
 
                     </div>
@@ -106,7 +108,7 @@
                         </div>
                     </div>
 
-                    <table class="table datatable-button-init-basic" id="fieldstable">
+                    <table class="table datatable-button-init-basic" id="diseasetable">
                         <thead>
                             <tr>
                                 <th>ID</th>
@@ -117,7 +119,21 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
+                        @foreach($diseases as $disease)
+                            <tr id="{{ $disease->id }}">
+                                <td>{{ $disease->id }}</td>
+                                <td>{{ $disease->disease_name }}</td>
+                                <td>{{ $disease->keywords }}</td>
+                                <td></td>
+                                <td>
+                                    <ul class="icons-list">
+                                        <li><a href="#" onclick="get_disease({{ $disease->id }})" data-toggle="modal" data-target="#view_modal"><i class="icon-eye"></i></a></li>
+                                        <li><a href="#" data-toggle="modal" data-target="#remove_modal"><i class="icon-trash"></i></a></li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        @endforeach
+                            <!-- <tr>
                                 <td>2207</td>
                                 <th>Plot No.</th>
                                 <td>200</td>
@@ -128,7 +144,7 @@
                                         <li><a href="#" data-toggle="modal" data-target="#remove_modal"><i class="icon-trash"></i></a></li>
                                     </ul>
                                 </td>
-                            </tr>
+                            </tr> -->
                         </tbody>
                     </table>
                 </div>
@@ -149,12 +165,12 @@
 
                                         <div class="form-group">
                                             <label class="control-label text-semibold">Disease Name :</label>
-                                            <input type="text" name="disease_name" id="disease_name" placeholder="Enter Disease Name" class="form-control mspborder readonly">
+                                            <input type="text" name="disease_name_up" id="disease_name_up" placeholder="Enter Disease Name" class="form-control mspborder readonly">
                                         </div>
 
                                         <div class="form-group">
                                             <label class="control-label text-semibold">Keywords :</label>
-                                            <input type="text" name="keywords" id="keywords" placeholder="Enter Keywords" class="form-control mspborder readonly">
+                                            <input type="text" name="keywords_up" id="keywords_up" placeholder="Enter Keywords" class="form-control mspborder readonly">
                                         </div>
 
                                     </div>
@@ -174,13 +190,13 @@
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <label class="control-label text-semibold">Description</label>
-                                            <textarea rows="5" cols="5" name="description" id="description" class="form-control" placeholder="Default textarea readonly"></textarea>
+                                            <textarea rows="5" cols="5" name="description_up" id="description_up" class="form-control" placeholder="Default textarea readonly"></textarea>
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <label class="control-label text-semibold">Solutions</label>
-                                            <textarea rows="5" cols="5" name="solutions" id="solutions" class="form-control" placeholder="Default textarea readonly"></textarea>
+                                            <textarea rows="5" cols="5" name="solutions_up" id="solutions_up" class="form-control" placeholder="Default textarea readonly"></textarea>
                                         </div>
                                     </div>
 
@@ -258,7 +274,7 @@
         });
 
         function datatb() {
-            var table_offset = $('#fieldstable').DataTable({
+            var table_offset = $('#diseasetable').DataTable({
                 fixedHeader: {
                     header: true,
                 },
@@ -291,11 +307,55 @@
             });
             table_offset.fixedHeader.headerOffset($('.navbar-fixed-top').height());
         }
-
-
-
-
     </script>
+
+<script src="{{ asset('assets/js/core.js') }}"></script>
+       
+<script>
+    const formName = "frm_disease";
+       $("#submit_disease_data").click(function () {
+           alert("okay");
+           formDataAjax("{{ route('disease.save') }}", "Disease Registered Successfully", "Error Registering Disease", formName);
+       });
+
+  function get_disease(id){
+
+
+    const url = "{{ route('disease.get') }}";
+
+
+    $.ajax({
+            method: "POST",
+            url: url,
+            data: { "_token": "{{ csrf_token() }}",
+                    "id":id},
+                    
+        }).done(function (data) {
+
+            data = JSON.parse(data);
+            console.log(data);
+
+            $('#txtid_up').val(data.id)
+            $('#disease_name_up').val(data.disease_name)
+            $('#keywords_up').val(data.keywords)
+            $('#description_up').val(data.descriptions)
+            $('#solutions_up').val(data.solution)
+
+
+      
+
+        }).fail(function () {
+
+            messageErrorAlert("error");
+
+        });
+  }
+
+
+</script>  
+       
+
+   
     {{--javascripts ends--}}
 
 @endsection

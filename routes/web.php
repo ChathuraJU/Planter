@@ -39,9 +39,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('field-receivable', function () {
         return view('pages.field_receivable');
     });
-    Route::get('disease-create', function () {
-        return view('pages.create_disease');
-    });
+   
     Route::get('disease-identify', function () {
         return view('pages.search_disease');
     });
@@ -68,5 +66,10 @@ Route::middleware(['auth'])->group(function () {
     Route::get('labour-chart', 'LabourController@index');
     Route::get('labour-register', 'LabourController@labour_register');
     Route::post('labour-save', 'LabourController@store')->name('labour.save');
+
+    //Disease Routes
+    Route::get('disease-create', 'DiseaseController@register_disease');
+    Route::post('disease-save', 'DiseaseController@save')->name('disease.save');
+    Route::post('disease-get', 'DiseaseController@retrieve')->name('disease.get');
 });
 
