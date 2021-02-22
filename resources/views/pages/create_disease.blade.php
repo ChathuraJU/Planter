@@ -34,7 +34,7 @@
             <div class="col-sm-12">
                 <form action="" method="post" enctype="multipart/form-data" id="frm_disease">
                     @csrf
-                    <input type="hidden" id="txtId" name="txtId" value=""/>>
+
                     <div class="panel panel-white">
                         <div class="panel-heading">
                             <h5 class="panel-title">Create Disease Form<a class="heading-elements-toggle"><i class="icon-more"></i></a></h5>
@@ -76,7 +76,7 @@
                                 <div class="col-sm-12">
                                     <div class="form-group">
                                         <label class="control-label text-semibold">Upload Image:</label>
-                                        <input type="file" class="file-input-ajax" multiple="multiple">
+                                        <input type="file" class="file-input-ajax" multiple="multiple" name="img_file">
                                     </div>
                                 </div>
 
@@ -124,11 +124,11 @@
                                 <td>{{ $disease->id }}</td>
                                 <td>{{ $disease->disease_name }}</td>
                                 <td>{{ $disease->keywords }}</td>
-                                <td></td>
+                                <td><img src="storage/app/{{ $disease->image}}"/></td>
                                 <td>
                                     <ul class="icons-list">
                                         <li><a href="#" onclick="get_disease({{ $disease->id }})" data-toggle="modal" data-target="#view_modal"><i class="icon-eye"></i></a></li>
-                                        <li><a href="#" data-toggle="modal" data-target="#remove_modal"><i class="icon-trash"></i></a></li>
+                                        <li><a href="#" onclick="delete_disease_id({{ $disease->id }})" data-toggle="modal" data-target="#remove_modal"><i class="icon-trash"></i></a></li>
                                     </ul>
                                 </td>
                             </tr>
@@ -160,51 +160,55 @@
                             </div>
 
                             <div class="modal-body">
-                                <div class="row">
-                                    <div class="col-sm-6">
+                                <form action="" method="post" enctype="multipart/form-data" id="frm_disease_up">
+                                    @csrf
+                                    <input type="hidden" id="txtId" name="txtId" value=""/>
+                                    <div class="row">
+                                        <div class="col-sm-6">
 
-                                        <div class="form-group">
-                                            <label class="control-label text-semibold">Disease Name :</label>
-                                            <input type="text" name="disease_name_up" id="disease_name_up" placeholder="Enter Disease Name" class="form-control mspborder readonly">
+                                            <div class="form-group">
+                                                <label class="control-label text-semibold">Disease Name :</label>
+                                                <input type="text" name="disease_name_up" id="disease_name_up" placeholder="Enter Disease Name" class="form-control mspborder readonly">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label class="control-label text-semibold">Keywords :</label>
+                                                <input type="text" name="keywords_up" id="keywords_up" placeholder="Enter Keywords" class="form-control mspborder readonly">
+                                            </div>
+
                                         </div>
-
-                                        <div class="form-group">
-                                            <label class="control-label text-semibold">Keywords :</label>
-                                            <input type="text" name="keywords_up" id="keywords_up" placeholder="Enter Keywords" class="form-control mspborder readonly">
-                                        </div>
-
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <div class="content-group">
-                                            <div class="row">
-                                                <div class="col-lg-6 col-sm-6">
-                                                    <label class="control-label text-semibold">Image</label>
-                                                    <p><a href="#"><img src="images/placeholderimg.jpg" class="img-responsive img-rounded" alt="image"></a></p>
+                                        <div class="col-sm-6">
+                                            <div class="content-group">
+                                                <div class="row">
+                                                    <div class="col-lg-6 col-sm-6">
+                                                        <label class="control-label text-semibold">Image</label>
+                                                        <p><a href="#"><img src="images/placeholderimg.jpg" class="img-responsive img-rounded" alt="image"></a></p>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row">
+                                    <div class="row">
 
-                                    <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <label class="control-label text-semibold">Description</label>
-                                            <textarea rows="5" cols="5" name="description_up" id="description_up" class="form-control" placeholder="Default textarea readonly"></textarea>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label class="control-label text-semibold">Description</label>
+                                                <textarea rows="5" cols="5" name="description_up" id="description_up" class="form-control" placeholder="Default textarea readonly"></textarea>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <label class="control-label text-semibold">Solutions</label>
-                                            <textarea rows="5" cols="5" name="solutions_up" id="solutions_up" class="form-control" placeholder="Default textarea readonly"></textarea>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label class="control-label text-semibold">Solutions</label>
+                                                <textarea rows="5" cols="5" name="solutions_up" id="solutions_up" class="form-control" placeholder="Default textarea readonly"></textarea>
+                                            </div>
                                         </div>
-                                    </div>
 
-                                </div>
+                                    </div>
+                                </form>
                             </div>
 
                             <div class="modal-footer">
-                                <button type="button" class="btn bg-green-800" data-dismiss="modal">Save changes</button>
+                                <button type="button" id="submit_disease_data_up" class="btn bg-green-800" data-dismiss="modal">Save changes</button>
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                             </div>
                         </div>
@@ -227,7 +231,7 @@
                             </div>
 
                             <div class="modal-footer">
-                                <button type="button" class="btn bg-green-800" data-dismiss="modal">Yes, remove</button>
+                                <button type="button" onclick="delete_disease()" class="btn bg-green-800" data-dismiss="modal">Yes, remove</button>
                                 <button type="button" class="btn btn-default" data-dismiss="modal">No, thanks</button>
                             </div>
                         </div>
@@ -310,39 +314,64 @@
     </script>
 
 <script src="{{ asset('assets/js/core.js') }}"></script>
-       
+
 <script>
     const formName = "frm_disease";
        $("#submit_disease_data").click(function () {
-           alert("okay");
            formDataAjax("{{ route('disease.save') }}", "Disease Registered Successfully", "Error Registering Disease", formName);
        });
 
+    const formNameup = "frm_disease_up";
+       $("#submit_disease_data_up").click(function () {
+           formDataAjax("{{ route('disease.save') }}", "Disease Updated Successfully", "Error Updating Disease", formNameup);
+       });
+
+  function delete_disease(){
+
+
+    const url = "{{ route('disease.delete') }}";
+
+    $.ajax({
+            method: "POST",
+            url: url,
+            data: { "_token": "{{ csrf_token() }}",
+                    "id": $('#txtId').val()},
+
+        }).done(function (data) {
+
+            messageSuccessAlert("Disease Deleted Successfully")
+
+        }).fail(function () {
+
+            messageErrorAlert("error");
+
+        });
+  }
+
+  function delete_disease_id(id){
+    $('#txtId').val(id);
+  }
+
   function get_disease(id){
 
-
     const url = "{{ route('disease.get') }}";
-
 
     $.ajax({
             method: "POST",
             url: url,
             data: { "_token": "{{ csrf_token() }}",
                     "id":id},
-                    
+
         }).done(function (data) {
 
             data = JSON.parse(data);
-            console.log(data);
 
-            $('#txtid_up').val(data.id)
+            $('#txtId').val(data.id)
             $('#disease_name_up').val(data.disease_name)
             $('#keywords_up').val(data.keywords)
             $('#description_up').val(data.descriptions)
             $('#solutions_up').val(data.solution)
 
-
-      
 
         }).fail(function () {
 
@@ -352,10 +381,10 @@
   }
 
 
-</script>  
-       
+</script>
 
-   
+
+
     {{--javascripts ends--}}
 
 @endsection
