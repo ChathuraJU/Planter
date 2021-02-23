@@ -159,8 +159,8 @@
                             </div>
 
                             <div class="modal-footer">
-                                <button type="button" class="btn bg-green-800" data-dismiss="modal">Yes, approve</button>
-                                <button type="button" class="btn btn-default" data-dismiss="modal">No, thanks</button>
+                                <button type="button" class="btn bg-green-800" data-dismiss="modal">Yes, Update</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">No, Thanks</button>
                             </div>
                         </div>
                     </div>

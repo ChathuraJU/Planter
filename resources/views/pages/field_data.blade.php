@@ -50,18 +50,6 @@
                             <fieldset>
                                 <legend class="text-semibold"><i class="icon-reading position-left"></i> Labour details</legend>
                                 <div class="form-group">
-                                    <label class="col-lg-3 control-label text-semibold" for="epf">EPF No.</label>
-                                    <div class="col-lg-9">
-                                        <select data-placeholder="Select an EPF number..." id="epf" class="select select2-hidden-accessible" tabindex="-1" aria-hidden="true">
-                                            <option></option>
-                                            <optgroup label="epf">
-                                                <option value="0">EPF1</option>
-                                                <option value="1">EPF2</option>
-                                            </optgroup>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-group">
                                     <label class="col-lg-3 control-label text-semibold" for="labour">Labour Name</label>
                                     <div class="col-lg-9">
                                         <select data-placeholder="Select a Labour..." id="labour" class="select select2-hidden-accessible" tabindex="-1" aria-hidden="true">
@@ -73,6 +61,19 @@
                                         </select>
                                     </div>
                                 </div>
+                                <div class="form-group">
+                                    <label class="col-lg-3 control-label text-semibold" for="epf">EPF No.</label>
+                                    <div class="col-lg-9">
+                                        <select data-placeholder="Select an EPF number..." id="epf" class="select select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+                                            <option></option>
+                                            <optgroup label="epf">
+                                                <option value="0">EPF1</option>
+                                                <option value="1">EPF2</option>
+                                            </optgroup>
+                                        </select>
+                                    </div>
+                                </div>
+
                                 <div class="form-group">
                                     <label class="col-lg-3 control-label text-semibold" for="field">Field No.</label>
                                     <div class="col-lg-9">
@@ -163,6 +164,7 @@
                                             <thead>
                                             <tr class="bg-green">
                                                 <th>Field No.</th>
+                                                <th>Block No.</th>
                                                 <th>Tappers</th>
                                                 <th>Latex(L)</th>
                                                 <th>Latex(kg)</th>
@@ -173,22 +175,6 @@
                                             <tbody>
                                             <tr>
                                                 <td>1</td>
-                                                <td>Eugene</td>
-                                                <td>Kopyov</td>
-                                                <td>@Koopyov</td>
-                                                <td>@Koopyov</td>
-                                                <td>@Koopyov</td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Eugene</td>
-                                                <td>Kopyov</td>
-                                                <td>@Koopyov</td>
-                                                <td>@Koopyov</td>
-                                                <td>@Koopyov</td>
-                                            </tr>
-                                            <tr>
                                                 <td>1</td>
                                                 <td>Eugene</td>
                                                 <td>Kopyov</td>
@@ -199,6 +185,7 @@
 
                                             <tr>
                                                 <td>1</td>
+                                                <td>1</td>
                                                 <td>Eugene</td>
                                                 <td>Kopyov</td>
                                                 <td>@Koopyov</td>
@@ -207,6 +194,7 @@
                                             </tr>
                                             <tr>
                                                 <td>1</td>
+                                                <td>3</td>
                                                 <td>Eugene</td>
                                                 <td>Kopyov</td>
                                                 <td>@Koopyov</td>
@@ -215,6 +203,7 @@
                                             </tr>
 
                                             <tr>
+                                                <td>2</td>
                                                 <td>1</td>
                                                 <td>Eugene</td>
                                                 <td>Kopyov</td>
@@ -223,7 +212,8 @@
                                                 <td>@Koopyov</td>
                                             </tr>
                                             <tr>
-                                                <td>1</td>
+                                                <td>2</td>
+                                                <td>2</td>
                                                 <td>Eugene</td>
                                                 <td>Kopyov</td>
                                                 <td>@Koopyov</td>
@@ -232,6 +222,26 @@
                                             </tr>
 
                                             <tr>
+                                                <td>3</td>
+                                                <td>1</td>
+                                                <td>Eugene</td>
+                                                <td>Kopyov</td>
+                                                <td>@Koopyov</td>
+                                                <td>@Koopyov</td>
+                                                <td>@Koopyov</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>3</td>
+                                                <td>Eugene</td>
+                                                <td>Kopyov</td>
+                                                <td>@Koopyov</td>
+                                                <td>@Koopyov</td>
+                                                <td>@Koopyov</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>4</td>
                                                 <td>1</td>
                                                 <td>Eugene</td>
                                                 <td>Kopyov</td>
@@ -244,6 +254,7 @@
                                             <tfoot>
                                                 <tr style="background-color: #e4efaf; font-weight: bold">
                                                     <td>Total</td>
+                                                    <td></td>
                                                     <td></td>
                                                     <td></td>
                                                     <td></td>

@@ -39,7 +39,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('field-receivable', function () {
         return view('pages.field_receivable');
     });
-   
+
     Route::get('disease-identify', function () {
         return view('pages.search_disease');
     });
@@ -55,6 +55,9 @@ Route::middleware(['auth'])->group(function () {
     });
     Route::get('users', function () {
         return view('pages.registered_users');
+    });
+    Route::get('block-create', function () {
+        return view('pages.create_block');
     });
 
     //Field Routes

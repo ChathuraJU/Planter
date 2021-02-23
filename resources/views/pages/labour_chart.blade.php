@@ -111,21 +111,21 @@
                                             @if ($labour->gender == 0)
 
                                             <div class="cju-form-group mt-5">
-                                                <label class="text-semibold">Gender : Male</label>
-                                                <span class="pull-right-sm"></span>
+                                                <label class="text-semibold">Gender :</label>
+                                                <span class="pull-right-sm"> Male</span>
                                             </div>
 
                                             @else
 
                                                 <div class="cju-form-group mt-5">
-                                                    <label class="text-semibold">Gender : Female</label>
-                                                    <span class="pull-right-sm"></span>
+                                                    <label class="text-semibold">Gender :</label>
+                                                    <span class="pull-right-sm"> Female</span>
                                                 </div>
                                             @endif
 
                                             <div class="cju-form-group">
-                                                <label class="text-semibold">D.O.B. : {{$labour-> dob }}</label>
-                                                <span class="pull-right-sm"></span>
+                                                <label class="text-semibold">D.O.B. : </label>
+                                                <span class="pull-right-sm"> {{$labour-> dob }}</span>
                                             </div>
                                             <div class="cju-form-group">
                                                 <label class="text-semibold">Contact No. :</label>
@@ -135,6 +135,13 @@
                                             <div class="cju-form-group">
                                                 <label class="text-semibold">Address :</label>
                                                 <span class="pull-right-sm">{{$labour->address}}</span>
+                                            </div>
+
+
+                                            <div class="cju-form-group">
+                                                <div class="row text-center text-size-mini">
+                                                    <a href="#" data-toggle="modal" data-target="#view_modal" type="button" class="btn bg-green-800 btn-labeled btn-rounded"><b><i class="icon-quill4"></i></b>Edit</a>
+                                                </div>
                                             </div>
 
                                         </div>

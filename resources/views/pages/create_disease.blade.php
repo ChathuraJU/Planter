@@ -131,18 +131,7 @@
                                 </td>
                             </tr>
                         @endforeach
-                            <!-- <tr>
-                                <td>2207</td>
-                                <th>Plot No.</th>
-                                <td>200</td>
-                                <td>img</td>
-                                <td>
-                                    <ul class="icons-list">
-                                        <li><a href="#" data-toggle="modal" data-target="#view_modal"><i class="icon-eye"></i></a></li>
-                                        <li><a href="#" data-toggle="modal" data-target="#remove_modal"><i class="icon-trash"></i></a></li>
-                                    </ul>
-                                </td>
-                            </tr> -->
+
                         </tbody>
                     </table>
                 </div>

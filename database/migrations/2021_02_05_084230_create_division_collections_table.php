@@ -23,6 +23,7 @@ class CreateDivisionCollectionsTable extends Migration
             $table->double('total_division_scrap_kgs')->default(0);
             $table->double('total_division_over_kgs')->default(0);
             $table->double('total_division_payable')->default(0);
+
             $table->double('total_division_kgs')->default(0);
             $table->integer('total_division_tappers')->default(0);
             $table->double('total_division_tap_per_hectare')->default(0);

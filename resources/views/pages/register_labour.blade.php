@@ -33,7 +33,7 @@
             <div class="col-sm-12">
                 <form action="" method="post" enctype="multipart/form-data" id="frm_labour">
                     @csrf
-                    <input type="hidden" id="txtId" name="txtId" value=""/>>
+                    <input type="hidden" id="txtId" name="txtId" value=""/>
                     <div class="panel panel-white">
                         <div class="panel-heading">
                             <h5 class="panel-title">Labour Register Form<a class="heading-elements-toggle"><i class="icon-more"></i></a></h5>
@@ -75,7 +75,7 @@
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label class="control-label text-semibold">Date of Birth : :</label>
-                                        <input type="text" name="dob" id="dob" placeholder="Select your birthday here.." class="form-control mspborder required">
+                                        <input type="date" name="dob" id="dob" placeholder="Select your birthday here.." class="form-control mspborder required">
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
@@ -126,10 +126,8 @@
 
 
     </div>
-
-
-
     {{--page content ends--}}
+
 <script src="{{ asset('assets/js/core.js') }}"></script>
 <script>
     const formName = "frm_labour";

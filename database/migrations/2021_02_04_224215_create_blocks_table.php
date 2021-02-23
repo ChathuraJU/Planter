@@ -15,7 +15,7 @@ class CreateBlocksTable extends Migration
     {
         Schema::create('blocks', function (Blueprint $table) {
             $table->integer('id');
-            $table->string('block_no')->default(0);
+            $table->integer('block_no')->default(0);
             $table->integer('field_id')->default(0);
             $table->double('hectare')->default(0);
             $table->timestamps();

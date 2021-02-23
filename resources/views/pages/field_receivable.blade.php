@@ -8,7 +8,7 @@
             <div class="page-header-content border-bottom border-bottom-success-300">
                 <div class="page-title">
                     <h5>
-                        <span class="text-semibold">Add Field Receivables</span>
+                        <i class="icon-arrow-left52 position-left"></i><span class="text-semibold">Add Field Receivables</span>
                     </h5>
                 </div>
 
@@ -57,6 +57,18 @@
                                             <optgroup label="Fields">
                                                 <option value="0">jayamaha</option>
                                                 <option value="1">sumathi</option>
+                                            </optgroup>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-lg-3 control-label text-semibold" for="field">Block No. :</label>
+                                    <div class="col-lg-9">
+                                        <select data-placeholder="Select a Field..." id="field" class="select select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+                                            <option></option>
+                                            <optgroup label="Fields">
+                                                <option value="0">1</option>
+                                                <option value="1">2</option>
                                             </optgroup>
                                         </select>
                                     </div>
@@ -138,22 +150,95 @@
                                     <table class="table table-bordered" id="fieldsummarytable">
                                         <thead>
                                         <tr class="bg-green">
-                                            <th>Field Officer Name </th>
-                                            <th>Field No. </th>
-                                            <th>Block No. </th>
-                                            <th>Field Wt. </th>
-
+                                            <th>Field No.</th>
+                                            <th>Block No.</th>
+                                            <th>Latex(L)</th>
+                                            <th>Latex(kg)</th>
+                                            <th>Scrap(kg)</th>
+                                            <th>Total(kg)</th>
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <tr>
-                                            <td>Eugene</td>
-                                            <td>5656</td>
-                                            <td>56</td>
-                                            <td>56</td>
-                                        </tr>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>1</td>
+                                                <td>Kopyov</td>
+                                                <td>@Koopyov</td>
+                                                <td>@Koopyov</td>
+                                                <td>@Koopyov</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>1</td>
+                                                <td>1</td>
+                                                <td>Eugene</td>
+                                                <td>@Koopyov</td>
+                                                <td>@Koopyov</td>
+                                                <td>@Koopyov</td>
+                                            </tr>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>1</td>
+                                                <td>Kopyov</td>
+                                                <td>@Koopyov</td>
+                                                <td>@Koopyov</td>
+                                                <td>@Koopyov</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>1</td>
+                                                <td>1</td>
+                                                <td>Kopyov</td>
+                                                <td>@Koopyov</td>
+                                                <td>@Koopyov</td>
+                                                <td>@Koopyov</td>
+                                            </tr>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>1</td>
+                                                <td>Kopyov</td>
+                                                <td>@Koopyov</td>
+                                                <td>@Koopyov</td>
+                                                <td>@Koopyov</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>1</td>
+                                                <td>1</td>
+                                                <td>Kopyov</td>
+                                                <td>@Koopyov</td>
+                                                <td>@Koopyov</td>
+                                                <td>@Koopyov</td>
+                                            </tr>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>1</td>
+                                                <td>Kopyov</td>
+                                                <td>@Koopyov</td>
+                                                <td>@Koopyov</td>
+                                                <td>@Koopyov</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>1</td>
+                                                <td>1</td>
+                                                <td>Kopyov</td>
+                                                <td>@Koopyov</td>
+                                                <td>@Koopyov</td>
+                                                <td>@Koopyov</td>
+                                            </tr>
 
                                         </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <td  style="background-color: #e4efaf; font-weight: bold">Total</td>
+                                                <td></td>
+                                                <td>tot latex L</td>
+                                                <td>tot latex kg</td>
+                                                <td>tot scrap kg</td>
+                                                <td>tot tot kg</td>
+                                            </tr>
+                                        </tfoot>
 
                                     </table>
                                 </div>
@@ -229,16 +314,19 @@
                                         <thead>
                                         <tr class="bg-green">
                                             <th>Field No.</th>
+                                            <th>Block No.</th>
                                             <th>Hectare</th>
                                             <th>Tappers</th>
                                             <th>Tap per Hect</th>
                                             <th>Field Wt.</th>
                                             <th>Factory Wt.</th>
                                             <th>Loss</th>
+                                            <th>Action</th>
                                         </tr>
                                         </thead>
                                         <tbody>
                                         <tr>
+                                            <td>1</td>
                                             <td>1</td>
                                             <td>Eugene</td>
                                             <td>Kopyov</td>
@@ -246,9 +334,31 @@
                                             <td>@Koopyov</td>
                                             <td>@Koopyov</td>
                                             <td>@Koopyov</td>
+                                            <td>
+                                                <ul class="icons-list">
+                                                    <li><a href="#" onclick="" data-toggle="modal" data-target="#view_modal"><i class="icon-eye"></i></a></li>
+                                                    <li><a href="#" onclick="" data-toggle="modal" data-target="#remove_modal"><i class="icon-trash"></i></a></li>
+                                                </ul>
+                                            </td>
                                         </tr>
 
                                         </tbody>
+                                        <tfoot>
+                                        <tr>
+                                            <td style="background-color: #e4efaf; font-weight: bold">To-date</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>tap total</td>
+                                            <td>tap per hect total</td>
+                                            <td>field wt tot</td>
+                                            <td>@factory wt tot</td>
+                                            <td>@Loss tot</td>
+                                            <td>
+
+                                            </td>
+                                        </tr>
+
+                                        </tfoot>
 
                                     </table>
                                 </div>
@@ -350,6 +460,27 @@
         {{--/Add field data form ends--}}
 
 
+        <!-- Remove modal -->
+        <div id="remove_modal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h5 class="modal-title">Confirm action</h5>
+                    </div>
+
+                    <div class="modal-body">
+                        You are about to remove this row. Are you sure?
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" onclick="delete_disease()" class="btn bg-green-800" data-dismiss="modal">Yes, remove</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">No, thanks</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /remove modal -->
 
 
     </div>
@@ -358,12 +489,6 @@
 
     {{--javascripts starts here--}}
     <script>
-$(document).ready(function () {
-    $('.pickadate-strings').pickadate({
-        weekdaysShort: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
-        showMonthsShort: true
-    });
-})
 
 
     </script>
