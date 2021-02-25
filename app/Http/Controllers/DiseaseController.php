@@ -35,7 +35,7 @@ class DiseaseController extends Controller
 //               File::delete(public_path().'/'.$field->image);
 //               dd(public_path().'/'.$field->image);
 //           }
-                $path = Storage::putFile('public/diseases', $request->file('img_file'),'public');
+                $path = Storage::putFile('diseases', $request->file('img_file'),'public');
                 $disease->image = 'storage/'.$path;
             }
 
@@ -54,7 +54,7 @@ class DiseaseController extends Controller
             $disease->descriptions = $request->description;
             $disease->solution = $request->solutions;
 
-            $path = Storage::putFile('public/diseases', $request->file('img_file'),'public');
+            $path = Storage::putFile('diseases', $request->file('img_file'),'public');
             $disease->image = 'storage/'.$path;
 
             if($disease->save()){
@@ -75,5 +75,16 @@ class DiseaseController extends Controller
     public function delete(Request $request){
         $disease = Disease::find($request->id);
         $disease->delete();
+    }
+
+    public function get_diseases(Request $request){
+        $diseases = Disease::orderBy('id');
+
+        if($request->has('search')){
+            $diseases->where('keywords', 'LIKE', "%{$request->search}%");
+        }
+        $diseases = $diseases->paginate(5);
+
+        return view('pages.search_disease', compact('diseases'));
     }
 }

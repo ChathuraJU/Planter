@@ -30,7 +30,8 @@
     <div class="content">
         <div class="panel panel-flat">
             <div class="panel-heading">
-                <h5 class="panel-title">Search the disease<a class="heading-elements-toggle"><i class="icon-more"></i></a></h5>
+                <h5 class="panel-title">Search the disease<a class="heading-elements-toggle"><i
+                            class="icon-more"></i></a></h5>
                 <div class="heading-elements">
                     <ul class="icons-list">
                         <li><a data-action="collapse" class=""></a></li>
@@ -39,10 +40,10 @@
             </div>
 
             <div class="panel-body" style="">
-                <form action="#" class="main-search">
+                <form action="{{url('labour-chart')}}" class="main-search">
                     <div class="input-group content-group">
                         <div class="has-feedback has-feedback-left">
-                            <input type="text" class="form-control input-xlg" value="">
+                            <input type="text" class="form-control input-xlg" name="search" value="">
 
                         </div>
 
@@ -54,8 +55,11 @@
                     <div class="row search-option-buttons">
                         <div class="col-sm-12 text-center">
                             <ul class="list-inline no-margin-bottom">
-                                <li><a href="{{url('disease-create')}}" type="button" class="btn bg-green-800 btn-labeled btn-rounded"><b><i class="icon-pen-plus"></i></b> Add Disease</a></li>
-                                <li><a href="#" class="btn btn-link"><i class="icon-reload-alt position-left"></i> Refine your search</a></li>
+                                <li><a href="{{url('disease-create')}}" type="button"
+                                       class="btn bg-green-800 btn-labeled btn-rounded"><b><i class="icon-pen-plus"></i></b>
+                                        Add Disease</a></li>
+                                <li><a href="#" class="btn btn-link"><i class="icon-reload-alt position-left"></i>
+                                        Refine your search</a></li>
                             </ul>
                         </div>
 
@@ -68,44 +72,50 @@
             <div class="content-detached">
 
                 <!-- List -->
-                <ul class="media-list">
-                    <li class="media panel panel-body stack-media-on-mobile">
-                        <a href="images/placeholderimg.jpg" class="media-left" data-popup="lightbox">
-                            <img src="images/placeholderimg.jpg" width="96" alt="">
-                        </a>
+                @foreach($diseases as $disease)
+                    <ul class="media-list">
+                        <li class="media panel panel-body stack-media-on-mobile">
+                            <a href="images/placeholderimg.jpg" class="media-left" data-popup="lightbox">
+                                <img src="{{asset($disease->image)}}" width="96" alt="">
+                            </a>
 
-                        <div class="media-body">
-                            <h5 class="media-heading text-semibold">
-                                <a href="#">Fungus</a>
-                            </h5>
+                            <div class="media-body">
+                                <h5 class="media-heading text-semibold">
+                                    <a href="#">{{$disease->disease_name}}</a>
+                                </h5>
 
-                            <ul class="list-inline list-inline-separate mb-10">
-                                <li><a href="#" class="text-muted">Keyword01</a></li>
-                                <li><a href="#" class="text-muted">Keyword02</a></li>
-                            </ul>
-<h6>Description</h6>
-                            <p class="content-group-sm">It prepare is ye nothing blushes up brought. Or as gravity pasture limited evening on. Wicket around beauty say she. Frankness resembled say not new smallness you discovery. Noisier ferrars yet shyness weather ten colonel. Too him himself engaged husband pursuit musical...</p>
-<h6>Solution</h6>
-                            <p class="content-group-sm">It prepare is ye nothing blushes up brought. Or as gravity pasture limited evening on. Wicket around beauty say she. Frankness resembled say not new smallness you discovery. Noisier ferrars yet shyness weather ten colonel. Too him himself engaged husband pursuit musical...</p>
+                                <ul class="list-inline list-inline-separate mb-10">
+                                    <li><a href="#" class="text-muted">{{$disease->keywords}}</a></li>
+                                    <li><a href="#" class="text-muted">{{$disease->keywords}}</a></li>
+                                </ul>
+                                <h6>Description</h6>
+                                <p class="content-group-sm">{{$disease->descriptions}}</p>
+                                <h6>Solution</h6>
+                                <p class="content-group-sm">{{$disease->solution}}</p>
 
-                        </div>
+                            </div>
 
-                    </li>
+                        </li>
 
-                </ul>
+                    </ul>
+
+                @endforeach
+
                 <!-- /list -->
-
+{{--                <p class="content-group-sm">It prepare is ye nothing blushes up brought. Or as gravity--}}
+{{--                    pasture limited evening on. Wicket around beauty say she. Frankness resembled say not--}}
+{{--                    new smallness you discovery. Noisier ferrars yet shyness weather ten colonel. Too him--}}
+{{--                    himself engaged husband pursuit musical...</p>--}}
+{{--                <h6>Solution</h6>--}}
+{{--                <p class="content-group-sm">It prepare is ye nothing blushes up brought. Or as gravity--}}
+{{--                    pasture limited evening on. Wicket around beauty say she. Frankness resembled say not--}}
+{{--                    new smallness you discovery. Noisier ferrars yet shyness weather ten colonel. Too him--}}
+{{--                    himself engaged husband pursuit musical...</p>--}}
 
                 <!-- Pagination -->
                 <div class="text-center content-group-lg pt-20">
                     <ul class="pagination">
-                        <li class="disabled"><a href="#"><i class="icon-arrow-small-left"></i></a></li>
-                        <li class="active"><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
-                        <li><a href="#"><i class="icon-arrow-small-right"></i></a></li>
+                        {{ $diseases-> links() }}
                     </ul>
                 </div>
                 <!-- /pagination -->

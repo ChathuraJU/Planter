@@ -168,18 +168,18 @@
                                             <div class="content-group">
                                                 <div class="row">
                                                     <div class="col-lg-4 col-sm-4">
-                                                        <p><a href="#"><img src="images/placeholderimg.jpg" class="img-responsive img-rounded" alt="image"></a></p>
-                                                        <p><a href="#"><img src="images/placeholderimg.jpg" class="img-responsive img-rounded" alt="image"></a></p>
+                                                        <p><a href="#"><img id="image1" src="" class="img-responsive img-rounded" alt="image"></a></p>
+                                                        <p><a href="#"><img id="image2" src="" class="img-responsive img-rounded" alt="image"></a></p>
                                                     </div>
 
                                                     <div class="col-lg-4 col-sm-4">
-                                                        <p><a href="#"><img src="images/placeholderimg.jpg" class="img-responsive img-rounded" alt="image"></a></p>
-                                                        <p><a href="#"><img src="images/placeholderimg.jpg" class="img-responsive img-rounded" alt="image"></a></p>
+                                                        <p><a href="#"><img id="image3" src="" class="img-responsive img-rounded" alt="image"></a></p>
+                                                        <p><a href="#"><img id="image4" src="" class="img-responsive img-rounded" alt="image"></a></p>
                                                     </div>
 
                                                     <div class="col-lg-4 col-sm-4">
-                                                        <p><a href="#"><img src="images/placeholderimg.jpg" class="img-responsive img-rounded" alt="image"></a></p>
-                                                        <p><a href="#"><img src="images/placeholderimg.jpg" class="img-responsive img-rounded" alt="image"></a></p>
+                                                        <p><a href="#"><img id="image5" src="" class="img-responsive img-rounded" alt="image"></a></p>
+                                                        <p><a href="#"><img id="image6" src="" class="img-responsive img-rounded" alt="image"></a></p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -368,6 +368,14 @@
             $('#keywords_up').val(data.keywords)
             $('#description_up').val(data.descriptions)
             $('#solutions_up').val(data.solution)
+            $("#image1").attr("src",data.image);
+            $("#image2").attr("src",data.image);
+            $("#image3").attr("src",data.image);
+            $("#image4").attr("src",data.image);
+            $("#image5").attr("src",data.image);
+            $("#image6").attr("src",data.image);
+
+        // images/placeholderimg.jpg
 
 
         }).fail(function () {

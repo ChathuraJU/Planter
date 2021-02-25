@@ -17,7 +17,7 @@ Auth::routes();
 //Route::get('/', 'HomeController@index')->name('home');
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/homepage', function () {
+    Route::get('/', function () {
         return view('pages.homepage');
     });
     Route::get('nursery-dashboard', function () {
@@ -40,9 +40,6 @@ Route::middleware(['auth'])->group(function () {
         return view('pages.field_receivable');
     });
 
-    Route::get('disease-identify', function () {
-        return view('pages.search_disease');
-    });
 
     Route::get('create-report', function () {
         return view('pages.create_report');
@@ -72,6 +69,7 @@ Route::middleware(['auth'])->group(function () {
 
     //Disease Routes
     Route::get('disease-create', 'DiseaseController@register_disease');
+    Route::get('disease-identify', 'DiseaseController@get_diseases');
     Route::post('disease-save', 'DiseaseController@save')->name('disease.save');
     Route::post('disease-get', 'DiseaseController@retrieve')->name('disease.get');
     Route::post('disease-delete', 'DiseaseController@delete')->name('disease.delete');

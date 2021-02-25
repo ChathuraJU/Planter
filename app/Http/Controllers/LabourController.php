@@ -28,9 +28,7 @@ class LabourController extends Controller
         }
 
         $labours =  $labours->paginate(8);
-
-        // dd($labours->all());
-
+        
         return view('pages.labour_chart', compact('labours'));
     }
 

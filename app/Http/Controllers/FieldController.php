@@ -36,10 +36,7 @@ class FieldController extends Controller
            $path = Storage::putFile('public/fields', $request->file('txt_upload_image'),'public');
            $field->image = 'storage/'.$path;
        }
-
-
-
-
+       
         if ($field->save()) {
             echo true;
         } else {
