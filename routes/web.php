@@ -20,9 +20,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/', function () {
         return view('pages.homepage');
     });
-    Route::get('nursery-dashboard', function () {
-        return view('pages.nursery_dashboard');
-    });
+
     Route::get('nursery-create', function () {
         return view('pages.nursery_create');
     });
@@ -73,5 +71,36 @@ Route::middleware(['auth'])->group(function () {
     Route::post('disease-save', 'DiseaseController@save')->name('disease.save');
     Route::post('disease-get', 'DiseaseController@retrieve')->name('disease.get');
     Route::post('disease-delete', 'DiseaseController@delete')->name('disease.delete');
+
+    Route::group(['as' => 'admin', 'middleware' => ['auth', 'admin']], function () {
+        Route::get('nursery-dashboard', function () {
+            return view('pages.nursery_dashboard');
+        });
+    });
+
+    Route::group(['as' => 'director', 'middleware' => ['auth', 'director']], function () {
+
+    });
+
+    Route::group(['as' => 'estate_office', 'middleware' => ['auth', 'estate_office']], function () {
+
+    });
+
+    Route::group(['as' => 'factory_officer', 'middleware' => ['auth', 'factory_officer']], function () {
+
+    });
+
+    Route::group(['as' => 'field_officer', 'middleware' => ['auth', 'field_officer']], function () {
+
+    });
+
+    Route::group(['as' => 'labour', 'middleware' => ['auth', 'labour']], function () {
+
+    });
+
+    Route::group(['as' => 'manager', 'middleware' => ['auth', 'manager']], function () {
+
+    });
+
 });
 
