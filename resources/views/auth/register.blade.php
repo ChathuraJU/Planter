@@ -123,8 +123,12 @@
                             <div class="col-12 col-md-6">
                                 <div class="form-group row">
                                     <label for="designation" class="col-3 col-form-label text-md-right">{{ __('Designation') }}</label>
-                                    <input id="designation" type="text" class="col-8 form-control @error('designation') is-invalid @enderror" name="designation" value="{{ old('designation') }}" required autocomplete="designation" autofocus>
-
+                                    <select id="designation" type="text" class="col-8 form-control @error('designation') is-invalid @enderror" name="designation" value="{{ old('designation') }}" required autocomplete="designation" autofocus>
+                                    <option value="">Select Designation</option>
+                                        @foreach($designations as $designation)
+                                        <option value="{{$designation->user_type_id}}">{{$designation->user_type_name}}</option>
+                                    @endforeach
+                                    </select>
                                     @error('designation')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>

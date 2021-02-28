@@ -40,7 +40,7 @@
             </div>
 
             <div class="panel-body" style="">
-                <form action="{{url('labour-chart')}}" class="main-search">
+                <form action="{{url('disease-identify')}}" class="main-search">
                     <div class="input-group content-group">
                         <div class="has-feedback has-feedback-left">
                             <input type="text" class="form-control input-xlg" name="search" value="">

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\User;
+use App\Person;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -44,7 +45,7 @@ class RegisterController extends Controller
     /**
      * Get a validator for an incoming registration request.
      *
-     * @param  array  $data
+     * @param array $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
@@ -67,21 +68,33 @@ class RegisterController extends Controller
     /**
      * Create a new user instance after a valid registration.
      *
-     * @param  array  $data
+     * @param array $data
      * @return \App\User
      */
     protected function create(array $data)
     {
+        $person = new Person;
+
+        $person->user_type_id = $data['designation'];
+        $person->fname = $data['fname'];
+        $person->lname = $data['lname'];
+        $person->gender = $data['gender'];
+        $person->dob = $data['dob'];
+        $person->nic = $data['nic'];
+        $person->contact = $data['contact'];
+        $person->address = $data['address'];
+//        $person->designation = $data['designation'];
+//        $person->estate = $data['estate'];
+
+        $person->Save();
+        $data['person_id'] = $person->person_id;
+
+
         return User::create([
-            'fname' => $data['fname'],
-            'lname' => $data['lname'],
-            'gender' => $data['gender'],
-            'dob' => $data['dob'],
-            'nic' => $data['nic'],
-            'contact' => $data['contact'],
-            'address' => $data['address'],
-            'designation' => $data['designation'],
-            'estate' => $data['estate'],
+            'username' => $data['email'],
+            'person_id' => $data['person_id'],
+            'status' => 0,
+            'estate_name' => $data['estate'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
