@@ -72,6 +72,8 @@ Route::middleware(['auth'])->group(function () {
     Route::post('disease-get', 'DiseaseController@retrieve')->name('disease.get');
     Route::post('disease-delete', 'DiseaseController@delete')->name('disease.delete');
 
+    Route::post('field-data-log-add', 'FieldController@addToTemp')->name('field.log.add');
+
     Route::group(['as' => 'admin', 'middleware' => ['auth', 'admin']], function () {
         Route::get('nursery-dashboard', function () {
             return view('pages.nursery_dashboard');
