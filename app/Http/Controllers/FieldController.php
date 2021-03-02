@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Field;
+use App\Person;
 use App\TempLabourCollectionSummaryEntity;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 
@@ -57,6 +59,42 @@ class FieldController extends Controller
         $collection_summary->labour_id = $request->labour;
         $collection_summary->epf_id = $request->epf;
         $collection_summary->field_no = $request->field;
-        $collection_summary->block_no = $request->field;
+        $collection_summary->block_no = $request->block_no;
+        $collection_summary->no_of_liters = $request->latex_liters;
+        $collection_summary->metrolac_reading = $request->metrolac;
+        $collection_summary->latex = $request->latex_kg;
+        $collection_summary->scrap = $request->scrap_kg;
+        $collection_summary->over = $request->over_kg;
+        $collection_summary->field_norm = $request->field_norms;
+        $collection_summary->paid = $request->paid;
+        $collection_summary->save();
+        return true;
+    }
+
+    public function getFieldLabourData()
+    {
+        $data = TempLabourCollectionSummaryEntity::with('labour', 'field')->get();
+        $summary = DB::select("SELECT tmp.block_no, f.field_name, SUM(tmp.no_of_liters) as latexL, COUNT(tmp.id) as tappers, SUM(tmp.latex) as latexKg, SUM(tmp.scrap) as scrap, (SUM(tmp.latex) + SUM(tmp.scrap)) as totalKg FROM tmp_labour_collection_summary tmp INNER JOIN `fields` f on f.field_id = tmp.field_no GROUP BY block_no");
+        $response['data'] = $data;
+        $response['summer'] = $summary;
+        return json_encode($response);
+    }
+
+    public function deleteTmpLabourData(Request $request)
+    {
+        TempLabourCollectionSummaryEntity::find($request->id)->delete();
+        return true;
+    }
+
+    public function addFieldDataLog(Request $request)
+    {
+        $persons = Person::where('user_type_id', 7)->get();
+        $fields = Field::all();
+        return view('pages.field_data', compact('persons', 'fields'));
+    }
+
+    public function saveFieldData(Request $request)
+    {
+        dd($request->all());
     }
 }

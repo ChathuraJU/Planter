@@ -60,6 +60,32 @@ function formDataAjax(url, successMessage, errorMessage, formId) {
     // }
 };
 
+function formDataAjaxNoReload(url, successMessage, errorMessage, formId) {
+    // if (checkValidity()) {
+        f = new FormData($("#" + formId)[0]);
+        $.ajax({
+            method: "POST",
+            url: url,
+            data: f,
+            processData: false,
+            contentType: false
+        }).done(function (data) {
+            if (data == 1) {
+                messageSuccessAlertNoReload(successMessage);
+            } else {
+                data = JSON.parse(data);
+                if (data.hasOwnProperty('msg')) {
+                    messageErrorAlert(data.msg);
+                } else {
+                    messageErrorAlert(errorMessage);
+                }
+            }
+        }).fail(function () {
+            messageErrorAlert(errorMessage);
+        });
+    // }
+};
+
 function messageSuccessAlert(message) {
     swal({
             title: message,
@@ -69,6 +95,18 @@ function messageSuccessAlert(message) {
         },
         function (isConfirm) {
             location.reload();
+        });
+};
+
+function messageSuccessAlertNoReload(message) {
+    swal({
+            title: message,
+            text: "Click ok to continue",
+            confirmButtonColor: "#66BB6A",
+            type: "success"
+        },
+        function (isConfirm) {
+
         });
 };
 

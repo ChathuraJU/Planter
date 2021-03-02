@@ -31,9 +31,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('field-data-logs', function () {
         return view('pages.all_field_data_logs');
     });
-    Route::get('field-data', function () {
-        return view('pages.field_data');
-    });
+    Route::get('field-data', 'FieldController@addFieldDataLog');
     Route::get('field-receivable', function () {
         return view('pages.field_receivable');
     });
@@ -73,6 +71,9 @@ Route::middleware(['auth'])->group(function () {
     Route::post('disease-delete', 'DiseaseController@delete')->name('disease.delete');
 
     Route::post('field-data-log-add', 'FieldController@addToTemp')->name('field.log.add');
+    Route::post('field-data-log-save', 'FieldController@saveFieldData')->name('field.log.save');
+    Route::get('get-field-labour-data', 'FieldController@getFieldLabourData')->name('get.field.labour.data');
+    Route::get('delete-field-labour-data', 'FieldController@deleteTmpLabourData')->name('delete.field.labour.data');
 
     Route::group(['as' => 'admin', 'middleware' => ['auth', 'admin']], function () {
         Route::get('nursery-dashboard', function () {

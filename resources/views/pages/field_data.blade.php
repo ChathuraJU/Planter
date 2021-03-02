@@ -55,8 +55,9 @@
                                         <select data-placeholder="Select a Labour..." id="labour"  name="labour" class="select select2-hidden-accessible" tabindex="-1" aria-hidden="true">
                                             <option></option>
                                             <optgroup label="Labours">
-                                                <option value="0">jayamaha</option>
-                                                <option value="1">sumathi</option>
+                                                @foreach($persons as $person)
+                                                    <option value="{{ $person->person_id }}">{{ $person->fname }} {{ $person->lname }}</option>
+                                                @endforeach
                                             </optgroup>
                                         </select>
                                     </div>
@@ -64,24 +65,18 @@
                                 <div class="form-group">
                                     <label class="col-lg-3 control-label text-semibold" for="epf">EPF No.</label>
                                     <div class="col-lg-9">
-                                        <select data-placeholder="Select an EPF number..." id="epf" name="epf" class="select select2-hidden-accessible" tabindex="-1" aria-hidden="true">
-                                            <option></option>
-                                            <optgroup label="epf">
-                                                <option value="0">EPF1</option>
-                                                <option value="1">EPF2</option>
-                                            </optgroup>
-                                        </select>
+                                        <input type="text" name="epf" id="epf" placeholder="Enter EPF No. " class="form-control mspborder required">
                                     </div>
                                 </div>
-
                                 <div class="form-group">
                                     <label class="col-lg-3 control-label text-semibold" for="field">Field No.</label>
                                     <div class="col-lg-9">
                                         <select data-placeholder="Select a Field..." id="field" name="field" class="select select2-hidden-accessible" tabindex="-1" aria-hidden="true">
                                             <option></option>
                                             <optgroup label="Fields">
-                                                <option value="0">jayamaha</option>
-                                                <option value="1">sumathi</option>
+                                                @foreach($fields as $field)
+                                                    <option value="{{ $field->field_id }}">{{ $field->field_name }}</option>
+                                                @endforeach
                                             </optgroup>
                                         </select>
                                     </div>
@@ -148,6 +143,18 @@
                                         <input type="text" name="field_norms" id="field_norms" placeholder="Enter Field Nprm " class="form-control mspborder required">
                                     </div>
                                 </div>
+                                <div class="form-group">
+                                    <label class="col-lg-3 control-label text-semibold" for="field">Paid</label>
+                                    <div class="col-lg-9">
+                                        <select data-placeholder="Select..." id="paid" name="paid" class="select select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+                                            <option></option>
+                                            <optgroup label="Options">
+                                                <option value="0">Not Paid</option>
+                                                <option value="1">Paid</option>
+                                            </optgroup>
+                                        </select>
+                                    </div>
+                                </div>
                                 <div class="text-center" >
                                     <button type="button" id="enter_field_data" class="btn bg-green-800 btn-labeled btn-rounded btn-xlg"><b><i class="icon-arrow-down-right32"></i></b>Enter</button>
                                 </div>
@@ -173,83 +180,6 @@
                                             </tr>
                                             </thead>
                                             <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>1</td>
-                                                <td>Eugene</td>
-                                                <td>Kopyov</td>
-                                                <td>@Koopyov</td>
-                                                <td>@Koopyov</td>
-                                                <td>@Koopyov</td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>1</td>
-                                                <td>1</td>
-                                                <td>Eugene</td>
-                                                <td>Kopyov</td>
-                                                <td>@Koopyov</td>
-                                                <td>@Koopyov</td>
-                                                <td>@Koopyov</td>
-                                            </tr>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>3</td>
-                                                <td>Eugene</td>
-                                                <td>Kopyov</td>
-                                                <td>@Koopyov</td>
-                                                <td>@Koopyov</td>
-                                                <td>@Koopyov</td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>2</td>
-                                                <td>1</td>
-                                                <td>Eugene</td>
-                                                <td>Kopyov</td>
-                                                <td>@Koopyov</td>
-                                                <td>@Koopyov</td>
-                                                <td>@Koopyov</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>2</td>
-                                                <td>Eugene</td>
-                                                <td>Kopyov</td>
-                                                <td>@Koopyov</td>
-                                                <td>@Koopyov</td>
-                                                <td>@Koopyov</td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>3</td>
-                                                <td>1</td>
-                                                <td>Eugene</td>
-                                                <td>Kopyov</td>
-                                                <td>@Koopyov</td>
-                                                <td>@Koopyov</td>
-                                                <td>@Koopyov</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>3</td>
-                                                <td>Eugene</td>
-                                                <td>Kopyov</td>
-                                                <td>@Koopyov</td>
-                                                <td>@Koopyov</td>
-                                                <td>@Koopyov</td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>4</td>
-                                                <td>1</td>
-                                                <td>Eugene</td>
-                                                <td>Kopyov</td>
-                                                <td>@Koopyov</td>
-                                                <td>@Koopyov</td>
-                                                <td>@Koopyov</td>
-                                            </tr>
-
                                             </tbody>
                                             <tfoot>
                                                 <tr style="background-color: #e4efaf; font-weight: bold">
@@ -277,7 +207,6 @@
                                     <table class="table table-striped table-bordered table-hover" id="fieldlabourtable">
                                         <thead>
                                         <tr class="bg-green">
-                                            <th>#</th>
                                             <th>EPF No.</th>
                                             <th>Labour Name</th>
                                             <th>Field Name</th>
@@ -289,56 +218,14 @@
                                             <th>Over(Kgs)</th>
                                             <th>Field Norm</th>
                                             <th>Payable</th>
-                                            <th>Paid</th>
+                                            <th>paid</th>
                                             <th>Action</th>
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <tr>
-                                            <td>a</td>
-                                            <td>a</td>
-                                            <td>acasdf asfsdfasf afFFDSF</td>
-                                            <td>a</td>
-                                            <td>a</td>
-                                            <td>a</td>
-                                            <td></td>
-                                            <td>a</td>
-                                            <td>a</td>
-                                            <td>a</td>
-                                            <td>s</td>
-                                            <td>a</td>
-                                            <td>
-                                                <div class="switchery-xs">
-                                                    <input type="checkbox" class="switchery" checked="checked">
-                                                </div>
-                                            </td>
-                                            <td></td>
-                                        </tr>
-                                        <tr>
-                                            <td>a</td>
-                                            <td>a</td>
-                                            <td>a</td>
-                                            <td>a</td>
-                                            <td>a</td>
-                                            <td>a</td>
-                                            <td></td>
-                                            <td>a</td>
-                                            <td>a</td>
-                                            <td>a</td>
-                                            <td>a</td>
-                                            <td>s</td>
-                                            <td>
-                                                <div class="switchery-xs">
-                                                    <input type="checkbox" class="switchery" checked="checked">
-                                                </div>
-                                            </td>
-                                            <td></td>
-                                        </tr>
-
                                         </tbody>
                                         <tfoot>
                                         <tr style="background-color: #e4efaf; font-weight: bold">
-                                            <td></td>
                                             <td></td>
                                             <td></td>
                                             <td></td>
@@ -361,7 +248,6 @@
 
                     </div>
                     <div class="row" style="margin-top: 50px">
-
                         <div class="col-md-12">
                             <fieldset>
                                 <legend class="text-semibold"><i class="icon-stack-plus position-left"></i>Confirmation</legend>
@@ -369,14 +255,14 @@
                                     <div class="form-group">
                                         <label class="col-lg-3 control-label text-semibold">Image Attachments:</label>
                                         <div class="col-lg-9">
-                                            <input type="file" class="file-input-ajax" multiple="multiple">
+                                            <input type="file" class="file-input-ajax" name="uploadedFile">
                                         </div>
                                     </div>
 
                                     <div class="form-group">
                                         <label class="col-lg-3 control-label text-semibold">Your message:</label>
                                         <div class="col-lg-9">
-                                        <textarea rows="5" cols="5" class="form-control" placeholder="Enter your message here"></textarea>
+                                        <textarea name="txtMessage" rows="5" cols="5" class="form-control" placeholder="Enter your message here"></textarea>
                                         </div>
                                     </div>
 
@@ -387,7 +273,7 @@
                                         </label>
                                     </div>
                                     <div class="text-center" >
-                                        <button type="submit" id="submit_field_data" class="btn bg-green-800 btn-labeled btn-rounded btn-xlg"><b><i class="icon-arrow-down-right32"></i></b>Submit Form</button>
+                                        <button type="button" id="submit_field_data" class="btn bg-green-800 btn-labeled btn-rounded btn-xlg"><b><i class="icon-arrow-down-right32"></i></b>Submit Form</button>
                                     </div>
                             </fieldset>
                         </div>
@@ -413,8 +299,54 @@
     <script src="{{ asset('assets/js/core.js') }}"></script>
     <script>
 
+        function getDataForMainTable() {
+            $.ajax({
+                method: "GET",
+                url: "{{ route('get.field.labour.data') }}",
+            }).done(function (data) {
+                data = JSON.parse(data);
+                $("#fieldlabourtable tbody").empty();
+                data.data.forEach((item) => {
+                    let paidLbl = item.paid ? 'PAID' : 'NOT PAID';
+                    $("#fieldlabourtable tbody").append("<tr id='"+item.id+"'><td>"+item.epf_id+"</td><td>"+item.labour.fname+" "+item.labour.lname+"</td><td>"+item.field.field_name+"</td><td>"+item.block_no+"</td><td>"+item.no_of_liters+"</td><td>"+item.metrolac_reading+"</td><td>"+item.latex+"</td><td>"+item.scrap+"</td><td>"+item.over+"</td><td>"+item.field_norm+"</td><td>"+item.payable+"</td><td>"+paidLbl+"</td><td><button type='button' onclick='deleteLabourData("+item.id+")'>DEL</button></td></tr>");
+                });
+                $("#fieldsummarytable tbody").empty();
+                data.summer.forEach((item) => {
+                    console.log(item);
+                    $("#fieldsummarytable tbody").append("<tr><td>"+item.field_name+"</td><td>"+item.block_no+"</td><td>"+item.tappers+"</td><td>"+item.latexL+"</td><td>"+item.latexKg+"</td><td>"+item.scrap+"</td><td>"+item.totalKg+"</td></tr>");
+                });
+            }).fail(function () {
+                messageErrorAlert("Error While Retrieving Data");
+            });
+        }
+
+        function deleteLabourData(id) {
+            $.ajax({
+                method: "GET",
+                url: "{{ route('delete.field.labour.data') }}",
+                data: {
+                    id: id
+                }
+            }).done(function (data) {
+                messageSuccessAlertNoReload("Data Deleted");
+                getDataForMainTable();
+            }).fail(function () {
+                messageErrorAlert("Error While Deleting Data");
+            });
+        }
+
+        $(document).ready(function () {
+            getDataForMainTable();
+        });
+
         $("#enter_field_data").click(function () {
-            formDataAjax("{{ route('field.log.add') }}", "Field Data Entered Successfully", "Error while entering Field data", "frm_create_field_data");
+            formDataAjaxNoReload("{{ route('field.log.add') }}", "Field Labour Data Entered Successfully", "Error while entering Field data", "frm_create_field_data");
+            getDataForMainTable();
+        });
+
+        $("#submit_field_data").click(function () {
+            formDataAjax("{{ route('field.log.save') }}", "Field Data Saved Successfully", "Error while entering Field data", "frm_create_field_data");
+            getDataForMainTable();
         });
 
         $("#enter_field_data").click(function(){
@@ -441,8 +373,6 @@
             var id = $(this).closest("tr").attr("id");
             $(this).closest("tr").remove();
         });//On table Delete function
-
-
     </script>
     {{--javascripts ends--}}
 @endsection
