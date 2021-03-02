@@ -43,12 +43,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('all-reports', function () {
         return view('pages.all_reports');
     });
-    Route::get('register-requests', function () {
-        return view('pages.register_requests');
-    });
-    Route::get('users', function () {
-        return view('pages.registered_users');
-    });
+    
+   
     Route::get('block-create', function () {
         return view('pages.create_block');
     });
@@ -70,6 +66,15 @@ Route::middleware(['auth'])->group(function () {
     Route::post('disease-get', 'DiseaseController@retrieve')->name('disease.get');
     Route::post('disease-delete', 'DiseaseController@delete')->name('disease.delete');
 
+    //Register 
+    Route::get('register-requests', 'UserController@index');
+    Route::post('register-approveuser', 'UserController@approveuser')->name('user.approveuser');
+    Route::post('register-rejectuser', 'UserController@rejectuser')->name('user.rejectuser');
+    Route::post('register-getuser', 'UserController@getuser')->name('user.getuser');
+    Route::get('users', 'UserController@getregistedusers')->name('user.getregistedusers');
+
+        
+  
     Route::post('field-data-log-add', 'FieldController@addToTemp')->name('field.log.add');
     Route::post('field-data-log-save', 'FieldController@saveFieldData')->name('field.log.save');
     Route::get('get-field-labour-data', 'FieldController@getFieldLabourData')->name('get.field.labour.data');

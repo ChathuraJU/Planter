@@ -57,6 +57,23 @@
                         </tr>
                         </thead>
                         <tbody>
+                            @foreach($users as $user)
+                            <tr id="{{$user->person_id}}">
+                                <td>{{$user->person_id}}</td>
+                                <td>{{$user->fname}}</td>
+                                <td>{{$user->nic}}</td>
+                                <td>{{$user->contact}}</td>
+                                <td>{{$user->estate_name}}</td>
+                                <td>{{$user->user_type_id}}</td>
+                                <td>
+                                    <ul class="icons-list">
+                                        <li><a href="#" data-toggle="modal" data-target="#view_modal"  onclick="requestApprove_id_set({{$user->id}})"><i class="icon-file-check"></i></a></li>
+                                    </ul>
+                                </td>
+                            <tr>   
+                            @endforeach
+                        </tbody>
+                        <!-- <tbody>
                         <tr>
                             <td>test</td>
                             <td>test</td>
@@ -70,7 +87,7 @@
                                 </ul>
                             </td>
                         </tr>
-                        </tbody>
+                        </tbody> -->
                     </table>
                 </div>
                 <!-- /basic initialization -->
@@ -87,9 +104,10 @@
                             <div class="modal-body">
                                 <div class="row">
                                     <div class="col-sm-6">
+                                    <input type="hidden" name="txtid" id="txtid"/>
                                         <div class="form-group">
                                             <label class="control-label text-semibold">First Name :</label>
-                                            <input type="text" name="fname" id="disease_name" placeholder="Enter First Name" class="form-control mspborder disabled">
+                                            <input type="text" name="fname" id="fname" placeholder="Enter First Name" class="form-control mspborder disabled">
                                         </div>
                                         <div class="form-group">
                                             <label class="control-label text-semibold">DOB :</label>
@@ -159,7 +177,7 @@
                             </div>
 
                             <div class="modal-footer">
-                                <button type="button" class="btn bg-green-800" data-dismiss="modal">Yes, approve</button>
+                                <button type="button" class="btn bg-green-800" onclick="requestApprove()" data-dismiss="modal">Yes, approve</button>
                                 <button type="button" class="btn btn-default" data-dismiss="modal">No, thanks</button>
                             </div>
                         </div>
@@ -180,7 +198,7 @@
                             </div>
 
                             <div class="modal-footer">
-                                <button type="button" class="btn bg-green-800" data-dismiss="modal">Yes, reject</button>
+                                <button type="button" class="btn bg-green-800" onclick="requestReject()" data-dismiss="modal">Yes, reject</button>
                                 <button type="button" class="btn btn-default" data-dismiss="modal">No, thanks</button>
                             </div>
                         </div>
@@ -197,9 +215,10 @@
     {{--page content ends--}}
 
     {{--javascripts starts here--}}
+    <script src="{{ asset('assets/js/core.js') }}"></script>
+
     <script>
-
-
+    
         $(document).ready(function () {
             datatb();
         });
@@ -260,6 +279,85 @@
             });
             table_offset.fixedHeader.headerOffset($('.navbar-fixed-top').height());
         }
+
+        function getuser(id) {
+            const url = "{{ route('user.getuser') }}";
+
+            $.ajax({
+                    method: "POST",
+                    url: url,
+                    data: { "_token": "{{ csrf_token() }}",
+                            "id": id},
+
+                }).done(function (data) {
+
+                    data = JSON.parse(data);
+                    $("#fname").val(data[0].fname)
+                    $("#lname").val(data[0].lname)
+                    $("#dob").val(data[0].dob)
+                    $("#gender").val(data[0].gender)
+                    $("#nic").val(data[0].nic)
+                    $("#contact").val(data[0].contact)
+                    $("#address").val(data[0].address)
+                    $("#email").val(data[0].email)
+                    $("#estate").val(data[0].estate_name)
+                    $("#designation").val(data[0].user_type_name)
+
+                    // messageSuccessAlert("User Rejected Successfully")
+
+                }).fail(function () {
+
+                    messageErrorAlert("error");
+
+                });
+        }
+
+        function requestApprove_id_set(id){
+            $('#txtid').val(id);
+            getuser(id);
+        }
+
+        function requestApprove(){
+        const url = "{{ route('user.approveuser') }}";
+
+        $.ajax({
+                method: "POST",
+                url: url,
+                data: { "_token": "{{ csrf_token() }}",
+                        "id": $('#txtid').val()},
+
+            }).done(function (data) {
+
+                messageSuccessAlert("User Approved Successfully")
+
+            }).fail(function () {
+
+                messageErrorAlert("error");
+
+            });
+        }
+
+        function requestReject(){
+        const url = "{{ route('user.rejectuser') }}";
+
+        $.ajax({
+                method: "POST",
+                url: url,
+                data: { "_token": "{{ csrf_token() }}",
+                        "id": $('#txtid').val()},
+
+            }).done(function (data) {
+
+                messageSuccessAlert("User Rejected Successfully")
+
+            }).fail(function () {
+
+                messageErrorAlert("error");
+
+            });
+        }
+
+      
 
     </script>
     {{--javascripts ends--}}
