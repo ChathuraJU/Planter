@@ -2,12 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\CollectionApproval;
+use App\DivisionCollection;
+use App\DivisionCollectionMain;
 use App\Field;
+use App\LabourCollection;
 use App\Person;
 use App\TempLabourCollectionSummaryEntity;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Storage;
 
 class FieldController extends Controller
@@ -95,6 +100,62 @@ class FieldController extends Controller
 
     public function saveFieldData(Request $request)
     {
-        dd($request->all());
+        $response = Http::get('http://api.openweathermap.org/data/2.5/weather?lat='.$request->lat.'&lon='.$request->lon.'&appid='.env('WEATHER_API_KEY'));
+
+        $division_collection_main = new DivisionCollectionMain();
+        $division_collection_main->weather = $response->body();
+        $division_collection_main->weather = $response;
+        if ($division_collection_main->save()) {
+
+            $summary = DB::select("SELECT tmp.block_no, f.field_id, SUM(tmp.no_of_liters) as latexL, COUNT(tmp.id) as tappers, SUM(tmp.latex) as latexKg, SUM(tmp.scrap) as scrap, (SUM(tmp.latex) + SUM(tmp.scrap)) as totalKg FROM tmp_labour_collection_summary tmp INNER JOIN `fields` f on f.field_id = tmp.field_no GROUP BY block_no");
+            foreach ($summary as $tem_collection) {
+                $division_collection = new DivisionCollection();
+                $field = Field::find($tem_collection->field_id);
+                $division_id = $field->division->division_id;
+                $division_collection->division_id = $division_id;
+                $division_collection->field_no = $tem_collection->field_id;
+                $division_collection->block_no = $tem_collection->block_no;
+                $division_collection->no_tappers = $tem_collection->tappers;
+                $division_collection->latex_l = $tem_collection->latexL;
+                $division_collection->latex_kg = $tem_collection->latexKg;
+                $division_collection->scrap_kg = $tem_collection->scrap;
+                $division_collection->total = $tem_collection->totalKg;
+                $division_collection->division_collection_main_id = $division_collection_main->id;
+                $division_collection->save();
+            }
+
+            $collection_approval = new CollectionApproval();
+            $collection_approval->user_type_id = auth()->user()->user_type_id;
+            $collection_approval->user_id = auth()->user()->id;
+            $collection_approval->note = $request->txtMessage;
+            $collection_approval->approval_status = 1;
+            $collection_approval->division_collection_main_id = $division_collection_main->id;
+            if ($request->uploadedFile) {
+                $path = Storage::putFile('public/approvals', $request->file('uploadedFile'),'public');
+                $collection_approval->image = 'storage/'.$path;
+            }
+            if ($collection_approval->save()) {
+                $tempData = TempLabourCollectionSummaryEntity::with('labour', 'field')->get();
+                foreach ($tempData as $data) {
+                    $labour_collection = new LabourCollection();
+                    $labour_collection->labour_id = $data->labour_id;
+                    $labour_collection->division_collection_id = $division_collection->division_collection_id;
+                    $labour_collection->field_id = $data->field_no;
+                    $labour_collection->block_id = $data->block_no;
+                    $labour_collection->labour_latex_kgs = $data->latex;
+                    $labour_collection->metrolac_reading = $data->metrolac_reading;
+                    $labour_collection->metrolac_reading = $data->metrolac_reading;
+                    $labour_collection->labour_scrap_kgs = $data->scrap;
+                    $labour_collection->labour_over_kgs = $data->over;
+                    $labour_collection->labour_field_norms = $data->field_norm;
+                    $labour_collection->labour_payable = $data->payable;
+                    $labour_collection->labour_pay_status = $data->paid;
+                    $labour_collection->save();
+                }
+                DB::table('tmp_labour_collection_summary')->truncate();
+                return true;
+            }
+        }
+
     }
 }

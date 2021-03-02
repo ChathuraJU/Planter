@@ -272,6 +272,8 @@
                                             I do here by confirm the above recorded data is in order
                                         </label>
                                     </div>
+                                <input type="hidden" name="lon" id="lon">
+                                <input type="hidden" name="lat" id="lat">
                                     <div class="text-center" >
                                         <button type="button" id="submit_field_data" class="btn bg-green-800 btn-labeled btn-rounded btn-xlg"><b><i class="icon-arrow-down-right32"></i></b>Submit Form</button>
                                     </div>
@@ -298,6 +300,10 @@
     {{--javascripts starts here--}}
     <script src="{{ asset('assets/js/core.js') }}"></script>
     <script>
+
+        $(".touchspin-empty").TouchSpin({
+            max: 1000000,
+        });
 
         function getDataForMainTable() {
             $.ajax({
@@ -344,9 +350,20 @@
             getDataForMainTable();
         });
 
-        $("#submit_field_data").click(function () {
-            formDataAjax("{{ route('field.log.save') }}", "Field Data Saved Successfully", "Error while entering Field data", "frm_create_field_data");
-            getDataForMainTable();
+        $("#submit_field_data").click(async function () {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition((response) => {
+                    console.log(response.coords.latitude);
+                    $("#lon").val(response.coords.longitude);
+                    $("#lat").val(response.coords.latitude);
+                    formDataAjax("{{ route('field.log.save') }}", "Field Data Saved Successfully", "Error while entering Field data", "frm_create_field_data");
+                    getDataForMainTable();
+                }, (error) => {
+                    console.log(error);
+                });
+            } else {
+                console.log("Geolocation is not supported by this browser.");
+            }
         });
 
         $("#enter_field_data").click(function(){
