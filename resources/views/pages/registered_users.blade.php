@@ -57,6 +57,23 @@
                         </tr>
                         </thead>
                         <tbody>
+                            @foreach($users as $user)
+                            <tr id="{{$user->person_id}}">
+                                <td>{{$user->person_id}}</td>
+                                <td>{{$user->fname}}</td>
+                                <td>{{$user->nic}}</td>
+                                <td>{{$user->contact}}</td>
+                                <td>{{$user->estate_name}}</td>
+                                <td>{{$user->user_type_name}}</td>
+                                <td>
+                                    <ul class="icons-list">
+                                        <li><a href="#" data-toggle="modal" data-target="#view_modal"  onclick="getuser({{$user->id}})"><i class="icon-file-check"></i></a></li>
+                                    </ul>
+                                </td>
+                            <tr>   
+                            @endforeach
+                        </tbody>
+                        <!-- <tbody>
                         <tr>
                             <td>test</td>
                             <td>test</td>
@@ -70,7 +87,7 @@
                                 </ul>
                             </td>
                         </tr>
-                        </tbody>
+                        </tbody> -->
                     </table>
                 </div>
                 <!-- /basic initialization -->
@@ -175,6 +192,7 @@
     {{--page content ends--}}
 
     {{--javascripts starts here--}}
+    <script src="{{ asset('assets/js/core.js') }}"></script>
     <script>
 
 
@@ -238,6 +256,10 @@
             });
             table_offset.fixedHeader.headerOffset($('.navbar-fixed-top').height());
         }
+
+    function getuser(id){
+
+    }
 
     </script>
     {{--javascripts ends--}}
