@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Field;
+use App\TempLabourCollectionSummaryEntity;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
@@ -36,7 +37,7 @@ class FieldController extends Controller
            $path = Storage::putFile('public/fields', $request->file('txt_upload_image'),'public');
            $field->image = 'storage/'.$path;
        }
-       
+
         if ($field->save()) {
             echo true;
         } else {
@@ -48,5 +49,14 @@ class FieldController extends Controller
     {
         $field = Field::find($request->myData);
         echo $field->toJson();
+    }
+
+    public function addToTemp(Request $request)
+    {
+        $collection_summary = new TempLabourCollectionSummaryEntity();
+        $collection_summary->labour_id = $request->labour;
+        $collection_summary->epf_id = $request->epf;
+        $collection_summary->field_no = $request->field;
+        $collection_summary->block_no = $request->field;
     }
 }

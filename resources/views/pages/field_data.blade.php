@@ -11,7 +11,6 @@
                         <span class="text-semibold">Add Field Data</span>
                     </h5>
                 </div>
-
             </div>
 
             <div class="breadcrumb-line" id="mydiv">
@@ -32,7 +31,8 @@
     <div class="content">
 
         {{--Add field data form starts here--}}
-        <form class="form-horizontal" action="#">
+        <form class="form-horizontal" id="frm_create_field_data" action="#">
+            @csrf
             <div class="panel panel-white">
                 <div class="panel-heading">
                     <h5 class="panel-title">Add Field Data Form</h5>
@@ -52,7 +52,7 @@
                                 <div class="form-group">
                                     <label class="col-lg-3 control-label text-semibold" for="labour">Labour Name</label>
                                     <div class="col-lg-9">
-                                        <select data-placeholder="Select a Labour..." id="labour" class="select select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+                                        <select data-placeholder="Select a Labour..." id="labour"  name="labour" class="select select2-hidden-accessible" tabindex="-1" aria-hidden="true">
                                             <option></option>
                                             <optgroup label="Labours">
                                                 <option value="0">jayamaha</option>
@@ -64,7 +64,7 @@
                                 <div class="form-group">
                                     <label class="col-lg-3 control-label text-semibold" for="epf">EPF No.</label>
                                     <div class="col-lg-9">
-                                        <select data-placeholder="Select an EPF number..." id="epf" class="select select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+                                        <select data-placeholder="Select an EPF number..." id="epf" name="epf" class="select select2-hidden-accessible" tabindex="-1" aria-hidden="true">
                                             <option></option>
                                             <optgroup label="epf">
                                                 <option value="0">EPF1</option>
@@ -77,7 +77,7 @@
                                 <div class="form-group">
                                     <label class="col-lg-3 control-label text-semibold" for="field">Field No.</label>
                                     <div class="col-lg-9">
-                                        <select data-placeholder="Select a Field..." id="field" class="select select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+                                        <select data-placeholder="Select a Field..." id="field" name="field" class="select select2-hidden-accessible" tabindex="-1" aria-hidden="true">
                                             <option></option>
                                             <optgroup label="Fields">
                                                 <option value="0">jayamaha</option>
@@ -149,7 +149,7 @@
                                     </div>
                                 </div>
                                 <div class="text-center" >
-                                    <button type="submit" id="enter_field_data" class="btn bg-green-800 btn-labeled btn-rounded btn-xlg"><b><i class="icon-arrow-down-right32"></i></b>Enter</button>
+                                    <button type="button" id="enter_field_data" class="btn bg-green-800 btn-labeled btn-rounded btn-xlg"><b><i class="icon-arrow-down-right32"></i></b>Enter</button>
                                 </div>
 
                             </fieldset>
@@ -410,7 +410,12 @@
 
 
     {{--javascripts starts here--}}
+    <script src="{{ asset('assets/js/core.js') }}"></script>
     <script>
+
+        $("#enter_field_data").click(function () {
+            formDataAjax("{{ route('field.log.add') }}", "Field Data Entered Successfully", "Error while entering Field data", "frm_create_field_data");
+        });
 
         $("#enter_field_data").click(function(){
             var val1 = $('#epf').val();
