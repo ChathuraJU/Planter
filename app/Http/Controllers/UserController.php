@@ -20,8 +20,6 @@ class UserController extends Controller
                     ->join('users', 'persons.person_id', '=', 'users.person_id')
                     ->where('users.status',0)->get();
 
-        // dd($users);
-        
         return view('pages.register_requests', compact('users'));
     }
 
@@ -70,5 +68,9 @@ class UserController extends Controller
 
         return view('pages.registered_users', compact('users'));
     }
+
+    public function userupdate(){
+        echo true;
+    } 
 
 }

@@ -52,13 +52,12 @@
                                 <div class="col-sm-4">
                                     <div class="form-group">
                                         <label class="control-label text-semibold">Field</label>
-                                        <select data-placeholder="Select a Field..."
-                                                class="select select2-hidden-accessible" id="txtField" name="txtField"
-                                                tabindex="-1" aria-hidden="true">
+                                        <select data-placeholder="Select a Field..." id="field" name="field" class="select select2-hidden-accessible" tabindex="-1" aria-hidden="true">
                                             <option></option>
-                                            <optgroup label="Divisions">
-                                                <option value="0">Field A</option>
-                                                <option value="1">Field B</option>
+                                            <optgroup label="Fields">
+                                                @foreach($fields as $field)
+                                                    <option value="{{ $field->field_id }}">{{ $field->field_name }}</option>
+                                                @endforeach
                                             </optgroup>
                                         </select>
                                     </div>
@@ -77,11 +76,11 @@
                                             <span class="input-group-addon bootstrap-touchspin-prefix"
                                                   style="display: none;"></span>
                                             <input type="text" value="" id="txt_no_of_hecatres" name="txt_no_of_hecatres"
-                                                   class="touchspin-empty form-control " style="display: block;">
+                                                   class="touchspin-custom form-control " style="display: block;">
                                             <span class="input-group-addon bootstrap-touchspin-postfix"
                                                   style="display: none;"></span>
                                         </div>
-                                        <span style="color: #3b3b3b" class="text-gray-600">(Hectares remaining in the selected field : 10)</span>
+                                        <span style="color: #3b3b3b" class="text-gray-600">(Hectares remaining in the selected field : <span id="hectare"></span>)</span>
                                     </div>
                                 </div>
                             </div>
@@ -123,19 +122,18 @@
                             <th>Field</th>
                             <th>Block No.</th>
                             <th>Number of Hectares</th>
-                            <th>Action</th>
 
                         </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Upper Division</td>
-                                <td>Field A</td>
-                                <td>Block No.</td>
-                                <td class="text-center">10</td>
-                                <td><a href="#">Update</a></td>
-                            </tr>
-
+                            @foreach($blocks as $block)
+                            <tr id="{{ $block->id }}">
+                                <td>{{ $block->division_name }}</td>
+                                <td>{{ $block->field_name }}</td>
+                                <td>{{ $block->block_no }}</td>
+                                <td>{{ $block->hectare }}</td>
+                            </tr>   
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
@@ -151,22 +149,26 @@
     {{--javascripts starts here--}}
     <script src="{{ asset('assets/js/core.js') }}"></script>
     <script>
-        {{--tableRowClick("{{ csrf_token() }}", "{{ route('field.get') }}", function (data) {--}}
-        {{--    var decodedData = JSON.parse(data);--}}
-        {{--    $("#txtId").val(decodedData.field_id);--}}
-        {{--    $("#txtDivision").select2().val(decodedData.division_id).trigger("change");--}}
-        {{--    $("#txt_field_name").val(decodedData.field_name);--}}
-        {{--    $("#txt_no_of_hecatres").val(decodedData.hectare);--}}
-        {{--});--}}
+        // {{--tableRowClick("{{ csrf_token() }}", "{{ route('field.get') }}", function (data) {--}}
+        // {{--    var decodedData = JSON.parse(data);--}}
+        // {{--    $("#txtId").val(decodedData.field_id);--}}
+        // {{--    $("#txtDivision").select2().val(decodedData.division_id).trigger("change");--}}
+        // {{--    $("#txt_field_name").val(decodedData.field_name);--}}
+        // {{--    $("#txt_no_of_hecatres").val(decodedData.hectare);--}}
+        // {{--});--}}
 
-        {{--const formName = "frm_field";--}}
-        {{--$("#submit_field_data").click(function () {--}}
-        {{--    formDataAjax("{{ route('field.save') }}", "Field Registered Successfully", "Error Registering Field", formName);--}}
-        {{--});--}}
+        // {{--const formName = "frm_field";--}}
+        // {{--$("#submit_field_data").click(function () {--}}
+        // {{--    formDataAjax("{{ route('field.save') }}", "Field Registered Successfully", "Error Registering Field", formName);--}}
+        // {{--});--}}
+
+        // $(document).ready(function () {
+        //     $("#" + formName).trigger('reset');
+        //     datatb();
+        // });
 
         $(document).ready(function () {
-            $("#" + formName).trigger('reset');
-            datatb();
+            setMax(100);
         });
 
         // Setting datatable defaults
@@ -225,6 +227,62 @@
             });
             table_offset.fixedHeader.headerOffset($('.navbar-fixed-top').height());
         }
+
+        $( "#field" ).change(function() {
+           
+            var id = $('#field').val();
+    
+            const url = "{{ route('field.get') }}";
+
+            $.ajax({
+                    method: "POST",
+                    url: url,
+                    data: { "_token": "{{ csrf_token() }}",
+                            "myData": id},
+
+                }).done(function (data) {
+
+                    data = JSON.parse(data);
+                    $("#hectare").text(data.hectare)
+                
+                    // messageSuccessAlert("User Rejected Successfully")
+
+                }).fail(function () {
+
+                    messageErrorAlert("error");
+
+                });
+        });
+
+        function setMax(value){
+            $(".touchspin-custom").TouchSpin({
+                max:value,
+            });
+        }
+
+        $("#txt_no_of_hecatres").change(function(){
+            var selecthectare = $("#txt_no_of_hecatres").val();
+            var fieldhectare =  parseInt($("#hectare").text());
+
+            if(selecthectare > fieldhectare){
+                swal({
+                    title: "Input hecatres cannot be greater than field hecatres" ,
+                    text: "Click ok to continue",
+                    confirmButtonColor: "#f44336",
+                    type: "error"
+                },
+                function (isConfirm) {
+
+                    setMax(fieldhectare);
+
+                });
+            }
+        });
+
+        const formName = "frm_field";
+        $("#submit_field_data").click(function () {
+            formDataAjax("{{ route('fieldblock.save') }}", "Block Registered Successfully", "Error Registering Block", formName);
+        });
 
 
 

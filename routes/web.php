@@ -44,15 +44,13 @@ Route::middleware(['auth'])->group(function () {
         return view('pages.all_reports');
     });
     
-   
-    Route::get('block-create', function () {
-        return view('pages.create_block');
-    });
 
     //Field Routes
     Route::get('field-create', 'FieldController@index');
     Route::post('filed-save', 'FieldController@store')->name('field.save');
     Route::post('filed-get', 'FieldController@retrieve')->name('field.get');
+    Route::get('block-create', 'FieldController@block_view');
+    Route::post('block-fieldblock', 'FieldController@fieldblocksave')->name('fieldblock.save');
 
     //Labour Routes
     Route::get('labour-chart', 'LabourController@index');
@@ -72,6 +70,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('register-rejectuser', 'UserController@rejectuser')->name('user.rejectuser');
     Route::post('register-getuser', 'UserController@getuser')->name('user.getuser');
     Route::get('users', 'UserController@getregistedusers')->name('user.getregistedusers');
+    Route::get('register-userupdate', 'UserController@userupdate')->name('user.userupdate');
 
         
   
