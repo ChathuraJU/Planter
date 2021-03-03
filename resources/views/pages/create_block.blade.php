@@ -131,7 +131,7 @@
                                 <td>{{ $block->division_name }}</td>
                                 <td>{{ $block->field_name }}</td>
                                 <td>{{ $block->block_no }}</td>
-                                <td>{{ $block->hectare }}</td>
+                                <td>{{ $block->block_hectare }}</td>
                             </tr>   
                             @endforeach
                         </tbody>

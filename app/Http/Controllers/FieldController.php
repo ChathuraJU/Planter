@@ -167,7 +167,7 @@ class FieldController extends Controller
         $blocks = DB::table('blocks')
                     ->join('fields', 'blocks.field_id', '=', 'fields.field_id')
                     ->join('divisions', 'fields.division_id', '=', 'divisions.division_id')->get();
- 
+
         return view('pages.create_block', compact('fields','blocks'));
     }
 
@@ -180,7 +180,7 @@ class FieldController extends Controller
         
         $block->block_no= $request->txt_block_no;
         $block->field_id=  $field_id;
-        $block->hectare= $hectare;
+        $block->block_hectare= $hectare;
 
         if($block->save()){
 
