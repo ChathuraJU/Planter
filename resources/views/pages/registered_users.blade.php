@@ -70,7 +70,7 @@
                                         <li><a href="#" data-toggle="modal" data-target="#view_modal"  onclick="getuser({{$user->id}})"><i class="icon-file-check"></i></a></li>
                                     </ul>
                                 </td>
-                            <tr>   
+                            </tr>   
                             @endforeach
                         </tbody>
                         <!-- <tbody>
@@ -104,9 +104,10 @@
                             <div class="modal-body">
                                 <div class="row">
                                     <div class="col-sm-6">
+                                    <input type="hidden" id="txtid" name="txtid"/>
                                         <div class="form-group">
                                             <label class="control-label text-semibold">First Name :</label>
-                                            <input type="text" name="fname" id="disease_name" placeholder="Enter First Name" class="form-control mspborder disabled">
+                                            <input type="text" name="fname" id="fname" placeholder="Enter First Name" class="form-control mspborder disabled">
                                         </div>
                                         <div class="form-group">
                                             <label class="control-label text-semibold">DOB :</label>
@@ -258,7 +259,36 @@
         }
 
     function getuser(id){
+        const url = "{{ route('user.getuser') }}";
 
+        $.ajax({
+                method: "POST",
+                url: url,
+                data: { "_token": "{{ csrf_token() }}",
+                        "id": id},
+
+            }).done(function (data) {
+
+                data = JSON.parse(data);
+                $("#txtid").val(data[0].id)
+                $("#fname").val(data[0].fname)
+                $("#lname").val(data[0].lname)
+                $("#dob").val(data[0].dob)
+                $("#gender").val(data[0].gender)
+                $("#nic").val(data[0].nic)
+                $("#contact").val(data[0].contact)
+                $("#address").val(data[0].address)
+                $("#email").val(data[0].email)
+                $("#estate").val(data[0].estate_name)
+                $("#designation").val(data[0].user_type_name)
+
+                // messageSuccessAlert("User Rejected Successfully")
+
+            }).fail(function () {
+
+                messageErrorAlert("error");
+
+            });
     }
 
     </script>

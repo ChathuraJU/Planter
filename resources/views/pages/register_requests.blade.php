@@ -70,7 +70,7 @@
                                         <li><a href="#" data-toggle="modal" data-target="#view_modal"  onclick="requestApprove_id_set({{$user->id}})"><i class="icon-file-check"></i></a></li>
                                     </ul>
                                 </td>
-                            <tr>   
+                            </tr>   
                             @endforeach
                         </tbody>
                         <!-- <tbody>
