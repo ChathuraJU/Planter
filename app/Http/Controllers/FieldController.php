@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Field;
 use App\Person;
+use App\Block;
 use App\TempLabourCollectionSummaryEntity;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -96,5 +97,38 @@ class FieldController extends Controller
     public function saveFieldData(Request $request)
     {
         dd($request->all());
+    }
+
+    public function block_view(){
+
+        $fields = Field::all();
+        
+        $blocks = DB::table('blocks')
+                    ->join('fields', 'blocks.field_id', '=', 'fields.field_id')
+                    ->join('divisions', 'fields.division_id', '=', 'divisions.division_id')->get();
+ 
+        return view('pages.create_block', compact('fields','blocks'));
+    }
+
+    public function fieldblocksave(Request $request){
+
+        $block = new Block();
+
+        $field_id = $request->field;
+        $hectare = $request->txt_no_of_hecatres;
+        
+        $block->block_no= $request->txt_block_no;
+        $block->field_id=  $field_id;
+        $block->hectare= $hectare;
+
+        if($block->save()){
+
+            $field = DB::update("update fields set hectare = hectare - '$hectare' where field_id = '$field_id'");
+            
+            echo true;
+        }else{
+            echo false;
+        }
+
     }
 }
