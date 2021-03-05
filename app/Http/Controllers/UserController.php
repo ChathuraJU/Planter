@@ -69,8 +69,27 @@ class UserController extends Controller
         return view('pages.registered_users', compact('users'));
     }
 
-    public function userupdate(){
-        echo true;
+    public function userupdate(Request $request){
+
+                dd($request->all());
+
+                // $per_id = $request->txtId;
+
+                // $user = User::find($per_id);
+
+                // $user->fname = $request->fname;
+                // $user->lname = $request->lname;
+                // $user->gender = $request->gender;
+                // $user->dob = $request->dob;
+                // $user->nic = $request->nic;
+                // $user->contact = $request->contact;
+                // $user->address = $request->address;
+                // $user->epf = $request->epf;
+
+                // $user->save();      
     } 
 
 }
+
+
+

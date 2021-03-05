@@ -103,6 +103,8 @@
 
                             <div class="modal-body">
                                 <div class="row">
+                                <form action="" method="post" enctype="multipart/form-data" id="frm_user_update">
+                                    @csrf
                                     <div class="col-sm-6">
                                     <input type="hidden" id="txtid" name="txtid"/>
                                         <div class="form-group">
@@ -148,6 +150,7 @@
                                             <input type="text" name="designation" id="designation" placeholder="Enter your designation" class="form-control mspborder readonly">
                                         </div>
                                     </div>
+                                    </form>
                                 </div>
 
                             </div>
@@ -177,7 +180,7 @@
                             </div>
 
                             <div class="modal-footer">
-                                <button type="button" class="btn bg-green-800" data-dismiss="modal">Yes, Update</button>
+                                <button type="button" id="submitdata" class="btn bg-green-800" data-dismiss="modal">Yes, Update</button>
                                 <button type="button" class="btn btn-default" data-dismiss="modal">No, Thanks</button>
                             </div>
                         </div>
@@ -290,6 +293,12 @@
 
             });
     }
+
+        const formName = "frm_user_update";
+            $("#submitdata").click(function () {
+                formDataAjax("{{ route('user.userupdate') }}", "User Update Successfully", "Error User Update", formName);
+            });
+   
 
     </script>
     {{--javascripts ends--}}

@@ -70,10 +70,9 @@ Route::middleware(['auth'])->group(function () {
     Route::post('register-rejectuser', 'UserController@rejectuser')->name('user.rejectuser');
     Route::post('register-getuser', 'UserController@getuser')->name('user.getuser');
     Route::get('users', 'UserController@getregistedusers')->name('user.getregistedusers');
-    Route::get('register-userupdate', 'UserController@userupdate')->name('user.userupdate');
+    Route::post('register-userupdate', 'UserController@userupdate')->name('user.userupdate');
 
         
-  
     Route::post('field-data-log-add', 'FieldController@addToTemp')->name('field.log.add');
     Route::post('field-data-log-save', 'FieldController@saveFieldData')->name('field.log.save');
     Route::get('get-field-labour-data', 'FieldController@getFieldLabourData')->name('get.field.labour.data');
