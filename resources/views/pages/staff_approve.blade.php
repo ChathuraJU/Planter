@@ -197,67 +197,149 @@
                         </div>
                     </div>
                     <div class="row" style="margin-top: 50px">
-                        <div class="col-sm-5">
-                            <fieldset>
-                                <legend class="text-semibold"><i class="icon-truck position-left"></i>Approvals Summary</legend>
-                                <!-- Scrollable table -->
-                                <div class="table-responsive pre-scrollable" style="max-height: 500px">
-                                    <table class="table table-bordered" id="fieldsummarytable">
-                                        <thead>
-                                        <tr class="bg-green">
-                                            <th>Approved By</th>
-                                            <th>Segment</th>
-                                            <th>Status</th>
+                        <div class="col-sm-9">
+                            <div class="row">
+                                <div class="col-sm-7">
+                                    <fieldset>
+                                        <legend class="text-semibold"><i class="icon-truck position-left"></i>Approvals Summary</legend>
+                                        <!-- Scrollable table -->
+                                        <div class="table-responsive pre-scrollable" style="max-height: 500px">
+                                            <table class="table table-bordered" id="fieldsummarytable">
+                                                <thead>
+                                                <tr class="bg-green">
+                                                    <th>Approved By</th>
+                                                    <th>Segment</th>
+                                                    <th>Status</th>
 
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Eugene</td>
-                                            <td>Kopyov</td>
-                                        </tr>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>Eugene</td>
+                                                    <td>Kopyov</td>
+                                                </tr>
 
-                                        </tbody>
+                                                </tbody>
 
-                                    </table>
+                                            </table>
+                                        </div>
+                                        <!-- /scrollable table -->
+                                    </fieldset>
                                 </div>
-                                <!-- /scrollable table -->
-                            </fieldset>
-
-                        </div>
-                        <div class="col-sm-4">
-                            <fieldset>
-                                <legend class="text-semibold"><i class="icon-truck position-left"></i>Weather</legend>
-                                <div class="panel text-center bg-brown-700" style="background-image: url('{{asset('images/panel_bg.png')}}');">
-                                    <div class="panel-body">
-                                        <h6 class="text-semibold no-margin-bottom mt-5">20th Jan 2021</h6>
-                                        <div class="opacity-75 content-group">KANDY</div>
-                                        <div class="opacity-75 content-group">01.13 PM</div>
-                                        <i class="icon-cloud" style="font-size: 54px"></i>
-                                    </div>
-
-                                    <div class="panel-body panel-body-accent pb-15">
-                                        <div class="row">
-                                            <div class="col-xs-4">
-                                                <div class="text-uppercase text-size-mini opacity-75">Rainfall</div>
-                                                <h5 class="text-semibold no-margin">55.0mm</h5>
+                                <div class="col-sm-5">
+                                    <fieldset>
+                                        <legend class="text-semibold"><i class="icon-truck position-left"></i>Weather</legend>
+                                        <div class="panel text-center bg-brown-700" style="background-image: url('{{asset('images/panel_bg.png')}}');">
+                                            <div class="panel-body">
+                                                <h6 class="text-semibold no-margin-bottom mt-5">20th Jan 2021</h6>
+                                                <div class="opacity-75 content-group">KANDY</div>
+                                                <div class="opacity-75 content-group">01.13 PM</div>
+                                                <i class="icon-cloud" style="font-size: 54px"></i>
                                             </div>
 
-                                            <div class="col-xs-4">
-                                                <div class="text-uppercase text-size-mini opacity-75">Temp</div>
-                                                <h5 class="text-semibold no-margin">23°C</h5>
-                                            </div>
+                                            <div class="panel-body panel-body-accent pb-15">
+                                                <div class="row">
+                                                    <div class="col-xs-4">
+                                                        <div class="text-uppercase text-size-mini opacity-75">Rainfall</div>
+                                                        <h5 class="text-semibold no-margin">55.0mm</h5>
+                                                    </div>
 
-                                            <div class="col-xs-4">
-                                                <div class="text-uppercase text-size-mini opacity-75">Humidity</div>
-                                                <h5 class="text-semibold no-margin">93%</h5>
+                                                    <div class="col-xs-4">
+                                                        <div class="text-uppercase text-size-mini opacity-75">Temp</div>
+                                                        <h5 class="text-semibold no-margin">23°C</h5>
+                                                    </div>
+
+                                                    <div class="col-xs-4">
+                                                        <div class="text-uppercase text-size-mini opacity-75">Humidity</div>
+                                                        <h5 class="text-semibold no-margin">93%</h5>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </fieldset>
                                 </div>
-                            </fieldset>
+                            </div>
+                            <div class="row">
+                                <fieldset>
+                                    <legend class="text-semibold"><i class="icon-truck position-left"></i>Collection Summary</legend>
+                                    <!-- Scrollable table -->
+                                    <div class="table-responsive pre-scrollable" style="max-height: 500px">
+                                        <table class="table table-bordered" id="fieldsummarytable">
+                                            <thead>
+                                            <tr class="bg-green">
+                                                <th>Field No.</th>
+                                                <th>Block No.</th>
+                                                <th>Hectare</th>
+                                                <th>Tappers</th>
+                                                <th>Tap per Hect</th>
+                                                <th>Field Wt.</th>
+                                                <th>Factory Wt.</th>
+                                                <th>Loss</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>1</td>
+                                                <td>Eugene</td>
+                                                <td>Kopyov</td>
+                                                <td>@Koopyov</td>
+                                                <td>@Koopyov</td>
+                                                <td>@Koopyov</td>
+                                                <td>@Koopyov</td>
+                                            </tr>
+
+                                            </tbody>
+                                            <tfoot>
+                                            <tr>
+                                                <td style="background-color: #e4efaf; font-weight: bold">To-date</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td>tap total</td>
+                                                <td>tap per hect total</td>
+                                                <td>field wt tot</td>
+                                                <td>@factory wt tot</td>
+                                                <td>@Loss tot</td>
+                                            </tr>
+
+                                            </tfoot>
+
+                                        </table>
+                                    </div>
+                                    <!-- /scrollable table -->
+                                </fieldset>
+                                <fieldset class="mt-5">
+                                    <legend class="text-semibold"><i class="icon-stack-plus position-left"></i>Confirmation</legend>
+
+                                    <div class="form-group">
+                                        <label class="col-lg-3 control-label text-semibold">Image Attachments: <span style="color: #a8a8a8">(Only if needed)</span></label>
+                                        <div class="col-lg-9">
+                                            <input type="file" class="file-input-ajax" multiple="multiple">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-lg-3 control-label text-semibold">Your message:</label>
+                                        <div class="col-lg-9">
+                                            <textarea rows="5" cols="5" class="form-control" placeholder="Enter your message here"></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" class="styled">
+                                            I do here by confirm the above recorded data is in order
+                                        </label>
+                                    </div>
+                                    <div class="text-center" >
+                                        <button type="submit" id="submit_field_data" class="btn bg-green-800 btn-labeled btn-rounded btn-xlg"><b><i class="icon-arrow-down-right32"></i></b>Submit Form</button>
+                                    </div>
+                                </fieldset>
+                            </div>
+
                         </div>
+
                         <div class="col-sm-3">
                             <fieldset>
                                 <legend class="text-semibold"><i class="icon-images2 position-left"></i>Images</legend>
@@ -280,88 +362,6 @@
                                     </div>
                                 </div>
                             </fieldset>
-                        </div>
-                    </div>
-
-                    <div class="row " style="margin-top: 50px">
-                        <div class="col-md-9">
-                            <fieldset>
-                                <legend class="text-semibold"><i class="icon-truck position-left"></i>Collection Summary</legend>
-                                <!-- Scrollable table -->
-                                <div class="table-responsive pre-scrollable" style="max-height: 500px">
-                                    <table class="table table-bordered" id="fieldsummarytable">
-                                        <thead>
-                                        <tr class="bg-green">
-                                            <th>Field No.</th>
-                                            <th>Block No.</th>
-                                            <th>Hectare</th>
-                                            <th>Tappers</th>
-                                            <th>Tap per Hect</th>
-                                            <th>Field Wt.</th>
-                                            <th>Factory Wt.</th>
-                                            <th>Loss</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>1</td>
-                                            <td>Eugene</td>
-                                            <td>Kopyov</td>
-                                            <td>@Koopyov</td>
-                                            <td>@Koopyov</td>
-                                            <td>@Koopyov</td>
-                                            <td>@Koopyov</td>
-                                        </tr>
-
-                                        </tbody>
-                                        <tfoot>
-                                        <tr>
-                                            <td style="background-color: #e4efaf; font-weight: bold">To-date</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td>tap total</td>
-                                            <td>tap per hect total</td>
-                                            <td>field wt tot</td>
-                                            <td>@factory wt tot</td>
-                                            <td>@Loss tot</td>
-                                        </tr>
-
-                                        </tfoot>
-
-                                    </table>
-                                </div>
-                                <!-- /scrollable table -->
-                            </fieldset>
-                            <fieldset class="mt-5">
-                                <legend class="text-semibold"><i class="icon-stack-plus position-left"></i>Confirmation</legend>
-
-                                <div class="form-group">
-                                    <label class="col-lg-3 control-label text-semibold">Image Attachments: <span style="color: #a8a8a8">(Only if needed)</span></label>
-                                    <div class="col-lg-9">
-                                        <input type="file" class="file-input-ajax" multiple="multiple">
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label class="col-lg-3 control-label text-semibold">Your message:</label>
-                                    <div class="col-lg-9">
-                                        <textarea rows="5" cols="5" class="form-control" placeholder="Enter your message here"></textarea>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label class="checkbox-inline">
-                                        <input type="checkbox" class="styled">
-                                        I do here by confirm the above recorded data is in order
-                                    </label>
-                                </div>
-                                <div class="text-center" >
-                                    <button type="submit" id="submit_field_data" class="btn bg-green-800 btn-labeled btn-rounded btn-xlg"><b><i class="icon-arrow-down-right32"></i></b>Submit Form</button>
-                                </div>
-                            </fieldset>
-                        </div>
-                        <div class="col-md-3">
                             <fieldset>
                                 <legend class="text-semibold"><i class="icon-notebook position-left"></i>Notes Summary</legend>
                                 <div class="panel panel-body border-top-teal">
@@ -398,9 +398,10 @@
                                     </ul>
                                 </div>
                             </fieldset>
-
                         </div>
                     </div>
+
+
 
                 </div>
             </div>
