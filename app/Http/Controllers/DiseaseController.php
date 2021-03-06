@@ -18,7 +18,7 @@ class DiseaseController extends Controller
     }
 
     public function save(Request $request){
-
+//        dd($request->img_file);
         $dis_id = $request->txtId;
 
         if($dis_id){
@@ -29,8 +29,19 @@ class DiseaseController extends Controller
             $disease->keywords = $request->keywords_up;
             $disease->descriptions = $request->description_up;
             $disease->solution = $request->solutions_up;
-
+            dd($request->img_file);
             if ($request->img_file) {
+
+
+                $image = $request->file('img_file');
+                foreach ($image as $files) {
+                    $destinationPath = 'public/files/';
+                    $file_name = time() . "." . $files->getClientOriginalExtension();
+                    $files->move($destinationPath, $file_name);
+                    $data[] = $file_name;
+                }
+
+
 //           if ($field->image != null && $field->image != '') {
 //               File::delete(public_path().'/'.$field->image);
 //               dd(public_path().'/'.$field->image);

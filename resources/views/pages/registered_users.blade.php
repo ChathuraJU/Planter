@@ -70,7 +70,7 @@
                                         <li><a href="#" data-toggle="modal" data-target="#view_modal"  onclick="getuser({{$user->id}})"><i class="icon-file-check"></i></a></li>
                                     </ul>
                                 </td>
-                            </tr>   
+                            </tr>
                             @endforeach
                         </tbody>
                         <!-- <tbody>
@@ -147,7 +147,12 @@
                                         </div>
                                         <div class="form-group">
                                             <label class="control-label text-semibold">Designation :</label>
-                                            <input type="text" name="designation" id="designation" placeholder="Enter your designation" class="form-control mspborder readonly">
+                                            <select type="text" name="designation" id="designation" placeholder="Enter your designation" class="form-control mspborder readonly">
+                                                @foreach( $designations as $designation)
+                                                    <option value="{{ $designation->user_type_id }}"> {{ $designation->user_type_name }} </option>
+                                                @endforeach
+
+                                            </select>
                                         </div>
                                     </div>
                                     </form>
@@ -273,7 +278,7 @@
             }).done(function (data) {
 
                 data = JSON.parse(data);
-                $("#txtid").val(data[0].id)
+                $("#txtid").val(data[0].person_id)
                 $("#fname").val(data[0].fname)
                 $("#lname").val(data[0].lname)
                 $("#dob").val(data[0].dob)
@@ -283,7 +288,7 @@
                 $("#address").val(data[0].address)
                 $("#email").val(data[0].email)
                 $("#estate").val(data[0].estate_name)
-                $("#designation").val(data[0].user_type_name)
+                $("#designation").val(data[0].user_type_id)
 
                 // messageSuccessAlert("User Rejected Successfully")
 
@@ -298,7 +303,7 @@
             $("#submitdata").click(function () {
                 formDataAjax("{{ route('user.userupdate') }}", "User Update Successfully", "Error User Update", formName);
             });
-   
+
 
     </script>
     {{--javascripts ends--}}
