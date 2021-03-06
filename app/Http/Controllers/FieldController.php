@@ -160,10 +160,23 @@ class FieldController extends Controller
 
     }
 
+    public function getFieldDataLogs()
+    {
+        $data_list = CollectionApproval::all();
+        return view('pages.all_field_data_logs', compact('data_list'));
+    }
+
+    public function fieldReceivables($id)
+    {
+        $division_main = DivisionCollectionMain::find($id);
+        $division_main['weather'] = json_decode($division_main->weather);
+        return view('pages.field_receivable', compact('division_main'));
+    }
+
     public function block_view(){
 
         $fields = Field::all();
-        
+
         $blocks = DB::table('blocks')
                     ->join('fields', 'blocks.field_id', '=', 'fields.field_id')
                     ->join('divisions', 'fields.division_id', '=', 'divisions.division_id')->get();
@@ -177,7 +190,7 @@ class FieldController extends Controller
 
         $field_id = $request->field;
         $hectare = $request->txt_no_of_hecatres;
-        
+
         $block->block_no= $request->txt_block_no;
         $block->field_id=  $field_id;
         $block->block_hectare= $hectare;
@@ -185,7 +198,7 @@ class FieldController extends Controller
         if($block->save()){
 
             $field = DB::update("update fields set hectare = hectare - '$hectare' where field_id = '$field_id'");
-            
+
             echo true;
         }else{
             echo false;

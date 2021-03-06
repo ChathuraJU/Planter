@@ -53,18 +53,18 @@
                             <th>Field Officer Name</th>
                             <th>Log Date</th>
                             <th>Action</th>
-
                         </tr>
                         </thead>
                         <tbody>
-
-                        <tr>
-                            <td>1</td>
-                            <td>Upper Division</td>
-                            <td>Andrew</td>
-                            <td>20.01.2021</td>
-                            <td><a href="{{url('field-receivable')}}">View</a></td>
-                        </tr>
+                            @foreach($data_list as $row)
+                                <tr>
+                                    <td>{{$row->division_collection_main_id}}</td>
+                                    <td>{{$row->division_collections->first()->division->division_name}}</td>
+                                    <td>{{$row->approved_user->person->fname}} {{$row->approved_user->person->lname}}</td>
+                                    <td>{{$row->created_at}}</td>
+                                    <td><a href="{{url('field-receivable')}}/{{$row->division_collection_main_id}}">View</a></td>
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

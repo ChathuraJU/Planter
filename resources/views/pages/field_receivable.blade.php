@@ -274,27 +274,28 @@
                                 <legend class="text-semibold"><i class="icon-truck position-left"></i>Weather</legend>
                                 <div class="panel text-center bg-brown-700" style="background-image: url('{{asset('images/panel_bg.png')}}');">
                                     <div class="panel-body">
-                                        <h6 class="text-semibold no-margin-bottom mt-5">20th Jan 2021</h6>
-                                        <div class="opacity-75 content-group">KANDY</div>
-                                        <div class="opacity-75 content-group">01.13 PM</div>
-                                        <i class="icon-cloud" style="font-size: 54px"></i>
+                                        <h6 class="text-semibold no-margin-bottom mt-5">{{explode(' ', $division_main->created_at)[0]}}</h6>
+                                        <div class="opacity-75 content-group">{{$division_main->weather->name}}</div>
+                                        <div class="opacity-75 content-group">{{explode(' ', $division_main->created_at)[1]}}</div>
+                                        <img src="http://openweathermap.org/img/w/{{ $division_main->weather->weather[0]->icon }}.png" alt="">
+{{--                                        <i class="icon-cloud" style="font-size: 54px"></i>--}}
                                     </div>
 
                                     <div class="panel-body panel-body-accent pb-15">
                                         <div class="row">
                                             <div class="col-xs-4">
                                                 <div class="text-uppercase text-size-mini opacity-75">Rainfall</div>
-                                                <h5 class="text-semibold no-margin">55.0mm</h5>
+                                                <h5 class="text-semibold no-margin">{{$division_main->weather->clouds->all}}mm</h5>
                                             </div>
 
                                             <div class="col-xs-4">
                                                 <div class="text-uppercase text-size-mini opacity-75">Temp</div>
-                                                <h5 class="text-semibold no-margin">23°C</h5>
+                                                <h5 class="text-semibold no-margin">{{$division_main->weather->main->temp}}</h5>
                                             </div>
 
                                             <div class="col-xs-4">
                                                 <div class="text-uppercase text-size-mini opacity-75">Humidity</div>
-                                                <h5 class="text-semibold no-margin">93%</h5>
+                                                <h5 class="text-semibold no-margin">{{$division_main->weather->main->humidity}}%</h5>
                                             </div>
                                         </div>
                                     </div>
