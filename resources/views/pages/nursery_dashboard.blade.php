@@ -30,7 +30,7 @@
     <div class="content">
         <div class="panel panel-flat">
             <div class="panel-heading">
-                <h5 class="panel-title">Search the disease<a class="heading-elements-toggle"><i class="icon-more"></i></a></h5>
+                <h5 class="panel-title">Search Nursery<a class="heading-elements-toggle"><i class="icon-more"></i></a></h5>
                 <div class="heading-elements">
                     <ul class="icons-list">
                         <li><a data-action="collapse" class=""></a></li>
@@ -48,7 +48,7 @@
                         </div>
 
                         <div class="input-group-btn">
-                            <button type="submit" class="btn bg-green-800 btn-xlg">Search</button>
+                            <button type="submit" class="btn bg-green-800 btn-xlg"> Search </button>
                         </div>
                     </div>
 
@@ -154,8 +154,6 @@
                             {{--</div>--}}
                         </div>
                         <div class="tab-pane fade active in" id="schedule">
-
-
                             <ul class="list-feed media-list cju-list-scroll">
                                 <li>
                                     <span class="list-feed-solid text-muted">12.12.2021</span>
@@ -165,7 +163,7 @@
                                     <div class="media-right">
                                         <ul class="icons-list icons-list-extended text-nowrap">
                                             <li style="display: none"><a href="#" class="text-danger "><i class="icon-spinner position-left text-danger"></i> Pending</a></li>
-                                            <li><a href="#" class="text-success"><i class="icon-check position-left text-success"></i> Completed</a></li>
+                                            <li><a href="#" class="text-success" data-toggle="modal" data-target="#complete_task" ><i class="icon-check position-left text-success"></i> Completed</a></li>
                                         </ul>
                                     </div>
                                 </li>
@@ -266,8 +264,11 @@
                                     </div>
                                 </li>
                             </ul>
-                        </div>
+                            <div class="row text-center">
+                                <button type="button" class="btn bg-green-800 btn-labeled btn-rounded btn-sm" data-toggle="modal" data-target="#add_task"><b><i class="fa fa-calendar-plus-o"></i></b> Add Task</button>
+                            </div>
 
+                        </div>
 
                     </div>
                     <!-- /tabs content -->
@@ -294,5 +295,109 @@
 
     {{--page content ends--}}
 
+    <!-- Adding Task modal -->
+    <div id="add_task" class="modal fade" tabindex="-1">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h5 class="modal-title">Add a Task</h5>
+                </div>
 
+                <div class="modal-body">
+                    <form method="#" action="">
+                        <div class="row container-fluid">
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label for="newtask" class="control-label text-semibold">{{ __('New Task') }}</label>
+                                    <input id="newtask" type="text" class="form-control mspborder " name="newtask" value="{{ old('newtask') }}" required autocomplete="newtask" autofocus>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label for="newtaskstatus" class="control-label text-semibold">{{ __('Status') }}</label>
+                                    <select id="newtaskstatus" type="text" class="select select2-hidden-accessible" name="newtaskstatus" value="{{ old('newtaskstatus') }}" required autocomplete="newtaskstatus" autofocus>
+                                        <option value="">Select Status</option>
+                                        <option value="0">Pending</option>
+                                        <option value="1">Completed</option>
+                                    </select>
+                                </div>
+
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label for="newtaskdate" class="control-label text-semibold">{{ __('Date') }}</label>
+                                    <input id="newtaskdate" type="date" class="form-control mspborder" name="newtaskdate" value="{{ old('newtaskdate') }}" required autocomplete="newtaskdate" autofocus>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label for="newtasknote" class="control-label text-semibold">{{ __('Note') }}</label>
+                                    <textarea name="newtasknote" rows="5" cols="5" class="form-control mspborder" name="newtasknote" value="{{ old('newtasknote') }}" required autocomplete="newtasknote" autofocus></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn bg-green-800">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Adding Task modal -->
+
+    <!-- Completing Task modal -->
+    <div id="complete_task" class="modal fade" tabindex="-1">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h5 class="modal-title text-semibold">Fertilizer 1st Round - <span class="list-feed-solid text-muted">26.02.2021</span></h5>
+                </div>
+
+                <div class="modal-body">
+
+
+                    <form method="#" action="">
+                        <div class="row container-fluid">
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label for="taskstatus" class="control-label text-semibold">{{ __('Status') }}</label>
+                                    <select id="taskstatus" type="text" class="select select2-hidden-accessible" name="taskstatus" value="{{ old('taskstatus') }}" required autocomplete="taskstatus" autofocus>
+                                        <option value="">Select Status</option>
+                                        <option value="0">Pending</option>
+                                        <option value="1">Completed</option>
+                                    </select>
+                                </div>
+
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label for="taskdate" class="control-label text-semibold">{{ __('Date') }}</label>
+                                    <input id="taskdate" type="date" class="form-control mspborder" name="taskdate" value="{{ old('taskdate') }}" required autocomplete="taskdate" autofocus>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label for="tasknote" class="control-label text-semibold">{{ __('Note') }}</label>
+                                    <textarea name="tasknote" rows="5" cols="5" class="form-control mspborder" name="tasknote" value="{{ old('tasknote') }}" required autocomplete="tasknote" autofocus></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn bg-green-800">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Completing Task modal -->
 @endsection
