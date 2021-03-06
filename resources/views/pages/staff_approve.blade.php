@@ -408,27 +408,6 @@
         {{--/Add field data form ends--}}
 
 
-        <!-- Remove modal -->
-        <div id="remove_modal" class="modal fade" role="dialog">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h5 class="modal-title">Confirm action</h5>
-                    </div>
-
-                    <div class="modal-body">
-                        You are about to remove this row. Are you sure?
-                    </div>
-
-                    <div class="modal-footer">
-                        <button type="button" onclick="delete_disease()" class="btn bg-green-800" data-dismiss="modal">Yes, remove</button>
-                        <button type="button" class="btn btn-default" data-dismiss="modal">No, thanks</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- /remove modal -->
 
 
     </div>
