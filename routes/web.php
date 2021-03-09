@@ -29,6 +29,7 @@ Route::middleware(['auth'])->group(function () {
     });
 
     Route::get('field-data-logs', 'FieldController@getFieldDataLogs')->name('get.field.data.logs');
+    Route::get('field-data-log-summary', 'FieldController@getFieldLogSummary')->name('get.field.log.summary');
     Route::get('field-data', 'FieldController@addFieldDataLog');
     Route::get('field-receivable/{id}', 'FieldController@fieldReceivables');
 

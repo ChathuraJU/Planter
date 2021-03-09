@@ -13,4 +13,14 @@ class DivisionCollection extends Model
     {
         return $this->belongsTo('App\Division', 'division_id', 'division_id');
     }
+
+    public function field()
+    {
+        return $this->belongsTo('App\Field', 'field_no', 'field_id');
+    }
+
+    public function block()
+    {
+        return $this->belongsTo('App\Block', 'block_no', 'id');
+    }
 }
