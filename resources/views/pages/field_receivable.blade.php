@@ -52,11 +52,12 @@
                                 <div class="form-group">
                                     <label class="col-lg-3 control-label text-semibold" for="field">Field No. :</label>
                                     <div class="col-lg-9">
-                                        <select data-placeholder="Select a Field..." id="field" class="select select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+                                        <select data-placeholder="Select a Field..." id="field" name="field" class="select select2-hidden-accessible" tabindex="-1" aria-hidden="true">
                                             <option></option>
                                             <optgroup label="Fields">
-                                                <option value="0">jayamaha</option>
-                                                <option value="1">sumathi</option>
+                                                @foreach($fields as $field)
+                                                    <option value="{{ $field->field_id }}">{{ $field->field_name }}</option>
+                                                @endforeach
                                             </optgroup>
                                         </select>
                                     </div>
@@ -64,11 +65,12 @@
                                 <div class="form-group">
                                     <label class="col-lg-3 control-label text-semibold" for="field">Block No. :</label>
                                     <div class="col-lg-9">
-                                        <select data-placeholder="Select a Field..." id="field" class="select select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+                                        <select data-placeholder="Select a Block..." id="block" name="block" class="select select2-hidden-accessible" tabindex="-1" aria-hidden="true">
                                             <option></option>
                                             <optgroup label="Fields">
-                                                <option value="0">1</option>
-                                                <option value="1">2</option>
+                                                @foreach($blocks as $block)
+                                                    <option value="{{ $block->id }}">{{ $block->block_no }}</option>
+                                                @endforeach
                                             </optgroup>
                                         </select>
                                     </div>
@@ -159,86 +161,8 @@
                                         </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>1</td>
-                                                <td>Kopyov</td>
-                                                <td>@Koopyov</td>
-                                                <td>@Koopyov</td>
-                                                <td>@Koopyov</td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>1</td>
-                                                <td>1</td>
-                                                <td>Eugene</td>
-                                                <td>@Koopyov</td>
-                                                <td>@Koopyov</td>
-                                                <td>@Koopyov</td>
-                                            </tr>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>1</td>
-                                                <td>Kopyov</td>
-                                                <td>@Koopyov</td>
-                                                <td>@Koopyov</td>
-                                                <td>@Koopyov</td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>1</td>
-                                                <td>1</td>
-                                                <td>Kopyov</td>
-                                                <td>@Koopyov</td>
-                                                <td>@Koopyov</td>
-                                                <td>@Koopyov</td>
-                                            </tr>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>1</td>
-                                                <td>Kopyov</td>
-                                                <td>@Koopyov</td>
-                                                <td>@Koopyov</td>
-                                                <td>@Koopyov</td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>1</td>
-                                                <td>1</td>
-                                                <td>Kopyov</td>
-                                                <td>@Koopyov</td>
-                                                <td>@Koopyov</td>
-                                                <td>@Koopyov</td>
-                                            </tr>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>1</td>
-                                                <td>Kopyov</td>
-                                                <td>@Koopyov</td>
-                                                <td>@Koopyov</td>
-                                                <td>@Koopyov</td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>1</td>
-                                                <td>1</td>
-                                                <td>Kopyov</td>
-                                                <td>@Koopyov</td>
-                                                <td>@Koopyov</td>
-                                                <td>@Koopyov</td>
-                                            </tr>
 
                                         </tbody>
-                                        <tfoot>
-                                            <tr>
-                                                <td  style="background-color: #e4efaf; font-weight: bold">Total</td>
-                                                <td></td>
-                                                <td>tot latex L</td>
-                                                <td>tot latex kg</td>
-                                                <td>tot scrap kg</td>
-                                                <td>tot tot kg</td>
-                                            </tr>
-                                        </tfoot>
 
                                     </table>
                                 </div>
@@ -248,7 +172,7 @@
                                 <legend class="text-semibold"><i class="icon-truck position-left"></i>Approvals Summary</legend>
                                 <!-- Scrollable table -->
                                 <div class="table-responsive pre-scrollable" style="max-height: 500px">
-                                    <table class="table table-bordered" id="fieldsummarytable">
+                                    <table class="table table-bordered" id="approvalSummary">
                                         <thead>
                                         <tr class="bg-green">
                                             <th>Approved By</th>
@@ -258,11 +182,13 @@
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Eugene</td>
-                                            <td>Kopyov</td>
-                                        </tr>
+                                        @foreach($approvals as $approval)
+                                            <tr>
+                                                <td>{{$approval->approved_user->person->fname}} {{$approval->approved_user->person->lname}}</td>
+                                                <td>{{$approval->approved_user->role->user_type_name}}</td>
+                                                <td>{{$approval->approval_status}}</td>
+                                            </tr>
+                                        @endforeach
 
                                         </tbody>
 
@@ -311,7 +237,7 @@
                                 <legend class="text-semibold"><i class="icon-truck position-left"></i>Collection Summary</legend>
                                 <!-- Scrollable table -->
                                 <div class="table-responsive pre-scrollable" style="max-height: 500px">
-                                    <table class="table table-bordered" id="fieldsummarytable">
+                                    <table class="table table-bordered" id="collectionSummary">
                                         <thead>
                                         <tr class="bg-green">
                                             <th>Field No.</th>
@@ -322,44 +248,20 @@
                                             <th>Field Wt.</th>
                                             <th>Factory Wt.</th>
                                             <th>Loss</th>
-                                            <th>Action</th>
                                         </tr>
                                         </thead>
                                         <tbody>
                                         <tr>
-                                            <td>1</td>
-                                            <td>1</td>
-                                            <td>Eugene</td>
-                                            <td>Kopyov</td>
-                                            <td>@Koopyov</td>
-                                            <td>@Koopyov</td>
-                                            <td>@Koopyov</td>
-                                            <td>@Koopyov</td>
-                                            <td>
-                                                <ul class="icons-list">
-                                                    <li><a href="#" onclick="" data-toggle="modal" data-target="#view_modal"><i class="icon-eye"></i></a></li>
-                                                    <li><a href="#" onclick="" data-toggle="modal" data-target="#remove_modal"><i class="icon-trash"></i></a></li>
-                                                </ul>
-                                            </td>
+
+{{--                                            <td>--}}
+{{--                                                <ul class="icons-list">--}}
+{{--                                                    <li><a href="#" onclick="" data-toggle="modal" data-target="#view_modal"><i class="icon-eye"></i></a></li>--}}
+{{--                                                    <li><a href="#" onclick="" data-toggle="modal" data-target="#remove_modal"><i class="icon-trash"></i></a></li>--}}
+{{--                                                </ul>--}}
+{{--                                            </td>--}}
                                         </tr>
 
                                         </tbody>
-                                        <tfoot>
-                                        <tr>
-                                            <td style="background-color: #e4efaf; font-weight: bold">To-date</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td>tap total</td>
-                                            <td>tap per hect total</td>
-                                            <td>field wt tot</td>
-                                            <td>@factory wt tot</td>
-                                            <td>@Loss tot</td>
-                                            <td>
-
-                                            </td>
-                                        </tr>
-
-                                        </tfoot>
 
                                     </table>
                                 </div>
@@ -398,35 +300,12 @@
                                 <legend class="text-semibold"><i class="icon-notebook position-left"></i>Notes Summary</legend>
                                 <div class="panel panel-body border-top-teal">
                                     <ul class="list-feed">
-                                        <li>
-                                            <div class="text-muted">Jan 12, 12:47</div>
-                                            <a href="#">David Linner</a> requested refund for a double bank card charge
-                                        </li>
-
-                                        <li>
-                                            <div class="text-muted">Jan 11, 10:25</div>
-                                            User <a href="#">Christopher Wallace</a> from Google is awaiting for staff reply
-                                        </li>
-
-                                        <li>
-                                            <div class="text-muted">Jan 10, 09:37</div>
-                                            Ticket <strong>#43683</strong> has been resolved by <a href="#">Victoria Wilson</a>
-                                        </li>
-
-                                        <li>
-                                            <div class="text-muted">Jan 9, 08:28</div>
-                                            <a href="#">Eugene Kopyov</a> merged <strong>Master</strong>, <strong>Demo</strong> and <strong>Dev</strong> branches
-                                        </li>
-
-                                        <li>
-                                            <div class="text-muted">Jan 8, 07:58</div>
-                                            All sellers have received payouts for December, 2016!
-                                        </li>
-
-                                        <li>
-                                            <div class="text-muted">Jan 7, 06:32</div>
-                                            <a href="#">Chris Arney</a> created a new ticket <strong>#43136</strong> and assigned to <a href="#">John Nod</a>
-                                        </li>
+                                        @foreach($approvals as $approval)
+                                            <li>
+                                                <div class="text-muted">{{$approval->created_at}}</div>
+                                                <a href="#">{{$approval->approved_user->person->fname}} {{$approval->approved_user->person->lname}}</a> {{$approval->note}}
+                                            </li>
+                                        @endforeach
                                     </ul>
                                 </div>
                             </fieldset>
@@ -489,9 +368,33 @@
 
 
     {{--javascripts starts here--}}
+    <script src="{{ asset('assets/js/core.js') }}"></script>
     <script>
+        $(document).ready(function () {
+            getDataForMainTable();
+        });
 
-
+        function getDataForMainTable() {
+            $.ajax({
+                method: "GET",
+                data: {"mainId": "{{ $division_main->id }}"},
+                url: "{{ route('get.field.log.summary') }}",
+            }).done(function (data) {
+                data = JSON.parse(data);
+                $("#fieldsummarytable tbody").empty();
+                data.forEach((item) => {
+                    $("#fieldsummarytable tbody").append("<tr><td>"+item.field.field_name+"</td><td>"+item.block_no+"</td><td>"+item.latex_l+"</td><td>"+item.latex_kg+"</td><td>"+item.scrap_kg+"</td><td>"+item.total+"</td></tr>");
+                });
+                $("#collectionSummary tbody").empty();
+                data.forEach((item) => {
+                    if (item.hect !== null || item.hect !== tap_per_hect || item.field_wt !== tap_per_hect || item.field_wt !== field_wt || item.field_wt !== loss) {
+                        $("#collectionSummary tbody").append("<tr><td>"+item.field.field_name+"</td><td>"+item.block_no+"</td><td>"+(item.hect ?? 'Not Entered')+"</td><td>"+item.no_tappers+"</td><td>"+(item.tap_per_hect ?? 'Not Entered')+"</td><td>"+(item.field_wt ?? 'Not Entered')+"</td><td>"+(item.factory_wt ?? 'Not Entered')+"</td><td>"+(item.loss ?? 'Not Entered')+"</td></tr>");
+                    }
+                });
+            }).fail(function () {
+                messageErrorAlert("Error While Retrieving Data");
+            });
+        }
     </script>
     {{--javascripts ends--}}
 @endsection

@@ -92,6 +92,12 @@ class FieldController extends Controller
         return true;
     }
 
+    public function getFieldLogSummary(Request $request)
+    {
+        $summary_data = DivisionCollection::with('block', 'field', 'division')->where('division_collection_main_id', $request->mainId)->get();
+        return json_encode($summary_data);
+    }
+
     public function addFieldDataLog(Request $request)
     {
         $persons = Person::where('user_type_id', 7)->get();
@@ -169,8 +175,11 @@ class FieldController extends Controller
     public function fieldReceivables($id)
     {
         $division_main = DivisionCollectionMain::find($id);
+        $fields = Field::all();
+        $blocks = Block::all();
+        $approvals = CollectionApproval::where('division_collection_main_id', $id)->get();
         $division_main['weather'] = json_decode($division_main->weather);
-        return view('pages.field_receivable', compact('division_main'));
+        return view('pages.field_receivable', compact('division_main', 'fields', 'blocks', 'approvals'));
     }
 
     public function block_view(){
