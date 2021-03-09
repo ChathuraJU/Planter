@@ -105,6 +105,29 @@ class FieldController extends Controller
         return view('pages.field_data', compact('persons', 'fields'));
     }
 
+    public function saveFieldDataApproval(Request $request)
+    {
+        $collection_approval_existing = CollectionApproval::where('user_type_id', auth()->user()->user_type_id)->get();
+        if (isset($collection_approval_existing[0])) {
+            return 0;
+        }
+        $collection_approval = new CollectionApproval();
+        $collection_approval->user_type_id = auth()->user()->user_type_id;
+        $collection_approval->user_id = auth()->user()->id;
+        $collection_approval->note = $request->message;
+        $collection_approval->approval_status = 1;
+        $collection_approval->division_collection_main_id = $request->mainId;
+        if ($request->uploadedFile) {
+            $path = Storage::putFile('public/approvals', $request->file('uploadedFile'),'public');
+            $collection_approval->image = 'storage/'.$path;
+        }
+        if ($collection_approval->save()) {
+            return true;
+        } else {
+            return 0;
+        }
+    }
+
     public function saveFieldData(Request $request)
     {
         $response = Http::get('http://api.openweathermap.org/data/2.5/weather?lat='.$request->lat.'&lon='.$request->lon.'&appid='.env('WEATHER_API_KEY'));
@@ -164,6 +187,22 @@ class FieldController extends Controller
             }
         }
 
+    }
+
+    public function fieldReceivableSaveTemp(Request $request)
+    {
+        $collection = DivisionCollection::where('field_no', $request->field)->where('block_no', $request->block)->where('division_collection_main_id', $request->mainId)->get()->first();
+        $collection->hect = $request->hect;
+        $collection->no_tappers = $request->tappers;
+        $collection->tap_per_hect = $request->tap_hect;
+        $collection->field_wt = $request->field_wt;
+        $collection->factory_wt = $request->factory_wt;
+        $collection->loss = $request->lost;
+        if ($collection->save()) {
+            return true;
+        } else {
+            false;
+        }
     }
 
     public function getFieldDataLogs()

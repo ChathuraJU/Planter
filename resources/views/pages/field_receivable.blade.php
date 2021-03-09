@@ -20,7 +20,6 @@
                     <li><a href="#">Field</a></li>
                     <li class="active">Add Field Receivables</li>
                 </ul>
-
             </div>
         </div>
     </div>
@@ -31,7 +30,8 @@
     {{--page content starts here--}}
     <div class="content">
         {{--Add field data form starts here--}}
-        <form class="form-horizontal" action="#">
+        <form class="form-horizontal" action="#" id="tempDataForm">
+            @csrf
             <div class="panel panel-white">
                 <div class="panel-heading">
                     <h5 class="panel-title">Add Field Data Form</h5>
@@ -48,7 +48,7 @@
                         <div class="col-md-7">
                             <fieldset>
                                 <legend class="text-semibold"><i class="icon-reading position-left"></i> Field Receivables Details</legend>
-
+                                <input type="hidden" name="mainId" value="{{$division_main->id}}">
                                 <div class="form-group">
                                     <label class="col-lg-3 control-label text-semibold" for="field">Field No. :</label>
                                     <div class="col-lg-9">
@@ -86,7 +86,7 @@
                                     <div class="col-lg-9">
                                         <div class="input-group bootstrap-touchspin mspborder">
                                             <span class="input-group-addon bootstrap-touchspin-prefix" style="display: none;"></span>
-                                            <input type="text" name="latex_liters" id="latex_liters" value="" class="touchspin-empty form-control " style="display: block;">
+                                            <input type="text" name="hect" id="hect" value="" class="touchspin-empty form-control " style="display: block;">
                                             <span class="input-group-addon bootstrap-touchspin-postfix" style="display: none;"></span>
                                         </div>
                                     </div>
@@ -96,7 +96,7 @@
                                     <div class="col-lg-9">
                                         <div class="input-group bootstrap-touchspin mspborder">
                                             <span class="input-group-addon bootstrap-touchspin-prefix" style="display: none;"></span>
-                                            <input type="text" name="metrolac" id="metrolac" value="" class="touchspin-empty form-control " style="display: block;">
+                                            <input type="text" name="tappers" id="tappers" value="" class="touchspin-empty form-control " style="display: block;">
                                             <span class="input-group-addon bootstrap-touchspin-postfix" style="display: none;"></span>
                                         </div>
                                     </div>
@@ -106,7 +106,7 @@
                                     <div class="col-lg-9">
                                         <div class="input-group bootstrap-touchspin mspborder">
                                             <span class="input-group-addon bootstrap-touchspin-prefix" style="display: none;"></span>
-                                            <input type="text" name="latex_kg" id="latex_kg" value="" class="touchspin-empty form-control " style="display: block;">
+                                            <input type="text" name="tap_hect" id="tap_hect" value="" class="touchspin-empty form-control " style="display: block;">
                                             <span class="input-group-addon bootstrap-touchspin-postfix" style="display: none;"></span>
                                         </div>
                                     </div>
@@ -116,7 +116,7 @@
                                     <div class="col-lg-9">
                                         <div class="input-group bootstrap-touchspin mspborder">
                                             <span class="input-group-addon bootstrap-touchspin-prefix" style="display: none;"></span>
-                                            <input type="text" name="scrap_kg" id="scrap_kg" value="" class="touchspin-empty form-control " style="display: block;">
+                                            <input type="text" name="field_wt" id="field_wt" value="" class="touchspin-empty form-control " style="display: block;">
                                             <span class="input-group-addon bootstrap-touchspin-postfix" style="display: none;"></span>
                                         </div>
                                     </div>
@@ -126,7 +126,7 @@
                                     <div class="col-lg-9">
                                         <div class="input-group bootstrap-touchspin mspborder">
                                             <span class="input-group-addon bootstrap-touchspin-prefix" style="display: none;"></span>
-                                            <input type="text" name="over_kg" id="over_kg" value="" class="touchspin-empty form-control " style="display: block;">
+                                            <input type="text" name="factory_wt" id="factory_wt" value="" class="touchspin-empty form-control " style="display: block;">
                                             <span class="input-group-addon bootstrap-touchspin-postfix" style="display: none;"></span>
                                         </div>
                                     </div>
@@ -134,11 +134,11 @@
                                 <div class="form-group">
                                     <label class="col-lg-3 control-label text-semibold" for="field_norms">Lost :</label>
                                     <div class="col-lg-9">
-                                        <input type="text" name="field_norms" id="field_norms" placeholder="Enter Lost Amount " class="form-control mspborder required">
+                                        <input type="text" name="lost" id="lost" placeholder="Enter Lost Amount " class="form-control mspborder required">
                                     </div>
                                 </div>
                                 <div class="text-center" >
-                                    <button type="submit" id="enter_field_data" class="btn bg-green-800 btn-labeled btn-rounded btn-xlg"><b><i class="icon-arrow-down-right32"></i></b>Enter</button>
+                                    <button type="button" id="enter_field_data" class="btn bg-green-800 btn-labeled btn-rounded btn-xlg"><b><i class="icon-arrow-down-right32"></i></b>Enter</button>
                                 </div>
 
                             </fieldset>
@@ -273,14 +273,14 @@
                                 <div class="form-group">
                                     <label class="col-lg-3 control-label text-semibold">Image Attachments: <span style="color: #a8a8a8">(Only if needed)</span></label>
                                     <div class="col-lg-9">
-                                        <input type="file" class="file-input-ajax" multiple="multiple">
+                                        <input type="file" name="uploadedFile" class="file-input-ajax" multiple="multiple">
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label class="col-lg-3 control-label text-semibold">Your message:</label>
                                     <div class="col-lg-9">
-                                        <textarea rows="5" cols="5" class="form-control" placeholder="Enter your message here"></textarea>
+                                        <textarea rows="5" cols="5" class="form-control" name="message" placeholder="Enter your message here"></textarea>
                                     </div>
                                 </div>
 
@@ -291,7 +291,7 @@
                                     </label>
                                 </div>
                                 <div class="text-center" >
-                                    <button type="submit" id="submit_field_data" class="btn bg-green-800 btn-labeled btn-rounded btn-xlg"><b><i class="icon-arrow-down-right32"></i></b>Submit Form</button>
+                                    <button type="button" id="submit_field_data" class="btn bg-green-800 btn-labeled btn-rounded btn-xlg"><b><i class="icon-arrow-down-right32"></i></b>Submit Form</button>
                                 </div>
                             </fieldset>
                         </div>
@@ -374,6 +374,11 @@
             getDataForMainTable();
         });
 
+        $("#enter_field_data").click(async function () {
+            await formDataAjaxNoReload("{{ route('field.receivable.save.temp') }}", "Successfully added data", "Error while adding data", "tempDataForm");
+            getDataForMainTable();
+        });
+
         function getDataForMainTable() {
             $.ajax({
                 method: "GET",
@@ -395,6 +400,11 @@
                 messageErrorAlert("Error While Retrieving Data");
             });
         }
+
+        $("#submit_field_data").click(async function () {
+            formDataAjax("{{ route('field.log.save.approval') }}", "Field Data Saved Successfully", "Error while entering Field data", "tempDataForm");
+            getDataForMainTable();
+        });
     </script>
     {{--javascripts ends--}}
 @endsection

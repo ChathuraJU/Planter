@@ -48,6 +48,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('filed-get', 'FieldController@retrieve')->name('field.get');
     Route::get('block-create', 'FieldController@block_view');
     Route::post('block-fieldblock', 'FieldController@fieldblocksave')->name('fieldblock.save');
+    Route::post('field-receivable-save-temp', 'FieldController@fieldReceivableSaveTemp')->name('field.receivable.save.temp');
 
     //Labour Routes
     Route::get('labour-chart', 'LabourController@index');
@@ -72,6 +73,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::post('field-data-log-add', 'FieldController@addToTemp')->name('field.log.add');
     Route::post('field-data-log-save', 'FieldController@saveFieldData')->name('field.log.save');
+    Route::post('field-data-log-save-approval', 'FieldController@saveFieldDataApproval')->name('field.log.save.approval');
     Route::get('get-field-labour-data', 'FieldController@getFieldLabourData')->name('get.field.labour.data');
     Route::get('delete-field-labour-data', 'FieldController@deleteTmpLabourData')->name('delete.field.labour.data');
 
