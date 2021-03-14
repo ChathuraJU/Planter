@@ -76,7 +76,7 @@
                     <ul class="media-list">
                         <li class="media panel panel-body stack-media-on-mobile">
                             <a href="images/placeholderimg.jpg" class="media-left" data-popup="lightbox">
-                                <img src="{{asset($disease->image)}}" width="96" alt="">
+                                <img src="{{asset($disease->image)}}" width="96" alt="image">
                             </a>
 
                             <div class="media-body">
