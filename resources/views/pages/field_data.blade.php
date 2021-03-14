@@ -294,10 +294,10 @@
         function calculateOverKgs() {
             let fNorm = Number($("#field_norms").val());
             let latexKg = Number($("#latex_kg").val());
-            let overKgs = fNorm - latexKg;
+            let overKgs = latexKg - fNorm;
             $("#over_kg").val(overKgs);
 
-            let payable = (overKgs + 1000)*40;
+            let payable = (overKgs *40) + 1000;
             $("#payable").val(payable);
         }
 
