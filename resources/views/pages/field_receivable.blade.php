@@ -421,36 +421,37 @@
 
             });
         });
-        // $( "#field" ).change(function() {
 
-        {{--    var id = $('#field').val();--}}
+        $( "#field" ).change(function() {
 
-        {{--    const url = "{{ route('field.block.data') }}";--}}
+            var id = $('#field').val();
 
-        {{--    $.ajax({--}}
-        {{--        method: "POST",--}}
-        {{--        url: url,--}}
-        {{--        data: { "_token": "{{ csrf_token() }}",--}}
-        {{--            "myData": id},--}}
+            const url = "{{ route('field.block.data') }}";
 
-        {{--    }).done(function (data) {--}}
-        {{--        $('#block').empty();--}}
-        {{--        data = JSON.parse(data);--}}
+            $.ajax({
+                method: "POST",
+                url: url,
+                data: { "_token": "{{ csrf_token() }}",
+                    "myData": id},
 
-        {{--        $.each(data, function (i, data) {--}}
-        {{--            $('#block').append($('<option>', {--}}
-        {{--                value: data.id,--}}
-        {{--                text : data.block_no--}}
-        {{--            }));--}}
-        {{--        });--}}
-        {{--        // messageSuccessAlert("User Rejected Successfully")--}}
+            }).done(function (data) {
+                $('#block').empty();
+                data = JSON.parse(data);
 
-        {{--    }).fail(function () {--}}
+                $.each(data, function (i, data) {
+                    $('#block').append($('<option>', {
+                        value: data.id,
+                        text : data.block_no
+                    }));
+                });
+                // messageSuccessAlert("User Rejected Successfully")
 
-        {{--        messageErrorAlert("error");--}}
+            }).fail(function () {
 
-        {{--    });--}}
-        {{--});--}}
+                messageErrorAlert("error");
+
+            });
+        });
     </script>
     {{--javascripts ends--}}
 @endsection
