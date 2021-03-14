@@ -118,7 +118,7 @@
                                     <div class="col-lg-9">
                                         <div class="input-group bootstrap-touchspin mspborder">
                                             <span class="input-group-addon bootstrap-touchspin-prefix" style="display: none;"></span>
-                                            <input type="text" name="latex_kg" id="latex_kg" value="" class="touchspin-empty form-control " style="display: block;">
+                                            <input type="text" name="latex_kg" id="latex_kg" value=""  onkeyup="calculateOverKgs()" onchange="calculateOverKgs()" class="touchspin-empty form-control " style="display: block;">
                                             <span class="input-group-addon bootstrap-touchspin-postfix" style="display: none;"></span>
                                         </div>
                                     </div>
@@ -134,25 +134,25 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
+                                    <label class="col-lg-3 control-label text-semibold" for="field_norms">Field Norms:</label>
+                                    <div class="col-lg-9">
+                                        <input type="text" name="field_norms" id="field_norms" onkeyup="calculateOverKgs()"  onchange="calculateOverKgs()" placeholder="Enter Field Nprm " class="form-control mspborder required">
+                                    </div>
+                                </div>
+                                <div class="form-group">
                                     <label class="col-lg-3 control-label text-semibold" for="over_kg">Over Kgs.: </label>
                                     <div class="col-lg-9">
                                         <div class="input-group bootstrap-touchspin mspborder">
                                             <span class="input-group-addon bootstrap-touchspin-prefix" style="display: none;"></span>
-                                            <input type="text" name="over_kg" id="over_kg" value="" class="touchspin-empty form-control " style="display: block;">
+                                            <input type="text" name="over_kg" id="over_kg" value="" class="touchspin-empty form-control " style="display: block;" readonly>
                                             <span class="input-group-addon bootstrap-touchspin-postfix" style="display: none;"></span>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-lg-3 control-label text-semibold" for="field_norms">Field Norms:</label>
-                                    <div class="col-lg-9">
-                                        <input type="text" name="field_norms" id="field_norms" placeholder="Enter Field Nprm " class="form-control mspborder required">
-                                    </div>
-                                </div>
-                                <div class="form-group">
                                     <label class="col-lg-3 control-label text-semibold" for="field_norms">Payable:</label>
                                     <div class="col-lg-9">
-                                        <input type="text" name="payable" id="payable" placeholder="Payable Amount " class="form-control mspborder required">
+                                        <input type="text" name="payable" id="payable" placeholder="Payable Amount " class="form-control mspborder required" readonly>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -194,15 +194,7 @@
                                             <tbody>
                                             </tbody>
                                             <tfoot>
-                                                <tr style="background-color: #e4efaf; font-weight: bold">
-                                                    <td>Total</td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                </tr>
+
                                             </tfoot>
                                         </table>
                                     </div>
@@ -237,21 +229,7 @@
                                         <tbody>
                                         </tbody>
                                         <tfoot>
-                                        <tr style="background-color: #e4efaf; font-weight: bold">
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td>Total</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                        </tr>
+
                                         </tfoot>
                                     </table>
                                 </div>
@@ -313,6 +291,16 @@
     <script src="{{ asset('assets/js/core.js') }}"></script>
     <script>
 
+        function calculateOverKgs() {
+            let fNorm = Number($("#field_norms").val());
+            let latexKg = Number($("#latex_kg").val());
+            let overKgs = fNorm - latexKg;
+            $("#over_kg").val(overKgs);
+
+            let payable = (overKgs + 1000)*40;
+            $("#payable").val(payable);
+        }
+
         $(".touchspin-empty").TouchSpin({
             max: 1000000,
         });
@@ -324,15 +312,68 @@
             }).done(function (data) {
                 data = JSON.parse(data);
                 $("#fieldlabourtable tbody").empty();
+                $("#fieldlabourtable tfoot").empty();
+                let sum_tappers = 0;
+                let sum_latexl = 0;
+                let sum_latexkg = 0;
+                let sum_scrap = 0;
+                let sum_total = 0;
+
+                let col_liters = 0;
+                let col_latexkg = 0;
+                let col_scrap = 0;
+                let col_over = 0;
+                let col_payable = 0;
+
                 data.data.forEach((item) => {
                     let paidLbl = item.paid ? 'PAID' : 'NOT PAID';
                     $("#fieldlabourtable tbody").append("<tr id='"+item.id+"'><td>"+item.epf_id+"</td><td>"+item.labour.fname+" "+item.labour.lname+"</td><td>"+item.field.field_name+"</td><td>"+item.block_no+"</td><td>"+item.no_of_liters+"</td><td>"+item.metrolac_reading+"</td><td>"+item.latex+"</td><td>"+item.scrap+"</td><td>"+item.over+"</td><td>"+item.field_norm+"</td><td>"+item.payable+"</td><td>"+paidLbl+"</td><td><button type='button' onclick='deleteLabourData("+item.id+")'><i class='icon-trash'></i></button></td></tr>");
+
+                    col_liters = Number(item.no_of_liters) + col_liters;
+                    col_latexkg = Number(item.latex) + col_latexkg;
+                    col_scrap = Number(item.scrap) + col_scrap;
+                    col_over = Number(item.over) + col_over;
+                    col_payable = Number(item.payable) + col_payable;
                 });
+
+                $("#fieldlabourtable tbody").append('<tr style="background-color: #e4efaf; font-weight: bold">\n' +
+                    '                                            <td>Total</td>\n' +
+                    '                                            <td></td>\n' +
+                    '                                            <td></td>\n' +
+                    '                                            <td></td>\n' +
+                    '                                            <td>'+col_liters+'</td>\n' +
+                    '                                            <td></td>\n' +
+                    '                                            <td>'+col_latexkg+'</td>\n' +
+                    '                                            <td>'+col_scrap+'</td>\n' +
+                    '                                            <td>'+col_over+'</td>\n' +
+                    '                                            <td></td>\n' +
+                    '                                            <td>'+col_payable+'</td>\n' +
+                    '                                            <td></td>\n' +
+                    '                                            <td></td>\n' +
+                    '                                        </tr>');
+
                 $("#fieldsummarytable tbody").empty();
+                $("#fieldsummarytable tfoot").empty();
                 data.summer.forEach((item) => {
                     console.log(item);
                     $("#fieldsummarytable tbody").append("<tr><td>"+item.field_name+"</td><td>"+item.block_no+"</td><td>"+item.tappers+"</td><td>"+item.latexL+"</td><td>"+item.latexKg+"</td><td>"+item.scrap+"</td><td>"+item.totalKg+"</td></tr>");
+                    sum_tappers = Number(item.tappers) + sum_tappers;
+                    sum_latexl = Number(item.latexL) + sum_latexl;
+                    sum_latexkg = Number(item.latexKg) + sum_latexkg;
+                    sum_scrap = Number(item.scrap) + sum_scrap;
+                    sum_total = Number(item.totalKg) + sum_total;
                 });
+
+                $("#fieldsummarytable tfoot").append('<tr style="background-color: #e4efaf; font-weight: bold">\n' +
+                    '                                                    <td>Total</td>\n' +
+                    '                                                    <td></td>\n' +
+                    '                                                    <td>'+sum_tappers+'</td>\n' +
+                    '                                                    <td>'+sum_latexl+'</td>\n' +
+                    '                                                    <td>'+sum_latexkg+'</td>\n' +
+                    '                                                    <td>'+sum_scrap+'</td>\n' +
+                    '                                                    <td>'+sum_total+'</td>\n' +
+                    '                                                </tr>');
+
             }).fail(function () {
                 messageErrorAlert("Error While Retrieving Data");
             });

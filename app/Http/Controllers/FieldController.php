@@ -133,9 +133,38 @@ class FieldController extends Controller
     {
         $response = Http::get('http://api.openweathermap.org/data/2.5/weather?lat='.$request->lat.'&lon='.$request->lon.'&appid='.env('WEATHER_API_KEY'));
 
+        $data = TempLabourCollectionSummaryEntity::with('labour', 'field')->get();
+        $temp_sum_data = DB::select("SELECT (SUM(tmp.latex) + SUM(tmp.scrap)) as totalKg FROM tmp_labour_collection_summary tmp INNER JOIN `fields` f on f.field_id = tmp.field_no GROUP BY block_no");
+        $total_tappers = TempLabourCollectionSummaryEntity::all()->count();
+        $total_latexl = 0;
+        $total_latekg = 0;
+        $total_scrap = 0;
+        $total_total = 0;
+        $total_over = 0;
+        $total_payable = 0;
+
+        foreach ($temp_sum_data as $temp_sum_datum) {
+            $total_total = $total_total + $temp_sum_datum->totalKg;
+        }
+
+        foreach ($data as $tempRow) {
+            $total_latexl = $total_latexl + $tempRow->no_of_liters;
+            $total_latekg = $total_latekg + $tempRow->latex;
+            $total_scrap = $total_scrap + $tempRow->scrap;
+            $total_over = $total_over + $tempRow->over;
+            $total_payable = $total_payable + $tempRow->payable;
+        }
+
         $division_collection_main = new DivisionCollectionMain();
         $division_collection_main->weather = $response->body();
-        $division_collection_main->weather = $response;
+        $division_collection_main->tot_tappers = $total_tappers;
+        $division_collection_main->tot_latexl = $total_latexl;
+        $division_collection_main->tot_latexkg = $total_latekg;
+        $division_collection_main->tot_scrap = $total_scrap;
+        $division_collection_main->tot_tot_kg = $total_total;
+        $division_collection_main->tot_overkg = $total_over;
+        $division_collection_main->tot_payable = $total_total;
+
         if ($division_collection_main->save()) {
 
             $summary = DB::select("SELECT tmp.block_no, f.field_id, SUM(tmp.no_of_liters) as latexL, COUNT(tmp.id) as tappers, SUM(tmp.latex) as latexKg, SUM(tmp.scrap) as scrap, (SUM(tmp.latex) + SUM(tmp.scrap)) as totalKg FROM tmp_labour_collection_summary tmp INNER JOIN `fields` f on f.field_id = tmp.field_no GROUP BY block_no");
