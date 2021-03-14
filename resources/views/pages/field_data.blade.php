@@ -433,7 +433,7 @@
                     "myData": id},
 
             }).done(function (data) {
-
+                $('#block_no').empty();
                 data = JSON.parse(data);
 
                 $.each(data, function (i, data) {

@@ -49,6 +49,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('block-create', 'FieldController@block_view');
     Route::post('block-fieldblock', 'FieldController@fieldblocksave')->name('fieldblock.save');
     Route::post('field-receivable-save-temp', 'FieldController@fieldReceivableSaveTemp')->name('field.receivable.save.temp');
+    Route::post('get-from-block-data', 'FieldController@getDataFromBlock')->name('get.field.data.from.block');
 
     //Labour Routes
     Route::get('labour-chart', 'LabourController@index');

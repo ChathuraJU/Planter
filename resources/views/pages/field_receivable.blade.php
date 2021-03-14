@@ -76,17 +76,11 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-lg-3 control-label text-semibold" for="field_norms">Date :</label>
-                                    <div class="col-lg-9">
-                                        <input type="text" name="date" id="date" placeholder="" class="form-control mspborder required">
-                                    </div>
-                                </div>
-                                <div class="form-group">
                                     <label class="col-lg-3 control-label text-semibold" for="latex_liters">No. of Hectares : </label>
                                     <div class="col-lg-9">
                                         <div class="input-group bootstrap-touchspin mspborder">
                                             <span class="input-group-addon bootstrap-touchspin-prefix" style="display: none;"></span>
-                                            <input type="text" name="hect" id="hect" value="" class="touchspin-empty form-control " style="display: block;">
+                                            <input type="text" name="hect" id="hect" value="" class="touchspin-empty form-control " style="display: block;" readonly>
                                             <span class="input-group-addon bootstrap-touchspin-postfix" style="display: none;"></span>
                                         </div>
                                     </div>
@@ -96,7 +90,7 @@
                                     <div class="col-lg-9">
                                         <div class="input-group bootstrap-touchspin mspborder">
                                             <span class="input-group-addon bootstrap-touchspin-prefix" style="display: none;"></span>
-                                            <input type="text" name="tappers" id="tappers" value="" class="touchspin-empty form-control " style="display: block;">
+                                            <input type="text" name="tappers" id="tappers" value="" class="touchspin-empty form-control " style="display: block;" readonly>
                                             <span class="input-group-addon bootstrap-touchspin-postfix" style="display: none;"></span>
                                         </div>
                                     </div>
@@ -106,7 +100,7 @@
                                     <div class="col-lg-9">
                                         <div class="input-group bootstrap-touchspin mspborder">
                                             <span class="input-group-addon bootstrap-touchspin-prefix" style="display: none;"></span>
-                                            <input type="text" name="tap_hect" id="tap_hect" value="" class="touchspin-empty form-control " style="display: block;">
+                                            <input type="text" name="tap_hect" id="tap_hect" value="" class="touchspin-empty form-control " style="display: block;" readonly>
                                             <span class="input-group-addon bootstrap-touchspin-postfix" style="display: none;"></span>
                                         </div>
                                     </div>
@@ -116,7 +110,7 @@
                                     <div class="col-lg-9">
                                         <div class="input-group bootstrap-touchspin mspborder">
                                             <span class="input-group-addon bootstrap-touchspin-prefix" style="display: none;"></span>
-                                            <input type="text" name="field_wt" id="field_wt" value="" class="touchspin-empty form-control " style="display: block;">
+                                            <input type="text" name="field_wt" id="field_wt" value="" class="touchspin-empty form-control " style="display: block;" readonly>
                                             <span class="input-group-addon bootstrap-touchspin-postfix" style="display: none;"></span>
                                         </div>
                                     </div>
@@ -388,7 +382,7 @@
                 data = JSON.parse(data);
                 $("#fieldsummarytable tbody").empty();
                 data.forEach((item) => {
-                    $("#fieldsummarytable tbody").append("<tr><td>"+item.field.field_name+"</td><td>"+item.block_no+"</td><td>"+item.latex_l+"</td><td>"+item.latex_kg+"</td><td>"+item.scrap_kg+"</td><td>"+item.total+"</td></tr>");
+                    $("#fieldsummarytable tbody").append("<tr><td>"+item.field.field_name+"</td><td>"+item.block.block_no+"</td><td>"+item.latex_l+"</td><td>"+item.latex_kg+"</td><td>"+item.scrap_kg+"</td><td>"+item.total+"</td></tr>");
                 });
                 $("#collectionSummary tbody").empty();
                 data.forEach((item) => {
@@ -405,6 +399,58 @@
             formDataAjax("{{ route('field.log.save.approval') }}", "Field Data Saved Successfully", "Error while entering Field data", "tempDataForm");
             getDataForMainTable();
         });
+
+        $( "#block" ).change(function() {
+            $.ajax({
+                method: "POST",
+                url: "{{ route('get.field.data.from.block') }}",
+                data: { "_token": "{{ csrf_token() }}", "mainId": "{{ $division_main->id }}", "block_id": $(this).val()},
+
+            }).done(function (data) {
+                data = JSON.parse(data);
+                if (data.length > 0) {
+                    data = data[0];
+                    $("#hect").val(data['block']['block_hectare']);
+                    $("#tappers").val(data['no_tappers']);
+                    $("#tap_hect").val(data['tap_per_hect']);
+                    $("#field_wt").val(data['latex_kg']);
+                }
+            }).fail(function () {
+
+                messageErrorAlert("error");
+
+            });
+        });
+        // $( "#field" ).change(function() {
+
+        {{--    var id = $('#field').val();--}}
+
+        {{--    const url = "{{ route('field.block.data') }}";--}}
+
+        {{--    $.ajax({--}}
+        {{--        method: "POST",--}}
+        {{--        url: url,--}}
+        {{--        data: { "_token": "{{ csrf_token() }}",--}}
+        {{--            "myData": id},--}}
+
+        {{--    }).done(function (data) {--}}
+        {{--        $('#block').empty();--}}
+        {{--        data = JSON.parse(data);--}}
+
+        {{--        $.each(data, function (i, data) {--}}
+        {{--            $('#block').append($('<option>', {--}}
+        {{--                value: data.id,--}}
+        {{--                text : data.block_no--}}
+        {{--            }));--}}
+        {{--        });--}}
+        {{--        // messageSuccessAlert("User Rejected Successfully")--}}
+
+        {{--    }).fail(function () {--}}
+
+        {{--        messageErrorAlert("error");--}}
+
+        {{--    });--}}
+        {{--});--}}
     </script>
     {{--javascripts ends--}}
 @endsection

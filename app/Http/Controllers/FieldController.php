@@ -219,6 +219,12 @@ class FieldController extends Controller
 
     }
 
+    public function getDataFromBlock(Request $request)
+    {
+        $preDta = DivisionCollection::with('block', 'field', 'division')->where('division_collection_main_id', $request->mainId)->where('block_no', $request->block_id)->get();
+        return json_encode($preDta);
+    }
+
     public function fieldReceivableSaveTemp(Request $request)
     {
         $collection = DivisionCollection::where('field_no', $request->field)->where('block_no', $request->block)->where('division_collection_main_id', $request->mainId)->get()->first();
