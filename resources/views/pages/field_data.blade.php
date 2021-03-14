@@ -84,7 +84,13 @@
                                 <div class="form-group">
                                     <label class="col-lg-3 control-label text-semibold" for="block">Block No.</label>
                                     <div class="col-lg-9">
-                                        <input type="text" name="block_no" id="block_no" placeholder="Enter Block No. " class="form-control mspborder required">
+                                        <select data-placeholder="Select Block No. " id="block_no" name="block_no" class="select select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+                                            <option></option>
+                                            <optgroup label="Blocks">
+
+                                            </optgroup>
+                                        </select>
+
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -141,6 +147,12 @@
                                     <label class="col-lg-3 control-label text-semibold" for="field_norms">Field Norms:</label>
                                     <div class="col-lg-9">
                                         <input type="text" name="field_norms" id="field_norms" placeholder="Enter Field Nprm " class="form-control mspborder required">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-lg-3 control-label text-semibold" for="field_norms">Payable:</label>
+                                    <div class="col-lg-9">
+                                        <input type="text" name="payable" id="payable" placeholder="Payable Amount " class="form-control mspborder required">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -314,7 +326,7 @@
                 $("#fieldlabourtable tbody").empty();
                 data.data.forEach((item) => {
                     let paidLbl = item.paid ? 'PAID' : 'NOT PAID';
-                    $("#fieldlabourtable tbody").append("<tr id='"+item.id+"'><td>"+item.epf_id+"</td><td>"+item.labour.fname+" "+item.labour.lname+"</td><td>"+item.field.field_name+"</td><td>"+item.block_no+"</td><td>"+item.no_of_liters+"</td><td>"+item.metrolac_reading+"</td><td>"+item.latex+"</td><td>"+item.scrap+"</td><td>"+item.over+"</td><td>"+item.field_norm+"</td><td>"+item.payable+"</td><td>"+paidLbl+"</td><td><button type='button' onclick='deleteLabourData("+item.id+")'>DEL</button></td></tr>");
+                    $("#fieldlabourtable tbody").append("<tr id='"+item.id+"'><td>"+item.epf_id+"</td><td>"+item.labour.fname+" "+item.labour.lname+"</td><td>"+item.field.field_name+"</td><td>"+item.block_no+"</td><td>"+item.no_of_liters+"</td><td>"+item.metrolac_reading+"</td><td>"+item.latex+"</td><td>"+item.scrap+"</td><td>"+item.over+"</td><td>"+item.field_norm+"</td><td>"+item.payable+"</td><td>"+paidLbl+"</td><td><button type='button' onclick='deleteLabourData("+item.id+")'><i class='icon-trash'></i></button></td></tr>");
                 });
                 $("#fieldsummarytable tbody").empty();
                 data.summer.forEach((item) => {
@@ -366,30 +378,65 @@
             }
         });
 
-        $("#enter_field_data").click(function(){
-            var val1 = $('#epf').val();
-            var val2 =$('#labour').val();
-            var val3 = $('#field').val();
-            var val4 =$('#block_no').val();
-            var val5 =$('#latex_liters').val();
-            var val6 =$('#metrolac').val();
-            var val7 =$('#latex_kg').val();
-            var val8 =$('#scrap_kg').val();
-            var val9 =$('#over_kg').val();
-            var val10 =$('#field_norms').val();
-            var val11 =number(1000)+ val9*number(40);
 
-            // count = count++;
+        $( "#field" ).change(function() {
 
-            $("#fieldlabourtable tbody").append("<tr ><td></td><td>"+val1+"</td><td>"+val2+"</td><td>"+val3+"</td><td>"+val4+"</td><td>"+val5+"</td><td>"+val6+"</td><td>"+val7+"</td><td>"+val8+"</td><td>"+val9+"</td><td>"+val10+"</td><td>"+val11+"</td><td>button</td><td><a href='#'><i class='icon-trash'></i></a></td></tr>");
+            var id = $('#field').val();
+
+            const url = "{{ route('field.block.data') }}";
+
+            $.ajax({
+                method: "POST",
+                url: url,
+                data: { "_token": "{{ csrf_token() }}",
+                    "myData": id},
+
+            }).done(function (data) {
+
+                data = JSON.parse(data);
+
+                $.each(data, function (i, data) {
+                    $('#block_no').append($('<option>', {
+                        value: data.id,
+                        text : data.block_no
+                    }));
+                });
+                // messageSuccessAlert("User Rejected Successfully")
+
+            }).fail(function () {
+
+                messageErrorAlert("error");
+
+            });
         });
 
+        $( "#labour" ).change(function() {
 
-        //Remove record from table
-        $("#fieldlabourtable tbody").on("click",".icon-trash",function () { //trash icon click function
-            var id = $(this).closest("tr").attr("id");
-            $(this).closest("tr").remove();
-        });//On table Delete function
+            // alert("okay");
+
+            var id = $('#labour').val();
+
+            const url = "{{ route('field.person.epf') }}";
+
+            $.ajax({
+                method: "POST",
+                url: url,
+                data: { "_token": "{{ csrf_token() }}",
+                    "myData": id},
+
+            }).done(function (data) {
+
+                data = JSON.parse(data);
+                $("#epf").val(data[0].epf);
+
+                // messageSuccessAlert("User Rejected Successfully")
+
+            }).fail(function () {
+
+                messageErrorAlert("error");
+
+            });
+        });
     </script>
     {{--javascripts ends--}}
 @endsection

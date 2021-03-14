@@ -76,6 +76,8 @@ Route::middleware(['auth'])->group(function () {
     Route::post('field-data-log-save-approval', 'FieldController@saveFieldDataApproval')->name('field.log.save.approval');
     Route::get('get-field-labour-data', 'FieldController@getFieldLabourData')->name('get.field.labour.data');
     Route::get('delete-field-labour-data', 'FieldController@deleteTmpLabourData')->name('delete.field.labour.data');
+    Route::post('Field-data-block', 'FieldController@getBlockData')->name('field.block.data');
+    Route::post('Field-person-epf', 'FieldController@getPersonEPF')->name('field.person.epf');
 
     Route::group(['as' => 'admin', 'middleware' => ['auth', 'admin']], function () {
         Route::get('nursery-dashboard', function () {

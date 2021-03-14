@@ -86,11 +86,10 @@
 
                                 <ul class="list-inline list-inline-separate mb-10">
                                     <li><a href="#" class="text-muted">{{$disease->keywords}}</a></li>
-                                    <li><a href="#" class="text-muted">{{$disease->keywords}}</a></li>
                                 </ul>
-                                <h6>Description</h6>
+                                <h6><b>Description</b></h6>
                                 <p class="content-group-sm">{{$disease->descriptions}}</p>
-                                <h6>Solution</h6>
+                                <h6><b>Solution</b></h6>
                                 <p class="content-group-sm">{{$disease->solution}}</p>
 
                             </div>
@@ -102,15 +101,7 @@
                 @endforeach
 
                 <!-- /list -->
-{{--                <p class="content-group-sm">It prepare is ye nothing blushes up brought. Or as gravity--}}
-{{--                    pasture limited evening on. Wicket around beauty say she. Frankness resembled say not--}}
-{{--                    new smallness you discovery. Noisier ferrars yet shyness weather ten colonel. Too him--}}
-{{--                    himself engaged husband pursuit musical...</p>--}}
-{{--                <h6>Solution</h6>--}}
-{{--                <p class="content-group-sm">It prepare is ye nothing blushes up brought. Or as gravity--}}
-{{--                    pasture limited evening on. Wicket around beauty say she. Frankness resembled say not--}}
-{{--                    new smallness you discovery. Noisier ferrars yet shyness weather ten colonel. Too him--}}
-{{--                    himself engaged husband pursuit musical...</p>--}}
+
 
                 <!-- Pagination -->
                 <div class="text-center content-group-lg pt-20">

@@ -132,7 +132,7 @@
                                 <td>{{ $block->field_name }}</td>
                                 <td>{{ $block->block_no }}</td>
                                 <td>{{ $block->block_hectare }}</td>
-                            </tr>   
+                            </tr>
                             @endforeach
                         </tbody>
                     </table>
@@ -229,9 +229,9 @@
         }
 
         $( "#field" ).change(function() {
-           
+
             var id = $('#field').val();
-    
+
             const url = "{{ route('field.get') }}";
 
             $.ajax({
@@ -244,7 +244,7 @@
 
                     data = JSON.parse(data);
                     $("#hectare").text(data.hectare)
-                
+
                     // messageSuccessAlert("User Rejected Successfully")
 
                 }).fail(function () {

@@ -72,6 +72,7 @@ class FieldController extends Controller
         $collection_summary->scrap = $request->scrap_kg;
         $collection_summary->over = $request->over_kg;
         $collection_summary->field_norm = $request->field_norms;
+        $collection_summary->payable = $request->payable;
         $collection_summary->paid = $request->paid;
         $collection_summary->save();
         return true;
@@ -251,6 +252,23 @@ class FieldController extends Controller
         }else{
             echo false;
         }
+
+    }
+    public function getBlockData(Request $request){
+        $id = $request->myData;
+
+        $blocks = Block::where('field_id',$id)->get();
+
+        return $blocks->tojson();
+
+    }
+
+    public function getPersonEPF(Request $request){
+        $id = $request->myData;
+
+        $blocks = Person::where('person_id',$id)->get();
+
+        return $blocks->tojson();
 
     }
 }
