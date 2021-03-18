@@ -18,7 +18,7 @@ class DiseaseController extends Controller
     }
 
     public function save(Request $request){
-//        dd($request->img_file);
+    //    dd($request->all());
         $dis_id = $request->txtId;
 
         if($dis_id){
@@ -29,7 +29,11 @@ class DiseaseController extends Controller
             $disease->keywords = $request->keywords_up;
             $disease->descriptions = $request->description_up;
             $disease->solution = $request->solutions_up;
+
+
             dd($request->img_file);
+
+
             if ($request->img_file) {
 
 

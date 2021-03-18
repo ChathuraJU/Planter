@@ -21,22 +21,15 @@ Route::middleware(['auth'])->group(function () {
         return view('pages.homepage');
     });
 
-    Route::get('nursery-create', function () {
-        return view('pages.nursery_create');
-    });
+    
     Route::get('field-dashboard', function () {
         return view('pages.field_dashboard');
     });
 
-    Route::get('field-data-logs', 'FieldController@getFieldDataLogs')->name('get.field.data.logs');
-    Route::get('field-data-log-summary', 'FieldController@getFieldLogSummary')->name('get.field.log.summary');
-    Route::get('field-data', 'FieldController@addFieldDataLog');
-    Route::get('field-receivable/{id}', 'FieldController@fieldReceivables');
-
-
     Route::get('create-report', function () {
         return view('pages.create_report');
     });
+
     Route::get('all-reports', function () {
         return view('pages.all_reports');
     });
@@ -63,7 +56,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('disease-get', 'DiseaseController@retrieve')->name('disease.get');
     Route::post('disease-delete', 'DiseaseController@delete')->name('disease.delete');
 
-    //Register
+    //Register Routes
     Route::get('register-requests', 'UserController@index');
     Route::post('register-approveuser', 'UserController@approveuser')->name('user.approveuser');
     Route::post('register-rejectuser', 'UserController@rejectuser')->name('user.rejectuser');
@@ -71,7 +64,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('users', 'UserController@getregistedusers')->name('user.getregistedusers');
     Route::post('register-userupdate', 'UserController@userupdate')->name('user.userupdate');
 
-
+    //field Routes
     Route::post('field-data-log-add', 'FieldController@addToTemp')->name('field.log.add');
     Route::post('field-data-log-save', 'FieldController@saveFieldData')->name('field.log.save');
     Route::post('field-data-log-save-approval', 'FieldController@saveFieldDataApproval')->name('field.log.save.approval');
@@ -79,6 +72,19 @@ Route::middleware(['auth'])->group(function () {
     Route::get('delete-field-labour-data', 'FieldController@deleteTmpLabourData')->name('delete.field.labour.data');
     Route::post('Field-data-block', 'FieldController@getBlockData')->name('field.block.data');
     Route::post('Field-person-epf', 'FieldController@getPersonEPF')->name('field.person.epf');
+
+    Route::get('field-data-logs', 'FieldController@getFieldDataLogs')->name('get.field.data.logs');
+    Route::get('field-data-log-summary', 'FieldController@getFieldLogSummary')->name('get.field.log.summary');
+    Route::get('field-data', 'FieldController@addFieldDataLog');
+    Route::get('field-receivable/{id}', 'FieldController@fieldReceivables');
+
+    //Nersery Routes
+    Route::get('nursery-create', 'NurseryController@index');
+    Route::post('nursery-save', 'NurseryController@store')->name('nursery.save');
+    Route::post('nursery-get', 'NurseryController@retrieve')->name('nursery.get');
+    Route::post('nursery-update', 'NurseryController@update_nursery')->name('nursery.update');
+    Route::post('nursery-delete', 'NurseryController@delete')->name('nursery.delete');
+
 
     Route::group(['as' => 'admin', 'middleware' => ['auth', 'admin']], function () {
         Route::get('nursery-dashboard', function () {

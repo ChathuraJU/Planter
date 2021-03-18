@@ -31,7 +31,8 @@
         {{--create nursery dashboard form starts here--}}
         <div class="row">
             <div class="col-sm-12">
-                <form action="#">
+                <form action="" method="post" enctype="multipart/form-data" id="frm_nursery">
+                    @csrf
                     <div class="panel panel-white">
                         <div class="panel-heading">
                             <h5 class="panel-title">Create Nursery Form<a class="heading-elements-toggle"><i class="icon-more"></i></a></h5>
@@ -48,7 +49,7 @@
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label class="control-label text-semibold">Region</label>
-                                        <select data-placeholder="Select a Region..." class="select select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+                                        <select name="plot_region" id="plot_region"   data-placeholder="Select a Region..." class="select select2-hidden-accessible" tabindex="-1" aria-hidden="true">
                                             <option></option>
                                             <optgroup label="Regions">
                                                 <option value="0">Mid Country</option>
@@ -68,21 +69,21 @@
                                         <label class="control-label text-semibold">Number of Cuttings: </label>
                                         <div class="input-group bootstrap-touchspin mspborder">
                                             <span class="input-group-addon bootstrap-touchspin-prefix" style="display: none;"></span>
-                                            <input type="text" value="" class="touchspin-empty form-control " style="display: block;">
+                                            <input type="text" value="" class="touchspin-empty form-control " name="plot_cuttings" id="plot_cuttings" style="display: block;">
                                             <span class="input-group-addon bootstrap-touchspin-postfix" style="display: none;"></span>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <label class="control-label text-semibold">Layout Date. : :</label>
-                                        <input type="text" name="plot_no" id="plot_no" placeholder="Enter Plot No." class="form-control mspborder required">
+                                        <label class="control-label text-semibold">Layout Date:</label>
+                                        <input type="date" name="plot_date" id="plot_date" placeholder="Enter date" class="form-control mspborder required">
                                     </div>
                                 </div>
                                 <div class="col-sm-12">
                                     <div class="form-group">
                                         <label class="control-label text-semibold">Upload Image:</label>
-                                            <input type="file" class="file-input-ajax" multiple="multiple">
+                                            <input type="file" class="file-input-ajax" multiple="multiple" name="plot_image" id="plot_image">
                                     </div>
                                 </div>
 
@@ -90,7 +91,7 @@
 
                         </div>
                         <div class="text-center mb-5" >
-                            <button type="submit" id="submit_field_data" class="btn bg-green-800 btn-labeled btn-rounded btn-xlg"><b><i class="icon-arrow-down-right32"></i></b>Submit Form</button>
+                            <button type="button" id="submit_nursery_data" class="btn bg-green-800 btn-labeled btn-rounded btn-xlg"><b><i class="icon-arrow-down-right32"></i></b>Submit Form</button>
                         </div>
 
                     </div>
@@ -126,7 +127,20 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
+                            @foreach($nurseries as $nursery)
+                                <tr>
+                                <td>{{ $nursery->region == 0 ? 'Low Country' : 'Mid Country' }}</td>
+                                    <th>{{ $nursery->plot_no}}</th>
+                                    <th>{{ $nursery->no_of_cuttings}}</th>
+                                    <th>{{ $nursery->layout_date}}</th>
+                                    <td>
+                                        <ul class="icons-list">
+                                            <li><a href="#" onclick="get_nursery({{ $nursery->nursery_id}})" data-toggle="modal" data-target="#view_modal"><i class="icon-eye"></i></a></li>
+                                            <li><a href="#" onclick="delete_nursery({{ $nursery->nursery_id}})" data-toggle="modal" data-target="#remove_modal"><i class="icon-trash"></i></a></li>
+                                        </ul>
+                                    </td>
+                            @endforeach
+                            <!-- <tr>
                                 <td>2207</td>
                                 <th>Plot No.</th>
                                 <td>200</td>
@@ -138,7 +152,7 @@
                                     </ul>
                                 </td>
 
-                            </tr>
+                            </tr> -->
                         </tbody>
                     </table>
                 </div>
@@ -158,45 +172,49 @@
 
                     <div class="modal-body">
                         <div class="row">
+                        <form action="" method="post" enctype="multipart/form-data" id="frm_nursery_up">
+                            @csrf
                             <div class="col-sm-6">
                                 <div class="form-group">
+                                <input type="hidden" name="txtid" id="txtid" placeholder="" class="form-control mspborder">
+                          
                                     <label class="control-label text-semibold"> Region :</label>
-                                    <input type="text" name="Region" id="Region" placeholder="Region Name" class="form-control mspborder readonly">
+                                    <input type="text" name="Region_em" id="Region_em" placeholder="Region Name" class="form-control mspborder readonly">
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label text-semibold">Layout Date :</label>
-                                    <input type="text" name="layout_date" id="layout_date" placeholder="Layout date" class="form-control mspborder readonly">
+                                    <input type="date" name="layout_date_em" id="layout_date_em" placeholder="Layout date" class="form-control mspborder readonly">
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label text-semibold">No. of Cuttings :</label>
-                                    <input type="text" name="cuttings" id="cuttings" placeholder="No. of Cuttings" class="form-control mspborder readonly">
+                                    <input type="text" name="cuttings_em" id="cuttings_em" placeholder="No. of Cuttings" class="form-control mspborder readonly">
                                 </div>
                                 <legend class="text-semibold"><i class="icon-images2 position-left"></i>Images</legend>
                                 <div class="content-group">
                                     <div class="row">
                                         <div class="col-lg-4 col-sm-4">
-                                            <p><a href="images/placeholderimg.jpg" class="media-left" data-popup="lightbox"><img src="images/placeholderimg.jpg" class="img-responsive img-rounded" alt="image"></a></p>
-                                            <p><a href="images/placeholderimg.jpg" class="media-left" data-popup="lightbox"><img src="images/placeholderimg.jpg" class="img-responsive img-rounded" alt="image"></a></p>
+                                            <p><a href="images/placeholderimg.jpg" class="media-left" data-popup="lightbox"><img src="images/placeholderimg.jpg" id="img1" Name="img1" class="img-responsive img-rounded" alt="image"></a></p>
+                                            <p><a href="images/placeholderimg.jpg" class="media-left" data-popup="lightbox"><img src="images/placeholderimg.jpg" id="img2" Name="img2" class="img-responsive img-rounded" alt="image"></a></p>
                                         </div>
 
                                         <div class="col-lg-4 col-sm-4">
-                                            <p><a href="images/placeholderimg.jpg" class="media-left" data-popup="lightbox"><img src="images/placeholderimg.jpg" class="img-responsive img-rounded" alt="image"></a></p>
-                                            <p><a href="images/placeholderimg.jpg" class="media-left" data-popup="lightbox"><img src="images/placeholderimg.jpg" class="img-responsive img-rounded" alt="image"></a></p>
+                                            <p><a href="images/placeholderimg.jpg" class="media-left" data-popup="lightbox"><img src="images/placeholderimg.jpg" id="img3" Name="img3" class="img-responsive img-rounded" alt="image"></a></p>
+                                            <p><a href="images/placeholderimg.jpg" class="media-left" data-popup="lightbox"><img src="images/placeholderimg.jpg" id="img4" Name="img4" class="img-responsive img-rounded" alt="image"></a></p>
                                         </div>
 
                                         <div class="col-lg-4 col-sm-4">
-                                            <p><a href="images/placeholderimg.jpg" class="media-left" data-popup="lightbox"><img src="images/placeholderimg.jpg" class="img-responsive img-rounded" alt="image"></a></p>
-                                            <p><a href="images/placeholderimg.jpg" class="media-left" data-popup="lightbox"><img src="images/placeholderimg.jpg" class="img-responsive img-rounded" alt="image"></a></p>
+                                            <p><a href="images/placeholderimg.jpg" class="media-left" data-popup="lightbox"><img src="images/placeholderimg.jpg" id="img5" Name="img5"class="img-responsive img-rounded" alt="image"></a></p>
+                                            <p><a href="images/placeholderimg.jpg" class="media-left" data-popup="lightbox"><img src="images/placeholderimg.jpg" id="img6" Name="img6"class="img-responsive img-rounded" alt="image"></a></p>
                                         </div>
                                     </div>
                                 </div>
-
+                            </form>
                             </div>
                             <div class="col-sm-6">
                                 <div class="panel panel-body">
                                     <legend class="text-semibold"><i class="icon-task position-left"></i>Schedule</legend>
-                                    <ul class="list-feed media-list cju-list-scroll">
-                                        <li>
+                                    <ul class="list-feed media-list cju-list-scroll" id="list">
+                                        <!-- <li>
                                             <span class="list-feed-solid text-muted">12.12.2021</span>
                                             <div class="media-body">
                                                 <div class="text-semibold">Cuttings Layout</div>
@@ -303,7 +321,7 @@
                                                     <li style="display: none"><a href="#" class="text-success"><i class="icon-check position-left text-success"></i> Completed</a></li>
                                                 </ul>
                                             </div>
-                                        </li>
+                                        </li> -->
                                     </ul>
                                 </div>
                             </div>
@@ -315,7 +333,7 @@
                     </div>
 
                     <div class="modal-footer">
-                        <button type="button" class="btn bg-green-800" data-dismiss="modal">Save changes</button>
+                        <!-- <button type="button" id="submit_nursery_up" class="btn bg-green-800" data-dismiss="modal">Save changes</button> -->
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     </div>
                 </div>
@@ -351,11 +369,18 @@
     {{--page content ends--}}
 
     {{--javascripts starts here--}}
+    <script src="{{ asset('assets/js/core.js') }}"></script>
     <script>
 
 
         $(document).ready(function () {
             datatb();
+        });
+
+
+        const formName = "frm_nursery";
+        $("#submit_nursery_data").click(function () {
+            formDataAjax("{{ route('nursery.save') }}", "Nursery Registered Successfully", "Error Registering Nursery", formName);
         });
 
         // Setting datatable defaults
@@ -414,6 +439,90 @@
             });
             table_offset.fixedHeader.headerOffset($('.navbar-fixed-top').height());
         }
+
+       function get_nursery(id){
+           
+            $("#list").empty();
+
+            const url = "{{ route('nursery.get') }}";
+
+            $.ajax({
+                    method: "POST",
+                    url: url,
+                    data: { "_token": "{{ csrf_token() }}",
+                            "id":id},
+
+                }).done(function (data) {
+
+                    data = JSON.parse(data);
+
+                    console.log(data[0].nursery.no_of_cuttings);
+                    // console.log(data[0]);
+
+
+                    $('#txtid').val(data[0].nursery.nursery_id)
+                    $('#Region_em').val(data[0].nursery.region)
+                    $('#layout_date_em').val(data[0].nursery.layout_date)
+                    $('#cuttings_em').val(data[0].nursery.no_of_cuttings)
+
+                    $("#img1").attr("src",data[0].nursery.image);
+                    // $("#image2").attr("src",data.image);
+                    // $("#image3").attr("src",data.image);
+                    // $("#image4").attr("src",data.image);
+                    // $("#image5").attr("src",data.image);
+                    // $("#image6").attr("src",data.image);
+
+                // images/placeholderimg.jpg
+
+                $.each( data[0].nursery_plan, function( key, value ) {
+                    // alert( key + ": " + data[0].nursery_plan[key].scheduled_date );
+                    var status ='';
+                    if(data[0].nursery_plan[key].status == 1){
+                        status = '<li><a href="#" class="text-success"><i class="icon-check position-left text-success"></i> Completed</a></li>';
+                    }else{
+                        status = '<li><a href="#" class="text-danger "><i class="icon-spinner position-left text-danger"></i> Pending</a></li>';
+                    }
+
+                    $("#list").append('<li><span class="list-feed-solid text-muted">'+data[0].nursery_plan[key].scheduled_date+'</span>'+
+                    '<div class="media-body"><div class="text-semibold">'+data[0].nursery_plan[key].task_name+'</div></div>'+
+                    '<div class="media-right"><ul class="icons-list icons-list-extended text-nowrap">'+status
+                    +
+                    '</ul></div></li>');
+                });
+
+
+                }).fail(function () {
+
+                    messageErrorAlert("error");
+
+                });
+       }
+
+    //    const formNameup = "frm_nursery_up";
+    //    $("#submit_nursery_up").click(function () {
+    //        formDataAjax("{{ route('nursery.update') }}", "Nursery Updated Successfully", "Error Updating Nursery", formNameup);
+    //    });
+
+       function delete_nursery(id){
+
+           const url = "{{ route('nursery.delete') }}";
+
+            $.ajax({
+                    method: "POST",
+                    url: url,
+                    data: { "_token": "{{ csrf_token() }}",
+                            "id": $('#txtid').val()},
+
+                }).done(function (data) {
+
+                    messageSuccessAlert("Nursery Deleted Successfully")
+
+                }).fail(function () {
+
+                    messageErrorAlert("error");
+
+                });
+       }
 
     </script>
     {{--javascripts ends--}}
