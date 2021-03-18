@@ -48,8 +48,8 @@ function formDataAjax(url, successMessage, errorMessage, formId) {
                 messageSuccessAlert(successMessage);
             } else {
                 data = JSON.parse(data);
-                if (data.hasOwnProperty('msg')) {
-                    messageErrorAlert(data.msg);
+                if (data['message'] !== undefined) {
+                    messageErrorAlert(data['message']);
                 } else {
                     messageErrorAlert(errorMessage);
                 }

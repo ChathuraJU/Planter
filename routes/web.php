@@ -21,7 +21,7 @@ Route::middleware(['auth'])->group(function () {
         return view('pages.homepage');
     });
 
-    
+
     Route::get('field-dashboard', function () {
         return view('pages.field_dashboard');
     });
@@ -84,6 +84,10 @@ Route::middleware(['auth'])->group(function () {
     Route::post('nursery-get', 'NurseryController@retrieve')->name('nursery.get');
     Route::post('nursery-update', 'NurseryController@update_nursery')->name('nursery.update');
     Route::post('nursery-delete', 'NurseryController@delete')->name('nursery.delete');
+
+    //Staff Approve Routes
+    Route::get('staff-approve/{id}', 'StaffApproveController@index');
+    Route::post('staff-approve-save', 'StaffApproveController@saveApprove')->name('save.staff.approve');
 
 
     Route::group(['as' => 'admin', 'middleware' => ['auth', 'admin']], function () {

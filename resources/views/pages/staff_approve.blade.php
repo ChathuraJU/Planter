@@ -31,7 +31,9 @@
     {{--page content starts here--}}
     <div class="content">
         {{--Add field data form starts here--}}
-        <form class="form-horizontal" action="#">
+        <form class="form-horizontal" id="staffApproveForm" enctype="multipart/form-data">
+            @csrf
+            <input type="hidden" name="mainId" value="{{$division_main->id}}">
             <div class="panel panel-white">
                 <div class="panel-heading">
                     <h5 class="panel-title">Approval View</h5>
@@ -107,85 +109,10 @@
                                         </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>1</td>
-                                                <td>Kopyov</td>
-                                                <td>@Koopyov</td>
-                                                <td>@Koopyov</td>
-                                                <td>@Koopyov</td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>1</td>
-                                                <td>1</td>
-                                                <td>Eugene</td>
-                                                <td>@Koopyov</td>
-                                                <td>@Koopyov</td>
-                                                <td>@Koopyov</td>
-                                            </tr>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>1</td>
-                                                <td>Kopyov</td>
-                                                <td>@Koopyov</td>
-                                                <td>@Koopyov</td>
-                                                <td>@Koopyov</td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>1</td>
-                                                <td>1</td>
-                                                <td>Kopyov</td>
-                                                <td>@Koopyov</td>
-                                                <td>@Koopyov</td>
-                                                <td>@Koopyov</td>
-                                            </tr>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>1</td>
-                                                <td>Kopyov</td>
-                                                <td>@Koopyov</td>
-                                                <td>@Koopyov</td>
-                                                <td>@Koopyov</td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>1</td>
-                                                <td>1</td>
-                                                <td>Kopyov</td>
-                                                <td>@Koopyov</td>
-                                                <td>@Koopyov</td>
-                                                <td>@Koopyov</td>
-                                            </tr>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>1</td>
-                                                <td>Kopyov</td>
-                                                <td>@Koopyov</td>
-                                                <td>@Koopyov</td>
-                                                <td>@Koopyov</td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>1</td>
-                                                <td>1</td>
-                                                <td>Kopyov</td>
-                                                <td>@Koopyov</td>
-                                                <td>@Koopyov</td>
-                                                <td>@Koopyov</td>
-                                            </tr>
 
                                         </tbody>
                                         <tfoot>
-                                            <tr>
-                                                <td  style="background-color: #e4efaf; font-weight: bold">Total</td>
-                                                <td></td>
-                                                <td>tot latex L</td>
-                                                <td>tot latex kg</td>
-                                                <td>tot scrap kg</td>
-                                                <td>tot tot kg</td>
-                                            </tr>
+
                                         </tfoot>
 
                                     </table>
@@ -204,7 +131,7 @@
                                         <legend class="text-semibold"><i class="icon-truck position-left"></i>Approvals Summary</legend>
                                         <!-- Scrollable table -->
                                         <div class="table-responsive pre-scrollable" style="max-height: 500px">
-                                            <table class="table table-bordered" id="fieldsummarytable">
+                                            <table class="table table-bordered" id="approvalSummary">
                                                 <thead>
                                                 <tr class="bg-green">
                                                     <th>Approved By</th>
@@ -214,11 +141,13 @@
                                                 </tr>
                                                 </thead>
                                                 <tbody>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td>Eugene</td>
-                                                    <td>Kopyov</td>
-                                                </tr>
+                                                @foreach($approvals as $approval)
+                                                    <tr>
+                                                        <td>{{$approval->approved_user->person->fname}} {{$approval->approved_user->person->lname}}</td>
+                                                        <td>{{$approval->approved_user->role->user_type_name}}</td>
+                                                        <td>{{$approval->approval_status}}</td>
+                                                    </tr>
+                                                @endforeach
 
                                                 </tbody>
 
@@ -232,27 +161,27 @@
                                         <legend class="text-semibold"><i class="icon-truck position-left"></i>Weather</legend>
                                         <div class="panel text-center bg-brown-700" style="background-image: url('{{asset('images/panel_bg.png')}}');">
                                             <div class="panel-body">
-                                                <h6 class="text-semibold no-margin-bottom mt-5">20th Jan 2021</h6>
-                                                <div class="opacity-75 content-group">KANDY</div>
-                                                <div class="opacity-75 content-group">01.13 PM</div>
-                                                <i class="icon-cloud" style="font-size: 54px"></i>
+                                                <h6 class="text-semibold no-margin-bottom mt-5">{{explode(' ', $division_main->created_at)[0]}}</h6>
+                                                <div class="opacity-75 content-group">{{$division_main->weather->name}}</div>
+                                                <div class="opacity-75 content-group">{{explode(' ', $division_main->created_at)[1]}}</div>
+                                                <img src="http://openweathermap.org/img/w/{{ $division_main->weather->weather[0]->icon }}.png" alt="">
                                             </div>
 
                                             <div class="panel-body panel-body-accent pb-15">
                                                 <div class="row">
                                                     <div class="col-xs-4">
                                                         <div class="text-uppercase text-size-mini opacity-75">Rainfall</div>
-                                                        <h5 class="text-semibold no-margin">55.0mm</h5>
+                                                        <h5 class="text-semibold no-margin">{{$division_main->weather->clouds->all}}mm</h5>
                                                     </div>
 
                                                     <div class="col-xs-4">
                                                         <div class="text-uppercase text-size-mini opacity-75">Temp</div>
-                                                        <h5 class="text-semibold no-margin">23°C</h5>
+                                                        <h5 class="text-semibold no-margin">{{$division_main->weather->main->temp}}</h5>
                                                     </div>
 
                                                     <div class="col-xs-4">
                                                         <div class="text-uppercase text-size-mini opacity-75">Humidity</div>
-                                                        <h5 class="text-semibold no-margin">93%</h5>
+                                                        <h5 class="text-semibold no-margin">{{$division_main->weather->main->humidity}}%</h5>
                                                     </div>
                                                 </div>
                                             </div>
@@ -265,7 +194,7 @@
                                     <legend class="text-semibold"><i class="icon-truck position-left"></i>Collection Summary</legend>
                                     <!-- Scrollable table -->
                                     <div class="table-responsive pre-scrollable" style="max-height: 500px">
-                                        <table class="table table-bordered" id="fieldsummarytable">
+                                        <table class="table table-bordered" id="collectionSummary">
                                             <thead>
                                             <tr class="bg-green">
                                                 <th>Field No.</th>
@@ -279,16 +208,6 @@
                                             </tr>
                                             </thead>
                                             <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>1</td>
-                                                <td>Eugene</td>
-                                                <td>Kopyov</td>
-                                                <td>@Koopyov</td>
-                                                <td>@Koopyov</td>
-                                                <td>@Koopyov</td>
-                                                <td>@Koopyov</td>
-                                            </tr>
 
                                             </tbody>
                                             <tfoot>
@@ -315,14 +234,14 @@
                                     <div class="form-group">
                                         <label class="col-lg-3 control-label text-semibold">Image Attachments: <span style="color: #a8a8a8">(Only if needed)</span></label>
                                         <div class="col-lg-9">
-                                            <input type="file" class="file-input-ajax" multiple="multiple">
+                                            <input type="file" class="file-input-ajax" name="uploadedFile">
                                         </div>
                                     </div>
 
                                     <div class="form-group">
                                         <label class="col-lg-3 control-label text-semibold">Your message:</label>
                                         <div class="col-lg-9">
-                                            <textarea rows="5" cols="5" class="form-control" placeholder="Enter your message here"></textarea>
+                                            <textarea rows="5" cols="5" class="form-control" name="message" placeholder="Enter your message here"></textarea>
                                         </div>
                                     </div>
 
@@ -333,7 +252,7 @@
                                         </label>
                                     </div>
                                     <div class="text-center" >
-                                        <button type="submit" id="submit_field_data" class="btn bg-green-800 btn-labeled btn-rounded btn-xlg"><b><i class="icon-arrow-down-right32"></i></b>Submit Form</button>
+                                        <button type="button" id="submit_field_data" class="btn bg-green-800 btn-labeled btn-rounded btn-xlg"><b><i class="icon-arrow-down-right32"></i></b>Submit Form</button>
                                     </div>
                                 </fieldset>
                             </div>
@@ -366,35 +285,12 @@
                                 <legend class="text-semibold"><i class="icon-notebook position-left"></i>Notes Summary</legend>
                                 <div class="panel panel-body border-top-teal">
                                     <ul class="list-feed">
-                                        <li>
-                                            <div class="text-muted">Jan 12, 12:47</div>
-                                            <a href="#">David Linner</a> requested refund for a double bank card charge
-                                        </li>
-
-                                        <li>
-                                            <div class="text-muted">Jan 11, 10:25</div>
-                                            User <a href="#">Christopher Wallace</a> from Google is awaiting for staff reply
-                                        </li>
-
-                                        <li>
-                                            <div class="text-muted">Jan 10, 09:37</div>
-                                            Ticket <strong>#43683</strong> has been resolved by <a href="#">Victoria Wilson</a>
-                                        </li>
-
-                                        <li>
-                                            <div class="text-muted">Jan 9, 08:28</div>
-                                            <a href="#">Eugene Kopyov</a> merged <strong>Master</strong>, <strong>Demo</strong> and <strong>Dev</strong> branches
-                                        </li>
-
-                                        <li>
-                                            <div class="text-muted">Jan 8, 07:58</div>
-                                            All sellers have received payouts for December, 2016!
-                                        </li>
-
-                                        <li>
-                                            <div class="text-muted">Jan 7, 06:32</div>
-                                            <a href="#">Chris Arney</a> created a new ticket <strong>#43136</strong> and assigned to <a href="#">John Nod</a>
-                                        </li>
+                                        @foreach($approvals as $approval)
+                                            <li>
+                                                <div class="text-muted">{{$approval->created_at}}</div>
+                                                <a href="#">{{$approval->approved_user->person->fname}} {{$approval->approved_user->person->lname}}</a> {{$approval->note}}
+                                            </li>
+                                        @endforeach
                                     </ul>
                                 </div>
                             </fieldset>
@@ -416,9 +312,86 @@
 
 
     {{--javascripts starts here--}}
+    <script src="{{ asset('assets/js/core.js') }}"></script>
     <script>
+        $(document).ready(function () {
+            getDataForMainTable();
+        });
+
+        $("#submit_field_data").click(async function () {
+            formDataAjax("{{ route('save.staff.approve') }}", "Approved Successfully", "Error while Approving", "staffApproveForm");
+            getDataForMainTable();
+        });
+
+        function getDataForMainTable() {
+            $.ajax({
+                method: "GET",
+                data: {"mainId": "{{ $division_main->id }}"},
+                url: "{{ route('get.field.log.summary') }}",
+            }).done(function (data) {
+
+                let sum_latexl = 0;
+                let sum_latexkg = 0;
+                let sum_scrap = 0;
+                let sum_total = 0;
+
+                data = JSON.parse(data);
+                $("#fieldsummarytable tbody").empty();
+                $("#fieldsummarytable tfoot").empty();
+                data.forEach((item) => {
+                    console.log(item);
+                    $("#fieldsummarytable tbody").append("<tr><td>"+item.field.field_name+"</td><td>"+item.block.block_no+"</td><td>"+item.latex_l+"</td><td>"+item.latex_kg+"</td><td>"+item.scrap_kg+"</td><td>"+item.total+"</td></tr>");
+                    sum_latexl = Number(item.latex_l) + sum_latexl;
+                    sum_latexkg = Number(item.latex_kg) + sum_latexkg;
+                    sum_scrap = Number(item.scrap_kg) + sum_scrap;
+                    sum_total = Number(item.total) + sum_total;
+                });
+
+                $("#fieldsummarytable tfoot").append('<tr style="background-color: #e4efaf; font-weight: bold">\n' +
+                    '                                                    <td>Total</td>\n' +
+                    '                                                    <td></td>\n' +
+                    '                                                    <td>'+sum_latexl+'</td>\n' +
+                    '                                                    <td>'+sum_latexkg+'</td>\n' +
+                    '                                                    <td>'+sum_scrap+'</td>\n' +
+                    '                                                    <td>'+sum_total+'</td>\n' +
+                    '                                                </tr>');
 
 
+
+                let hect = 0;
+                let no_tappers = 0;
+                let tap_per_hect = 0;
+                let field_wt = 0;
+                let factory_wt = 0;
+                let loss = 0;
+
+                $("#collectionSummary tbody").empty();
+                $("#collectionSummary tfoot").empty();
+                data.forEach((item) => {
+                    $("#collectionSummary tbody").append("<tr><td>"+item.field.field_name+"</td><td>"+item.block_no+"</td><td>"+(item.hect ?? 'Not Entered')+"</td><td>"+item.no_tappers+"</td><td>"+(item.tap_per_hect ?? 'Not Entered')+"</td><td>"+(item.field_wt ?? 'Not Entered')+"</td><td>"+(item.factory_wt ?? 'Not Entered')+"</td><td>"+(item.loss ?? 'Not Entered')+"</td></tr>");
+
+                    hect = Number(item.hect) + hect;
+                    no_tappers = Number(item.no_tappers) + no_tappers;
+                    tap_per_hect = Number(item.tap_per_hect) + tap_per_hect;
+                    field_wt = Number(item.field_wt) + field_wt;
+                    factory_wt = Number(item.factory_wt) + factory_wt;
+                    loss = Number(item.loss) + loss;
+                });
+
+                $("#collectionSummary tbody").append('<tr style="background-color: #e4efaf; font-weight: bold">\n' +
+                    '                                            <td>Total</td>\n' +
+                    '                                            <td></td>\n' +
+                    '                                            <td>'+hect+'</td>\n' +
+                    '                                            <td>'+no_tappers+'</td>\n' +
+                    '                                            <td>'+tap_per_hect+'</td>\n' +
+                    '                                            <td>'+field_wt+'</td>\n' +
+                    '                                            <td>'+factory_wt+'</td>\n' +
+                    '                                            <td>'+loss+'</td>\n' +
+                    '                                        </tr>');
+            }).fail(function () {
+                messageErrorAlert("Error While Retrieving Data");
+            });
+        }
     </script>
     {{--javascripts ends--}}
 @endsection
