@@ -410,10 +410,13 @@
                 data = JSON.parse(data);
                 if (data.length > 0) {
                     data = data[0];
-                    $("#hect").val(data['block']['block_hectare']);
-                    $("#tappers").val(data['no_tappers']);
-                    $("#tap_hect").val(data['tap_per_hect']);
-                    $("#field_wt").val(data['latex_kg']);
+
+                    var tap_per_hect = Number(data['no_tappers']) / Number(data['block']['block_hectare']);
+
+                    $("#hect").val(data['block'] == undefined ? '0' : data['block']['block_hectare']);
+                    $("#tappers").val(data['no_tappers'] == undefined ? '0' : data['no_tappers']);
+                    $("#tap_hect").val(tap_per_hect == undefined ? '0' : tap_per_hect);
+                    $("#field_wt").val(data['latex_kg'] == undefined ? '0' : data['latex_kg']);
                 }
             }).fail(function () {
 

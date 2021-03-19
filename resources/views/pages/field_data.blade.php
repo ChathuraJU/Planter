@@ -419,7 +419,6 @@
             }
         });
 
-
         $( "#field" ).change(function() {
 
             var id = $('#field').val();
