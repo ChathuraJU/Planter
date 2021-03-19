@@ -17,4 +17,9 @@ class TempLabourCollectionSummaryEntity extends Model
     {
         return $this->belongsTo('App\Field', "field_no", "field_id");
     }
+
+    public function block()
+    {
+        return $this->belongsTo('App\Block', "block_no", "id");
+    }
 }

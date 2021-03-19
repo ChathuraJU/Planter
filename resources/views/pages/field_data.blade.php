@@ -356,7 +356,7 @@
                 $("#fieldsummarytable tfoot").empty();
                 data.summer.forEach((item) => {
                     console.log(item);
-                    $("#fieldsummarytable tbody").append("<tr><td>"+item.field_name+"</td><td>"+item.block.block_no+"</td><td>"+item.tappers+"</td><td>"+item.latexL+"</td><td>"+item.latexKg+"</td><td>"+item.scrap+"</td><td>"+item.totalKg+"</td></tr>");
+                    $("#fieldsummarytable tbody").append("<tr><td>"+item.field_name+"</td><td>"+item.blk+"</td><td>"+item.tappers+"</td><td>"+item.latexL+"</td><td>"+item.latexKg+"</td><td>"+item.scrap+"</td><td>"+item.totalKg+"</td></tr>");
                     sum_tappers = Number(item.tappers) + sum_tappers;
                     sum_latexl = Number(item.latexL) + sum_latexl;
                     sum_latexkg = Number(item.latexKg) + sum_latexkg;
@@ -435,7 +435,6 @@
             }).done(function (data) {
                 $('#block_no').empty();
                 data = JSON.parse(data);
-
                 $.each(data, function (i, data) {
                     $('#block_no').append($('<option>', {
                         value: data.id,
@@ -443,11 +442,8 @@
                     }));
                 });
                 // messageSuccessAlert("User Rejected Successfully")
-
             }).fail(function () {
-
                 messageErrorAlert("error");
-
             });
         });
 

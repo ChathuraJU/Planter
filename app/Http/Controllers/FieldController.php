@@ -80,8 +80,8 @@ class FieldController extends Controller
 
     public function getFieldLabourData()
     {
-        $data = TempLabourCollectionSummaryEntity::with('labour', 'field')->get();
-        $summary = DB::select("SELECT tmp.block_no, f.field_name, SUM(tmp.no_of_liters) as latexL, COUNT(tmp.id) as tappers, SUM(tmp.latex) as latexKg, SUM(tmp.scrap) as scrap, (SUM(tmp.latex) + SUM(tmp.scrap)) as totalKg FROM tmp_labour_collection_summary tmp INNER JOIN `fields` f on f.field_id = tmp.field_no GROUP BY block_no");
+        $data = TempLabourCollectionSummaryEntity::with('labour', 'field', 'block')->get();
+        $summary = DB::select("SELECT tmp.block_no, f.field_name, SUM(tmp.no_of_liters) as latexL, bl.block_no as blk, COUNT(tmp.id) as tappers, SUM(tmp.latex) as latexKg, SUM(tmp.scrap) as scrap, (SUM(tmp.latex) + SUM(tmp.scrap)) as totalKg FROM tmp_labour_collection_summary tmp INNER JOIN `fields` f on f.field_id = tmp.field_no INNER JOIN `blocks` bl on bl.id = tmp.block_no GROUP BY block_no");
         $response['data'] = $data;
         $response['summer'] = $summary;
         return json_encode($response);
