@@ -78,41 +78,25 @@
                                 <div class="form-group">
                                     <label class="col-lg-3 control-label text-semibold" for="latex_liters">No. of Hectares : </label>
                                     <div class="col-lg-9">
-                                        <div class="input-group bootstrap-touchspin mspborder">
-                                            <span class="input-group-addon bootstrap-touchspin-prefix" style="display: none;"></span>
-                                            <input type="text" name="hect" id="hect" value="" class="touchspin-empty form-control " style="display: block;" readonly>
-                                            <span class="input-group-addon bootstrap-touchspin-postfix" style="display: none;"></span>
-                                        </div>
+                                        <input type="text"  name="hect" id="hect" placeholder="No. of hectare" class="form-control mspborder required" style="display: block;" readonly>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-lg-3 control-label text-semibold" for="metrolac">No. of Tappers : </label>
                                     <div class="col-lg-9">
-                                        <div class="input-group bootstrap-touchspin mspborder">
-                                            <span class="input-group-addon bootstrap-touchspin-prefix" style="display: none;"></span>
-                                            <input type="text" name="tappers" id="tappers" value="" class="touchspin-empty form-control " style="display: block;" readonly>
-                                            <span class="input-group-addon bootstrap-touchspin-postfix" style="display: none;"></span>
-                                        </div>
+                                        <input type="text"  name="tappers" id="tappers" placeholder="No. of Tappers" class="form-control mspborder required" style="display: block;" readonly>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-lg-3 control-label text-semibold" for="latex_kg">Tap per Hectares : </label>
                                     <div class="col-lg-9">
-                                        <div class="input-group bootstrap-touchspin mspborder">
-                                            <span class="input-group-addon bootstrap-touchspin-prefix" style="display: none;"></span>
-                                            <input type="text" name="tap_hect" id="tap_hect" value="" class="touchspin-empty form-control " style="display: block;" readonly>
-                                            <span class="input-group-addon bootstrap-touchspin-postfix" style="display: none;"></span>
-                                        </div>
+                                        <input type="text"  name="tap_hect" id="tap_hect" placeholder="Tappers per hectare" class="form-control mspborder required" style="display: block;" readonly>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-lg-3 control-label text-semibold" for="scrap_kg">Field Wt. : </label>
                                     <div class="col-lg-9">
-                                        <div class="input-group bootstrap-touchspin mspborder">
-                                            <span class="input-group-addon bootstrap-touchspin-prefix" style="display: none;"></span>
-                                            <input type="text" name="field_wt" id="field_wt" value="" class="touchspin-empty form-control " style="display: block;" readonly>
-                                            <span class="input-group-addon bootstrap-touchspin-postfix" style="display: none;"></span>
-                                        </div>
+                                        <input type="text" name="field_wt" id="field_wt" placeholder="Field Wt." class="form-control mspborder required" style="display: block;" readonly>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -137,7 +121,6 @@
 
                             </fieldset>
                         </div>
-
                         <div class="col-md-5">
                             <fieldset >
                                 <legend class="text-semibold"><i class="icon-file-excel position-left"></i>Field Log Summary</legend>
@@ -145,19 +128,17 @@
                                 <div class="table-responsive pre-scrollable" style="max-height: 500px">
                                     <table class="table table-bordered" id="fieldsummarytable">
                                         <thead>
-                                        <tr class="bg-green">
-                                            <th>Field No.</th>
-                                            <th>Block No.</th>
-                                            <th>Latex(L)</th>
-                                            <th>Latex(kg)</th>
-                                            <th>Scrap(kg)</th>
-                                            <th>Total(kg)</th>
-                                        </tr>
+                                            <tr class="bg-green">
+                                                <th>Field No.</th>
+                                                <th>Block No.</th>
+                                                <th>Latex(L)</th>
+                                                <th>Latex(kg)</th>
+                                                <th>Scrap(kg)</th>
+                                                <th>Total(kg)</th>
+                                            </tr>
                                         </thead>
                                         <tbody>
-
                                         </tbody>
-
                                     </table>
                                 </div>
                                 <!-- /scrollable table -->
@@ -168,24 +149,21 @@
                                 <div class="table-responsive pre-scrollable" style="max-height: 500px">
                                     <table class="table table-bordered" id="approvalSummary">
                                         <thead>
-                                        <tr class="bg-green">
+                                            <tr class="bg-green">
                                             <th>Approved By</th>
                                             <th>Segment</th>
                                             <th>Status</th>
-
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        @foreach($approvals as $approval)
-                                            <tr>
-                                                <td>{{$approval->approved_user->person->fname}} {{$approval->approved_user->person->lname}}</td>
-                                                <td>{{$approval->approved_user->role->user_type_name}}</td>
-                                                <td>{{$approval->approval_status}}</td>
-                                            </tr>
-                                        @endforeach
-
+                                            @foreach($approvals as $approval)
+                                                <tr>
+                                                    <td>{{$approval->approved_user->person->fname}} {{$approval->approved_user->person->lname}}</td>
+                                                    <td>{{$approval->approved_user->role->user_type_name}}</td>
+                                                    <td>{{$approval->approval_status}}</td>
+                                                </tr>
+                                            @endforeach
                                         </tbody>
-
                                     </table>
                                 </div>
                                 <!-- /scrollable table -->
@@ -198,7 +176,6 @@
                                         <div class="opacity-75 content-group">{{$division_main->weather->name}}</div>
                                         <div class="opacity-75 content-group">{{explode(' ', $division_main->created_at)[1]}}</div>
                                         <img src="http://openweathermap.org/img/w/{{ $division_main->weather->weather[0]->icon }}.png" alt="">
-{{--                                        <i class="icon-cloud" style="font-size: 54px"></i>--}}
                                     </div>
 
                                     <div class="panel-body panel-body-accent pb-15">
@@ -221,11 +198,10 @@
                                     </div>
                                 </div>
                             </fieldset>
-
                         </div>
                     </div>
 
-                    <div class="row " style="margin-top: 50px">
+                    <div class="row" style="margin-top: 50px">
                         <div class="col-md-9">
                             <fieldset>
                                 <legend class="text-semibold"><i class="icon-truck position-left"></i>Collection Summary</legend>
@@ -233,30 +209,21 @@
                                 <div class="table-responsive pre-scrollable" style="max-height: 500px">
                                     <table class="table table-bordered" id="collectionSummary">
                                         <thead>
-                                        <tr class="bg-green">
-                                            <th>Field No.</th>
-                                            <th>Block No.</th>
-                                            <th>Hectare</th>
-                                            <th>Tappers</th>
-                                            <th>Tap per Hect</th>
-                                            <th>Field Wt.</th>
-                                            <th>Factory Wt.</th>
-                                            <th>Loss</th>
-                                        </tr>
+                                            <tr class="bg-green">
+                                                <th>Field No.</th>
+                                                <th>Block No.</th>
+                                                <th>Hectare</th>
+                                                <th>Tappers</th>
+                                                <th>Tap per Hect</th>
+                                                <th>Field Wt.</th>
+                                                <th>Factory Wt.</th>
+                                                <th>Loss</th>
+                                            </tr>
                                         </thead>
                                         <tbody>
                                         <tr>
-
-{{--                                            <td>--}}
-{{--                                                <ul class="icons-list">--}}
-{{--                                                    <li><a href="#" onclick="" data-toggle="modal" data-target="#view_modal"><i class="icon-eye"></i></a></li>--}}
-{{--                                                    <li><a href="#" onclick="" data-toggle="modal" data-target="#remove_modal"><i class="icon-trash"></i></a></li>--}}
-{{--                                                </ul>--}}
-{{--                                            </td>--}}
                                         </tr>
-
                                         </tbody>
-
                                     </table>
                                 </div>
                                 <!-- /scrollable table -->
@@ -324,7 +291,6 @@
                                     </div>
                                 </div>
                             </fieldset>
-
                         </div>
                     </div>
 
