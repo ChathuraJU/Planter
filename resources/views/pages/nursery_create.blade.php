@@ -136,7 +136,7 @@
                                     <td>
                                         <ul class="icons-list">
                                             <li><a href="#" onclick="get_nursery({{ $nursery->nursery_id}})" data-toggle="modal" data-target="#view_modal"><i class="icon-eye"></i></a></li>
-                                            <li><a href="#" onclick="delete_nursery({{ $nursery->nursery_id}})" data-toggle="modal" data-target="#remove_modal"><i class="icon-trash"></i></a></li>
+                                            <li><a href="#" onclick="delete_id_set({{ $nursery->nursery_id}})" data-toggle="modal" data-target="#remove_modal"><i class="icon-trash"></i></a></li>
                                         </ul>
                                     </td>
                             @endforeach
@@ -356,7 +356,7 @@
                     </div>
 
                     <div class="modal-footer">
-                        <button type="button" class="btn bg-green-800" data-dismiss="modal">Yes, remove</button>
+                        <button type="button" onclick="delete_nursery()" class="btn bg-green-800" data-dismiss="modal">Yes, remove</button>
                         <button type="button" class="btn btn-default" data-dismiss="modal">No, thanks</button>
                     </div>
                 </div>
@@ -503,8 +503,13 @@
     //        formDataAjax("{{ route('nursery.update') }}", "Nursery Updated Successfully", "Error Updating Nursery", formNameup);
     //    });
 
-       function delete_nursery(id){
+    function delete_id_set(id){
+        $("#txtid").val(id);
+    }
 
+
+
+       function delete_nursery(){
            const url = "{{ route('nursery.delete') }}";
 
             $.ajax({

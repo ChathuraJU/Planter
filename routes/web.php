@@ -91,9 +91,7 @@ Route::middleware(['auth'])->group(function () {
 
 
     Route::group(['as' => 'admin', 'middleware' => ['auth', 'admin']], function () {
-        Route::get('nursery-dashboard', function () {
-            return view('pages.nursery_dashboard');
-        });
+        Route::get('nursery-dashboard', 'NurseryController@dashboard');
     });
 
     Route::group(['as' => 'director', 'middleware' => ['auth', 'director']], function () {

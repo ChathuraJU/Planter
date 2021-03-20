@@ -158,6 +158,9 @@ class NurseryController extends Controller
     public function delete(Request $request){
         $nursery = Nursery::find($request->id);
         $nursery->delete();
+
+        $nursery_plan = NurseryPlan::where('nursery_id', $request->id);
+        $nursery_plan->delete();
     }
 
     public function get_diseases(Request $request){
@@ -189,5 +192,19 @@ class NurseryController extends Controller
     //         echo false;
     //     }
     // }
+
+    public function dashboard(){
+
+        $nurseries = Nursery::all();
+        $nerseryplans = NurseryPlan::all();
+
+        // $nurseries = DB::table('nurseries')
+        //             ->join('nursery_plan', 'nurseries.nursery_id', '=', 'nursery_plan.nursery_id')
+        //             ->orderBy('scheduled_date')->get();
+
+                    dd($nurseries);
+                    
+        return view('pages.nursery_dashboard', compact('nurseries', 'nerseryplans'));
+    }
     
 }
