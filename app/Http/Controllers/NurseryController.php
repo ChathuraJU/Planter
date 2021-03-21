@@ -8,6 +8,7 @@ namespace App\Http\Controllers;
 use App\Nursery;
 use App\NurseryPlan;
 use App\Task;
+use App\Comment;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -196,15 +197,18 @@ class NurseryController extends Controller
     public function dashboard(){
 
         $nurseries = Nursery::all();
-        $nerseryplans = NurseryPlan::all();
+        $nurseryplans = NurseryPlan::all();
+        $tasks = Task::all();
+        $comments = Comment::all();
 
-        // $nurseries = DB::table('nurseries')
-        //             ->join('nursery_plan', 'nurseries.nursery_id', '=', 'nursery_plan.nursery_id')
-        //             ->orderBy('scheduled_date')->get();
+        $users = DB::table('users')
+                    ->join('persons', 'users.person_id', '=', 'persons.person_id')
+                    ->get();
 
-                    dd($nurseries);
+        // dd($comments);
                     
-        return view('pages.nursery_dashboard', compact('nurseries', 'nerseryplans'));
+        return view('pages.nursery_dashboard', compact('nurseries', 'nurseryplans', 'tasks', 'comments', 'users'));
     }
     
 }
+  
