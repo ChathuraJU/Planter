@@ -84,6 +84,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('nursery-get', 'NurseryController@retrieve')->name('nursery.get');
     Route::post('nursery-update', 'NurseryController@update_nursery')->name('nursery.update');
     Route::post('nursery-delete', 'NurseryController@delete')->name('nursery.delete');
+    Route::post('nursery-comment', 'NurseryController@comment')->name('nursery.comment');
 
     //Staff Approve Routes
     Route::get('staff-approve/{id}', 'StaffApproveController@index');

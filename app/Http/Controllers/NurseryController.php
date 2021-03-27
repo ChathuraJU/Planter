@@ -196,7 +196,7 @@ class NurseryController extends Controller
 
     public function dashboard(){
 
-        $nurseries = Nursery::all();
+        $nurseries = Nursery::orderby('nursery_id', 'asc')->paginate(8);
         $nurseryplans = NurseryPlan::all();
         $tasks = Task::all();
         $comments = Comment::all();
@@ -205,9 +205,32 @@ class NurseryController extends Controller
                     ->join('persons', 'users.person_id', '=', 'persons.person_id')
                     ->get();
 
+        // $comments = DB::table('comments')
+        //             ->join('users', 'comments.user_id', '=', 'users.id')
+        //             ->join('persons', 'users.person_id', '=', 'persons.person_id')
+        //             ->get();
+                    
         // dd($comments);
                     
         return view('pages.nursery_dashboard', compact('nurseries', 'nurseryplans', 'tasks', 'comments', 'users'));
+    }
+
+    public function comment(Request $request){
+
+        // dd(auth()->user()->id);
+        
+        $comment = new comment();
+        
+        $comment->nursery_id = $request->id;
+        $comment->user_id = auth()->user()->id;
+        $comment->date_time = date("Y-m-d H:i:s");
+        $comment->comment = $request->msg;
+
+        if($comment->save()){
+            return true;
+        }else{
+            return false;
+        }
     }
     
 }

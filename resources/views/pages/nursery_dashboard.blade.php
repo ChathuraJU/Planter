@@ -140,7 +140,11 @@
                                 </a>
 
                                 <div class="media-body">
-                                    <div class="media-heading text-semibold"><a href="#">Test</a></div>
+                                @foreach($users as $user)
+                                    @if($user->id == $comment->user_id)
+                                        <div class="media-heading text-semibold"><a href="#">{{$user->fname}}</a></div>
+                                    @endif
+                                @endforeach
                                     {{$comment->comment}}
                                 </div>
                             </li>
@@ -158,13 +162,12 @@
                             </li> -->
                         </ul>
 
-                        <textarea name="enter-message" class="form-control content-group" rows="2" cols="1"
+                        <textarea id="entermessage{{$nursery->nursery_id}}" name="entermessage{{$nursery->nursery_id}}" class="form-control content-group" rows="2" cols="1"
                             placeholder="Add comment"></textarea>
 
                         <div class="row text-center">
-                            <button type="submit" id="submit_field_data"
-                                class="btn bg-green-800 btn-labeled btn-rounded btn-lg"><b><i
-                                        class="fa fa-send-o"></i></b>Send</button>
+                            <button type="button" id="submit_field_data"
+                                class="btn bg-green-800 btn-labeled btn-rounded btn-lg" onclick="sendcomment({{$nursery->nursery_id}})"><b><i class="fa fa-send-o"></i></b>Send</button>
                         </div>
                         {{--</div>--}}
                     </div>
@@ -185,11 +188,10 @@
                                     <ul class="icons-list icons-list-extended text-nowrap">
                                         @if($nurseryplan->status == 0)
 
-                                            <li<a href="#" class="text-danger "><i
+                                            <li <a href="#" class="text-danger" onclick="task_complete({{$nurseryplan->id}})"><i
                                                     class="icon-spinner position-left text-danger"></i> Pending</a></li>
                                          @else
-                                            <li><a href="#" class="text-success" data-toggle="modal"
-                                                data-target="#complete_task"><i
+                                            <li><a href="#" class="text-success" ><i
                                                     class="icon-check position-left text-success"></i> Completed</a></li>
                                         @endif
                                     </ul>
@@ -216,7 +218,8 @@
 
     <!-- Pagination -->
     <div class="text-center content-group-lg pt-20">
-        <ul class="pagination">
+    {{ $nurseries-> links() }}
+        <!-- <ul class="pagination">
             <li class="disabled"><a href="#"><i class="icon-arrow-small-left"></i></a></li>
             <li class="active"><a href="#">1</a></li>
             <li><a href="#">2</a></li>
@@ -224,7 +227,7 @@
             <li><a href="#">4</a></li>
             <li><a href="#">5</a></li>
             <li><a href="#"><i class="icon-arrow-small-right"></i></a></li>
-        </ul>
+        </ul> -->
     </div>
     <!-- /pagination -->
 </div>
@@ -310,6 +313,7 @@
                 <form method="#" action="">
                     <div class="row container-fluid">
                         <div class="col-12">
+                        <input id="txtid" type="hidden" class="form-control mspborder" name="txtid" value="">
                             <div class="form-group">
                                 <label for="taskstatus" class="control-label text-semibold">{{ __('Status') }}</label>
                                 <select id="taskstatus" type="text" class="select select2-hidden-accessible"
@@ -350,4 +354,61 @@
     </div>
 </div>
 <!-- /Completing Task modal -->
+<script src="{{ asset('assets/js/core.js') }}"></script>
+    <script>
+    function sendcomment(id){
+
+        var textarea = '#entermessage'+id
+
+        const url = "{{ route('nursery.comment') }}";
+
+        $.ajax({
+                method: "POST",
+                url: url,
+                data: { "_token": "{{ csrf_token() }}",
+                        "id":id,
+                        "msg":$(textarea).val()
+                    },
+
+            }).done(function (data) {
+
+              messageSuccessAlert("Comment added Successfully")
+
+              setTimeout(function(){location.reload();}, 3000);
+
+            }).fail(function () {
+
+                messageErrorAlert("error");
+
+            });
+    }
+
+    function task_complete(id){
+
+        $("#txtid").val(id);
+        $('#complete_task').modal();
+
+        // const url = "{{ route('nursery.comment') }}";
+
+        // $.ajax({
+        //         method: "POST",
+        //         url: url,
+        //         data: { "_token": "{{ csrf_token() }}",
+        //                 "id":id,
+        //                 "msg":$(textarea).val()
+        //             },
+
+        //     }).done(function (data) {
+
+        //     messageSuccessAlert("Comment added Successfully")
+
+        //     setTimeout(function(){location.reload();}, 3000);
+
+        //     }).fail(function () {
+
+        //         messageErrorAlert("error");
+
+        //     });
+    }
+    </script>
 @endsection
