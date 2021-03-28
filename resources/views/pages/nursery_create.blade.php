@@ -140,19 +140,6 @@
                                         </ul>
                                     </td>
                             @endforeach
-                            <!-- <tr>
-                                <td>2207</td>
-                                <th>Plot No.</th>
-                                <td>200</td>
-                                <td>2021.10.10</td>
-                                <td>
-                                    <ul class="icons-list">
-                                        <li><a href="#" data-toggle="modal" data-target="#view_modal"><i class="icon-eye"></i></a></li>
-                                        <li><a href="#" data-toggle="modal" data-target="#remove_modal"><i class="icon-trash"></i></a></li>
-                                    </ul>
-                                </td>
-
-                            </tr> -->
                         </tbody>
                     </table>
                 </div>
@@ -214,120 +201,12 @@
                                 <div class="panel panel-body">
                                     <legend class="text-semibold"><i class="icon-task position-left"></i>Schedule</legend>
                                     <ul class="list-feed media-list cju-list-scroll" id="list">
-                                        <!-- <li>
-                                            <span class="list-feed-solid text-muted">12.12.2021</span>
-                                            <div class="media-body">
-                                                <div class="text-semibold">Cuttings Layout</div>
-                                            </div>
-                                            <div class="media-right">
-                                                <ul class="icons-list icons-list-extended text-nowrap">
-                                                    <li style="display: none"><a href="#" class="text-danger "><i class="icon-spinner position-left text-danger"></i> Pending</a></li>
-                                                    <li><a href="#" class="text-success"><i class="icon-check position-left text-success"></i> Completed</a></li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <span class="list-feed-solid text-muted">26.02.2021</span>
-                                            <div class="media-body">
-                                                <div class="text-semibold">Folio Spraying 1st Round</div>
-                                            </div>
-                                            <div class="media-right">
-                                                <ul class="icons-list icons-list-extended text-nowrap">
-                                                    <li style="display: none"><a href="#" class="text-danger "><i class="icon-spinner position-left text-danger"></i> Pending</a></li>
-                                                    <li><a href="#" class="text-success"><i class="icon-check position-left text-success"></i> Completed</a></li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <span class="list-feed-solid text-muted">26.02.2021</span>
-                                            <div class="media-body">
-                                                <div class="text-semibold">Folio Spraying 2nd Round</div>
-                                            </div>
-                                            <div class="media-right">
-                                                <ul class="icons-list icons-list-extended text-nowrap">
-                                                    <li style="display: none"><a href="#" class="text-danger "><i class="icon-spinner position-left text-danger"></i> Pending</a></li>
-                                                    <li><a href="#" class="text-success"><i class="icon-check position-left text-success"></i> Completed</a></li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <span class="list-feed-solid text-muted">26.02.2021</span>
-                                            <div class="media-body">
-                                                <div class="text-semibold">Folio Spraying 4th Round</div>
-                                            </div>
-                                            <div class="media-right">
-                                                <ul class="icons-list icons-list-extended text-nowrap">
-                                                    <li style="display: none"><a href="#" class="text-danger "><i class="icon-spinner position-left text-danger"></i> Pending</a></li>
-                                                    <li><a href="#" class="text-success"><i class="icon-check position-left text-success"></i> Completed</a></li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <span class="list-feed-solid text-muted">26.02.2021</span>
-                                            <div class="media-body">
-                                                <div class="text-semibold">Fertilizer 1st Round</div>
-                                            </div>
-                                            <div class="media-right">
-                                                <ul class="icons-list icons-list-extended text-nowrap">
-                                                    <li><a href="#" class="text-danger "><i class="icon-spinner position-left text-danger"></i> Pending</a></li>
-                                                    <li style="display: none"><a href="#" class="text-success"><i class="icon-check position-left text-success"></i> Completed</a></li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <span class="list-feed-solid text-muted">26.02.2021</span>
-                                            <div class="media-body">
-                                                <div class="text-semibold">Folio Spraying 5th Round</div>
-                                            </div>
-                                            <div class="media-right">
-                                                <ul class="icons-list icons-list-extended text-nowrap">
-                                                    <li><a href="#" class="text-danger "><i class="icon-spinner position-left text-danger"></i> Pending</a></li>
-                                                    <li style="display: none"><a href="#" class="text-success"><i class="icon-check position-left text-success"></i> Completed</a></li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <span class="list-feed-solid text-muted">26.02.2021</span>
-                                            <div class="media-body">
-                                                <div class="text-semibold">Folio Spraying 6th Round</div>
-                                            </div>
-                                            <div class="media-right">
-                                                <ul class="icons-list icons-list-extended text-nowrap">
-                                                    <li><a href="#" class="text-danger "><i class="icon-spinner position-left text-danger"></i> Pending</a></li>
-                                                    <li style="display: none"><a href="#" class="text-success"><i class="icon-check position-left text-success"></i> Completed</a></li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <span class="list-feed-solid text-muted">26.02.2021</span>
-                                            <div class="media-body">
-                                                <div class="text-semibold">Folio Spraying 7th Round</div>
-                                            </div>
-                                            <div class="media-right">
-                                                <ul class="icons-list icons-list-extended text-nowrap">
-                                                    <li><a href="#" class="text-danger "><i class="icon-spinner position-left text-danger"></i> Pending</a></li>
-                                                    <li style="display: none"><a href="#" class="text-success"><i class="icon-check position-left text-success"></i> Completed</a></li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <span class="list-feed-solid text-muted">26.02.2021</span>
-                                            <div class="media-body">
-                                                <div class="text-semibold">Folio Spraying 8th Round</div>
-                                            </div>
-                                            <div class="media-right">
-                                                <ul class="icons-list icons-list-extended text-nowrap">
-                                                    <li ><a href="#" class="text-danger "><i class="icon-spinner position-left text-danger"></i> Pending</a></li>
-                                                    <li style="display: none"><a href="#" class="text-success"><i class="icon-check position-left text-success"></i> Completed</a></li>
-                                                </ul>
-                                            </div>
-                                        </li> -->
+                                     
                                     </ul>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
-
 
                         </div>
                     </div>
@@ -340,7 +219,6 @@
             </div>
         </div>
         <!-- /view modal -->
-
 
         <!-- Remove modal -->
         <div id="remove_modal" class="modal fade" role="dialog">
@@ -364,7 +242,6 @@
         </div>
         <!-- /remove modal -->
 
-
     </div>
     {{--page content ends--}}
 
@@ -372,11 +249,9 @@
     <script src="{{ asset('assets/js/core.js') }}"></script>
     <script>
 
-
         $(document).ready(function () {
             datatb();
         });
-
 
         const formName = "frm_nursery";
         $("#submit_nursery_data").click(function () {
@@ -457,8 +332,6 @@
                     data = JSON.parse(data);
 
                     console.log(data[0].nursery.no_of_cuttings);
-                    // console.log(data[0]);
-
 
                     $('#txtid').val(data[0].nursery.nursery_id)
                     $('#Region_em').val(data[0].nursery.region)
@@ -490,7 +363,6 @@
                     '</ul></div></li>');
                 });
 
-
                 }).fail(function () {
 
                     messageErrorAlert("error");
@@ -506,7 +378,6 @@
     function delete_id_set(id){
         $("#txtid").val(id);
     }
-
 
 
        function delete_nursery(){

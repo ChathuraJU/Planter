@@ -188,10 +188,10 @@
                                     <ul class="icons-list icons-list-extended text-nowrap">
                                         @if($nurseryplan->status == 0)
 
-                                            <li <a href="#" class="text-danger" onclick="task_complete({{$nurseryplan->id}})"><i
+                                            <li <a href="#" class="text-danger" onclick="task_complete_id({{$nurseryplan->id}})"><i
                                                     class="icon-spinner position-left text-danger"></i> Pending</a></li>
                                          @else
-                                            <li><a href="#" class="text-success" ><i
+                                            <li><a href="#" class="text-success" onclick="task_complete_id({{$nurseryplan->id}})"><i
                                                     class="icon-check position-left text-success"></i> Completed</a></li>
                                         @endif
                                     </ul>
@@ -303,8 +303,10 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h5 class="modal-title text-semibold">Fertilizer 1st Round - <span
-                        class="list-feed-solid text-muted">26.02.2021</span></h5>
+                <!-- <h5 class="modal-title text-semibold">Fertilizer 1st Round - <span
+                        class="list-feed-solid text-muted">26.02.2021</span></h5> -->
+
+                         <h5 class="modal-title text-semibold">Task Complete</h5>
             </div>
 
             <div class="modal-body">
@@ -312,7 +314,7 @@
 
                 <form method="#" action="">
                     <div class="row container-fluid">
-                        <div class="col-12">
+                        <!-- <div class="col-12">
                         <input id="txtid" type="hidden" class="form-control mspborder" name="txtid" value="">
                             <div class="form-group">
                                 <label for="taskstatus" class="control-label text-semibold">{{ __('Status') }}</label>
@@ -325,7 +327,8 @@
                                 </select>
                             </div>
 
-                        </div>
+                        </div> -->
+                        <input id="txtid" type="hidden" class="form-control mspborder" name="txtid" value="">
                         <div class="col-12">
                             <div class="form-group">
                                 <label for="taskdate" class="control-label text-semibold">{{ __('Date') }}</label>
@@ -337,7 +340,7 @@
                         <div class="col-12">
                             <div class="form-group">
                                 <label for="tasknote" class="control-label text-semibold">{{ __('Note') }}</label>
-                                <textarea name="tasknote" rows="5" cols="5" class="form-control mspborder"
+                                <textarea name="tasknote" id="tasknote" rows="5" cols="5" class="form-control mspborder"
                                     name="tasknote" value="{{ old('tasknote') }}" required autocomplete="tasknote"
                                     autofocus></textarea>
                             </div>
@@ -348,7 +351,7 @@
 
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn bg-green-800">Submit</button>
+                <button type="button" id="submit_btn" class="btn bg-green-800"  onclick="task_complete()" >Submit</button>
             </div>
         </div>
     </div>
@@ -356,6 +359,11 @@
 <!-- /Completing Task modal -->
 <script src="{{ asset('assets/js/core.js') }}"></script>
     <script>
+    $( document ).ready(function() {
+        $("#submit_btn").show();
+        $("#tasknote").val("");
+        $("#taskdate").val("");
+    });
     function sendcomment(id){
 
         var textarea = '#entermessage'+id
@@ -383,32 +391,75 @@
             });
     }
 
-    function task_complete(id){
-
+    function task_complete_id(id){
         $("#txtid").val(id);
-        $('#complete_task').modal();
+        $("#submit_btn").show();
+        $("#tasknote").val("");
+        $("#taskdate").val("");
 
-        // const url = "{{ route('nursery.comment') }}";
+        const url = "{{ route('nursery.gettask') }}";
 
-        // $.ajax({
-        //         method: "POST",
-        //         url: url,
-        //         data: { "_token": "{{ csrf_token() }}",
-        //                 "id":id,
-        //                 "msg":$(textarea).val()
-        //             },
+        $.ajax({
+                method: "POST",
+                url: url,
+                data: { "_token": "{{ csrf_token() }}",
+                        "id":id,
+                    },
 
-        //     }).done(function (data) {
+            }).done(function (data) {
 
-        //     messageSuccessAlert("Comment added Successfully")
+                data = JSON.parse(data);
+                // console.log(data[0]['note']);
 
-        //     setTimeout(function(){location.reload();}, 3000);
+                $('#complete_task').modal()
 
-        //     }).fail(function () {
+                if(!data[0]['note'] == "" || !data[0]['note'] == null){
+                    $("#submit_btn").hide();
+                    $("#tasknote").val(data[0]['note']);
+                    $("#taskdate").val(data[0]['completed_date']);
+                }
 
-        //         messageErrorAlert("error");
 
-        //     });
+            }).fail(function () {
+
+                messageErrorAlert("error");
+
+            });
     }
+
+    function task_complete(){
+
+        
+
+        var id = $("#txtid").val();
+        var msg = $('#tasknote').val();
+        // var status = $('#taskstatus').val();
+        var date = $('#taskdate').val();
+        
+
+        const url = "{{ route('nursery.taskupdate') }}";
+
+        $.ajax({
+                method: "POST",
+                url: url,
+                data: { "_token": "{{ csrf_token() }}",
+                        "id":id,
+                        "msg": msg,
+                        "date": date
+                    },
+
+            }).done(function (data) {
+
+            messageSuccessAlert("Task Updated Successfully")
+
+            // setTimeout(function(){location.reload();}, 3000);
+
+            }).fail(function () {
+
+                messageErrorAlert("error");
+
+            });
+    }
+
     </script>
 @endsection

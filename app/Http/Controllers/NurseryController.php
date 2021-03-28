@@ -61,9 +61,7 @@ class NurseryController extends Controller
 //           }
                 $path = Storage::putFile('nurserys', $request->file('img_file'),'public');
                 $nursery->image = 'storage/'.$path;
-            }
-
-           
+            }    
 
             if($nursery->save()){
                 echo true;
@@ -231,6 +229,35 @@ class NurseryController extends Controller
         }else{
             return false;
         }
+    }
+
+    public function taskcomplete(Request $request){
+
+        // dd($request->all());
+
+        // $nurseryPlan = NurseryPlan::where('nursery_id', $request->id)->first();
+        $nursery_plan = NurseryPlan::where('id', $request->id)->first();
+
+        // dd($nursery_plan);
+
+        $nursery_plan->note = $request->msg;
+        $nursery_plan->status = 1;
+        $nursery_plan->completed_date = $request->date;
+
+        if($nursery_plan->save()){
+            return true;
+        }else{
+            return false;
+        }
+
+    }
+
+    public function gettask(Request $request){
+
+        $nursery_plan = NurseryPlan::where('id', $request->id)->get();
+
+        return $nursery_plan->tojson();
+
     }
     
 }
