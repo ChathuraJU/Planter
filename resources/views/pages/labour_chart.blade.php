@@ -182,7 +182,6 @@
                 @endforeach
             </div>
 
-
         <!-- Pagination -->
         <div class="text-center content-group-lg pt-20">
             {{ $labours-> links() }}

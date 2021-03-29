@@ -192,9 +192,16 @@ class NurseryController extends Controller
     //     }
     // }
 
-    public function dashboard(){
+    public function dashboard(Request $request){
 
-        $nurseries = Nursery::orderby('nursery_id', 'asc')->paginate(8);
+        if($request->has('search')){
+            $nurseries = Nursery::where('plot_no', 'LIKE', "%{$request->search}%");
+                   
+        }else{
+            $nurseries = Nursery::orderby('nursery_id', 'asc');
+        }
+
+        $nurseries = $nurseries->paginate(8);
         $nurseryplans = NurseryPlan::all();
         $tasks = Task::all();
         $comments = Comment::all();

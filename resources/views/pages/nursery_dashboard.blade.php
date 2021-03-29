@@ -40,10 +40,11 @@
         </div>
 
         <div class="panel-body" style="">
-            <form action="#" class="main-search">
+            <form  action="{{url('nursery-dashboard')}}" class="main-search">
+             @csrf
                 <div class="input-group content-group">
                     <div class="has-feedback has-feedback-left">
-                        <input type="text" class="form-control input-xlg" value="">
+                        <input type="text" name="search" id="search" class="form-control input-xlg" value="">
 
                     </div>
 
@@ -106,7 +107,6 @@
                 </div>
                 <!-- /panel heading -->
 
-
                 <!-- Tabs nav -->
                 <ul
                     class="nav nav-tabs nav-justified no-margin no-border-radius bg-yellow-600 border-top border-top-teal-300">
@@ -125,7 +125,6 @@
                     </li>
                 </ul>
                 <!-- /tabs nav -->
-
 
                 <!-- Tabs content -->
                 <div class="tab-content panel-body">
@@ -150,16 +149,7 @@
                             </li>
                             @endif
                         @endforeach
-                            <!-- <li class="media">
-                                <a href="#" class="media-left">
-                                    <img src="images/placeholderimg.jpg" class="img-circle img-sm" alt="">
-                                </a>
 
-                                <div class="media-body">
-                                    <div class="media-heading text-semibold"><a href="#">Amanda Baker</a></div>
-                                    Delivered is to ye belonging enjoyment preferred. Astonished and acceptance men...
-                                </div>
-                            </li> -->
                         </ul>
 
                         <textarea id="entermessage{{$nursery->nursery_id}}" name="entermessage{{$nursery->nursery_id}}" class="form-control content-group" rows="2" cols="1"
@@ -200,11 +190,11 @@
                             @endif
                             @endforeach
                         </ul>
-                        <!-- <div class="row text-center">
+                        <div class="row text-center">
                             <button type="button" class="btn bg-green-800 btn-labeled btn-rounded btn-sm"
                                 data-toggle="modal" data-target="#add_task"><b><i class="fa fa-calendar-plus-o"></i></b>
                                 Add Task</button>
-                        </div> -->
+                        </div>
 
                     </div>
 
@@ -219,15 +209,6 @@
     <!-- Pagination -->
     <div class="text-center content-group-lg pt-20">
     {{ $nurseries-> links() }}
-        <!-- <ul class="pagination">
-            <li class="disabled"><a href="#"><i class="icon-arrow-small-left"></i></a></li>
-            <li class="active"><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
-            <li><a href="#"><i class="icon-arrow-small-right"></i></a></li>
-        </ul> -->
     </div>
     <!-- /pagination -->
 </div>

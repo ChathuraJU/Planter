@@ -3,8 +3,6 @@
 
 namespace App\Http\Controllers;
 
-
-//use http\Env\Request;
 use App\Person;
 use App\Labour;
 use Illuminate\Support\Facades\DB;
@@ -15,9 +13,6 @@ use Illuminate\Support\Facades\Storage;
 class LabourController extends Controller
 {
     public function index(Request $request){
-
-        // $labours = Person::orderby('person_id');
-        // $labours_details = Labour::orderby('labour_id');
 
         $labours = DB::table('persons')
                     ->join('labours', 'persons.person_id', '=', 'labours.person_id');
@@ -77,7 +72,6 @@ class LabourController extends Controller
 
 
                 if ($person->save()) {
-                    // dd($person->person_id);
 
                     $labour_details = new Labour();
 
