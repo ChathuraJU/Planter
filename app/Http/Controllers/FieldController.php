@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Storage;
+use Carbon\Carbon;
 
 class FieldController extends Controller
 {
@@ -307,5 +308,98 @@ class FieldController extends Controller
 
         return $blocks->tojson();
 
+    }
+
+    public function dashboard($id = null){
+        $fields = Field::all();
+
+        // $date1 = strtotime(date("Y-m-d", strtotime("-30 day")));
+        // $date2 = date("Y-m-d");
+
+        if($id !='all'){
+
+            $firstdate = DB::table('labour_collections')
+                    ->selectRaw('MIN(labour_collections.created_at) as min')
+                    ->get();
+
+            $firstdate = Carbon::parse($firstdate[0]->min)->format('Y-m-d');
+            $todaydate = date('Y-m-d');
+
+
+            // $datediff = DB::table('labour_collections')
+            //             ->selectRaw("DATEDIFF('$todaydate', '$firstdate');  AS datediff")
+            //             ->where('labour_collections.field_id', $id)
+            //             ->tosql();
+                        // dd($datediff);
+
+            $datediff = DB::table('labour_collections')
+                        ->selectRaw("Count(DISTINCT labour_collections.created_at)  AS count")
+                        ->where('labour_collections.field_id', $id)
+                        ->get();
+                
+            $count = $datediff[0]->count;
+           
+                
+            // dd($firstdate[0]->min);
+
+            $predictedKgSum = DB::table('labour_collections')
+                        ->selectRaw("Sum(labour_collections.labour_latex_kgs) AS predictedKg")
+                        ->where('labour_collections.field_id', $id)
+                        ->get();
+
+            $predictedKg = ($predictedKgSum[0]->predictedKg)/$count;
+
+        
+            $expectedKg = DB::table('labour_collections')
+                            ->selectRaw('AVG(labour_collections.labour_latex_kgs) AS expectedKg')
+                            ->where('labour_collections.field_id', $id)
+                            ->get();
+
+            $actualKg = DB::table('labour_collections')
+                            ->selectRaw('SUM(labour_collections.labour_latex_kgs) AS actualKg')
+                            ->where('labour_collections.field_id', $id)
+                            ->get();
+           
+        }else{
+
+            $date1 = date("Y-m-d");
+
+            $predictedKgSum = DB::table('labour_collections')
+                        ->selectRaw('AVG(labour_collections.labour_latex_kgs) AS predictedKg')
+                        ->where('labour_collections.created_at', "<", $date1)
+                        ->get();
+                        
+            $predictedKg = round($predictedKgSum[0]->predictedKg, 2);
+            // $expectedKg = DB::table('labour_collections')
+            //                 ->selectRaw('AVG(labour_collections.labour_latex_kgs) AS expectedKg')
+            //                 ->get();
+
+            // $actualKg = DB::table('labour_collections')
+            //                 ->select('labour_collections.labour_latex_kgs AS actualKg')
+            //                 ->where('labour_collections.created_at =', $date1)
+            //                 ->get();
+        }
+
+        // $predictedKg = DB::table('labour_collections')
+        //                 ->selectRaw('AVG(labour_collections.labour_latex_kgs) AS predictedKg')
+        //                 ->where('labour_collections.field_id', 1)
+        //                 ->get();
+
+        // $expectedKg = DB::table('labour_collections')
+        //                 ->selectRaw('AVG(labour_collections.labour_latex_kgs) AS predictedKg')
+        //                 ->where('labour_collections.field_id', 1)
+        //                 ->get();
+
+        // $predictedKg = DB::raw('SELECT AVG(labour_collections.labour_latex_kgs) FROM labour_collections WHERE DATE_FORMAT(labour_collections.created_at,"%Y-%m-%d") BETWEEN '$date1' AND '$date2' AND labour_collections.field_id = 1 GROUP BY labour_collections.field_id');
+        // $predictedKg = DB::table('labour_collections')
+        //                 ->selectRaw('AVG(labour_collections.labour_latex_kgs)')
+        //                 ->whereBetween(DB::raw('DATE_FORMAT(labour_collections.created_at,"%Y-%m-%d")'), [$date1,$date2])
+        //                 ->where('labour_collections.field_id', 1)
+        //                 ->groupBy('labour_collections.field_id')
+        //                 ->toSql();
+
+        // dd($predictedKg. $expectedKg. $actualKg);
+
+       return view('pages.field_dashboard', compact('fields', 'predictedKg'));
     }
 }

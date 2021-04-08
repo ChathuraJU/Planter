@@ -30,13 +30,17 @@
                         </a>
 
                         <ul class="dropdown-menu dropdown-menu-right">
-                            <li><a href="#"><i class="fa fa-stack"></i> Overall</a></li>
+                        <li><a href="/field-dashboard/all"><i class="fa fa-stack"></i> Overall</a></li>
+                        @foreach($fields as $field)
+                        <li><a href="/field-dashboard/{{$field->field_id}}"><i class="fa fa-pagelines"></i>{{$field->field_name}}</a></li>
+                        @endforeach
+<!--                             
                             <li class="divider"></li>
                             <li><a href="#"><i class="fa fa-pagelines"></i> 2005</a></li>
                             <li><a href="#"><i class="fa fa-pagelines"></i> 2006</a></li>
                             <li class="divider"></li>
                             <li><a href="#"><i class="fa fa-pagelines"></i> 2025</a></li>
-                            <li><a href="#"><i class="fa fa-pagelines"></i> 2027</a></li>
+                            <li><a href="#"><i class="fa fa-pagelines"></i> 2027</a></li> -->
                         </ul>
                     </li>
 
@@ -69,7 +73,7 @@
                                </div>
                            </div>
                            <hr>
-                           <h3 class="no-margin text-center">652.25 (L)</h3>
+                           <h3 class="no-margin text-center">{{$predictedKg}}</h3>
                        </div>
                    </div>
                    <div class="col-sm-6 col-md-4">

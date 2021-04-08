@@ -22,9 +22,7 @@ Route::middleware(['auth'])->group(function () {
     });
 
 
-    Route::get('field-dashboard', function () {
-        return view('pages.field_dashboard');
-    });
+   
 
     Route::get('create-report', function () {
         return view('pages.create_report');
@@ -56,8 +54,6 @@ Route::middleware(['auth'])->group(function () {
     Route::post('disease-get', 'DiseaseController@retrieve')->name('disease.get');
     Route::post('disease-delete', 'DiseaseController@delete')->name('disease.delete');
 
-
-
     //field Routes
     Route::post('field-data-log-add', 'FieldController@addToTemp')->name('field.log.add');
     Route::post('field-data-log-save', 'FieldController@saveFieldData')->name('field.log.save');
@@ -71,6 +67,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('field-data-log-summary', 'FieldController@getFieldLogSummary')->name('get.field.log.summary');
     Route::get('field-data', 'FieldController@addFieldDataLog');
     Route::get('field-receivable/{id}', 'FieldController@fieldReceivables');
+
+    Route::get('field-dashboard/{id?}', 'FieldCOntroller@dashboard');
 
     //Nersery Routes
     Route::get('nursery-create', 'NurseryController@index');
