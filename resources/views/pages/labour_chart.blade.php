@@ -138,11 +138,11 @@
                                             </div>
 
 
-                                            <div class="cju-form-group">
-                                                <div class="row text-center text-size-mini">
-                                                    <a href="#" data-toggle="modal" data-target="#view_modal" type="button" class="btn bg-green-800 btn-labeled btn-rounded"><b><i class="icon-quill4"></i></b>Edit</a>
-                                                </div>
-                                            </div>
+{{--                                            <div class="cju-form-group">--}}
+{{--                                                <div class="row text-center text-size-mini">--}}
+{{--                                                    <a href="#" data-toggle="modal" data-target="#view_modal" type="button" class="btn bg-green-800 btn-labeled btn-rounded"><b><i class="icon-quill4"></i></b>Edit</a>--}}
+{{--                                                </div>--}}
+{{--                                            </div>--}}
 
                                         </div>
 

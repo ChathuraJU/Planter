@@ -56,13 +56,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('disease-get', 'DiseaseController@retrieve')->name('disease.get');
     Route::post('disease-delete', 'DiseaseController@delete')->name('disease.delete');
 
-    //Register Routes
-    Route::get('register-requests', 'UserController@index');
-    Route::post('register-approveuser', 'UserController@approveuser')->name('user.approveuser');
-    Route::post('register-rejectuser', 'UserController@rejectuser')->name('user.rejectuser');
-    Route::post('register-getuser', 'UserController@getuser')->name('user.getuser');
-    Route::get('users', 'UserController@getregistedusers')->name('user.getregistedusers');
-    Route::post('register-userupdate', 'UserController@userupdate')->name('user.userupdate');
+
 
     //field Routes
     Route::post('field-data-log-add', 'FieldController@addToTemp')->name('field.log.add');
@@ -88,13 +82,15 @@ Route::middleware(['auth'])->group(function () {
     Route::post('nursery-taskupdate', 'NurseryController@taskcomplete')->name('nursery.taskupdate');
     Route::post('nursery-gettask', 'NurseryController@gettask')->name('nursery.gettask');
 
+    Route::get('nursery-dashboard', 'NurseryController@dashboard');
+
     //Staff Approve Routes
     Route::get('staff-approve/{id}', 'StaffApproveController@index');
     Route::post('staff-approve-save', 'StaffApproveController@saveApprove')->name('save.staff.approve');
 
 
     Route::group(['as' => 'admin', 'middleware' => ['auth', 'admin']], function () {
-        Route::get('nursery-dashboard', 'NurseryController@dashboard');
+
     });
 
     Route::group(['as' => 'director', 'middleware' => ['auth', 'director']], function () {
