@@ -22,7 +22,7 @@ Route::middleware(['auth'])->group(function () {
     });
 
 
-   
+
 
     Route::get('create-report', function () {
         return view('pages.create_report');

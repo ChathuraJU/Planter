@@ -34,13 +34,6 @@
                         @foreach($fields as $field)
                         <li><a href="/field-dashboard/{{$field->field_id}}"><i class="fa fa-pagelines"></i>{{$field->field_name}}</a></li>
                         @endforeach
-<!--                             
-                            <li class="divider"></li>
-                            <li><a href="#"><i class="fa fa-pagelines"></i> 2005</a></li>
-                            <li><a href="#"><i class="fa fa-pagelines"></i> 2006</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#"><i class="fa fa-pagelines"></i> 2025</a></li>
-                            <li><a href="#"><i class="fa fa-pagelines"></i> 2027</a></li> -->
                         </ul>
                     </li>
 
@@ -73,7 +66,7 @@
                                </div>
                            </div>
                            <hr>
-                           <h3 class="no-margin text-center">{{$predictedKg}}</h3>
+                           <h3 class="no-margin text-center">{{$predictedLtr}} (L)</h3>
                        </div>
                    </div>
                    <div class="col-sm-6 col-md-4">
@@ -93,7 +86,7 @@
                                </div>
                            </div>
                            <hr>
-                           <h3 class="no-margin text-center">652.25 (L)</h3>
+                           <h3 class="no-margin text-center">{{$actualLtr}} (L)</h3>
                        </div>
                    </div>
                    <div class="col-sm-6 col-md-4">
@@ -113,7 +106,7 @@
                                </div>
                            </div>
                            <hr>
-                           <h3 class="no-margin text-center">652.25 (L)</h3>
+                           <h3 class="no-margin text-center">{{$expectedLtr}} (L)</h3>
                        </div>
                    </div>
                </div>
@@ -150,7 +143,7 @@
                                </div>
                            </div>
                            <hr>
-                           <h3 class="no-margin text-center">652.25 (KG)</h3>
+                           <h3 class="no-margin text-center">{{$predictedKg}} (KG)</h3>
                        </div>
                    </div>
                    <div class="col-sm-6 col-md-4">
@@ -170,7 +163,7 @@
                                </div>
                            </div>
                            <hr>
-                           <h3 class="no-margin text-center">652.25 (KG)</h3>
+                           <h3 class="no-margin text-center">{{$actualKg}} (KG)</h3>
                        </div>
                    </div>
                    <div class="col-sm-6 col-md-4">
@@ -190,7 +183,7 @@
                                </div>
                            </div>
                            <hr>
-                           <h3 class="no-margin text-center">652.25 (KG)</h3>
+                           <h3 class="no-margin text-center">{{$expectedKg}} (KG)</h3>
                        </div>
                    </div>
                </div>
@@ -709,7 +702,7 @@
         // specify chart configuration item and data
         var option = {
             title: {
-                text: 'Chart Name'
+                text: 'Latex Liters'
             },
             tooltip: {},
             xAxis: {
@@ -721,19 +714,19 @@
                 type: 'bar',
                 data: [
                     {
-                        value: 200,
+                        value: {{$predictedLtr}},
                         itemStyle: {
                             color: '#32aa9f'
                         }
                     },
                     {
-                        value: 188,
+                        value: 0,
                         itemStyle: {
                             color: '#33b7f4'
                         }
                     },
                     {
-                        value: 220,
+                        value: {{$expectedLtr}},
                         itemStyle: {
                             color: '#fca930'
                         }
@@ -757,7 +750,7 @@
         // specify chart configuration item and data
         var option = {
             title: {
-                text: 'Chart Name'
+                text: 'Latex Kilos'
             },
             tooltip: {},
             xAxis: {
@@ -769,19 +762,19 @@
                 type: 'bar',
                 data: [
                     {
-                        value: 200,
+                        value: {{$predictedKg}},
                         itemStyle: {
                             color: '#32aa9f'
                         }
                     },
                     {
-                        value: 188,
+                        value: 0,
                         itemStyle: {
                             color: '#33b7f4'
                         }
                     },
                     {
-                        value: 220,
+                        value: {{$expectedKg}},
                         itemStyle: {
                             color: '#fca930'
                         }

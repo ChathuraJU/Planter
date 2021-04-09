@@ -184,7 +184,8 @@
                             <li class="navigation-header"><span class="fa fa-tree"></span><span class="text-center">Field</span></li>
                             <li class=""><a href="{{url('field-create')}}"><i class="icon-pencil6"></i> <span>Create Field</span></a></li>
                             <li class=""><a href="{{url('block-create')}}"><i class="icon-pencil6"></i> <span>Create Block</span></a></li>
-                            <li class=""><a href="{{url('field-receivable')}}"><i class="icon-stack-check"></i> <span>Add Field Receivables</span></a></li>
+{{--                            <li class=""><a href="{{url('field-receivable')}}"><i class="icon-stack-check"></i> <span>Add Field Receivables</span></a></li>--}}
+                            <li class=""><a href="{{url('staff-approve')}}"><i class="icon-stack-check"></i> <span>Staff Approval</span></a></li>
                             <li class=""><a href="{{url('field-data-logs')}}"><i class="icon-stack"></i> <span>All Field Data Logs</span></a></li>
                             <li class=""><a href="{{url('field-data')}}"><i class="icon-clipboard"></i> <span>Add Field Data Log</span></a></li>
 
