@@ -439,22 +439,20 @@
             <div class="panel panel-flat">
                 <div class="panel-heading">
                     <div class="row">
-                        <div class="col-sm-12 col-md-6">
-                            <div class="form-group">
-                                <label class="control-label col-lg-2">From Date :</label>
-                                <div class="col-lg-10">
-                                    <input type="date" name="fromdate" id="fromdate" placeholder="Select the from date.." class="form-control mspborder required">
-                                </div>
+
+                        <h6 class="text-semibold">Select a Date Range</h6>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p><input type="text" class="form-control" id="rangeDemoStart" placeholder="Start date"></p>
+                            </div>
+
+                            <div class="col-md-6">
+                                <p><input type="text" class="form-control" id="rangeDemoFinish" placeholder="Finish date" disabled="disabled"></p>
                             </div>
                         </div>
-                        <div class="col-sm-12 col-md-6">
-                            <div class="form-group">
-                                <label class="control-label col-lg-2">To Date :</label>
-                                <div class="col-lg-10">
-                                    <input type="date" name="todate" id="todate" placeholder="Select the to date.." class="form-control mspborder required">
-                                </div>
-                            </div>
-                        </div>
+
+                        <input type="button" id="rangeDemoToday" class="btn btn-primary" value="today">
+                        <input type="button" id="rangeDemoClear" class="btn btn-default" value="clear">
                     </div>
 
 
@@ -993,6 +991,58 @@
                     ]
                 },
             ]
+        });
+
+
+
+        // Options
+        var oneDay = 24*60*60*1000;
+        var rangeDemoFormat = "%e-%b-%Y";
+        var rangeDemoConv = new AnyTime.Converter({format:rangeDemoFormat});
+
+        // Set today's date
+        $("#rangeDemoToday").on('click',  function (e) {
+            $("#rangeDemoStart").val(rangeDemoConv.format(new Date())).change();
+        });
+
+        // Clear dates
+        $("#rangeDemoClear").on('click',  function (e) {
+            $("#rangeDemoStart").val("").change();
+        });
+
+        // Start date
+        $("#rangeDemoStart").AnyTime_picker({
+            format: rangeDemoFormat
+        });
+
+        // On value change
+        $("#rangeDemoStart").change(function(e) {
+            try {
+                var fromDay = rangeDemoConv.parse($("#rangeDemoStart").val()).getTime();
+
+                var dayLater = new Date(fromDay+oneDay);
+                dayLater.setHours(0,0,0,0);
+
+                var ninetyDaysLater = new Date(fromDay+(90*oneDay));
+                ninetyDaysLater.setHours(23,59,59,999);
+
+                // End date
+                $("#rangeDemoFinish")
+                    .AnyTime_noPicker()
+                    .removeAttr("disabled")
+                    .val(rangeDemoConv.format(dayLater))
+                    .AnyTime_picker({
+                        earliest: dayLater,
+                        format: rangeDemoFormat,
+                        latest: ninetyDaysLater
+                    });
+            }
+
+            catch(e) {
+
+                // Disable End date field
+                $("#rangeDemoFinish").val("").attr("disabled","disabled");
+            }
         });
 
     </script>
