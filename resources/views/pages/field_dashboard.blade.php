@@ -112,10 +112,6 @@
                </div>
                <!-- Basic column chart -->
                <div class="panel panel-flat">
-                   {{--<div class="panel-heading">--}}
-                       {{--<h5 class="panel-title">Latex Liters</h5>--}}
-                   {{--</div>--}}
-
                    <div class="panel-body">
                        <div class="container-fluid">
                            <div id="latex-liters" style="width:100%; height:300px;"></div>
@@ -189,11 +185,6 @@
                </div>
                <!-- Basic column chart -->
                <div class="panel panel-flat">
-                   {{--<div class="panel-heading">--}}
-                       {{--<h5 class="panel-title">Latex Kilos</h5>--}}
-
-                   {{--</div>--}}
-
                    <div class="panel-body">
                        <div class="container-fluid">
                            <div id="latex-kilos" style="width:100%; height:300px;"></div>
@@ -448,9 +439,12 @@
             <div class="panel panel-flat">
                 <div class="panel-heading">
                     <div class="heading-elements">
-                        <button type="button" class="btn btn-link daterange-ranges heading-btn text-semibold">
-                            <i class="icon-calendar3 position-left"></i> <span>January 10 - February 8</span> <b class="caret"></b>
-                        </button>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="icon-calendar22"></i></span>
+                                <input type="text" class="form-control daterange-basic" value="">
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="panel-body">
@@ -600,7 +594,7 @@
                 $("#todTemp").html(todayTemp.toFixed(2)+''+"°<span style='font-size : 11px'>C</span>");
                 // $("#todTemp").html(Math.round(data.current.temp - 273.15)+''+"");
                 $("#todHumidity").html(data.current.humidity+''+"<span style='font-size : 11px'>%</span>");
-                $("#todIcon").attr('src', `http://openweathermap.org/img/w/${data.current.weather[0].icon}.png`);
+                $("#todIcon").attr('src', `http://openweathermap.org/img/wn/${data.current.weather[0].icon}@2x.png`);
                 var todayDate = new Date(Number(data.current.dt) * 1000).toLocaleDateString("en-US");
                 $("#todData").html(todayDate);
 
@@ -610,7 +604,7 @@
                 var secondTemp = Number(data.daily[1].temp.morn - 273.15);
                 $("#secDayTemp").html(secondTemp.toFixed(2)+''+"°<span style='font-size : 11px'>C</span>");
                 $("#secDayHumidity").html(data.daily[1].humidity+' '+"%");
-                $("#secDayIcon").attr('src', `http://openweathermap.org/img/w/${data.daily[1].weather[0].icon}.png`);
+                $("#secDayIcon").attr('src', `http://openweathermap.org/img/wn/${data.daily[1].weather[0].icon}.png`);
                 var secDayDate = new Date(Number(data.daily[1].dt) * 1000).toLocaleDateString("en-US");
                 $("#secDayDate").html(secDayDate);
 
@@ -619,7 +613,7 @@
                 var thirdTemp = Number(data.daily[2].temp.morn - 273.15);
                 $("#thirdDayTemp").html(thirdTemp.toFixed(2)+''+"°<span style='font-size : 11px'>C</span>");
                 $("#thirdDayHumidity").html(data.daily[2].humidity+' '+"%");
-                $("#thirdDayIcon").attr('src', `http://openweathermap.org/img/w/${data.daily[2].weather[0].icon}.png`);
+                $("#thirdDayIcon").attr('src', `http://openweathermap.org/img/wn/${data.daily[2].weather[0].icon}.png`);
                 var thirdDayDate = new Date(Number(data.daily[2].dt) * 1000).toLocaleDateString("en-US");
                 $("#thirdDayDate").html(thirdDayDate);
 
@@ -628,7 +622,7 @@
                 var fourthTemp = Number(data.daily[3].temp.morn - 273.15);
                 $("#fourthDayTemp").html(fourthTemp.toFixed(2)+''+"°<span style='font-size : 11px'>C</span>");
                 $("#fourthDayHumidity").html(data.daily[3].humidity+' '+"%");
-                $("#fourthDayIcon").attr('src', `http://openweathermap.org/img/w/${data.daily[3].weather[0].icon}.png`);
+                $("#fourthDayIcon").attr('src', `http://openweathermap.org/img/wn/${data.daily[3].weather[0].icon}.png`);
                 var fourthDayDate = new Date(Number(data.daily[3].dt) * 1000).toLocaleDateString("en-US");
                 $("#fourthDayDate").html(fourthDayDate);
 
@@ -637,7 +631,7 @@
                 var fifthTemp = Number(data.daily[4].temp.morn - 273.15);
                 $("#fifthDayTemp").html(fifthTemp.toFixed(2)+''+"°<span style='font-size : 11px'>C</span>");
                 $("#fifthDayHumidity").html(data.daily[4].humidity+' '+"%");
-                $("#fifthDayIcon").attr('src', `http://openweathermap.org/img/w/${data.daily[4].weather[0].icon}.png`);
+                $("#fifthDayIcon").attr('src', `http://openweathermap.org/img/wn/${data.daily[4].weather[0].icon}.png`);
                 var fifthDayDate = new Date(Number(data.daily[4].dt) * 1000).toLocaleDateString("en-US");
                 $("#fifthDayDate").html(fifthDayDate);
 
@@ -646,7 +640,7 @@
                 var sixthTemp = Number(data.daily[5].temp.morn - 273.15);
                 $("#sixthDayTemp").html(sixthTemp.toFixed(2)+''+"°<span style='font-size : 11px'>C</span>");
                 $("#sixthDayHumidity").html(data.daily[5].humidity+' '+"%");
-                $("#sixthDayIcon").attr('src', `http://openweathermap.org/img/w/${data.daily[5].weather[0].icon}.png`);
+                $("#sixthDayIcon").attr('src', `http://openweathermap.org/img/wn/${data.daily[5].weather[0].icon}.png`);
                 var sixthDayDate = new Date(Number(data.daily[5].dt) * 1000).toLocaleDateString("en-US");
                 $("#sixthDayDate").html(sixthDayDate);
 
@@ -655,7 +649,7 @@
                 var sixthTemp = Number(data.daily[5].temp.morn - 273.15);
                 $("#sixthDayTemp").html(sixthTemp.toFixed(2)+''+"°<span style='font-size : 11px'>C</span>");
                 $("#sixthDayHumidity").html(data.daily[5].humidity+' '+"%");
-                $("#sixthDayIcon").attr('src', `http://openweathermap.org/img/w/${data.daily[5].weather[0].icon}.png`);
+                $("#sixthDayIcon").attr('src', `http://openweathermap.org/img/wn/${data.daily[5].weather[0].icon}.png`);
                 var sixthDayDate = new Date(Number(data.daily[5].dt) * 1000).toLocaleDateString("en-US");
                 $("#sixthDayDate").html(sixthDayDate);
 
@@ -664,21 +658,9 @@
                 var seventhTemp = Number(data.daily[6].temp.morn - 273.15);
                 $("#seventhDayTemp").html(seventhTemp.toFixed(2)+''+"°<span style='font-size : 11px'>C</span>");
                 $("#seventhDayHumidity").html(data.daily[6].humidity+' '+"%");
-                $("#seventhDayIcon").attr('src', `http://openweathermap.org/img/w/${data.daily[6].weather[0].icon}.png`);
+                $("#seventhDayIcon").attr('src', `http://openweathermap.org/img/wn/${data.daily[6].weather[0].icon}.png`);
                 var seventhDayDate = new Date(Number(data.daily[6].dt) * 1000).toLocaleDateString("en-US");
                 $("#seventhDayDate").html(seventhDayDate);
-
-
-
-
-                //
-                // $("#seventhDayCity").html("Kandy");
-                // $("#seventhDayRainfall").html(data.daily[6].clouds +' '+"mm");
-                // $("#seventhDayTemp").html(Math.round(data.current.temp - 273.15)+''+"°C");
-                // $("#seventhDayHumidity").html(data.daily[6].humidity +' '+"%");
-                // $("#seventhDayIcon").attr('src', `http://openweathermap.org/img/w/${data.daily[0].weather[0].icon}.png`);
-                // var seventhDayDate = new Date(Number(data.daily[6].dt) * 1000).toLocaleDateString("en-US");
-                // $("#seventhDayDate").html(seventhDayDate);
 
 
             }).fail(function () {

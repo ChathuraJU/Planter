@@ -310,7 +310,7 @@ class FieldController extends Controller
 
     }
 
-    public function dashboard($id = null){
+    public function dashboard($id = 'all'){
         $fields = Field::all();
 
         // $date1 = strtotime(date("Y-m-d", strtotime("-30 day")));
