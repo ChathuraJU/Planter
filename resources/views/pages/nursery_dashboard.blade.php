@@ -63,7 +63,6 @@
                                     your search</a></li>
                         </ul>
                     </div>
-
                 </div>
             </form>
         </div>
@@ -73,18 +72,15 @@
     @foreach($nurseries as $key => $nursery)
         <div class="col-sm-6 col-lg-4">
             <div class="panel panel-flat">
-
                 <!-- Panel heading -->
                 <div class="panel-heading">
-
-
                     <ul class="media-list">
                         <li class="media stack-media-on-mobile">
                             <div class="media-left" style="padding-right: 05px !important;">
                                 <div class="thumb">
                                     <a href="images/placeholderimg.jpg" class="media-left" data-popup="lightbox">
                                         {{-- <img src="{{asset('$nursery->image') }}" --}}
-                                        <img src="images/placeholderimg.jpg" 
+                                        <img src="images/placeholderimg.jpg"
                                             class="img-responsive img-rounded media-preview" alt="">
                                     </a>
                                 </div>
@@ -97,13 +93,9 @@
                                     <li>{{$nursery->layout_date}}</li>
                                     <li>No. of Cuttings : {{$nursery->no_of_cuttings}}</li>
                                 </ul>
-
-
                             </div>
-
                         </li>
                     </ul>
-
                 </div>
                 <!-- /panel heading -->
 
@@ -130,7 +122,7 @@
                 <div class="tab-content panel-body">
                     <div class="tab-pane fade" id="comments{{$key}}">
                         {{--<div class="caption">--}}
-                        <ul class="media-list content-group cju-list-scroll">  
+                        <ul class="media-list content-group cju-list-scroll">
                         @foreach($comments as $comment)
                             @if($nursery->nursery_id == $comment->nursery_id)
                             <li class="media">
@@ -189,21 +181,45 @@
                             </li>
                             @endif
                             @endforeach
+                            @if($new_tasks)
+                                <hr>
+                                @foreach($new_tasks as $new_task)
+                                    @if($nursery->nursery_id == $new_task->nursery_id)
+                                        <li>
+                                            <span class="list-feed-solid text-muted">{{$new_task->scheduled_date}}</span>
+{{--                                            {{$new_task->task_name}}--}}
+                                            <div class="media-body">
+                                                <div class="text-semibold">{{$new_task->task_name}}</div>
+                                            </div>
+                                            <div class="media-right">
+                                                <ul class="icons-list icons-list-extended text-nowrap">
+                                                    @if($new_task->status == 0)
+
+                                                        <li <a href="#" class="text-danger" onclick="new_task_complete_id({{$new_task->id}})"><i
+                                                                class="icon-spinner position-left text-danger"></i> Pending</a></li>
+                                                    @else
+                                                        <li><a href="#" class="text-success" onclick="new_task_complete_id({{$new_task->id}})"><i
+                                                                    class="icon-check position-left text-success"></i> Completed</a></li>
+                                                    @endif
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        @endif
+                                    @endforeach
+                            @endif
                         </ul>
                         <div class="row text-center">
                             <button type="button" class="btn bg-green-800 btn-labeled btn-rounded btn-sm"
-                                data-toggle="modal" data-target="#add_task"><b><i class="fa fa-calendar-plus-o"></i></b>
+                                data-toggle="modal" data-target="#add_task" onclick="add_task_nursery_id({{$nursery->nursery_id}})"><b><i class="fa fa-calendar-plus-o"></i></b>
                                 Add Task</button>
                         </div>
-
                     </div>
-
                 </div>
                 <!-- /tabs content -->
 
             </div>
         </div>
-      @endforeach  
+      @endforeach
     </div>
 
     <!-- Pagination -->
@@ -226,10 +242,11 @@
             </div>
 
             <div class="modal-body">
-                <form method="#" action="">
+                <form method="" action="">
                     <div class="row container-fluid">
                         <div class="col-12">
                             <div class="form-group">
+                                <input type="hidden" id="nursery_id" value="">
                                 <label for="newtask" class="control-label text-semibold">{{ __('New Task') }}</label>
                                 <input id="newtask" type="text" class="form-control mspborder " name="newtask"
                                     value="{{ old('newtask') }}" required autocomplete="newtask" autofocus>
@@ -239,8 +256,8 @@
                             <div class="form-group">
                                 <label for="newtaskstatus"
                                     class="control-label text-semibold">{{ __('Status') }}</label>
-                                <select id="newtaskstatus" type="text" class="select select2-hidden-accessible"
-                                    name="newtaskstatus" value="{{ old('newtaskstatus') }}" required
+                                <select id="newtaskstatus" name="newtaskstatus" type="text" class="select select2-hidden-accessible"
+                                  value="{{ old('newtaskstatus') }}" required
                                     autocomplete="newtaskstatus" autofocus>
                                     <option value="">Select Status</option>
                                     <option value="0">Pending</option>
@@ -251,28 +268,28 @@
                         </div>
                         <div class="col-12">
                             <div class="form-group">
-                                <label for="newtaskdate" class="control-label text-semibold">{{ __('Date') }}</label>
-                                <input id="newtaskdate" type="date" class="form-control mspborder" name="newtaskdate"
-                                    value="{{ old('newtaskdate') }}" required autocomplete="newtaskdate" autofocus>
+                                <label for="taskdate" class="control-label text-semibold">{{ __('Date') }}</label>
+                                <input id="taskdate" type="date" class="form-control mspborder" name="taskdate"
+                                    value="{{ old('taskdate') }}" required autocomplete="taskdate" autofocus>
                             </div>
                         </div>
 
                         <div class="col-12">
                             <div class="form-group">
                                 <label for="newtasknote" class="control-label text-semibold">{{ __('Note') }}</label>
-                                <textarea name="newtasknote" rows="5" cols="5" class="form-control mspborder"
-                                    name="newtasknote" value="{{ old('newtasknote') }}" required
+                                <textarea id="newtasknote" name="newtasknote" rows="5" cols="5" class="form-control mspborder" value="{{ old('newtasknote') }}" required
                                     autocomplete="newtasknote" autofocus></textarea>
                             </div>
                         </div>
                     </div>
-                </form>
+
             </div>
 
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn bg-green-800">Submit</button>
+                <button type="button" class="btn bg-green-800" onclick="add_new_task()">Submit</button>
             </div>
+            </form>
         </div>
     </div>
 </div>
@@ -338,6 +355,68 @@
     </div>
 </div>
 <!-- /Completing Task modal -->
+
+<!-- Completing Task modal New -->
+<div id="complete_task_new" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <!-- <h5 class="modal-title text-semibold">Fertilizer 1st Round - <span
+                        class="list-feed-solid text-muted">26.02.2021</span></h5> -->
+
+                <h5 class="modal-title text-semibold">Task Complete New</h5>
+            </div>
+
+            <div class="modal-body">
+
+
+                <form method="#" action="">
+                    <div class="row container-fluid">
+                    <!-- <div class="col-12">
+                        <input id="txtid" type="hidden" class="form-control mspborder" name="txtid" value="">
+                            <div class="form-group">
+                                <label for="taskstatus" class="control-label text-semibold">{{ __('Status') }}</label>
+                                <select id="taskstatus" type="text" class="select select2-hidden-accessible"
+                                    name="taskstatus" value="{{ old('taskstatus') }}" required autocomplete="taskstatus"
+                                    autofocus>
+                                    <option value="">Select Status</option>
+                                    <option value="0">Pending</option>
+                                    <option value="1">Completed</option>
+                                </select>
+                            </div>
+
+                        </div> -->
+                        <input id="txtidNew" type="hidden" class="form-control mspborder" name="txtidNew" value="">
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="newtaskdate" class="control-label text-semibold">{{ __('Date') }}</label>
+                                <input id="newtaskdate" type="date" class="form-control mspborder" name="newtaskdate"
+                                       value="{{ old('newtaskdate') }}" required autocomplete="newtaskdate" autofocus>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="tasknotenew" class="control-label text-semibold">{{ __('Note') }}</label>
+                                <textarea name="tasknotenew" id="tasknotenew" rows="5" cols="5" class="form-control mspborder"
+                                          name="tasknotenew" value="{{ old('tasknotenew') }}" required autocomplete="tasknotenew"
+                                          autofocus></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" id="submit_btn_new" class="btn bg-green-800"  onclick="task_complete_new()" >Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Completing Task modal New-->
+
 <script src="{{ asset('assets/js/core.js') }}"></script>
     <script>
     $( document ).ready(function() {
@@ -400,7 +479,6 @@
                     $("#taskdate").val(data[0]['completed_date']);
                 }
 
-
             }).fail(function () {
 
                 messageErrorAlert("error");
@@ -410,13 +488,10 @@
 
     function task_complete(){
 
-        
-
         var id = $("#txtid").val();
         var msg = $('#tasknote').val();
         // var status = $('#taskstatus').val();
         var date = $('#taskdate').val();
-        
 
         const url = "{{ route('nursery.taskupdate') }}";
 
@@ -442,5 +517,113 @@
             });
     }
 
+    function new_task_complete_id(id){
+        alert(id);
+        $("#txtidNew").val(id);
+        $("#submit_btn_new").show();
+        $("#newtasknote").val("");
+        $("#newtaskdate").val("");
+
+        const url = "{{ route('nursery.gettasknew') }}";
+
+        $.ajax({
+            method: "POST",
+            url: url,
+            data: { "_token": "{{ csrf_token() }}",
+                "id":id,
+            },
+
+        }).done(function (data) {
+
+            data = JSON.parse(data);
+            // console.log(data[0]['note']);
+
+            $('#complete_task').modal()
+
+            if(!data[0]['note'] == "" || !data[0]['note'] == null){
+                $("#submit_btn_new").hide();
+                $("#newtasknote").val(data[0]['note']);
+                $("#newtaskdate").val(data[0]['completed_date']);
+            }
+
+        }).fail(function () {
+
+            messageErrorAlert("error");
+
+        });
+    }
+
+    function new_task_complete(){
+
+        var id = $("#txtidNew").val();
+        var msg = $('#newtasknote').val();
+        // var status = $('#taskstatus').val();
+        var date = $('#newtaskdate').val();
+
+        const url = "{{ route('nursery.taskupdatenew') }}";
+
+        $.ajax({
+            method: "POST",
+            url: url,
+            data: { "_token": "{{ csrf_token() }}",
+                "id":id,
+                "msg": msg,
+                "date": date
+            },
+
+        }).done(function (data) {
+
+            messageSuccessAlert("Task Updated Successfully")
+
+            // setTimeout(function(){location.reload();}, 3000);
+
+        }).fail(function () {
+
+            messageErrorAlert("error");
+
+        });
+    }
+    function add_task_nursery_id(id){
+        alert(id);
+        $('#nursery_id').val(id);
+    }
+
+    function add_new_task(){
+        var id = $("#nursery_id").val();
+        alert(id+" Okay");
+        var task = $('#newtask').val();
+        var status = $('#newtaskstatus').val();
+        var taskdate = $('#taskdate').val();
+        var note = $('#newtasknote').val();
+
+        alert(status);
+
+        const url = "{{ route('nursery.taskadd') }}";
+
+        $.ajax({
+            method: "POST",
+            url: url,
+            data: { "_token": "{{ csrf_token() }}",
+                "id":id,
+                "task": task,
+                "newtaskstatus": status,
+                "taskdate": taskdate,
+                "newtasknote": note
+            },
+
+        }).done(function (data) {
+
+            messageSuccessAlert("Task Updated Successfully")
+
+            // setTimeout(function(){location.reload();}, 3000);
+
+        }).fail(function () {
+
+            messageErrorAlert("error");
+
+        });
+    }
     </script>
+
+
 @endsection

@@ -449,9 +449,10 @@ class FieldController extends Controller
             $actualLtr = round(($actualLtrSum[0]->actualLtr), 2);
 
         }
+        return view('pages.field_dashboard', compact('fields', 'predictedKg','expectedKg','actualKg','predictedLtr','expectedLtr','actualLtr'));
+    }
 
-
-
-       return view('pages.field_dashboard', compact('fields', 'predictedKg','expectedKg','actualKg','predictedLtr','expectedLtr','actualLtr'));
+    public function fieldData(Request $request){
+        dd($request->all());
     }
 }

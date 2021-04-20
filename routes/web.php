@@ -41,6 +41,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('block-fieldblock', 'FieldController@fieldblocksave')->name('fieldblock.save');
     Route::post('field-receivable-save-temp', 'FieldController@fieldReceivableSaveTemp')->name('field.receivable.save.temp');
     Route::post('get-from-block-data', 'FieldController@getDataFromBlock')->name('get.field.data.from.block');
+    Route::post('filed-fieldData', 'FieldController@fieldData')->name('field.fieldData');
 
     //Labour Routes
     Route::get('labour-chart', 'LabourController@index');
@@ -79,6 +80,9 @@ Route::middleware(['auth'])->group(function () {
     Route::post('nursery-comment', 'NurseryController@comment')->name('nursery.comment');
     Route::post('nursery-taskupdate', 'NurseryController@taskcomplete')->name('nursery.taskupdate');
     Route::post('nursery-gettask', 'NurseryController@gettask')->name('nursery.gettask');
+    Route::post('nursery-taskupdatenew', 'NurseryController@taskcompletenew')->name('nursery.taskupdatenew');
+    Route::post('nursery-gettasknew', 'NurseryController@gettasknew')->name('nursery.gettasknew');
+    Route::post('nursery-taskadd', 'NurseryController@tasknew')->name('nursery.taskadd');
 
     Route::get('nursery-dashboard', 'NurseryController@dashboard');
 

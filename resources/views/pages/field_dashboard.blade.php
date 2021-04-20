@@ -451,7 +451,7 @@
                             </div>
                         </div>
 
-                        <input type="button" id="rangeDemoToday" class="btn btn-primary" value="today">
+                        <input type="button" id="rangeDemoToday" class="btn btn-primary" onclick="datafield()" value="today">
                         <input type="button" id="rangeDemoClear" class="btn btn-default" value="clear">
                     </div>
 
@@ -893,11 +893,9 @@
         // Initialize chart
         var pie_latex_kilos = echarts.init(latex_kilos_pie);
 
-
         //
         // Chart config
         //
-
         // Top text label
         var labelTop = {
             show: true,
@@ -1044,6 +1042,39 @@
                 $("#rangeDemoFinish").val("").attr("disabled","disabled");
             }
         });
+
+        function datafield(){
+
+            var startdate = $("#rangeDemoStart").val();
+            var enddate = $("#rangeDemoFinish").val();
+
+            const url = "{{ route('field.fieldData') }}";
+
+            $.ajax({
+                method: "POST",
+                url: url,
+                data: { "_token": "{{ csrf_token() }}",
+                    "startdate":startdate,
+                    "enddate":enddate,
+                },
+
+            }).done(function (data) {
+
+                data = JSON.parse(data);
+                // console.log(data[0]['note']);
+
+                // if(!data[0]['note'] == "" || !data[0]['note'] == null){
+                //     $("#submit_btn").hide();
+                //     $("#tasknote").val(data[0]['note']);
+                //     $("#taskdate").val(data[0]['completed_date']);
+                // }
+
+            }).fail(function () {
+
+                messageErrorAlert("error");
+
+            });
+        }
 
     </script>
 @endsection

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 
 //use http\Env\Request;
+use App\NewTask;
 use App\Nursery;
 use App\NurseryPlan;
 use App\Task;
@@ -17,7 +18,7 @@ use Illuminate\Support\Facades\DB;
 
 class NurseryController extends Controller
 {
-    public function index(){ 
+    public function index(){
 
         $nurseries = Nursery::all();
 
@@ -54,14 +55,14 @@ class NurseryController extends Controller
                     $data[] = $file_name;
                 }
 
-                
+
 //           if ($field->image != null && $field->image != '') {
 //               File::delete(public_path().'/'.$field->image);
 //               dd(public_path().'/'.$field->image);
 //           }
                 $path = Storage::putFile('nurserys', $request->file('img_file'),'public');
                 $nursery->image = 'storage/'.$path;
-            }    
+            }
 
             if($nursery->save()){
                 echo true;
@@ -105,29 +106,29 @@ class NurseryController extends Controller
 
                 }elseif($x <= $tasktype0count+$tasktype1count){
                     $date->add($interval1);
-            
+
                 }elseif($x <= ($tasktype0count+$tasktype1count+$tasktype2count)){
                     if($x == ($tasktype0count+$tasktype1count+1)){
                         $date = new \DateTime($request->plot_date);
                     }
                     $date->add($interval2);
-            
+
                 }elseif($x <=($tasktype0count+$tasktype1count+$tasktype2count+$tasktype3count)){
                     if($x == ($tasktype0count+$tasktype1count+$tasktype2count+1)){
                         $date = new \DateTime($request->plot_date);
                     }
-                    $date->add($interval3);        
+                    $date->add($interval3);
                 }
 
                 $data[] = array(
                 'nursery_id' => $nursery->nursery_id,
                 'task_id' => $x,
-                'scheduled_date' => $date->format("Y-m-d"),  
+                'scheduled_date' => $date->format("Y-m-d"),
                 'status' => 0,
                 'user_id' => auth()->user()->id,
                 );
                 $date = new \DateTime($date->format("Y-m-d"));
-              } 
+              }
               $status = DB::table('nursery_plan') -> insert($data);
 
             if($status){
@@ -140,7 +141,7 @@ class NurseryController extends Controller
     }
 
     public function retrieve(Request $request){
-        $nursery = Nursery::find($request->id);     
+        $nursery = Nursery::find($request->id);
 
         $nursery_plan = DB::table('nursery_plan')
                     ->join('tasks', 'nursery_plan.task_id', '=', 'tasks.task_id')
@@ -196,7 +197,7 @@ class NurseryController extends Controller
 
         if($request->has('search')){
             $nurseries = Nursery::where('plot_no', 'LIKE', "%{$request->search}%");
-                   
+
         }else{
             $nurseries = Nursery::orderby('nursery_id', 'asc');
         }
@@ -204,6 +205,7 @@ class NurseryController extends Controller
         $nurseries = $nurseries->paginate(8);
         $nurseryplans = NurseryPlan::all();
         $tasks = Task::all();
+        $new_tasks = NewTask::all();
         $comments = Comment::all();
 
         $users = DB::table('users')
@@ -214,18 +216,18 @@ class NurseryController extends Controller
         //             ->join('users', 'comments.user_id', '=', 'users.id')
         //             ->join('persons', 'users.person_id', '=', 'persons.person_id')
         //             ->get();
-                    
-        // dd($comments);
-                    
-        return view('pages.nursery_dashboard', compact('nurseries', 'nurseryplans', 'tasks', 'comments', 'users'));
+
+//         dd($new_tasks);
+
+        return view('pages.nursery_dashboard', compact('nurseries', 'nurseryplans', 'tasks', 'comments', 'users','new_tasks'));
     }
 
     public function comment(Request $request){
 
         // dd(auth()->user()->id);
-        
+
         $comment = new comment();
-        
+
         $comment->nursery_id = $request->id;
         $comment->user_id = auth()->user()->id;
         $comment->date_time = date("Y-m-d H:i:s");
@@ -266,6 +268,51 @@ class NurseryController extends Controller
         return $nursery_plan->tojson();
 
     }
-    
+
+    public function taskcompletenew(Request $request){
+
+        // dd($request->all());
+
+        // $nurseryPlan = NurseryPlan::where('nursery_id', $request->id)->first();
+        $new_task = NewTask::where('id', $request->id)->first();
+
+        // dd($nursery_plan);
+
+        $new_task->note = $request->msg;
+        $new_task->status = 1;
+        $new_task->completed_date = $request->date;
+
+        if($new_task->save()){
+            return true;
+        }else{
+            return false;
+        }
+
+    }
+
+    public function gettasknew(Request $request){
+
+        $new_task = NewTask::where('id', $request->id)->get();
+
+        return $new_task->tojson();
+
+    }
+
+    public function tasknew(Request $request){
+//dd($request->all());
+        $new_task = new NewTask();
+
+        $new_task->nursery_id = $request->id;
+        $new_task->task_name = $request->task;
+        $new_task->scheduled_date = $request->taskdate;
+        $new_task->status = $request->newtaskstatus;
+        $new_task->note = $request->newtasknote;
+        $new_task->user_id = auth()->user()->id;
+
+        if($new_task->save()){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }
-  
