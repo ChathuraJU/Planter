@@ -17,6 +17,7 @@
     <link href="{{ asset('global_assets/css/extras/animate.min.css') }} " rel="stylesheet" type="text/css">
     <link href="{{ asset('mspstyles.css') }} " rel="stylesheet" type="text/css">
     <link href="{{ asset('css/cjustyles.css') }} " rel="stylesheet" type="text/css">
+    <link href="{{ asset('datepicker/css/datepicker.css') }} " rel="stylesheet" type="text/css">
     <!-- /global stylesheets -->
 
     <!-- Core JS files -->
@@ -83,6 +84,7 @@
     <script src="{{ asset('global_assets/js/demo_pages/login.js')}}"></script>
     <script src="{{ asset('global_assets/js/demo_pages/components_thumbnails.js')}}"></script>
     <script src="{{ asset('global_assets/js/demo_pages/ecommerce_product_list.js')}}"></script>
+    <script src="{{ asset('datepicker/js/bootstrap-datepicker.js')}}"></script>
 
     <!-- /theme JS files -->
 
