@@ -31,7 +31,8 @@
 
         <div class="row">
             <div class="col-sm-12">
-                <form action="#">
+                <form action="{{ route('report.generate') }}" method="POST">
+                    @csrf
                     <div class="panel panel-white">
                         <div class="panel-heading">
                             <h5 class="panel-title">Create Report Form<a class="heading-elements-toggle"><i class="icon-more"></i></a></h5>
@@ -45,37 +46,20 @@
 
                         <div class="panel-body">
                             <div class="row">
-                                <div class="col-sm-6">
+                                <div class="col-sm-">
                                     <fieldset>
-                                        <legend class="text-semibold"><i class="icon-file-text position-left"></i>Form</legend>
-                                            <div class="form-group">
-                                                <label class="control-label text-semibold">Type</label>
-                                                <select id="reporttype" data-placeholder="Select a Type..." class="select select2-hidden-accessible" tabindex="-1" aria-hidden="true">
-                                                    <optgroup label="Divisions">
-                                                        <option value="0">Monthly</option>
-                                                        <option value="1">Yearly</option>
-                                                    </optgroup>
-                                                </select>
-                                            </div>
-                                            <div class="form-group" id="monthselect">
-                                                <label class="control-label text-semibold">Month:</label>
+                                            <div class="form-group" id="datepicker">
+                                                <label class="control-label text-semibold">Select Month and Year:</label>
                                                 <input type="text" name="month" id="month" placeholder="Enter a month " class="form-control mspborder required">
                                             </div>
-                                            <div class="form-group"   id="yearselect">
-                                                <label class="control-label text-semibold">Year:</label>
-                                                <input type="text" name="year" id="year" placeholder="Enter a year " class="form-control mspborder required">
-                                            </div>
+
                                             <div class="form-group">
                                                 <label class="control-label text-semibold">Note</label>
                                                 <textarea rows="5" cols="5" name="note" id="note" class="form-control" placeholder="Default textarea readonly"></textarea>
                                             </div>
                                     </fieldset>
                                 </div>
-                                <div class="col-sm-6">
-                                    <fieldset>
-                                        <legend class="text-semibold"><i class="icon-file-eye position-left"></i>Preview</legend>
-                                    </fieldset>
-                                </div>
+
                             </div>
                             <div class="form-group">
                                 <label class="checkbox-inline">
@@ -84,38 +68,59 @@
                                 </label>
                             </div>
                             <div class="text-center" >
-                                <button type="submit" id="submit_field_data" class="btn bg-green-800 btn-labeled btn-rounded btn-xlg"><b><i class="icon-arrow-down-right32"></i></b>Submit Form</button>
+                                <button type="submit" id="submit_field_data" class="btn bg-green-800 btn-labeled btn-rounded btn-xlg"><b><i class="icon-arrow-down-right32"></i></b>Generate Report</button>
                             </div>
-
                         </div>
-
                     </div>
                 </form>
             </div>
         </div>
 
-
     </div>
     {{--page content ends--}}
+
+    {{--Fields list table starts here--}}
+    <div class="row">
+        <div class="col-sm-12">
+
+        </div>
+    </div>
+    {{--/fields list table ends--}}
 
 
     {{--javascript starts here--}}
     <script>
-        $(document).ready(function(){
 
-            $('#reporttype').on('change', function() {
-                if ( this.value == '0')
-                {
-                    $("#monthselect").show();
-                    $("#yearselect").hide();
-                }
-                else
-                {
-                    $("#monthselect").hide();
-                    $("#yearselect").show();
-                }
-            });
+        // $("#submit_field_data").click(function () {
+        //
+        // });
+
+        // $(document).ready(function(){
+        //
+        //     $('#reporttype').on('change', function() {
+        //         if ( this.value == '0')
+        //         {
+        //             $("#monthselect").show();
+        //             $("#yearselect").hide();
+        //         }
+        //         else
+        //         {
+        //             $("#monthselect").hide();
+        //             $("#yearselect").show();
+        //         }
+        //     });
+        // });
+
+        $("#month").datepicker( {
+            format: "yyyy-mm",
+            viewMode: "months",
+            minViewMode: "months"
         });
+        // $("#yearpicker").datepicker( {
+        //     format: "mm-yyyy",
+        //     viewMode: "months",
+        //     minViewMode: "months"
+        // });
     </script>
     {{--java scripts ends--}}
 

@@ -23,7 +23,7 @@ class StaffApproveController extends Controller
 
     public function saveApprove(Request $request)
     {
-        $collection_approval_existing = CollectionApproval::where('user_type_id', auth()->user()->user_type_id)->get();
+        $collection_approval_existing = CollectionApproval::where('user_type_id', auth()->user()->user_type_id)->where('division_collection_main_id', $request->mainId)->get();
         if (isset($collection_approval_existing[0])) {
             $response = array();
             $response['message'] = 'Already approved by current user type';

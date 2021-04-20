@@ -50,7 +50,7 @@
                         <tr>
                             <th>ID</th>
                             <th>Division</th>
-                            <th>Field Officer Name</th>
+                            <th>Officer Name</th>
                             <th>Log Date</th>
                             <th>Action</th>
                         </tr>
@@ -62,7 +62,11 @@
                                     <td>{{$row->division_collections->first()->division->division_name}}</td>
                                     <td>{{$row->approved_user->person->fname}} {{$row->approved_user->person->lname}}</td>
                                     <td>{{$row->created_at}}</td>
-                                    <td><a href="{{url('field-receivable')}}/{{$row->division_collection_main_id}}">View</a></td>
+                                    @if(auth()->user()->user_type_id == 2 || auth()->user()->user_type_id == 3 || auth()->user()->user_type_id == 4)
+                                        <td><a href="{{url('staff-approve')}}/{{$row->division_collection_main_id}}">View</a></td>
+                                    @else
+                                        <td><a href="{{url('field-receivable')}}/{{$row->division_collection_main_id}}">View</a></td>
+                                    @endif
                                 </tr>
                             @endforeach
                         </tbody>

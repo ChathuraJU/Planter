@@ -21,16 +21,10 @@ Route::middleware(['auth'])->group(function () {
         return view('pages.homepage');
     });
 
-
-
-
-    Route::get('create-report', function () {
-        return view('pages.create_report');
+    Route::get('no-access', function () {
+        return view('pages.no-access');
     });
 
-    Route::get('all-reports', function () {
-        return view('pages.all_reports');
-    });
 
 
     //Field Routes
@@ -54,6 +48,9 @@ Route::middleware(['auth'])->group(function () {
     Route::post('disease-save', 'DiseaseController@save')->name('disease.save');
     Route::post('disease-get', 'DiseaseController@retrieve')->name('disease.get');
     Route::post('disease-delete', 'DiseaseController@delete')->name('disease.delete');
+
+    //Report Routes
+    Route::post('generate-report', 'ReportController@generate')->name('report.generate');
 
     //field Routes
     Route::post('field-data-log-add', 'FieldController@addToTemp')->name('field.log.add');
@@ -116,6 +113,10 @@ Route::middleware(['auth'])->group(function () {
     });
 
     Route::group(['as' => 'manager', 'middleware' => ['auth', 'manager']], function () {
+
+        Route::get('create-report', function () {
+            return view('pages.create_report');
+        });
 
     });
 

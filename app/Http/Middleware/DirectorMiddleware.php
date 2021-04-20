@@ -19,7 +19,7 @@ class DirectorMiddleware
             return $next($request);
         }
         else {
-            return redirect('/login');
+            return redirect('no-access');
         }
     }
 }

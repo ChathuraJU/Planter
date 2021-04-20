@@ -24,7 +24,7 @@
                 <div class="panel panel-body bg-yellow-600 has-bg-image">
                     <div class="media no-margin">
                         <div class="media-body">
-                            <h3 class="no-margin">PMMS00001</h3>
+                            <h3 class="no-margin">PL{{ auth()->user()->person->person_id }}</h3>
                             <span class="text-uppercase text-size-small">Employee ID</span>
                         </div>
 
@@ -38,7 +38,7 @@
                 <div class="panel panel-body bg-yellow-600 has-bg-image">
                     <div class="media no-margin">
                         <div class="media-body">
-                            <h3 class="no-margin">IT Unit</h3>
+                            <h3 class="no-margin">{{ auth()->user()->person->address }}</h3>
                             <span class="text-uppercase text-size-small">Division</span>
                         </div>
 

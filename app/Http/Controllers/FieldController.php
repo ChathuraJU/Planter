@@ -109,7 +109,8 @@ class FieldController extends Controller
 
     public function saveFieldDataApproval(Request $request)
     {
-        $collection_approval_existing = CollectionApproval::where('user_type_id', auth()->user()->user_type_id)->get();
+        $collection_approval_existing = CollectionApproval::where('user_type_id', auth()->user()->user_type_id)->where('division_collection_main_id', $request->mainId)->get();
+//        dd(auth()->user()->user_type_id, $collection_approval_existing);
         if (isset($collection_approval_existing[0])) {
             $response = array();
             $response['message'] = 'Already approved by current user type';
@@ -246,7 +247,14 @@ class FieldController extends Controller
 
     public function getFieldDataLogs()
     {
-        $data_list = CollectionApproval::all();
+
+//        $data_list = DB::table('collection_approvals')->;
+        $data_list = DB::table('collection_approvals')->groupBy('division_collection_main_id')->get([DB::raw('MAX(collection_approvals.id) as id')]);
+        $pKeys = [];
+        foreach ($data_list as $id) {
+            array_push($pKeys, $id->id);
+        }
+        $data_list = CollectionApproval::wherein('id', $pKeys)->get();
         return view('pages.all_field_data_logs', compact('data_list'));
     }
 

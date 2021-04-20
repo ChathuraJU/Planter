@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Illuminate\Support\Facades\Auth;
 
 class ManagerMiddleware
 {
@@ -15,11 +16,11 @@ class ManagerMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if(auth::check() && Auth::user()->user_type_id == 3){
+        if(Auth::check() && Auth::user()->user_type_id == 3){
             return $next($request);
         }
         else {
-            return redirect('/login');
+            return redirect('no-access');
         }
     }
 }

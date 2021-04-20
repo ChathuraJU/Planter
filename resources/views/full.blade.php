@@ -149,9 +149,9 @@
                             <a href="#" class="media-left"><img src="{{ asset('images/users/1.jpg') }}"
                                                                 class="img-circle img-sm" alt=""></a>
                             <div class="media-body">
-                                <span class="media-heading text-semibold">ADMIN</span>
+                                <span class="media-heading text-semibold">{{ auth()->user()->person->fname }} {{ auth()->user()->person->lname }}</span>
                                 <div class="text-size-mini text-muted">
-                                    <i class="icon-pin text-size-small"></i> &nbsp;Kandy, Sri Lanka
+                                    <i class="text-size-small">EPF No : {{ auth()->user()->person->epf }}</i>
                                 </div>
                             </div>
 
@@ -172,41 +172,40 @@
                 <div class="sidebar-category sidebar-category-visible ">
                     <div class="category-content no-padding">
                         <ul class="navigation navigation-main navigation-accordion">
-                            <li class="active"><a href="{{url('homepage')}}"><i class="icon-home2"></i> <span>Home</span></a></li>
+                            <li class="{{ Request::is('/') ? 'active' : '' }}"><a href="{{url('/')}}"><i class="icon-home2"></i> <span>Home</span></a></li>
                             <li class="navigation-header"><span class="icon-display"></span><span class="text-center">Dashboard</span></li>
                             <li>
                                 <a href=""><i class="fa fa-leaf"></i> <span>Nursery</span></a>
                                 <ul class="hidden-ul">
-                                    <li><a href="{{url('nursery-dashboard')}}">Nursery Dashboards</a></li>
-                                    <li><a href="{{url('nursery-create')}}">Create Nursery Dashboard</a></li>
+                                    <li class="{{ Request::is('nursery-dashboard') ? 'active' : '' }}"><a href="{{url('nursery-dashboard')}}">Nursery Dashboards</a></li>
+                                    <li class="{{ Request::is('nursery-create') ? 'active' : '' }}"><a href="{{url('nursery-create')}}">Create Nursery Dashboard</a></li>
                                 </ul>
                             </li>
-                            <li class=""><a href="{{url('field-dashboard')}}"><i class="fa fa-pagelines"></i> <span>Field Dashboard</span></a></li>
+                            <li class="{{ Request::is('field-dashboard') ? 'active' : '' }}"><a href="{{url('field-dashboard')}}"><i class="fa fa-pagelines"></i> <span>Field Dashboard</span></a></li>
 
                             <li class="navigation-header"><span class="fa fa-tree"></span><span class="text-center">Field</span></li>
-                            <li class=""><a href="{{url('field-create')}}"><i class="icon-pencil6"></i> <span>Create Field</span></a></li>
-                            <li class=""><a href="{{url('block-create')}}"><i class="icon-pencil6"></i> <span>Create Block</span></a></li>
-{{--                            <li class=""><a href="{{url('field-receivable')}}"><i class="icon-stack-check"></i> <span>Add Field Receivables</span></a></li>--}}
-                            <li class=""><a href="{{url('staff-approve')}}"><i class="icon-stack-check"></i> <span>Staff Approval</span></a></li>
-                            <li class=""><a href="{{url('field-data-logs')}}"><i class="icon-stack"></i> <span>All Field Data Logs</span></a></li>
-                            <li class=""><a href="{{url('field-data')}}"><i class="icon-clipboard"></i> <span>Add Field Data Log</span></a></li>
+                            <li class="{{ Request::is('field-create') ? 'active' : '' }}"><a href="{{url('field-create')}}"><i class="icon-pencil6"></i> <span>Create Field</span></a></li>
+                            <li class="{{ Request::is('block-create') ? 'active' : '' }}"><a href="{{url('block-create')}}"><i class="icon-pencil6"></i> <span>Create Block</span></a></li>
+                            <li class="{{ Request::is('staff-approve') ? 'active' : '' }}"><a href="{{url('staff-approve')}}"><i class="icon-stack-check"></i> <span>Staff Approval</span></a></li>
+                            <li class="{{ Request::is('field-data-logs') ? 'active' : '' }}"><a href="{{url('field-data-logs')}}"><i class="icon-stack"></i> <span>All Field Data Logs</span></a></li>
+                            <li class="{{ Request::is('field-data') ? 'active' : '' }}"><a href="{{url('field-data')}}"><i class="icon-clipboard"></i> <span>Add Field Data Log</span></a></li>
 
 
                             <li class="navigation-header"><span class="fa fa-bug"></span><span class="text-center">Diseases</span></li>
-                            <li class=""><a href="{{url('disease-create')}}"><i class="icon-pencil6"></i> <span>Create Disease Log</span></a></li>
-                            <li class=""><a href="{{url('disease-identify')}}"><i class="icon-reading"></i> <span>Disease Identification</span></a></li>
+                            <li class="{{ Request::is('disease-create') ? 'active' : '' }}"><a href="{{url('disease-create')}}"><i class="icon-pencil6"></i> <span>Create Disease Log</span></a></li>
+                            <li class="{{ Request::is('disease-identify') ? 'active' : '' }}"><a href="{{url('disease-identify')}}"><i class="icon-reading"></i> <span>Disease Identification</span></a></li>
 
                             <li class="navigation-header"><span class="icon-man-woman"></span><span class="text-center">Labour</span></li>
-                            <li><a href="{{url('labour-register')}}"><i class="icon-pencil6"></i> Register Labour</a></li>
-                            <li><a href="{{url('labour-chart')}}"><i class="icon-profile"></i>Labour Chart</a></li>
+                            <li class="{{ Request::is('labour-register') ? 'active' : '' }}"><a href="{{url('labour-register')}}"><i class="icon-pencil6"></i> Register Labour</a></li>
+                            <li class="{{ Request::is('labour-chart') ? 'active' : '' }}"><a href="{{url('labour-chart')}}"><i class="icon-profile"></i>Labour Chart</a></li>
 
                             <li class="navigation-header"><span class="icon-file-check"></span><span class="text-center">Reports</span></li>
-                            <li><a href="{{url('create-report')}}"><i class="icon-home4"></i> Create Report</a></li>
-                            <li><a href="{{url('all-reports')}}"><i class="fa fa-file-pdf-o"></i> All Reports</a></li>
+                            <li class="{{ Request::is('create-report') ? 'active' : '' }}"><a href="{{url('create-report')}}"><i class="icon-home4"></i> Create Report</a></li>
+{{--                            <li><a href="{{url('all-reports')}}"><i class="fa fa-file-pdf-o"></i> All Reports</a></li>--}}
 
                             <li class="navigation-header"><span class="icon-cogs"></span><span class="text-center">Miscellaneous</span></li>
-                            <li><a href="{{url('register-requests')}}"><i class="icon-hour-glass3"></i> Register Requests</a></li>
-                            <li><a href="{{url('users')}}"><i class="icon-users2"></i> Registered Users</a></li>
+                            <li class="{{ Request::is('register-requests') ? 'active' : '' }}"><a href="{{url('register-requests')}}"><i class="icon-hour-glass3"></i> Register Requests</a></li>
+                            <li class="{{ Request::is('users') ? 'active' : '' }}"><a href="{{url('users')}}"><i class="icon-users2"></i> Registered Users</a></li>
 
                         </ul>
                     </div>

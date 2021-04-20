@@ -8,4 +8,6 @@ class LabourCollection extends Model
 {
     protected $table = 'labour_collections';
     protected $primaryKey = 'labour_collection_id';
+
+
 }
