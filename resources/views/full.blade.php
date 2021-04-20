@@ -96,7 +96,7 @@
 <!-- Main navbar -->
 <div class="navbar navbar-inverse navbar-fixed-top cju-navbar">
     <div class="navbar-header text-center cju-navbar-header">
-        <a href="/pages/dashboard.php"><img src="{{asset('images/planter.png')}}"
+        <a href="{{url('/')}}"><img src="{{asset('images/planter.png')}}"
                                                                 style="height: 50px;background-color: white" alt=""></a>
 
         <ul class="nav navbar-nav pull-right visible-xs-block">

@@ -438,14 +438,26 @@
         <div class="row">
             <div class="panel panel-flat">
                 <div class="panel-heading">
-                    <div class="heading-elements">
-                        <div class="form-group">
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="icon-calendar22"></i></span>
-                                <input type="text" class="form-control daterange-basic" value="">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6">
+                            <div class="form-group">
+                                <label class="control-label col-lg-2">From Date :</label>
+                                <div class="col-lg-10">
+                                    <input type="date" name="fromdate" id="fromdate" placeholder="Select the from date.." class="form-control mspborder required">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-6">
+                            <div class="form-group">
+                                <label class="control-label col-lg-2">To Date :</label>
+                                <div class="col-lg-10">
+                                    <input type="date" name="todate" id="todate" placeholder="Select the to date.." class="form-control mspborder required">
+                                </div>
                             </div>
                         </div>
                     </div>
+
+
                 </div>
                 <div class="panel-body">
                     <div class="col-sm-12 col-md-6">
@@ -493,17 +505,16 @@
                                     </div>
                                 </div>
 
-                                <!-- Basic column chart -->
-                                <div class="panel panel-flat">
-                                    <div class="panel-heading">
-                                        <h5 class="panel-title">Latex Liters</h5>
-                                    </div>
+                        <!-- Multiple donut charts -->
+                        <div class="panel panel-flat">
 
-                                    <div class="panel-body">
-
-                                    </div>
+                            <div class="panel-body">
+                                <div class="chart-container has-scroll">
+                                    <div class="chart " id="pie_latex_liters" style="width:100%; height:300px;"></div>
                                 </div>
-                                <!-- /basic column chart -->
+                            </div>
+                        </div>
+                        <!-- /multiple donut charts -->
 
                     </div>
 
@@ -551,16 +562,16 @@
                                     </div>
                                 </div>
 
-                                <!-- Basic column chart -->
-                                <div class="panel panel-flat">
-                                    <div class="panel-heading">
-                                        <h5 class="panel-title">Latex Kilos</h5>
-                                    </div>
+                        <!-- Multiple donut charts -->
+                        <div class="panel panel-flat">
 
-                                    <div class="panel-body">
-                                    </div>
+                            <div class="panel-body">
+                                <div class="chart-container ">
+                                    <div class="chart " id="pie_latex_kilos" style="width:100%; height:300px;"></div>
                                 </div>
-                                <!-- /basic column chart -->
+                            </div>
+                        </div>
+                        <!-- /multiple donut charts -->
 
                     </div>
                 </div>
@@ -674,9 +685,7 @@
             }
         });
 
-
-
-        {{-- chart >> latex liters--}}
+        {{-------------------------------- chart 01 ---------------- >> latex liters--}}
 
         // based on prepared DOM, initialize echarts instance
         var myChart = echarts.init(document.getElementById('latex-liters'));
@@ -724,7 +733,7 @@
         // use configuration item and data specified to show chart
         myChart.setOption(option);
 
-        {{-- chart >> latex Killos--}}
+        {{-------------------------------- chart 02 ----------------- >> latex Killos--}}
 
         // based on prepared DOM, initialize echarts instance
         var myChart = echarts.init(document.getElementById('latex-kilos'));
@@ -771,6 +780,221 @@
 
         // use configuration item and data specified to show chart
         myChart.setOption(option);
+
+
+        {{--------------------------------- chart 03 ----------------- >>pie latex liters--}}
+        // Pie latex liters
+            var latex_liters_pie = document.getElementById('pie_latex_liters');
+
+            // Initialize chart
+            var pie_latex_liters = echarts.init(latex_liters_pie);
+            //
+            // Chart config
+            //
+
+            // Top text label
+            var labelTop = {
+                show: true,
+                position: 'center',
+                formatter: '{b}\n',
+                fontSize: 15,
+                lineHeight: 50,
+                rich: {
+                    a: {}
+                }
+            };
+
+            // Background item style
+            var backStyle = {
+                color: '#eee',
+                emphasis: {
+                    color: '#eee'
+                }
+            };
+
+            // Bottom text label
+            var labelBottom = {
+                color: '#333',
+                show: true,
+                position: 'center',
+                formatter: function (params) {
+                    return '\n\n' + (100 - params.value) + '%'
+                },
+                fontWeight: 500,
+                lineHeight: 35,
+                rich: {
+                    a: {}
+                },
+                emphasis: {
+                    color: '#333'
+                }
+            };
+
+            // Set inner and outer radius
+            var radius = [52, 65];
+
+            // Options
+            pie_latex_liters.setOption({
+
+                // Colors
+                color: [
+                    '#7cb342',
+                    '#558b2f'
+                ],
+
+                // Global text styles
+                textStyle: {
+                    fontFamily: 'Roboto, Arial, Verdana, sans-serif',
+                    fontSize: 13
+                },
+
+                // Add title
+                title: {
+                    text: 'Received Latex Liters Percentage',
+                    subtext: 'As per the expected value',
+                    left: 'center',
+                    textStyle: {
+                        fontSize: 17,
+                        fontWeight: 500
+                    },
+                    subtextStyle: {
+                        fontSize: 12
+                    }
+                },
+
+                // Add legend
+                legend: {
+                    bottom: 0,
+                    left: 'center',
+                    data: ['Latex Liters'],
+                    itemHeight: 10,
+                    itemWidth: 10,
+                    selectedMode: false
+                },
+
+                // Add series
+                series: [
+                    {
+                        type: 'pie',
+                        center: ['50%', '50%'],
+                        radius: radius,
+                        hoverAnimation: false,
+                        data: [
+                            {name: 'other', value: 40, label: labelBottom, itemStyle: backStyle},
+                            {name: 'Latex Liters', value: 60, label: labelTop}
+                        ]
+                    },
+                ]
+            });
+
+
+        {{-------------------------------- chart 04 ------------------- >>pie latex kilos--}}
+        // Pie latex kilos
+        var latex_kilos_pie = document.getElementById('pie_latex_kilos');
+
+        // Initialize chart
+        var pie_latex_kilos = echarts.init(latex_kilos_pie);
+
+
+        //
+        // Chart config
+        //
+
+        // Top text label
+        var labelTop = {
+            show: true,
+            position: 'center',
+            formatter: '{b}\n',
+            fontSize: 15,
+            lineHeight: 50,
+            rich: {
+                a: {}
+            }
+        };
+
+        // Background item style
+        var backStyle = {
+            color: '#eee',
+            emphasis: {
+                color: '#eee'
+            }
+        };
+
+        // Bottom text label
+        var labelBottom = {
+            color: '#333',
+            show: true,
+            position: 'center',
+            formatter: function (params) {
+                return '\n\n' + (100 - params.value) + '%'
+            },
+            fontWeight: 500,
+            lineHeight: 35,
+            rich: {
+                a: {}
+            },
+            emphasis: {
+                color: '#333'
+            }
+        };
+
+        // Set inner and outer radius
+        var radius = [52, 65];
+
+        // Options
+        pie_latex_kilos.setOption({
+
+            // Colors
+            color: [
+                '#f69241',
+                '#f3852c'
+            ],
+
+            // Global text styles
+            textStyle: {
+                fontFamily: 'Roboto, Arial, Verdana, sans-serif',
+                fontSize: 13
+            },
+
+            // Add title
+            title: {
+                text: 'Received Latex Kilos Percentage',
+                subtext: 'As per the expected value',
+                left: 'center',
+                textStyle: {
+                    fontSize: 17,
+                    fontWeight: 500
+                },
+                subtextStyle: {
+                    fontSize: 12
+                }
+            },
+
+            // Add legend
+            legend: {
+                bottom: 0,
+                left: 'center',
+                data: ['Latex Liters'],
+                itemHeight: 10,
+                itemWidth: 10,
+                selectedMode: false
+            },
+
+            // Add series
+            series: [
+                {
+                    type: 'pie',
+                    center: ['50%', '50%'],
+                    radius: radius,
+                    hoverAnimation: false,
+                    data: [
+                        {name: 'other', value: 20, label: labelBottom, itemStyle: backStyle},
+                        {name: 'Latex Liters', value: 80, label: labelTop}
+                    ]
+                },
+            ]
+        });
+
     </script>
 @endsection
 
