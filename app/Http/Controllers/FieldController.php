@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Storage;
 use Carbon\Carbon;
+use DateTime;
 
 class FieldController extends Controller
 {
@@ -393,7 +394,8 @@ class FieldController extends Controller
 
             $actualLtr = round(($actualLtrSum[0]->actualLtr),2);
 
-        }else{
+        }
+        else{
 
             $datecount = DB::table('labour_collections')
                         ->selectRaw("Count(DISTINCT DATE(labour_collections.created_at))  AS count")
@@ -461,6 +463,46 @@ class FieldController extends Controller
     }
 
     public function fieldData(Request $request){
-        dd($request->all());
+
+        $date1 = $request->startdate;
+        $date2 = $request->enddate;
+
+        $datetime1 = new DateTime($date1);
+        $datetime2 = new DateTime($date2);
+        $interval = $datetime1->diff($datetime2);
+        $days = $interval->format('%a');
+
+        $actualWkKgSum = DB::table('labour_collections')
+            ->selectRaw('SUM(labour_collections.labour_latex_kgs) AS actualWkKg')
+            ->whereBetween('labour_collections.created_at', [$datetime1, $datetime2])
+            ->get();
+
+        $actualWkKg = round(($actualWkKgSum[0]->actualWkKg),2);
+
+
+        $actualWkLtrSum = DB::table('labour_collections')
+            ->selectRaw('SUM(labour_collections.labour_latex_liters) AS actualWkLtr')
+            ->whereBetween('labour_collections.created_at', [$datetime1, $datetime2])
+            ->get();
+
+        $actualWkLtr = round(($actualWkLtrSum[0]->actualWkLtr),2);
+//        dd($actualWkKg, $actualWkLtr);
+
+        $expectedWkKgSum = DB::table('labour_collections')
+            ->selectRaw('AVG(labour_collections.labour_latex_kgs) AS expectedWkKg')
+            ->where('labour_collections.created_at', "<", $datetime1)
+            ->get();
+
+        $expectedWkKg = round(($expectedWkKgSum[0]->expectedWkKg)*$days,2);
+
+
+        $expectedWkLtrSum = DB::table('labour_collections')
+            ->selectRaw('AVG(labour_collections.labour_latex_liters) AS expectedWkLtr')
+            ->where('labour_collections.created_at', "<", $datetime1)
+            ->get();
+
+        $expectedWkLtr = round(($expectedWkLtrSum[0]->expectedWkLtr)*$days,2);
+        dd($actualWkKg, $actualWkLtr, $expectedWkKg, $expectedWkLtr);
+        return view('pages.field_dashboard', compact( 'actualWkKg','actualWkLtr','expectedWkKg','expectedWkLtr'));
     }
 }
