@@ -478,7 +478,7 @@
                                                 </div>
                                             </div>
                                             <hr>
-                                            <h3 class="no-margin text-center">652.25 (L)</h3>
+                                            <h3 class="no-margin text-center"><span id="lblLatexL">652.25</span> (L)</h3>
                                         </div>
                                     </div>
                                     <div class="col-sm-6 col-md-6">
@@ -498,7 +498,7 @@
                                                 </div>
                                             </div>
                                             <hr>
-                                            <h3 class="no-margin text-center">652.25 (L)</h3>
+                                            <h3 class="no-margin text-center"><span id="lblAcLatexL">652.25</span> (L)</h3>
                                         </div>
                                     </div>
                                 </div>
@@ -536,7 +536,7 @@
                                                 </div>
                                             </div>
                                             <hr>
-                                            <h3 class="no-margin text-center">652.25 (KG)</h3>
+                                            <h3 class="no-margin text-center"><span id="lblLatexKg">652.25</span> (KG)</h3>
                                         </div>
                                     </div>
                                     <div class="col-sm-6 col-md-6">
@@ -555,7 +555,7 @@
                                                 </div>
                                             </div>
                                             <hr>
-                                            <h3 class="no-margin text-center">652.25 (KG)</h3>
+                                            <h3 class="no-margin text-center"><span id="lblAcLatexKg">652.25</span> (KG)</h3>
                                         </div>
                                     </div>
                                 </div>
@@ -878,8 +878,8 @@
                         radius: radius,
                         hoverAnimation: false,
                         data: [
-                            {name: 'other', value: 40, label: labelBottom, itemStyle: backStyle},
-                            {name: 'Latex Liters', value: 60, label: labelTop}
+                            {name: 'other', value: 100, label: labelBottom, itemStyle: backStyle},
+                            {name: 'Latex Liters', value: 10, label: labelTop}
                         ]
                     },
                 ]
@@ -1061,13 +1061,10 @@
             }).done(function (data) {
 
                 data = JSON.parse(data);
-                // console.log(data[0]['note']);
-
-                // if(!data[0]['note'] == "" || !data[0]['note'] == null){
-                //     $("#submit_btn").hide();
-                //     $("#tasknote").val(data[0]['note']);
-                //     $("#taskdate").val(data[0]['completed_date']);
-                // }
+                $("#lblLatexKg").html(data[2]);
+                $("#lblLatexL").html(data[3]);
+                $("#lblAcLatexKg").html(data[0]);
+                $("#lblAcLatexL").html(data[1]);
 
             }).fail(function () {
 

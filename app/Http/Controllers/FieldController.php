@@ -17,6 +17,9 @@ use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Storage;
 use Carbon\Carbon;
 use DateTime;
+use Phpml\Regression\LeastSquares;
+use Phpml\Regression\SVR;
+use Phpml\SupportVectorMachine\Kernel;
 
 class FieldController extends Controller
 {
@@ -160,6 +163,7 @@ class FieldController extends Controller
             $total_payable = $total_payable + $tempRow->payable;
         }
 
+
         $division_collection_main = new DivisionCollectionMain();
         $division_collection_main->weather = $response->body();
         $division_collection_main->tot_tappers = $total_tappers;
@@ -208,7 +212,7 @@ class FieldController extends Controller
                     $labour_collection->field_id = $data->field_no;
                     $labour_collection->block_id = $data->block_no;
                     $labour_collection->labour_latex_kgs = $data->latex;
-                    $labour_collection->metrolac_reading = $data->metrolac_reading;
+                    $labour_collection->labour_latex_liters = $data->no_of_liters;
                     $labour_collection->metrolac_reading = $data->metrolac_reading;
                     $labour_collection->labour_scrap_kgs = $data->scrap;
                     $labour_collection->labour_over_kgs = $data->over;
@@ -322,61 +326,89 @@ class FieldController extends Controller
     public function dashboard($id = 'all'){
         $fields = Field::all();
 
-        // $date1 = strtotime(date("Y-m-d", strtotime("-30 day")));
-        // $date2 = date("Y-m-d");
 
         if($id !='all'){
-
-            $firstdate = DB::table('labour_collections')
-                    ->selectRaw('MIN(labour_collections.created_at) as min')
-                    ->get();
-
-            $firstdate = Carbon::parse($firstdate[0]->min)->format('Y-m-d');
+//            $firstdate = DB::table('labour_collections')
+//                    ->selectRaw('MIN(labour_collections.created_at) as min')
+//                    ->get();
+//
+//            $firstdate = Carbon::parse($firstdate[0]->min)->format('Y-m-d');
             $todaydate = date('Y-m-d');
 
+        //------Predicted KG
+            $labour_collections = LabourCollection::select(\DB::raw("SUM(labour_latex_kgs) as labour_latex_kgs"))->where('labour_collections.field_id', $id)->groupBy('created_at')->where('created_at', '<', date('Y-m-d'))->orderBy('created_at', 'asc')->get();
+            $samples = [];
+            $targets = [];
+            $defaultVal = 1;
+            foreach ($labour_collections as $collec) {
+                array_push($samples, array($defaultVal++));
+                array_push($targets, $collec->labour_latex_kgs);
+            }
 
-            // $datediff = DB::table('labour_collections')
-            //             ->selectRaw("DATEDIFF('$todaydate', '$firstdate');  AS datediff")
-            //             ->where('labour_collections.field_id', $id)
-            //             ->tosql();
-                        // dd($datediff);
+            if (count($samples) >= 2 && count($targets) >= 2) {
+                $regression = new LeastSquares();
+                $regression->train($samples, $targets);
+                $predictedKg = round($regression->predict([$defaultVal++]), 2);
+            } else  {
+                $predictedKg = "No Data To Predict";
+            }
 
-            $datecount = DB::table('labour_collections')
-                        ->selectRaw("Count(DISTINCT DATE(labour_collections.created_at))  AS count")
-                        ->where('labour_collections.field_id', $id)
-                        ->get();
-            $count = $datecount[0]->count;
+        //------Predicted Ltrs
+
+            $labour_collections = LabourCollection::select(\DB::raw("SUM(labour_latex_liters) as labour_latex_liters"))->where('labour_collections.field_id', $id)->groupBy('created_at')->where('created_at', '<', date('Y-m-d'))->orderBy('created_at', 'asc')->get();
+            $samples = [];
+            $targets = [];
+            $defaultVal = 1;
+            foreach ($labour_collections as $collec) {
+                array_push($samples, array($defaultVal++));
+                array_push($targets, $collec->labour_latex_liters);
+            }
+           if (count($samples) >= 2 && count($targets) >= 2) {
+                $regression = new LeastSquares();
+                $regression->train($samples, $targets);
+                $predictedLtr = round($regression->predict([$defaultVal++]), 2);
+            } else  {
+                $predictedLtr = "No Data To Predict";
+            }
+
+        //------Expected KG
+
+            $labour_collections = LabourCollection::select(\DB::raw("SUM(labour_latex_kgs) as labour_latex_kgs"))->where('labour_collections.field_id', $id)->groupBy('created_at')->orderBy('created_at', 'asc')->get();
+            $samples = [];
+            $targets = [];
+            $defaultVal = 1;
+            foreach ($labour_collections as $collec) {
+                array_push($samples, array($defaultVal++));
+                array_push($targets, $collec->labour_latex_kgs);
+            }
+           if (count($samples) >= 2 && count($targets) >= 2) {
+                $regression = new LeastSquares();
+                $regression->train($samples, $targets);
+                $expectedKg = round($regression->predict([$defaultVal++]), 2);
+            } else  {
+                $expectedKg = "No Data To Predict";
+            }
+
+        //------Expected Ltrs
+
+            $labour_collections = LabourCollection::select(\DB::raw("SUM(labour_latex_liters) as labour_latex_liters"))->where('labour_collections.field_id', $id)->groupBy('created_at')->orderBy('created_at', 'asc')->get();
+            $samples = [];
+            $targets = [];
+            $defaultVal = 1;
+            foreach ($labour_collections as $collec) {
+                array_push($samples, array($defaultVal++));
+                array_push($targets, $collec->labour_latex_liters);
+            }
+           if (count($samples) >= 2 && count($targets) >= 2) {
+                $regression = new LeastSquares();
+                $regression->train($samples, $targets);
+                $expectedLtr = round($regression->predict([$defaultVal++]), 2);
+            } else  {
+                $expectedLtr = "No Data To Predict";
+            }
 
 
-            $predictedKgSum = DB::table('labour_collections')
-                        ->selectRaw("Sum(labour_collections.labour_latex_kgs) AS predictedKg")
-                        ->where('labour_collections.field_id', $id)
-                        ->get();
-            $predictedKg = round(($predictedKgSum[0]->predictedKg)/$count,2);
-
-            $predictedLtrSum = DB::table('labour_collections')
-                        ->selectRaw("Sum(labour_collections.labour_latex_liters) AS predictedLtr")
-                        ->where('labour_collections.field_id', $id)
-                        ->get();
-            $predictedLtr = round(($predictedLtrSum[0]->predictedLtr)/$count,2);
-
-            //----------------------
-
-            $expectedKgSum = DB::table('labour_collections')
-                            ->selectRaw('SUM(labour_collections.labour_latex_kgs) AS expectedKg')
-                            ->where('labour_collections.field_id', $id)
-                            ->get();
-            $expectedKg = round(($expectedKgSum[0]->expectedKg)/$count, 2);
-
-
-            $expectedLtrSum = DB::table('labour_collections')
-                            ->selectRaw('AVG(labour_collections.labour_latex_liters) AS expectedLtr')
-                            ->where('labour_collections.field_id', $id)
-                            ->get();
-            $expectedLtr = round(($expectedLtrSum[0]->expectedLtr),2);
-
-
-            //----------------------
+        //------Actual KG
 
             $actualKgSum = DB::table('labour_collections')
                             ->selectRaw('SUM(labour_collections.labour_latex_kgs) AS actualKg')
@@ -385,6 +417,8 @@ class FieldController extends Controller
                             ->get();
 
             $actualKg = round(($actualKgSum[0]->actualKg),2);
+
+        //------Actual Ltrs
 
             $actualLtrSum = DB::table('labour_collections')
                             ->selectRaw('SUM(labour_collections.labour_latex_liters) AS actualLtr')
@@ -397,51 +431,81 @@ class FieldController extends Controller
         }
         else{
 
-            $datecount = DB::table('labour_collections')
-                        ->selectRaw("Count(DISTINCT DATE(labour_collections.created_at))  AS count")
-                        ->whereRaw('DATE(labour_collections.created_at)< CURDATE()')
-                        ->get();
+        //------Predicted KG
 
-            $count = $datecount[0]->count;
+            $labour_collections = LabourCollection::select(\DB::raw("SUM(labour_latex_kgs) as labour_latex_kgs"))->groupBy('created_at')->where('created_at', '<', date('Y-m-d'))->orderBy('created_at', 'asc')->get();
+            $samples = [];
+            $targets = [];
+            $defaultVal = 1;
+            foreach ($labour_collections as $collec) {
+                array_push($samples, array($defaultVal++));
+                array_push($targets, $collec->labour_latex_kgs);
+            }
+           if (count($samples) >= 2 && count($targets) >= 2) {
+                $regression = new LeastSquares();
+                $regression->train($samples, $targets);
+                $predictedKg = round($regression->predict([$defaultVal++]), 2);
+            } else  {
+                $predictedKg = "No Data To Predict";
+            }
+
+        //------Predicted Ltrs
+
+            $labour_collections = LabourCollection::select(\DB::raw("SUM(labour_latex_liters) as labour_latex_liters"))->groupBy('created_at')->where('created_at', '<', date('Y-m-d'))->orderBy('created_at', 'asc')->get();
+            $samples = [];
+            $targets = [];
+            $defaultVal = 1;
+            foreach ($labour_collections as $collec) {
+                array_push($samples, array($defaultVal++));
+                array_push($targets, $collec->labour_latex_liters);
+            }
+            if (count($samples) >= 2 && count($targets) >= 2) {
+                $regression = new LeastSquares();
+                $regression->train($samples, $targets);
+                $predictedLtr = round($regression->predict([$defaultVal++]), 2);
+            } else  {
+                $predictedLtr = "No Data To Predict";
+            }
 
 
-            $predictedKgSum = DB::table('labour_collections')
-                ->selectRaw("Sum(labour_collections.labour_latex_kgs) AS predictedKg")
-                ->whereRaw('DATE(labour_collections.created_at)< CURDATE()')
-                ->get();
-
-            $predictedKg = round(($predictedKgSum[0]->predictedKg)/$count, 2);
-
-            $predictedLtrSum = DB::table('labour_collections')
-                        ->selectRaw('Sum(labour_collections.labour_latex_liters) AS predictedLtr')
-                        ->whereRaw('DATE(labour_collections.created_at)< CURDATE()')
-                        ->get();
-
-            $predictedLtr = round(($predictedLtrSum[0]->predictedLtr)/$count, 2);
+        //------Expected KG
 
 
-            //--------------------
-            $datecount1 = DB::table('labour_collections')
-                ->selectRaw("Count(DISTINCT DATE(labour_collections.created_at))  AS count1")
-                ->get();
+            $labour_collections = LabourCollection::select(\DB::raw("SUM(labour_latex_kgs) as labour_latex_kgs"))->groupBy('created_at')->orderBy('created_at', 'asc')->get();
+            $samples = [];
+            $targets = [];
+            $defaultVal = 1;
+            foreach ($labour_collections as $collec) {
+                array_push($samples, array($defaultVal++));
+                array_push($targets, $collec->labour_latex_kgs);
+            }
+            if (count($samples) >= 2 && count($targets) >= 2) {
+                $regression = new LeastSquares();
+                $regression->train($samples, $targets);
+                $expectedKg = round($regression->predict([$defaultVal++]), 2);
+            } else  {
+                $expectedKg = "No Data To Predict";
+            }
 
-            $count1 = $datecount1[0]->count1;
+        //------Expected Ltrs
 
+            $labour_collections = LabourCollection::select(\DB::raw("SUM(labour_latex_liters) as labour_latex_liters"))->groupBy('created_at')->orderBy('created_at', 'asc')->get();
+            $samples = [];
+            $targets = [];
+            $defaultVal = 1;
+            foreach ($labour_collections as $collec) {
+                array_push($samples, array($defaultVal++));
+                array_push($targets, $collec->labour_latex_liters);
+            }
+            if (count($samples) >= 2 && count($targets) >= 2) {
+                $regression = new LeastSquares();
+                $regression->train($samples, $targets);
+                $expectedLtr = round($regression->predict([$defaultVal++]), 2);
+            } else  {
+                $expectedLtr = "No Data To Predict";
+            }
 
-            $expectedKgSum = DB::table('labour_collections')
-                                ->selectRaw('SUM(labour_collections.labour_latex_kgs) AS expectedKg')
-                                ->get();
-
-            $expectedKg = round(($expectedKgSum[0]->expectedKg)/$count1, 2);
-
-
-            $expectedLtrSum = DB::table('labour_collections')
-                             ->selectRaw('SUM(labour_collections.labour_latex_liters) AS expectedLtr')
-                             ->get();
-
-            $expectedLtr = round(($expectedLtrSum[0]->expectedLtr)/$count1, 2);
-
-            //--------------------
+        //------Actual KG
 
             $actualKgSum = DB::table('labour_collections')
                 ->selectRaw('SUM(labour_collections.labour_latex_kgs) AS actualKg')
@@ -450,6 +514,7 @@ class FieldController extends Controller
 
             $actualKg = round(($actualKgSum[0]->actualKg), 2);
 
+        //------Actual Ltrs
 
             $actualLtrSum = DB::table('labour_collections')
                 ->selectRaw('SUM(labour_collections.labour_latex_liters) AS actualLtr')
@@ -472,6 +537,8 @@ class FieldController extends Controller
         $interval = $datetime1->diff($datetime2);
         $days = $interval->format('%a');
 
+        //------Actual Wk KG
+
         $actualWkKgSum = DB::table('labour_collections')
             ->selectRaw('SUM(labour_collections.labour_latex_kgs) AS actualWkKg')
             ->whereBetween('labour_collections.created_at', [$datetime1, $datetime2])
@@ -479,6 +546,7 @@ class FieldController extends Controller
 
         $actualWkKg = round(($actualWkKgSum[0]->actualWkKg),2);
 
+        //------Actual Wk Ltrs
 
         $actualWkLtrSum = DB::table('labour_collections')
             ->selectRaw('SUM(labour_collections.labour_latex_liters) AS actualWkLtr')
@@ -486,23 +554,45 @@ class FieldController extends Controller
             ->get();
 
         $actualWkLtr = round(($actualWkLtrSum[0]->actualWkLtr),2);
-//        dd($actualWkKg, $actualWkLtr);
-
-        $expectedWkKgSum = DB::table('labour_collections')
-            ->selectRaw('AVG(labour_collections.labour_latex_kgs) AS expectedWkKg')
-            ->where('labour_collections.created_at', "<", $datetime1)
-            ->get();
-
-        $expectedWkKg = round(($expectedWkKgSum[0]->expectedWkKg)*$days,2);
 
 
-        $expectedWkLtrSum = DB::table('labour_collections')
-            ->selectRaw('AVG(labour_collections.labour_latex_liters) AS expectedWkLtr')
-            ->where('labour_collections.created_at', "<", $datetime1)
-            ->get();
+        //------Expected Wk KG
 
-        $expectedWkLtr = round(($expectedWkLtrSum[0]->expectedWkLtr)*$days,2);
-        dd($actualWkKg, $actualWkLtr, $expectedWkKg, $expectedWkLtr);
-        return view('pages.field_dashboard', compact( 'actualWkKg','actualWkLtr','expectedWkKg','expectedWkLtr'));
+        $labour_collections = LabourCollection::select(\DB::raw("SUM(labour_latex_kgs) as labour_latex_kgs"))->where('created_at', '<', $datetime1)->groupBy('created_at')->orderBy('created_at', 'asc')->get();
+        $samples = [];
+        $targets = [];
+        $defaultVal = 1;
+        foreach ($labour_collections as $collec) {
+            array_push($samples, array($defaultVal++));
+            array_push($targets, $collec->labour_latex_kgs);
+        }
+        if (count($samples) >= 2 && count($targets) >= 2) {
+            $regression = new LeastSquares();
+            $regression->train($samples, $targets);
+            $expectedWkKg = round($regression->predict([$defaultVal++]), 2);
+        } else  {
+            $expectedWkKg = "No Data To Predict";
+        }
+
+        //------Expected Wk Ltrs
+
+        $labour_collections = LabourCollection::select(\DB::raw("SUM(labour_latex_liters) as labour_latex_liters"))->where('created_at', '<', $datetime1)->groupBy('created_at')->orderBy('created_at', 'asc')->get();
+        $samples = [];
+        $targets = [];
+        $defaultVal = 1;
+        foreach ($labour_collections as $collec) {
+            array_push($samples, array($defaultVal++));
+            array_push($targets, $collec->labour_latex_liters);
+        }
+        if (count($samples) >= 2 && count($targets) >= 2) {
+            $regression = new LeastSquares();
+            $regression->train($samples, $targets);
+            $expectedWkLtr = round($regression->predict([$defaultVal++]), 2);
+        } else  {
+            $expectedWkLtr = "No Data To Predict";
+        }
+
+        $response = [$actualWkKg,$actualWkLtr,$expectedWkKg,$expectedWkLtr];
+        return json_encode($response);
     }
 }
