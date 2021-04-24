@@ -46,8 +46,11 @@
                             <div class="col-12 col-md-6">
                                 <div class="form-group row">
                                     <label for="gender" class="col-3 col-form-label text-md-right">{{ __('Gender') }}</label>
-                                    <input id="gender" type="text" class="col-8 form-control @error('gender') is-invalid @enderror" name="gender" value="{{ old('gender') }}" required autocomplete="gender" autofocus>
-
+                                    <select id="gender" type="text" class="col-8 form-control @error('gender') is-invalid @enderror" name="gender" value="{{ old('gender') }}" required autocomplete="gender" autofocus>
+                                        <option value="">Select Gender</option>
+                                        <option value="0">Male</option>
+                                        <option value="1">Female</option>
+                                    </select>
                                     @error('gender')
                                     <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>

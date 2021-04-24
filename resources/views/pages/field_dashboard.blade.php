@@ -508,7 +508,7 @@
 
                             <div class="panel-body">
                                 <div class="chart-container has-scroll">
-                                    <div class="chart " id="pie_latex_liters" style="width:100%; height:300px;"></div>
+                                    <div class="chart " id="polar_latex_liters" style="width:100%; height:300px;"></div>
                                 </div>
                             </div>
                         </div>
@@ -565,7 +565,7 @@
 
                             <div class="panel-body">
                                 <div class="chart-container ">
-                                    <div class="chart " id="pie_latex_kilos" style="width:100%; height:300px;"></div>
+                                    <div class="chart " id="polar_latex_kilos" style="width:100%; height:400px;"></div>
                                 </div>
                             </div>
                         </div>
@@ -585,6 +585,10 @@
 
 
         $(document).ready(function() {
+
+            polarLatexKilos(0,0);
+            polarLatexLiters(0,0);
+
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition((response) => {
                     console.log(response.coords.latitude);
@@ -780,217 +784,88 @@
         myChart.setOption(option);
 
 
-        {{--------------------------------- chart 03 ----------------- >>pie latex liters--}}
-        // Pie latex liters
-            var latex_liters_pie = document.getElementById('pie_latex_liters');
+        {{--------------------------------- chart 03 ----------------- >>polar latex liters--}}
+        function polarLatexLiters(lblLatexL,lblAcLatexL){
+            var chartDom = document.getElementById('polar_latex_liters');
+            var myChart = echarts.init(chartDom);
+            var option;
 
-            // Initialize chart
-            var pie_latex_liters = echarts.init(latex_liters_pie);
-            //
-            // Chart config
-            //
-
-            // Top text label
-            var labelTop = {
-                show: true,
-                position: 'center',
-                formatter: '{b}\n',
-                fontSize: 15,
-                lineHeight: 50,
-                rich: {
-                    a: {}
-                }
-            };
-
-            // Background item style
-            var backStyle = {
-                color: '#eee',
-                emphasis: {
-                    color: '#eee'
-                }
-            };
-
-            // Bottom text label
-            var labelBottom = {
-                color: '#333',
-                show: true,
-                position: 'center',
-                formatter: function (params) {
-                    return '\n\n' + (100 - params.value) + '%'
+            option = {
+                angleAxis: {
                 },
-                fontWeight: 500,
-                lineHeight: 35,
-                rich: {
-                    a: {}
+                radiusAxis: {
+                    type: 'category',
+                    data: ['expected', 'actual'],
+                    z: 100
                 },
-                emphasis: {
-                    color: '#333'
-                }
-            };
-
-            // Set inner and outer radius
-            var radius = [52, 65];
-
-            // Options
-            pie_latex_liters.setOption({
-
-                // Colors
-                color: [
-                    '#7cb342',
-                    '#558b2f'
-                ],
-
-                // Global text styles
-                textStyle: {
-                    fontFamily: 'Roboto, Arial, Verdana, sans-serif',
-                    fontSize: 13
+                polar: {
                 },
-
-                // Add title
-                title: {
-                    text: 'Received Latex Liters Percentage',
-                    subtext: 'As per the expected value',
-                    left: 'center',
-                    textStyle: {
-                        fontSize: 17,
-                        fontWeight: 500
-                    },
-                    subtextStyle: {
-                        fontSize: 12
+                series: [{
+                    type: 'bar',
+                    data: [
+                        {
+                            value: lblLatexL,
+                            itemStyle: {
+                                color: '#32aa9f'
+                            }
+                        },
+                        {
+                            value: lblAcLatexL,
+                            itemStyle: {
+                                color: '#33b7f4'
+                            }
+                        }
+                    ],
+                    coordinateSystem: 'polar',
+                    name: 'A',
+                    stack: 'a',
+                    emphasis: {
+                        focus: 'series'
                     }
-                },
+                }],
+                // legend: {
+                //     show: true,
+                //     data: ['A']
+                // }
+            };
 
-                // Add legend
-                legend: {
-                    bottom: 0,
-                    left: 'center',
-                    data: ['Latex Liters'],
-                    itemHeight: 10,
-                    itemWidth: 10,
-                    selectedMode: false
-                },
-
-                // Add series
-                series: [
-                    {
-                        type: 'pie',
-                        center: ['50%', '50%'],
-                        radius: radius,
-                        hoverAnimation: false,
-                        data: [
-                            {name: 'other', value: 100, label: labelBottom, itemStyle: backStyle},
-                            {name: 'Latex Liters', value: 10, label: labelTop}
-                        ]
-                    },
-                ]
-            });
-
+            option && myChart.setOption(option);
+        }
 
         {{-------------------------------- chart 04 ------------------- >>pie latex kilos--}}
-        // Pie latex kilos
-        var latex_kilos_pie = document.getElementById('pie_latex_kilos');
+        function polarLatexKilos(lblLatexKg,lblAcLatexKg){
+            var chartDom = document.getElementById('polar_latex_kilos');
+            var myChart = echarts.init(chartDom);
+            var option;
 
-        // Initialize chart
-        var pie_latex_kilos = echarts.init(latex_kilos_pie);
-
-        //
-        // Chart config
-        //
-        // Top text label
-        var labelTop = {
-            show: true,
-            position: 'center',
-            formatter: '{b}\n',
-            fontSize: 15,
-            lineHeight: 50,
-            rich: {
-                a: {}
-            }
-        };
-
-        // Background item style
-        var backStyle = {
-            color: '#eee',
-            emphasis: {
-                color: '#eee'
-            }
-        };
-
-        // Bottom text label
-        var labelBottom = {
-            color: '#333',
-            show: true,
-            position: 'center',
-            formatter: function (params) {
-                return '\n\n' + (100 - params.value) + '%'
-            },
-            fontWeight: 500,
-            lineHeight: 35,
-            rich: {
-                a: {}
-            },
-            emphasis: {
-                color: '#333'
-            }
-        };
-
-        // Set inner and outer radius
-        var radius = [52, 65];
-
-        // Options
-        pie_latex_kilos.setOption({
-
-            // Colors
-            color: [
-                '#f69241',
-                '#f3852c'
-            ],
-
-            // Global text styles
-            textStyle: {
-                fontFamily: 'Roboto, Arial, Verdana, sans-serif',
-                fontSize: 13
-            },
-
-            // Add title
-            title: {
-                text: 'Received Latex Kilos Percentage',
-                subtext: 'As per the expected value',
-                left: 'center',
-                textStyle: {
-                    fontSize: 17,
-                    fontWeight: 500
+            option = {
+                angleAxis: {
                 },
-                subtextStyle: {
-                    fontSize: 12
-                }
-            },
-
-            // Add legend
-            legend: {
-                bottom: 0,
-                left: 'center',
-                data: ['Latex Liters'],
-                itemHeight: 10,
-                itemWidth: 10,
-                selectedMode: false
-            },
-
-            // Add series
-            series: [
-                {
-                    type: 'pie',
-                    center: ['50%', '50%'],
-                    radius: radius,
-                    hoverAnimation: false,
-                    data: [
-                        {name: 'other', value: 20, label: labelBottom, itemStyle: backStyle},
-                        {name: 'Latex Liters', value: 80, label: labelTop}
-                    ]
+                radiusAxis: {
+                    type: 'category',
+                    data: ['expected', 'actual'],
+                    z: 100
                 },
-            ]
-        });
+                polar: {
+                },
+                series: [{
+                    type: 'bar',
+                    data: [lblLatexKg, lblAcLatexKg],
+                    coordinateSystem: 'polar',
+                    name: 'A',
+                    stack: 'a',
+                    emphasis: {
+                        focus: 'series'
+                    }
+                }],
+                // legend: {
+                //     show: true,
+                //     data: ['A']
+                // }
+            };
+            option && myChart.setOption(option);
 
+        }
 
 
         // Options
@@ -1065,6 +940,9 @@
                 $("#lblLatexL").html(data[3]);
                 $("#lblAcLatexKg").html(data[0]);
                 $("#lblAcLatexL").html(data[1]);
+
+                polarLatexKilos(data[2],data[0]);
+                polarLatexLiters(data[3],data[1]);
 
             }).fail(function () {
 

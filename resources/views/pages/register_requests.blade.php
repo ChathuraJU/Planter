@@ -64,13 +64,13 @@
                                 <td>{{$user->nic}}</td>
                                 <td>{{$user->contact}}</td>
                                 <td>{{$user->estate_name}}</td>
-                                <td>{{$user->user_type_id}}</td>
+                                <td>{{$user->user_type_name}}</td>
                                 <td>
                                     <ul class="icons-list">
                                         <li><a href="#" data-toggle="modal" data-target="#view_modal"  onclick="requestApprove_id_set({{$user->id}})"><i class="icon-file-check"></i></a></li>
                                     </ul>
                                 </td>
-                            </tr>   
+                            </tr>
                             @endforeach
                         </tbody>
                         <!-- <tbody>
@@ -218,7 +218,7 @@
     <script src="{{ asset('assets/js/core.js') }}"></script>
 
     <script>
-    
+
         $(document).ready(function () {
             datatb();
         });
@@ -357,7 +357,7 @@
             });
         }
 
-      
+
 
     </script>
     {{--javascripts ends--}}

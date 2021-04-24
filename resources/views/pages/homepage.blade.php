@@ -74,43 +74,50 @@
                 </div>
                 <!-- /date stamp -->
 
+                @foreach($data_lists as $data_list)
                 <!-- Blog post -->
                 <div class="timeline-row">
 
                     <div class="timeline-icon">
-                        <img src="{{asset('images/users/1.jpg')}}" alt="">
+                        <img src="{{asset($data_list->image)}}" alt="">
                     </div>
 
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="panel panel-flat timeline-content">
                                 <div class="panel-heading">
-                                    <h6 class="panel-title text-bold">Upper Division Crop Posted</h6>
+                                    <h6 class="panel-title text-bold">{{$data_list->division_collections->first()->division->division_name}} Crop Posted</h6>
                                     <div class="heading-elements">
-                                        <span class="heading-text"><i class="icon-checkmark-circle position-left text-success"></i> 49 minutes ago</span>
+{{--                                        <span class="heading-text"><i class="icon-checkmark-circle position-left text-success"></i> 49 minutes ago</span>--}}
+                                        <span class="heading-text"><i class="icon-checkmark-circle position-left text-success"></i>{{\Carbon\Carbon::parse($data_list->created_at)->diffForhumans()}}</span>
                                     </div>
                                 </div>
 
                                 <div class="panel-body">
                                     <h6 class="content-group">
                                         <i class="icon-user position-left"></i>
-                                        <a href="#">Jason Statham </a> Created:
+                                        <a href="#">{{$data_list->approved_user->person->fname}} {{$data_list->approved_user->person->lname}}</a> Created:{{$data_list->created_at}}
                                     </h6>
 
                                     <blockquote>
-                                        <p>Added Note here</p>
-                                        <footer><cite title="Source Title">10:39 am</cite></footer>
+                                        <p>{{$data_list->note}}</p>
+{{--                                        <footer><cite title="Source Title">10:39 am</cite></footer>--}}
                                     </blockquote>
                                 </div>
                                 <div class="panel-footer panel-footer-transparent">
                                     <div class="heading-elements">
-                                        <ul class="list-inline list-inline-condensed heading-text">
-                                            <li><a href="#" class="text-default"><i class="icon-spinner position-left text-danger"></i> Pending</a></li>
-                                            <li><a href="#" class="text-default"><i class="icon-check position-left text-success"></i> Approved</a></li>
-                                            <li><a href="#" class="text-default"><i class="icon-cross position-left text-warning"></i> Rejected</a></li>
-                                        </ul>
+{{--                                        <ul class="list-inline list-inline-condensed heading-text">--}}
+{{--                                            <li><a href="#" class="text-default"><i class="icon-spinner position-left text-danger"></i> Pending</a></li>--}}
+{{--                                            <li><a href="#" class="text-default"><i class="icon-check position-left text-success"></i> Approved</a></li>--}}
+{{--                                            <li><a href="#" class="text-default"><i class="icon-cross position-left text-warning"></i> Rejected</a></li>--}}
+{{--                                        </ul>--}}
                                         <span class="heading-btn pull-right">
-                                            <button type="button" class="btn bg-green-800 btn-labeled btn-rounded"><b><i class="icon-eye"></i></b> View</button>
+                                            @if(auth()->user()->user_type_id == 2 || auth()->user()->user_type_id == 3 || auth()->user()->user_type_id == 4)
+                                                <a class="btn bg-green-800 btn-labeled btn-rounded" href="{{url('staff-approve')}}/{{$data_list->division_collection_main_id}}"><b><i class="icon-eye"></i></b>View</a>
+                                            @else
+                                                <a class="btn bg-green-800 btn-labeled btn-rounded" href="{{url('field-receivable')}}/{{$data_list->division_collection_main_id}}"><b><i class="icon-eye"></i></b>View</a>
+                                            @endif
+{{--                                            <button type="button" class="btn bg-green-800 btn-labeled btn-rounded"><b><i class="icon-eye"></i></b> View</button>--}}
                                         </span>
                                     </div>
                                 </div>
@@ -119,103 +126,103 @@
                     </div>
                 </div>
                 <!-- /blog post -->
-
+                @endforeach
                 <!-- Blog post -->
-                <div class="timeline-row">
-                    <div class="timeline-icon">
-                        <img src="{{asset('images/users/1.jpg')}}" alt="">
-                    </div>
+{{--                <div class="timeline-row">--}}
+{{--                    <div class="timeline-icon">--}}
+{{--                        <img src="{{asset('images/users/1.jpg')}}" alt="">--}}
+{{--                    </div>--}}
 
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="panel panel-flat timeline-content">
-                                <div class="panel-heading">
-                                    <h6 class="panel-title text-bold">Upper Division Crop Accepted</h6>
-                                    <div class="heading-elements">
-                                        <span class="heading-text"><i class="icon-checkmark-circle position-left text-success"></i> 3 hours ago</span>
-                                    </div>
-                                </div>
+{{--                    <div class="row">--}}
+{{--                        <div class="col-lg-12">--}}
+{{--                            <div class="panel panel-flat timeline-content">--}}
+{{--                                <div class="panel-heading">--}}
+{{--                                    <h6 class="panel-title text-bold">Upper Division Crop Accepted</h6>--}}
+{{--                                    <div class="heading-elements">--}}
+{{--                                        <span class="heading-text"><i class="icon-checkmark-circle position-left text-success"></i> 3 hours ago</span>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
 
-                                <div class="panel-body">
-                                    <h6 class="content-group">
-                                        <i class="icon-user position-left"></i>
-                                        <a href="#">Melanie Watson</a> approved the <a href="#"> ID </a>
-                                    </h6>
+{{--                                <div class="panel-body">--}}
+{{--                                    <h6 class="content-group">--}}
+{{--                                        <i class="icon-user position-left"></i>--}}
+{{--                                        <a href="#">Melanie Watson</a> approved the <a href="#"> ID </a>--}}
+{{--                                    </h6>--}}
 
-                                    <blockquote>
-                                        <p>Added note here</p>
-                                        <footer>Melanie, <cite title="Source Title">12:56 am</cite></footer>
-                                    </blockquote>
-                                </div>
+{{--                                    <blockquote>--}}
+{{--                                        <p>Added note here</p>--}}
+{{--                                        <footer>Melanie, <cite title="Source Title">12:56 am</cite></footer>--}}
+{{--                                    </blockquote>--}}
+{{--                                </div>--}}
 
-                                <div class="panel-footer panel-footer-transparent">
-                                    <div class="heading-elements">
-                                        <ul class="list-inline list-inline-condensed heading-text">
-                                            <li><a href="#" class="text-default"><i class="icon-spinner position-left text-danger"></i> Pending</a></li>
-                                            <li><a href="#" class="text-default"><i class="icon-check position-left text-success"></i> Approved</a></li>
-                                            <li><a href="#" class="text-default"><i class="icon-cross position-left text-warning"></i> Rejected</a></li>
-                                        </ul>
-                                        <span class="heading-btn pull-right">
-                                            <button type="button" class="btn bg-green-800 btn-labeled btn-rounded"><b><i class="icon-eye"></i></b> View</button>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+{{--                                <div class="panel-footer panel-footer-transparent">--}}
+{{--                                    <div class="heading-elements">--}}
+{{--                                        <ul class="list-inline list-inline-condensed heading-text">--}}
+{{--                                            <li><a href="#" class="text-default"><i class="icon-spinner position-left text-danger"></i> Pending</a></li>--}}
+{{--                                            <li><a href="#" class="text-default"><i class="icon-check position-left text-success"></i> Approved</a></li>--}}
+{{--                                            <li><a href="#" class="text-default"><i class="icon-cross position-left text-warning"></i> Rejected</a></li>--}}
+{{--                                        </ul>--}}
+{{--                                        <span class="heading-btn pull-right">--}}
+{{--                                            <button type="button" class="btn bg-green-800 btn-labeled btn-rounded"><b><i class="icon-eye"></i></b> View</button>--}}
+{{--                                        </span>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
                 <!-- /blog post -->
 
                 <!-- Date stamp -->
-                <div class="timeline-date text-muted">
-                    <i class="icon-history position-left"></i> <span class="text-semibold">Monday</span>, April 18
-                </div>
+{{--                <div class="timeline-date text-muted">--}}
+{{--                    <i class="icon-history position-left"></i> <span class="text-semibold">Monday</span>, April 18--}}
+{{--                </div>--}}
                 <!-- /date stamp -->
 
                 <!-- Blog post -->
-                <div class="timeline-row">
-                    <div class="timeline-icon">
-                        <img src="{{asset('images/users/1.jpg')}}" alt="">
-                    </div>
+{{--                <div class="timeline-row">--}}
+{{--                    <div class="timeline-icon">--}}
+{{--                        <img src="{{asset('images/users/1.jpg')}}" alt="">--}}
+{{--                    </div>--}}
 
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="panel panel-flat timeline-content">
-                                <div class="panel-heading">
-                                    <h6 class="panel-title text-bold">Lower Division Crop Updates</h6>
-                                    <div class="heading-elements">
-                                        <span class="heading-text"><i class="icon-checkmark-circle position-left text-success"></i> 3 hours ago</span>
-                                    </div>
-                                </div>
+{{--                    <div class="row">--}}
+{{--                        <div class="col-lg-12">--}}
+{{--                            <div class="panel panel-flat timeline-content">--}}
+{{--                                <div class="panel-heading">--}}
+{{--                                    <h6 class="panel-title text-bold">Lower Division Crop Updates</h6>--}}
+{{--                                    <div class="heading-elements">--}}
+{{--                                        <span class="heading-text"><i class="icon-checkmark-circle position-left text-success"></i> 3 hours ago</span>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
 
-                                <div class="panel-body">
-                                    <h6 class="content-group">
-                                        <i class="icon-user position-left"></i>
-                                        <a href="#">Melanie Watson</a> updated on <a href="#">ID</a>
-                                    </h6>
+{{--                                <div class="panel-body">--}}
+{{--                                    <h6 class="content-group">--}}
+{{--                                        <i class="icon-user position-left"></i>--}}
+{{--                                        <a href="#">Melanie Watson</a> updated on <a href="#">ID</a>--}}
+{{--                                    </h6>--}}
 
-                                    <blockquote>
-                                        <p>Added note here</p>
-                                        <footer>Melanie, <cite title="Source Title">12:56 am</cite></footer>
-                                    </blockquote>
-                                </div>
+{{--                                    <blockquote>--}}
+{{--                                        <p>Added note here</p>--}}
+{{--                                        <footer>Melanie, <cite title="Source Title">12:56 am</cite></footer>--}}
+{{--                                    </blockquote>--}}
+{{--                                </div>--}}
 
-                                <div class="panel-footer panel-footer-transparent">
-                                    <div class="heading-elements">
-                                        <ul class="list-inline list-inline-condensed heading-text">
-                                            <li><a href="#" class="text-default"><i class="icon-spinner position-left text-danger"></i> Pending</a></li>
-                                            <li><a href="#" class="text-default"><i class="icon-check position-left text-success"></i> Approved</a></li>
-                                            <li><a href="#" class="text-default"><i class="icon-cross position-left text-warning"></i> Rejected</a></li>
-                                        </ul>
-                                        <span class="heading-btn pull-right">
-                                            <button type="button" class="btn bg-green-800 btn-labeled btn-rounded"><b><i class="icon-eye"></i></b> View</button>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+{{--                                <div class="panel-footer panel-footer-transparent">--}}
+{{--                                    <div class="heading-elements">--}}
+{{--                                        <ul class="list-inline list-inline-condensed heading-text">--}}
+{{--                                            <li><a href="#" class="text-default"><i class="icon-spinner position-left text-danger"></i> Pending</a></li>--}}
+{{--                                            <li><a href="#" class="text-default"><i class="icon-check position-left text-success"></i> Approved</a></li>--}}
+{{--                                            <li><a href="#" class="text-default"><i class="icon-cross position-left text-warning"></i> Rejected</a></li>--}}
+{{--                                        </ul>--}}
+{{--                                        <span class="heading-btn pull-right">--}}
+{{--                                            <button type="button" class="btn bg-green-800 btn-labeled btn-rounded"><b><i class="icon-eye"></i></b> View</button>--}}
+{{--                                        </span>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
                 <!-- /blog post -->
 
             </div>

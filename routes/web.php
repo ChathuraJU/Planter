@@ -17,15 +17,13 @@ Auth::routes();
 //Route::get('/', 'HomeController@index')->name('home');
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/', function () {
-        return view('pages.homepage');
-    });
 
     Route::get('no-access', function () {
         return view('pages.no-access');
     });
 
-
+    //Home DashBoard
+    Route::get('/', 'HomeController@index');
 
     //Field Routes
     Route::get('field-create', 'FieldController@index');
@@ -83,9 +81,21 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('nursery-dashboard', 'NurseryController@dashboard');
 
+    //Register Routes
+    Route::get('register-requests', 'UserController@index');
+    Route::post('register-approveuser', 'UserController@approveuser')->name('user.approveuser');
+    Route::post('register-rejectuser', 'UserController@rejectuser')->name('user.rejectuser');
+    Route::post('register-getuser', 'UserController@getuser')->name('user.getuser');
+    Route::get('users', 'UserController@getregistedusers')->name('user.getregistedusers');
+    Route::post('register-userupdate', 'UserController@userupdate')->name('user.userupdate');
+
     //Staff Approve Routes
     Route::get('staff-approve/{id}', 'StaffApproveController@index');
     Route::post('staff-approve-save', 'StaffApproveController@saveApprove')->name('save.staff.approve');
+
+    Route::get('create-report', function () {
+        return view('pages.create_report');
+    });
 
 
     Route::group(['as' => 'admin', 'middleware' => ['auth', 'admin']], function () {
@@ -114,9 +124,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::group(['as' => 'manager', 'middleware' => ['auth', 'manager']], function () {
 
-        Route::get('create-report', function () {
-            return view('pages.create_report');
-        });
+
 
     });
 

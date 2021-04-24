@@ -19,9 +19,8 @@ class UserController extends Controller
 
         $users = DB::table('persons')
                     ->join('users', 'persons.person_id', '=', 'users.person_id')
+                    ->join('user_types', 'persons.user_type_id', '=', 'user_types.user_type_id')
                     ->where('users.status',0)->get();
-
-
 
         return view('pages.register_requests', compact('users'));
     }

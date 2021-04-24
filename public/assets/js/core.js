@@ -45,6 +45,7 @@ function formDataAjax(url, successMessage, errorMessage, formId) {
             contentType: false
         }).done(function (data) {
             if (data == 1) {
+                $("#"+formId)[0].reset();
                 messageSuccessAlert(successMessage);
             } else {
                 data = JSON.parse(data);

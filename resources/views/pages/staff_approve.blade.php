@@ -69,24 +69,44 @@
                                         </tr>
                                         </thead>
                                         <tbody>
+                                        @foreach($LabourCollectionSummaries as $LabourCollectionSummary)
+                                            <tr>
+                                                <td>{{$LabourCollectionSummary->epf}}</td>
+                                                <td>{{$LabourCollectionSummary->fname}}</td>
+                                                <td>{{$LabourCollectionSummary->field_name}}</td>
+                                                <td>{{$LabourCollectionSummary->block_no}}</td>
+                                                <td>{{$LabourCollectionSummary->labour_latex_liters}}</td>
+                                                <td>{{$LabourCollectionSummary->metrolac_reading}}</td>
+                                                <td>{{$LabourCollectionSummary->labour_latex_kgs}}</td>
+                                                <td>{{$LabourCollectionSummary->labour_scrap_kgs}}</td>
+                                                <td>{{$LabourCollectionSummary->labour_over_kgs}}</td>
+                                                <td>{{$LabourCollectionSummary->labour_field_norms}}</td>
+                                                <td>{{$LabourCollectionSummary->labour_payable}}</td>
+                                                @if($LabourCollectionSummary->labour_pay_status == 0)
+                                                    <td>Not Paid</td>
+                                                @else
+                                                    <td>Paid</td>
+                                                @endif
+                                            </tr
+                                        @endforeach
                                         </tbody>
-                                        <tfoot>
-                                        <tr style="background-color: #e4efaf; font-weight: bold">
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td>Total</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
+{{--                                        <tfoot>--}}
+{{--                                        <tr style="background-color: #e4efaf; font-weight: bold">--}}
+{{--                                            <td></td>--}}
+{{--                                            <td></td>--}}
+{{--                                            <td></td>--}}
+{{--                                            <td>Total</td>--}}
+{{--                                            <td></td>--}}
+{{--                                            <td></td>--}}
+{{--                                            <td></td>--}}
+{{--                                            <td></td>--}}
+{{--                                            <td></td>--}}
+{{--                                            <td></td>--}}
+{{--                                            <td></td>--}}
+{{--                                            <td></td>--}}
 
-                                        </tr>
-                                        </tfoot>
+{{--                                        </tr>--}}
+{{--                                        </tfoot>--}}
                                     </table>
                                 </div>
                             </fieldset>

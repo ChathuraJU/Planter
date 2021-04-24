@@ -7,18 +7,27 @@ use App\CollectionApproval;
 use App\DivisionCollectionMain;
 use App\Field;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
 class StaffApproveController extends Controller
 {
     public function index($id)
     {
+
+        $LabourCollectionSummaries = DB::table('labour_collections')
+                                ->join('persons', 'labour_collections.labour_id', '=', 'persons.person_id')
+                                ->join('division_collection_main', 'labour_collections.division_collection_id', '=', 'division_collection_main.id')
+                                ->join('fields', 'labour_collections.field_id', '=', 'fields.field_id')
+                                ->join('blocks', 'labour_collections.block_id', '=', 'blocks.id')
+                                ->where('division_collection_main.id', $id)->get();
+//dd($LabourCollectionSummaries);
         $division_main = DivisionCollectionMain::find($id);
         $fields = Field::all();
         $blocks = Block::all();
         $approvals = CollectionApproval::where('division_collection_main_id', $id)->get();
         $division_main['weather'] = json_decode($division_main->weather);
-        return view('pages.staff_approve', compact('division_main', 'fields', 'blocks', 'approvals'));
+        return view('pages.staff_approve', compact('division_main', 'fields', 'blocks', 'approvals', 'LabourCollectionSummaries'));
     }
 
     public function saveApprove(Request $request)
