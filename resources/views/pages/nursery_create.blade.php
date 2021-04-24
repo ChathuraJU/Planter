@@ -164,7 +164,7 @@
                             <div class="col-sm-6">
                                 <div class="form-group">
                                 <input type="hidden" name="txtid" id="txtid" placeholder="" class="form-control mspborder">
-                          
+
                                     <label class="control-label text-semibold"> Region :</label>
                                     <input type="text" name="Region_em" id="Region_em" placeholder="Region Name" class="form-control mspborder readonly">
                                 </div>
@@ -181,17 +181,6 @@
                                     <div class="row">
                                         <div class="col-lg-4 col-sm-4">
                                             <p><a href="images/placeholderimg.jpg" class="media-left" data-popup="lightbox"><img src="images/placeholderimg.jpg" id="img1" Name="img1" class="img-responsive img-rounded" alt="image"></a></p>
-                                            <p><a href="images/placeholderimg.jpg" class="media-left" data-popup="lightbox"><img src="images/placeholderimg.jpg" id="img2" Name="img2" class="img-responsive img-rounded" alt="image"></a></p>
-                                        </div>
-
-                                        <div class="col-lg-4 col-sm-4">
-                                            <p><a href="images/placeholderimg.jpg" class="media-left" data-popup="lightbox"><img src="images/placeholderimg.jpg" id="img3" Name="img3" class="img-responsive img-rounded" alt="image"></a></p>
-                                            <p><a href="images/placeholderimg.jpg" class="media-left" data-popup="lightbox"><img src="images/placeholderimg.jpg" id="img4" Name="img4" class="img-responsive img-rounded" alt="image"></a></p>
-                                        </div>
-
-                                        <div class="col-lg-4 col-sm-4">
-                                            <p><a href="images/placeholderimg.jpg" class="media-left" data-popup="lightbox"><img src="images/placeholderimg.jpg" id="img5" Name="img5"class="img-responsive img-rounded" alt="image"></a></p>
-                                            <p><a href="images/placeholderimg.jpg" class="media-left" data-popup="lightbox"><img src="images/placeholderimg.jpg" id="img6" Name="img6"class="img-responsive img-rounded" alt="image"></a></p>
                                         </div>
                                     </div>
                                 </div>
@@ -201,7 +190,7 @@
                                 <div class="panel panel-body">
                                     <legend class="text-semibold"><i class="icon-task position-left"></i>Schedule</legend>
                                     <ul class="list-feed media-list cju-list-scroll" id="list">
-                                     
+
                                     </ul>
                                 </div>
                             </div>
@@ -316,7 +305,7 @@
         }
 
        function get_nursery(id){
-           
+
             $("#list").empty();
 
             const url = "{{ route('nursery.get') }}";

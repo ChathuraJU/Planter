@@ -169,17 +169,6 @@
                                                 <div class="row">
                                                     <div class="col-lg-4 col-sm-4">
                                                         <p><a href="#"><img id="image1" src="" class="img-responsive img-rounded" alt="image"></a></p>
-                                                        <p><a href="#"><img id="image2" src="" class="img-responsive img-rounded" alt="image"></a></p>
-                                                    </div>
-
-                                                    <div class="col-lg-4 col-sm-4">
-                                                        <p><a href="#"><img id="image3" src="" class="img-responsive img-rounded" alt="image"></a></p>
-                                                        <p><a href="#"><img id="image4" src="" class="img-responsive img-rounded" alt="image"></a></p>
-                                                    </div>
-
-                                                    <div class="col-lg-4 col-sm-4">
-                                                        <p><a href="#"><img id="image5" src="" class="img-responsive img-rounded" alt="image"></a></p>
-                                                        <p><a href="#"><img id="image6" src="" class="img-responsive img-rounded" alt="image"></a></p>
                                                     </div>
                                                 </div>
                                             </div>

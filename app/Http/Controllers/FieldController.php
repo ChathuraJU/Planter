@@ -47,7 +47,7 @@ class FieldController extends Controller
 //               File::delete(public_path().'/'.$field->image);
 //               dd(public_path().'/'.$field->image);
 //           }
-           $path = Storage::putFile('public/fields', $request->file('txt_upload_image'),'public');
+           $path = Storage::disk('public')->put('fields', $request->file('txt_upload_image'));
            $field->image = 'storage/'.$path;
        }
 
@@ -127,7 +127,7 @@ class FieldController extends Controller
         $collection_approval->approval_status = 1;
         $collection_approval->division_collection_main_id = $request->mainId;
         if ($request->uploadedFile) {
-            $path = Storage::putFile('public/approvals', $request->file('uploadedFile'),'public');
+            $path = Storage::disk('public')->put('approvals', $request->file('uploadedFile'));
             $collection_approval->image = 'storage/'.$path;
         }
         if ($collection_approval->save()) {
@@ -200,7 +200,7 @@ class FieldController extends Controller
             $collection_approval->approval_status = 1;
             $collection_approval->division_collection_main_id = $division_collection_main->id;
             if ($request->uploadedFile) {
-                $path = Storage::putFile('public/approvals', $request->file('uploadedFile'),'public');
+                $path = Storage::disk('public')->put('approvals', $request->file('uploadedFile'));
                 $collection_approval->image = 'storage/'.$path;
             }
             if ($collection_approval->save()) {

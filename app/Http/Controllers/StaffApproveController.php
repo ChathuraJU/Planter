@@ -36,7 +36,8 @@ class StaffApproveController extends Controller
         $collection_approval->approval_status = 1;
         $collection_approval->division_collection_main_id = $request->mainId;
         if ($request->uploadedFile) {
-            $path = Storage::putFile('public/approvals', $request->file('uploadedFile'),'public');
+//            $path = Storage::putFile('public/approvals', $request->file('uploadedFile'),'public');
+            $path = Storage::disk('public')->put('approvals', $request->file('uploadedFile'));
             $collection_approval->image = 'storage/'.$path;
         }
         if ($collection_approval->save()) {

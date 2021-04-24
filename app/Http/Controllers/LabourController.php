@@ -8,6 +8,8 @@ use App\Labour;
 use Illuminate\Support\Facades\DB;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\File;
+use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
 
 class LabourController extends Controller
@@ -23,7 +25,7 @@ class LabourController extends Controller
         }
 
         $labours =  $labours->paginate(8);
-        
+
         return view('pages.labour_chart', compact('labours'));
     }
 
@@ -53,6 +55,8 @@ class LabourController extends Controller
 
             } else {
 
+//                dd($request->all());
+
                 $person = new Person();
 
                 $person->user_type_id = 7;
@@ -65,7 +69,7 @@ class LabourController extends Controller
                 $person->address = $request->address;
                 $person->epf = $request->epf;
 
-                $path = Storage::putFile('persons/labours', $request->file('labour_img'),'public');
+                $path = Storage::disk('public')->put('persons/labours', $request->file('labour_img'));
                 $person->image = 'storage/'.$path;
 
                 $person->status = 1;

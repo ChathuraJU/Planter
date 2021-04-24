@@ -31,7 +31,7 @@ class DiseaseController extends Controller
             $disease->solution = $request->solutions_up;
 
 
-            dd($request->img_file);
+//            dd($request->img_file);
 
 
             if ($request->img_file) {
@@ -45,12 +45,12 @@ class DiseaseController extends Controller
                     $data[] = $file_name;
                 }
 
-
 //           if ($field->image != null && $field->image != '') {
 //               File::delete(public_path().'/'.$field->image);
 //               dd(public_path().'/'.$field->image);
 //           }
-                $path = Storage::putFile('diseases', $request->file('img_file'),'public');
+//                $path = Storage::putFile('diseases', $request->file('img_file'),'public');
+                $path = Storage::disk('public')->put('diseases', $request->file('img_file'));
                 $disease->image = 'storage/'.$path;
             }
 
@@ -69,7 +69,7 @@ class DiseaseController extends Controller
             $disease->descriptions = $request->description;
             $disease->solution = $request->solutions;
 
-            $path = Storage::putFile('diseases', $request->file('img_file'),'public');
+            $path = Storage::disk('public')->put('diseases', $request->file('img_file'));
             $disease->image = 'storage/'.$path;
 
             if($disease->save()){

@@ -80,7 +80,7 @@
                                 <div class="thumb">
                                     <a href="images/placeholderimg.jpg" class="media-left" data-popup="lightbox">
                                         {{-- <img src="{{asset('$nursery->image') }}" --}}
-                                        <img src="images/placeholderimg.jpg"
+                                        <img src="{{ asset($nursery->image) }}"
                                             class="img-responsive img-rounded media-preview" alt="">
                                     </a>
                                 </div>

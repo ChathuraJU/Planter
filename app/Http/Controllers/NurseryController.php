@@ -60,7 +60,7 @@ class NurseryController extends Controller
 //               File::delete(public_path().'/'.$field->image);
 //               dd(public_path().'/'.$field->image);
 //           }
-                $path = Storage::putFile('nurserys', $request->file('img_file'),'public');
+                $path = Storage::disk('public')->put('nurserys', $request->file('img_file'));
                 $nursery->image = 'storage/'.$path;
             }
 
@@ -80,7 +80,8 @@ class NurseryController extends Controller
             $nursery->layout_date = $request->plot_date;
             // $nursery->image = $request->plot_image;
 
-            $path = Storage::putFile('nursery', $request->file('plot_image'),'public');
+//            $path = Storage::putFile('nursery', $request->file('plot_image'),'public');
+            $path = Storage::disk('public')->put('nursery', $request->file('plot_image'));
             $nursery->image = 'storage/'.$path;
 
             $nursery->save();
