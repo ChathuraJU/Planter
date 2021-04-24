@@ -451,7 +451,7 @@
                             </div>
                         </div>
 
-                        <input type="button" id="rangeDemoToday" class="btn btn-primary" onclick="datafield()" value="today">
+                        <input type="button" id="rangeDemoToday" class="btn btn-primary" onclick="datafield()" value="Generate">
                         <input type="button" id="rangeDemoClear" class="btn btn-default" value="clear">
                     </div>
 
@@ -478,7 +478,7 @@
                                                 </div>
                                             </div>
                                             <hr>
-                                            <h3 class="no-margin text-center"><span id="lblLatexL">652.25</span> (L)</h3>
+                                            <h3 class="no-margin text-center"><span id="lblLatexL">--</span> (L)</h3>
                                         </div>
                                     </div>
                                     <div class="col-sm-6 col-md-6">
@@ -498,7 +498,7 @@
                                                 </div>
                                             </div>
                                             <hr>
-                                            <h3 class="no-margin text-center"><span id="lblAcLatexL">652.25</span> (L)</h3>
+                                            <h3 class="no-margin text-center"><span id="lblAcLatexL">--</span> (L)</h3>
                                         </div>
                                     </div>
                                 </div>
@@ -536,7 +536,7 @@
                                                 </div>
                                             </div>
                                             <hr>
-                                            <h3 class="no-margin text-center"><span id="lblLatexKg">652.25</span> (KG)</h3>
+                                            <h3 class="no-margin text-center"><span id="lblLatexKg">--</span> (KG)</h3>
                                         </div>
                                     </div>
                                     <div class="col-sm-6 col-md-6">
@@ -555,7 +555,7 @@
                                                 </div>
                                             </div>
                                             <hr>
-                                            <h3 class="no-margin text-center"><span id="lblAcLatexKg">652.25</span> (KG)</h3>
+                                            <h3 class="no-margin text-center"><span id="lblAcLatexKg">--</span> (KG)</h3>
                                         </div>
                                     </div>
                                 </div>
