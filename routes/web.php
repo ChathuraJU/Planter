@@ -35,7 +35,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('block-fieldblock', 'FieldController@fieldblocksave')->name('fieldblock.save');
     Route::post('field-receivable-save-temp', 'FieldController@fieldReceivableSaveTemp')->name('field.receivable.save.temp');
     Route::post('get-from-block-data', 'FieldController@getDataFromBlock')->name('get.field.data.from.block');
-    Route::post('filed-fieldData', 'FieldController@fieldData')->name('field.fieldData');
+    Route::post('field-fieldData', 'FieldController@fieldData')->name('field.fieldData');
 
     //Labour Routes
     Route::get('labour-chart', 'LabourController@index');
@@ -121,4 +121,5 @@ Route::middleware(['auth'])->group(function () {
     });
 
 });
+
 

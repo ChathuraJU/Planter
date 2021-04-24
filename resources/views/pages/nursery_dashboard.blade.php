@@ -400,7 +400,7 @@
                             <div class="form-group">
                                 <label for="tasknotenew" class="control-label text-semibold">{{ __('Note') }}</label>
                                 <textarea name="tasknotenew" id="tasknotenew" rows="5" cols="5" class="form-control mspborder"
-                                          name="tasknotenew" value="{{ old('tasknotenew') }}" required autocomplete="tasknotenew"
+                                          value="{{ old('tasknotenew') }}" required autocomplete="tasknotenew"
                                           autofocus></textarea>
                             </div>
                         </div>
@@ -518,7 +518,6 @@
     }
 
     function new_task_complete_id(id){
-        alert(id);
         $("#txtidNew").val(id);
         $("#submit_btn_new").show();
         $("#newtasknote").val("");
@@ -534,29 +533,25 @@
             },
 
         }).done(function (data) {
-
             data = JSON.parse(data);
-            // console.log(data[0]['note']);
-
-            $('#complete_task').modal()
+            $('#complete_task_new').modal()
 
             if(!data[0]['note'] == "" || !data[0]['note'] == null){
-                $("#submit_btn_new").hide();
-                $("#newtasknote").val(data[0]['note']);
+                $("#tasknotenew").val(data[0]['note']);
                 $("#newtaskdate").val(data[0]['completed_date']);
             }
-
+            if(data[0]['status'] == "1"){
+                $("#submit_btn_new").hide();
+            }
         }).fail(function () {
-
             messageErrorAlert("error");
-
         });
     }
 
-    function new_task_complete(){
+    function task_complete_new(){
 
         var id = $("#txtidNew").val();
-        var msg = $('#newtasknote').val();
+        var msg = $('#tasknotenew').val();
         // var status = $('#taskstatus').val();
         var date = $('#newtaskdate').val();
 
@@ -584,19 +579,15 @@
         });
     }
     function add_task_nursery_id(id){
-        alert(id);
         $('#nursery_id').val(id);
     }
 
     function add_new_task(){
         var id = $("#nursery_id").val();
-        alert(id+" Okay");
         var task = $('#newtask').val();
         var status = $('#newtaskstatus').val();
         var taskdate = $('#taskdate').val();
         var note = $('#newtasknote').val();
-
-        alert(status);
 
         const url = "{{ route('nursery.taskadd') }}";
 
