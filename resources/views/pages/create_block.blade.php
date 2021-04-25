@@ -257,14 +257,18 @@
         function setMax(value){
             $(".touchspin-custom").TouchSpin({
                 max:value,
+                step: 0.1,
+                decimals: 2,
+                forcestepdivisibility: 'none',
             });
         }
 
         $("#txt_no_of_hecatres").change(function(){
             var selecthectare = $("#txt_no_of_hecatres").val();
-            var fieldhectare =  parseInt($("#hectare").text());
+            var fieldhectare =  parseFloat($("#hectare").text());
 
             if(selecthectare > fieldhectare){
+                $('#txt_no_of_hecatres').val(fieldhectare);
                 swal({
                     title: "Input hecatres cannot be greater than field hecatres" ,
                     text: "Click ok to continue",
@@ -273,8 +277,7 @@
                 },
                 function (isConfirm) {
 
-                    setMax(fieldhectare);
-
+                    $('#txt_no_of_hecatres').val(fieldhectare);
                 });
             }
         });
