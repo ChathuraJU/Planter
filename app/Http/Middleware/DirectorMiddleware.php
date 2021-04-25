@@ -15,7 +15,7 @@ class DirectorMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if(auth::check() && Auth::user()->user_type_id == 2){
+        if(Auth::check() && Auth::user()->user_type_id == 2){
             return $next($request);
         }
         else {

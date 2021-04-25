@@ -79,7 +79,7 @@
                 <div class="timeline-row">
 
                     <div class="timeline-icon">
-                        <img src="{{asset($data_list->image)}}" alt="">
+                        <img src="{{asset('images/users/2.png')}}" alt="">
                     </div>
 
                     <div class="row">

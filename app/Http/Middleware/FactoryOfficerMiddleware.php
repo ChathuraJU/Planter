@@ -15,7 +15,7 @@ class FactoryOfficerMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if(auth::check() && Auth::user()->user_type_id == 5){
+        if(Auth::check() && Auth::user()->user_type_id == 5){
             return $next($request);
         }
         else {

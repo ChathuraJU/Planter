@@ -30,7 +30,8 @@ class HomeController extends Controller
         foreach ($data_lists as $id) {
             array_push($pKeys, $id->id);
         }
-        $data_lists = CollectionApproval::wherein('id', $pKeys)->get();
+        $data_lists = CollectionApproval::wherein('id', $pKeys)
+            ->orderBy("created_at", 'DESC')->get();
 
         return view('pages.homepage', compact('data_lists'));
     }

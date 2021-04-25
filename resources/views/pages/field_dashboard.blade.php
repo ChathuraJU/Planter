@@ -508,7 +508,7 @@
 
                             <div class="panel-body">
                                 <div class="chart-container has-scroll">
-                                    <div class="chart " id="polar_latex_liters" style="width:100%; height:300px;"></div>
+                                    <div class="chart " id="polar_latex_liters" style="width:100%; height:400px;"></div>
                                 </div>
                             </div>
                         </div>

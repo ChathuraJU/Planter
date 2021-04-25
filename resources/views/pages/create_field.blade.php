@@ -140,7 +140,7 @@
                         @foreach($fields as $field)
                             <tr id="{{ $field->field_id }}">
                                 <td>{{ $field->division_id == 0 ? 'Upper Division' : 'Lower Division' }}</td>
-                                <td></td>
+                                <td><img src="{{asset($field->image)}}" alt="field image" style="max-width: 50px; max-height: 50px"></td>
                                 <td>{{ $field->field_name }}</td>
                                 <td class="text-center">{{ $field->hectare }}</td>
                                 <td class="text-center">{{ $field->remaining_hectare }}</td>
