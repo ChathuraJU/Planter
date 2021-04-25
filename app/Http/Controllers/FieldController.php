@@ -41,6 +41,7 @@ class FieldController extends Controller
         $field->user_id = auth()->user()->id;
         $field->field_name = $request->txt_field_name;
         $field->hectare = $request->txt_no_of_hecatres;
+        $field->remaining_hectare= $request->txt_no_of_hecatres;
 
        if ($request->txt_upload_image) {
 //           if ($field->image != null && $field->image != '') {
@@ -297,7 +298,7 @@ class FieldController extends Controller
 
         if($block->save()){
 
-            $field = DB::update("update fields set hectare = hectare - '$hectare' where field_id = '$field_id'");
+            $field = DB::update("update fields set remaining_hectare = remaining_hectare - '$hectare' where field_id = '$field_id'");
 
             echo true;
         }else{

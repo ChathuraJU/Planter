@@ -131,6 +131,7 @@
                             <th>Image</th>
                             <th>Field Name</th>
                             <th>Number of Hectares</th>
+                            <th>Remaining Hectare</th>
                             <th>Action</th>
 
                         </tr>
@@ -142,6 +143,7 @@
                                 <td></td>
                                 <td>{{ $field->field_name }}</td>
                                 <td class="text-center">{{ $field->hectare }}</td>
+                                <td class="text-center">{{ $field->remaining_hectare }}</td>
                                 <td><a href="#">Update</a></td>
                             </tr>
                         @endforeach

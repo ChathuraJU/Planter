@@ -243,7 +243,7 @@
                 }).done(function (data) {
 
                     data = JSON.parse(data);
-                    $("#hectare").text(data.hectare)
+                    $("#hectare").text(data.remaining_hectare)
 
                     // messageSuccessAlert("User Rejected Successfully")
 
