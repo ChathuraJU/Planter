@@ -17,6 +17,7 @@ class CreateUserTypesTable extends Migration
             $table->integer('user_type_id');
             $table->string('user_type_name')->default('None');
             $table->boolean('status')->default(true);
+            $table->int('view');
             $table->timestamps();
         });
     }
