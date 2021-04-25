@@ -16,13 +16,24 @@ class LabourController extends Controller
 {
     public function index(Request $request){
 
-        $labours = DB::table('persons')
+//        $labours = DB::select("SELECTpersons.person_id,persons.user_type_id,persons.fname,persons.lname,labour_collections.field_id,persons.gender,persons.dob,persons.nic,persons.contact,persons.address,persons.epf,persons.image,persons.`status`,persons.created_at,persons.updated_at,Sum(labour_collections.labour_latex_liters),Sum(labour_collections.labour_scrap_kgs),Sum(labour_collections.labour_over_kgs),Sum(labour_collections.labour_latex_kgs),Sum(labour_collections.labour_payable),labour_collections.labour_id,labour_collections.labour_collection_id FROM `persons` INNER JOIN `labours` ON `persons`.`person_id` = `labours`.`person_id` INNER JOIN `labour_collections` ON `labours`.`labour_id` = `labour_collections`.`labour_id` GROUP BY labour_collections.labour_id")
+//                    ->join('labours', 'persons.person_id', '=', 'labours.person_id')
+//                    ->join('labour_collections', 'labours.labour_id', '=', 'labour_collections.labour_id')->tosql();
+
+        $labours = Person::select(\DB::raw('*'))
                     ->join('labours', 'persons.person_id', '=', 'labours.person_id');
+
+//        $labours = Person::select(\DB::raw('persons.person_id, persons.user_type_id, persons.fname, persons.lname, labour_collections.field_id, persons.gender, persons.dob, persons.nic, persons.contact, persons.address, persons.epf, persons.image, persons.`status`, persons.created_at, persons.updated_at, Sum(labour_collections.labour_latex_liters) AS labour_latex_liters, Sum(labour_collections.labour_scrap_kgs) AS labour_scrap_kgs, Sum(labour_collections.labour_over_kgs) AS labour_over_kgs, Sum(labour_collections.labour_latex_kgs) AS labour_latex_kgs, Sum(labour_collections.labour_payable) AS labour_payable, labour_collections.labour_id, labour_collections.labour_collection_id'))
+//            ->join('labours', 'persons.person_id', '=', 'labours.person_id')
+//            ->join('labour_collections', 'labours.labour_id', '=', 'labour_collections.labour_id')
+//            ->groupBy('labour_collections.labour_id');
+
 
         if($request->has('search')){
             $labours->where('fname', 'LIKE', "%{$request->search}%")
                     ->orWhere('lname', 'LIKE', "%{$request->search}%");
         }
+//        dd($labours);
 
         $labours =  $labours->paginate(8);
 
@@ -92,10 +103,6 @@ class LabourController extends Controller
                 }
 
             }
-
-
-
-
 
     }
 

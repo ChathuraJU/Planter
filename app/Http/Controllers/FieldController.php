@@ -6,6 +6,7 @@ use App\CollectionApproval;
 use App\DivisionCollection;
 use App\DivisionCollectionMain;
 use App\Field;
+use App\Labour;
 use App\LabourCollection;
 use App\Person;
 use App\Block;
@@ -207,6 +208,15 @@ class FieldController extends Controller
             if ($collection_approval->save()) {
                 $tempData = TempLabourCollectionSummaryEntity::with('labour', 'field')->get();
                 foreach ($tempData as $data) {
+
+                    $labours = Labour::where('person_id',$data->labour_id)->first();
+
+                    $labours->tot_latex_liters += $data->no_of_liters;
+                    $labours->tot_latex_kg += $data->latex;
+                    $labours->tot_scrap_kg += $data->scrap;
+                    $labours->tot_over_kg += $data->over;
+                    $labours->save();
+
                     $labour_collection = new LabourCollection();
                     $labour_collection->labour_id = $data->labour_id;
                     $labour_collection->division_collection_id = $division_collection->division_collection_id;
