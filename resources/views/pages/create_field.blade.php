@@ -237,7 +237,16 @@
             table_offset.fixedHeader.headerOffset($('.navbar-fixed-top').height());
         }
 
-
+        $("input[name='txt_no_of_hecatres']").TouchSpin({
+            min: 0,
+            max: 100,
+            step: 1,
+            decimals: 2,
+            forcestepdivisibility: 'none',
+            boostat: 5,
+            maxboostedstep: 10,
+            postfix: '%'
+        });
 
     </script>
     {{--javascripts ends--}}

@@ -196,7 +196,7 @@
 
                                                     <div class="col-xs-4">
                                                         <div class="text-uppercase text-size-mini opacity-75">Temp</div>
-                                                        <h5 class="text-semibold no-margin">{{$division_main->weather->main->temp}}</h5>
+                                                        <h5 class="text-semibold no-margin">{{$division_main->weather->main->temp -273.15}}°C</h5>
                                                     </div>
 
                                                     <div class="col-xs-4">
@@ -284,20 +284,11 @@
                                 <legend class="text-semibold"><i class="icon-images2 position-left"></i>Images</legend>
                                 <div class="content-group">
                                     <div class="row">
-                                        <div class="col-lg-4 col-sm-4">
-                                            <p><a href="#"><img src="images/placeholderimg.jpg" class="img-responsive img-rounded" alt="image"></a></p>
-                                            <p><a href="#"><img src="images/placeholderimg.jpg" class="img-responsive img-rounded" alt="image"></a></p>
-                                        </div>
-
-                                        <div class="col-lg-4 col-sm-4">
-                                            <p><a href="#"><img src="images/placeholderimg.jpg" class="img-responsive img-rounded" alt="image"></a></p>
-                                            <p><a href="#"><img src="images/placeholderimg.jpg" class="img-responsive img-rounded" alt="image"></a></p>
-                                        </div>
-
-                                        <div class="col-lg-4 col-sm-4">
-                                            <p><a href="#"><img src="images/placeholderimg.jpg" class="img-responsive img-rounded" alt="image"></a></p>
-                                            <p><a href="#"><img src="images/placeholderimg.jpg" class="img-responsive img-rounded" alt="image"></a></p>
-                                        </div>
+                                        @foreach($approvals as $approval)
+                                            <div class="col-lg-4 col-sm-4">
+                                                <p><a href="#"><img src="{{asset($approval->image)}}" class="img-responsive img-rounded" alt="image" ></a></p>
+                                            </div>
+                                        @endforeach
                                     </div>
                                 </div>
                             </fieldset>

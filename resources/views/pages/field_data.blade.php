@@ -290,6 +290,13 @@
     {{--javascripts starts here--}}
     <script src="{{ asset('assets/js/core.js') }}"></script>
     <script>
+        $("input[name='scrap_kg']").TouchSpin({
+            min: 0,
+            max: 100,
+            step: 1,
+            decimals: 2,
+            forcestepdivisibility: 'none'
+        });
 
         function calculateOverKgs() {
             let fNorm = Number($("#field_norms").val());

@@ -267,6 +267,7 @@
                                                 <a href="#">{{$approval->approved_user->person->fname}} {{$approval->approved_user->person->lname}}</a> {{$approval->note}}
                                             </li>
                                         @endforeach
+
                                     </ul>
                                 </div>
                             </fieldset>
@@ -274,11 +275,11 @@
                                 <legend class="text-semibold"><i class="icon-images2 position-left"></i>Images</legend>
                                 <div class="content-group">
                                     <div class="row">
-
                                         @foreach($approvals as $approval)
-                                            <p><a href="#"><img src="{{asset($approval->image)}}" class="img-responsive img-rounded" alt="image"></a></p>
+                                            <div class="col-lg-4 col-sm-4">
+                                                <p><a href="#"><img src="{{asset($approval->image)}}" class="img-responsive img-rounded" alt="image" ></a></p>
+                                            </div>
                                         @endforeach
-
                                     </div>
                                 </div>
                             </fieldset>

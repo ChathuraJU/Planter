@@ -32,7 +32,7 @@ class FieldController extends Controller
 
     public function store(Request $request)
     {
-//        echo $request->txt_upload_image;
+
         if ($request->txtId) {
             $field = Field::find($request->txtId);
         } else {
@@ -45,10 +45,7 @@ class FieldController extends Controller
         $field->remaining_hectare= $request->txt_no_of_hecatres;
 
        if ($request->txt_upload_image) {
-//           if ($field->image != null && $field->image != '') {
-//               File::delete(public_path().'/'.$field->image);
-//               dd(public_path().'/'.$field->image);
-//           }
+
            $path = Storage::disk('public')->put('fields', $request->file('txt_upload_image'));
            $field->image = 'storage/'.$path;
        }
