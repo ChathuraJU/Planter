@@ -455,7 +455,6 @@
                         <input type="button" id="rangeDemoClear" class="btn btn-default" value="clear">
                     </div>
 
-
                 </div>
                 <div class="panel-body">
                     <div class="col-sm-12 col-md-6">
@@ -943,6 +942,9 @@
 
                 polarLatexKilos(data[2],data[0]);
                 polarLatexLiters(data[3],data[1]);
+
+                $("#rangeDemoStart").val(startdate);
+                $("#rangeDemoFinish").val(enddate);
 
             }).fail(function () {
 
